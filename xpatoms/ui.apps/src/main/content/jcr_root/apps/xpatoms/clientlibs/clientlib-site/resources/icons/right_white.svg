@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>0B2BF179-B244-4F2D-A805-C19F35D44E9D</title>
+    <defs>
+        <path d="M0.368759665,18.3975 C0.858759665,18.8875 1.64875967,18.8875 2.13875967,18.3975 L10.4487597,10.0875 C10.8387597,9.6975 10.8387597,9.0675 10.4487597,8.6775 L2.13875967,0.3675 C1.64875967,-0.1225 0.858759665,-0.1225 0.368759665,0.3675 C-0.121240335,0.8575 -0.121240335,1.6475 0.368759665,2.1375 L7.60875967,9.3875 L0.358759665,16.6375 C-0.121240335,17.1175 -0.121240335,17.9175 0.368759665,18.3975 Z" id="path-1"></path>
+    </defs>
+    <g id="Home-Page" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home-Page_D" transform="translate(-148.000000, -774.000000)">
+            <g id="Components/Desktop/About-Section" transform="translate(0.000000, 624.000000)">
+                <g id="Group" transform="translate(60.000000, 144.000000)">
+                    <g id="icon/-chevron/-right" transform="translate(88.000000, 6.000000)">
+                        <g id="color/-primary/-blue" transform="translate(7.011240, 2.612500)">
+                            <mask id="mask-2" fill="white">
+                                <use xlink:href="#path-1"></use>
+                            </mask>
+                            <use id="Mask" fill="#000000" fill-rule="nonzero" transform="translate(5.370630, 9.382500) scale(-1, -1) rotate(180.000000) translate(-5.370630, -9.382500) " xlink:href="#path-1"></use>
+                            <g id="Group" mask="url(#mask-2)">
+                                <g transform="translate(-7.011240, -2.612500)" id="color/-primary/-blue">
+                                    <rect id="Rectangle" fill="#FFFFFF" x="0" y="0" width="24" height="24"></rect>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

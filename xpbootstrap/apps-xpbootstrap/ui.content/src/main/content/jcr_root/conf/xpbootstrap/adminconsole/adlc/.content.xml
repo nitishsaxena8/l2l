@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2022-11-02T11:44:05.665+05:30"
+        cq:lastModifiedBy="admin"
+        cq:template="/conf/xpbootstrap/settings/wcm/templates/brandconfig"
+        jcr:name="ADLC Demo"
+        jcr:primaryType="nt:unstructured"
+        jcr:title="ADLC"
+        sling:resourceType="xpbootstrap/components/content/organisms/brandconfig"
+        brandClientlibs="[lib.xpbootstrap,site.global,site.www]"
+        footerXfPath="/content/experience-fragments/xpbootstrap/us/en/site/footer/master"
+        headerXfPath="/content/experience-fragments/xpbootstrap/us/en/site/header/master"/>
+</jcr:root>

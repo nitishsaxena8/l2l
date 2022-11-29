@@ -1,0 +1,8 @@
+<template data-sly-template.btnIcon="${ @ linkHref, linkTarget, linkTitle, iconSrc, iconAlt}">
+    <div class="pru-btn-icon-group">
+        <a href="${linkHref}" class="btn btn-primary pru-btn-icon-group__link" title="${linkTitle}" target="${linkTarget}">
+        	${linkTitle}
+        	<img data-sly-test="${iconSrc}" src="${iconSrc}" alt="${iconAlt}"/>
+        </a>
+    </div>
+</template>

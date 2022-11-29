@@ -1,0 +1,7 @@
+<template data-sly-template.atmCta="${ @ atmCtaLabel, atmCtaLink, atmCtaTarget, atmCtaType, atmCtaSize, atmCtaContext, atmCtaRole}">
+   <a data-sly-test="${atmCtaLink}" class="atm--cta btn ${atmCtaType || 'btn-link'} ${atmCtaSize}" 
+   		href="${atmCtaLink}" 
+   		target="${atmCtaTarget ? '_blank' : ''}"
+   		data-al-context="${atmCtaContext}"
+   		role="${atmCtaRole}">${atmCtaLabel}</a>
+</template>

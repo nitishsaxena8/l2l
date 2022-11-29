@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/xpatoms" mode="merge"/>
+    <filter root="/content/xpatoms" mode="merge"/>
+    <filter root="/content/dam/xpatoms/asset.jpg" mode="merge"/>
+    <filter root="/content/experience-fragments/xpatoms" mode="merge"/>
+</workspaceFilter>

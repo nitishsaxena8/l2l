@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/content/xpbootstrap" mode="update"/>
+    <filter root="/content/adlc-component-library" mode="update"/>
+    <filter root="/content/dam/xpbootstrap" mode="merge"/>
+    <filter root="/content/dam/xpbootstrap/earth_newpg_2.jpg" mode="merge"/>
+    <filter root="/content/dam/xpbootstrap/galaxy_002.jpg" mode="merge"/>
+    <filter root="/content/dam/xpbootstrap/galaxy_003.jpg" mode="merge"/>
+    <filter root="/content/dam/xpbootstrap/earth_newpg_2.jpg" mode="merge"/>
+    <filter root="/content/dam/xpbootstrap/galaxy_banner_2.jpg" mode="merge"/>
+    <filter root="/content/dam/xpbootstrap/jupiter.jpg" mode="merge"/>
+    <filter root="/content/dam/xpbootstrap/mercury_1.jpg" mode="merge"/>
+    <filter root="/content/dam/xpbootstrap/saturn_1.jpg" mode="merge"/>
+    <filter root="/content/dam/xpbootstrap/sun_2.jpg" mode="merge"/>
+    <filter root="/content/experience-fragments/xpbootstrap" mode="merge"/>
+</workspaceFilter>

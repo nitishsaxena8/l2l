@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2022-11-02T21:30:02.162+05:30"
+        cq:lastModifiedBy="admin"
+        cq:tags="[experience-fragments:variation/web]"
+        cq:template="/conf/xpbootstrap/settings/wcm/templates/xf-web-variation"
+        cq:xfMasterVariation="{Boolean}true"
+        cq:xfVariantType="web"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Footer"
+        sling:resourceType="xpbootstrap/components/content/organisms/xfpage">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="xpbootstrap/components/content/organisms/root-container"
+            layout="responsiveGrid">
+            <mleembed
+                jcr:created="{Date}2022-11-02T21:28:58.678+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2022-11-02T21:30:02.094+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="xpbootstrap/components/content/molecules/mleEmbed"
+                html="&#xd;&#xa; &lt;!-- &lt;section class=&quot;&quot;>&#xd;&#xa;  &lt;!-- Footer -->&#xd;&#xa;  &lt;footer class=&quot;text-center text-white&quot; style=&quot;background-color: #0a4275;&quot;>&#xd;&#xa;    &lt;!-- Grid container -->&#xd;&#xa;    &lt;div class=&quot;container p-4 pb-0&quot;>&#xd;&#xa;      &lt;!-- Section: CTA -->&#xd;&#xa;      &lt;section class=&quot;&quot;>&#xd;&#xa;        &lt;p class=&quot;d-flex justify-content-center align-items-center&quot;>&#xd;&#xa;          &lt;span class=&quot;me-3&quot;>Get latest update on space missions &lt;/span>&#xd;&#xa;          &lt;button type=&quot;button&quot; class=&quot;btn btn-outline-light btn-rounded&quot;>&#xd;&#xa;            REGISTER&#xd;&#xa;          &lt;/button>&#xd;&#xa;        &lt;/p>&#xd;&#xa;      &lt;/section>&#xd;&#xa;      &lt;!-- Section: CTA -->&#xd;&#xa;    &lt;/div>&#xd;&#xa;    &lt;!-- Grid container -->&#xd;&#xa;&#xd;&#xa;    &lt;!-- Copyright -->&#xd;&#xa;    &lt;div class=&quot;text-center p-3&quot; style=&quot;background-color: rgba(0, 0, 0, 0.2);&quot;>&#xd;&#xa;      � 2020 Copyright:&#xd;&#xa;      &lt;a class=&quot;text-white&quot; href=&quot;https://mdbootstrap.com/&quot;>SPACE&lt;/a>&#xd;&#xa;    &lt;/div>&#xd;&#xa;    &lt;!-- Copyright -->&#xd;&#xa;  &lt;/footer>&#xd;&#xa;  &lt;!-- Footer -->&#xd;&#xa;&lt;/section>"
+                marginBottom="margin-bottom-x"
+                marginTop="margin-top-x"
+                mobileMarginBottom="m-margin-bottom-x"
+                mobileMarginTop="m-margin-top-x"
+                type="html"/>
+        </root>
+    </jcr:content>
+</jcr:root>

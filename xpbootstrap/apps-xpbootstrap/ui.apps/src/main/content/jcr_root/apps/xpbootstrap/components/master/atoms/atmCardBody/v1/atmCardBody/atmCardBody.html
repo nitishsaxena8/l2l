@@ -1,0 +1,12 @@
+<template data-sly-template.atmCardBody="${ @ atmCardTitle, atmCardSubtitle, atmCardDescription, atmCardPrimaryCta, atmCardSecondaryCta, atmCardAuthor}">
+	  <div class="atm--card-body card-body" data-sly-use.atmCta="xpbootstrap/components/master/atoms/atmCta/v1/atmCta/atmCta.html">
+        <h5 data-sly-test="${atmCardTitle}" class="card-title">${atmCardTitle}</h5>
+        <p data-sly-test="${atmCardSubtitle}" class="card-subtitle mb-2 text-muted">${atmCardSubtitle}</p>
+        <div data-sly-test="${atmCardDescription}" class="card-text">${atmCardDescription @ context="html"}</div>
+        <br>
+        <p  data-sly-test="${atmCardAuthor}" class="card-subtitle mb-2 text-muted">Author:${atmCardAuthor}</p>
+        <sly data-sly-test="${atmCardPrimaryCta}" data-sly-call="${atmCta.atmCta @ atmCtaLabel=atmCardPrimaryCta.atmCtaLabel, atmCtaLink=atmCardPrimaryCta.atmCtaLink, atmCtaTarget=atmCardPrimaryCta.atmCtaTarget, atmCtaType=atmCardPrimaryCta.atmCtaType,atmCtaSize=atmCardPrimaryCta.atmCtaSize,atmCtaContext=atmCardPrimaryCta.atmCtaContext, atmCtaRole=atmCardPrimaryCta.atmCtaRole}"></sly>
+        <sly data-sly-test="${atmCardSecondaryCta}" data-sly-call="${atmCta.atmCta @ atmCtaLabel=atmCardSecondaryCta.atmCtaLabel, atmCtaLink=atmCardSecondaryCta.atmCtaLink, atmCtaTarget=atmCardSecondaryCta.atmCtaTarget, atmCtaType=atmCardSecondaryCta.atmCtaType,atmCtaSize=atmCardSecondaryCta.atmCtaSize,atmCtaContext=atmCardSecondaryCta.atmCtaContext, atmCtaRole=atmCardSecondaryCta.atmCtaRole}"></sly>
+  	  </div>
+</template>
+

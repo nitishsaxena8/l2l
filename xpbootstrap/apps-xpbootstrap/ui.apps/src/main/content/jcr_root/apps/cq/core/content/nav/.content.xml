@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured">
+    <tools jcr:primaryType="nt:unstructured">
+        <acs-tools/>
+        <acs-commons/>
+        <cloudservices/>
+        <adlc-tools
+            jcr:description="ADLC"
+            jcr:primaryType="nt:unstructured"
+            jcr:title="ADLC"
+            id="cq-adlc-tools">
+            <brand-config
+                jcr:description="Brand Configurations"
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Brand Configurations"
+                consoleId="brandConfigurations"
+                href="/adlc/brandConfigurations.html"
+                icon="gearsAdd"/>
+        </adlc-tools>
+    </tools>
+    <assets/>
+</jcr:root>

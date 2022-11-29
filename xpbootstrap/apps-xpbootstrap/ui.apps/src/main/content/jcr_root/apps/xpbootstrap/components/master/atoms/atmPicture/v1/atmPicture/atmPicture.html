@@ -1,0 +1,7 @@
+<template data-sly-template.atmPicture="${ @ atmPictureDesktopImg, atmPictureAltText, atmPictureMobileImg}">
+    <picture data-sly-test="${atmPictureDesktopImg}">
+        <source media="(max-width: 568)" srcset="${atmPictureMobileImg || atmPictureDesktopImg}">
+        <source media="(max-width: 1023px)" srcset="${atmPictureDesktopImg}">
+        <img src="${atmPictureDesktopImg}" alt="${atmPictureAltText}" class="atm--picture" />
+    </picture>
+</template>

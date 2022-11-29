@@ -1,0 +1,20 @@
+<sly data-sly-use.list="com.xperience.aem.xpbootstrap.core.models.molecules.MleList"
+    data-sly-use.template="xpbootstrap/components/master/organisms/commons/v1/templates.html"
+    data-sly-use.itemTemplate="item.html"
+    id="${list.id}"
+    data-cmp-data-layer="${list.data.json}">
+    
+<sly data-sly-set.marginTop="${list.marginTop || 'margin-top-x'}"/>
+<sly data-sly-set.mobileMarginTop="${list.mobileMarginTop || 'm-margin-top-x'}"/>
+<sly data-sly-set.marginBottom="${list.marginBottom || 'margin-bottom-x'}"/>
+<sly data-sly-set.mobileMarginBottom="${list.mobileMarginBottom || 'm-margin-bottom-x'}"/>
+
+<ul data-sly-list.item="${list.listItems}"
+    class="list-group ${marginTop} ${mobileMarginTop} ${marginBottom} ${mobileMarginBottom}">
+
+   <sly data-sly-test="${list.listItems.size != 0}"
+        data-sly-call="${itemTemplate.item @ list = list, item = item}"
+        data-cmp-data-layer="${item.data.json}"></sly>
+    
+</ul>
+<sly data-sly-call="${template.placeholder @ isEmpty=list.listItems.size == 0, classAppend='cmp-list'}"></sly>

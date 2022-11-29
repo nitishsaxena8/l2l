@@ -1,0 +1,46 @@
+<sly data-sly-use.tabs="com.xperience.aem.xpbootstrap.core.models.organisms.Tabs"></sly>
+
+<sly data-sly-set.marginTop="${tabs.marginTop || 'margin-top-x'}"/>
+<sly data-sly-set.mobileMarginTop="${tabs.mobileMarginTop || 'm-margin-top-x'}"/>
+<sly data-sly-set.marginBottom="${tabs.marginBottom || 'margin-bottom-x'}"/>
+<sly data-sly-set.mobileMarginBottom="${tabs.mobileMarginBottom || 'm-margin-bottom-x'}"/>
+
+<div
+     data-sly-use.templates="xpbootstrap/components/master/organisms/commons/v1/templates.html"
+     data-panelcontainer="${wcmmode.edit && 'tabs'}"
+     id="${tabs.id}"
+     class="organism-cmp-tabs ${marginTop} ${mobileMarginTop} ${marginBottom} ${mobileMarginBottom}"
+     data-cmp-is="tabs"
+     data-cmp-data-layer="${tabs.data.json}"
+     data-placeholder-text="${wcmmode.edit && 'Please drag Tab components here' @ i18n}">
+    <ul data-sly-test="${tabs.items && tabs.items.size > 0}"
+        data-sly-list.tab="${tabs.items}"
+        role="tablist"
+        id="${tabs.id}"
+        class="cmp-tabs__tablist nav nav-tabs"
+        aria-label="${tabs.accessibilityLabel}"
+        aria-multiselectable="false">
+        <sly data-sly-test.isActive="${tab.name == tabs.activeItem}"/>
+        <li role="tab"
+            id="${tab.name}-tab"
+            class="nav-item cmp-tabs__tab${isActive ? ' cmp-tabs__tab--active' : ''}"
+            aria-controls="${tab.name}-tabpanel"
+            data-cmp-hook-tabs="tab">
+           <button class="nav-link ${isActive ? ' active' : ''}" id="${tab.name}-button" data-bs-toggle="tab" data-bs-target="#${tab.name}-tabpanel" type="button" role="tab" aria-controls="${tab.name}-tabpanel" aria-selected="true">${tab.title}</button>
+        </li>
+    </ul>
+
+<div class="tab-content" id="${tabs.id}Content">
+    <div data-sly-repeat.item="${tabs.items}"
+         data-sly-resource="${item.name @ decorationTagName='div'}"
+         id="${item.name}-tabpanel"
+         role="tabpanel"
+         aria-labelledby="${item.name}-tab"
+         tabindex="0"
+         class="tab-pane fade cmp-tabs__tabpanel${item.name == tabs.activeItem ? ' show active cmp-tabs__tabpanel--active' : ''}"
+         data-cmp-hook-tabs="tabpanel"
+         data-cmp-data-layer="${item.data.json}"></div>
+    <sly data-sly-resource="${resource.path @ resourceType='wcm/foundation/components/parsys/newpar', appendPath='/*', decorationTagName='div', cssClassName='new section aem-Grid-newComponent'}"
+         data-sly-test="${(wcmmode.edit || wcmmode.preview) && tabs.items.size < 1}"></sly>
+    </div>
+</div>

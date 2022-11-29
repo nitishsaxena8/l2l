@@ -1,0 +1,93 @@
+$font-family-lato: "Lato", sans-serif;
+$font-family-bitter: "Lato", sans-serif;
+
+body {
+    font-family: $font-family-lato;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+h1 {
+    font-size: toRem(42);
+    line-height: toRem(46);
+
+    @include mobile {
+        font-size: toRem(28);
+        line-height: toRem(32);
+    }
+}
+
+h2 {
+    font-size: toRem(32);
+    line-height: toRem(36);
+
+    @include mobile {
+        font-size: toRem(26);
+        line-height: toRem(30);
+    }
+}
+
+h3 {
+    font-size: toRem(28);
+    line-height: toRem(32);
+
+    @include mobile {
+        font-size: toRem(24);
+        line-height: toRem(28);
+    }
+}
+
+h4 {
+    font-size: toRem(24);
+    line-height: toRem(28);
+
+    @include mobile {
+        font-size: toRem(22);
+        line-height: toRem(26);
+    }
+}
+
+h5 {
+    font-size: toRem(20);
+    line-height: toRem(24);
+
+    @include mobile {
+        font-size: toRem(20);
+        line-height: toRem(24);
+    }
+}
+
+h6 {
+    font-size: toRem(42);
+    line-height: toRem(46);
+
+    @include mobile {
+        font-size: toRem(16);
+        line-height: toRem(20);
+    }
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+p,
+div,
+ul,
+li,
+ol,
+section,
+article {
+    font-size: toRem(16);
+    font-weight: 400;
+    line-height: toRem(20);
+}

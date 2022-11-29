@@ -1,0 +1,26 @@
+@import '../../global/styles/functions.scss';
+
+$font-family-lato: "Lato", sans-serif;
+$font-family-bitter: "Lato", sans-serif;
+
+.mle--text {
+
+    //We can override rte styles for all the tags as shown below
+
+    a {
+        color: var(--color-primary);
+        text-decoration: none;
+    }
+
+    p,
+    div,
+    ul,
+    li,
+    ol,
+    section,
+    article {
+        font-size: toRem(16);
+        font-weight: 400;
+        line-height: toRem(20);
+    }
+}

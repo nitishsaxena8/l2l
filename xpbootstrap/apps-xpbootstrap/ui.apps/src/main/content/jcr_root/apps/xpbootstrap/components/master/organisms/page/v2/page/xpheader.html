@@ -1,0 +1,16 @@
+<template data-sly-template.xpheader="${@ headerXfPath}">
+
+   <sly data-sly-unwrap>
+    <sly data-sly-test="${!headerXfPath}">
+
+
+        <div data-sly-test="${(wcmmode.edit || wcmmode.preview)}"
+             class="cq-dd-experiencefragment cq-placeholder "
+             data-emptytext="Configure header fragemnt ${emptyTextAppend && ' - '}${emptyTextAppend}">
+        </div>
+    </sly>
+    <sly data-sly-test=${headerXfPath}
+         data-sly-resource="${@path=headerXfPath, selectors='content', wcmmode='disabled'}"></sly>
+</sly> 
+
+</template>
