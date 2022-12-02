@@ -1,6 +1,6 @@
 // Stylesheets
 import "./main.scss";
 
-// Javascript or Typescript // test 
+// Javascript or Typescript 
 import "./**/*.js";
 import "./components/**/*.js";
