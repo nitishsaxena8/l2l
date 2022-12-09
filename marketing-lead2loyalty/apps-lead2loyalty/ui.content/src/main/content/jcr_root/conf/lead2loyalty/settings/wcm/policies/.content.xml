@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+  xmlns:cq="http://www.day.com/jcr/cq/1.0"
+  xmlns:jcr="http://www.jcp.org/jcr/1.0"
+  xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+  xmlns:rep="internal"
+    jcr:mixinTypes="[rep:AccessControllable]"
+    jcr:primaryType="cq:Page">
+    <rep:policy/>
+    <xpbootstrap jcr:primaryType="nt:unstructured">
+        <components jcr:primaryType="nt:unstructured">
+            <content jcr:primaryType="nt:unstructured">
+                <organisms jcr:primaryType="nt:unstructured">
+                    <xp-container jcr:primaryType="nt:unstructured">
+                        <policy_1669829412542
+                            jcr:description="Home Page Template Policy."
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Home Page Template Policy"
+                            layoutDisabled="false"
+                            components="[group:xpbootstrap.container,group:xpbootstrap.content,group:lead2loyalty]"
+                            sling:resourceType="wcm/core/components/policy/policy">
+                            <jcr:content jcr:primaryType="nt:unstructured"/>
+                        </policy_1669829412542>
+                        <policy_1669829412541
+                            jcr:description="XF Template Policy."
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="XF Template Policy"
+                            layoutDisabled="false"
+                            components="[group:lead2loyalty]"
+                            sling:resourceType="wcm/core/components/policy/policy">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                        </policy_1669829412541>
+                    </xp-container>
+                </organisms>
+            </content>
+        </components>
+    </xpbootstrap>
+    <lead2loyalty jcr:primaryType="nt:unstructured">
+        <components jcr:primaryType="nt:unstructured">
+            <content jcr:primaryType="nt:unstructured">
+                <organisms jcr:primaryType="nt:unstructured">
+                    <page jcr:primaryType="nt:unstructured">
+                        <policy_1669842399486
+                                jcr:description="Page Policy for Home page."
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Home Page - Page Policy"
+                                layoutDisabled="false"
+                                clientlibsJsHead="lead2loyalty.homepage"
+                                clientlibs="[xp-comp-library.base,lead2loyalty.homepage]"
+                                sling:resourceType="wcm/core/components/policy/policy">
+                            <jcr:content jcr:primaryType="nt:unstructured"/>
+                        </policy_1669842399486>
+                        <policy_1669842399487
+                                jcr:description="Page Policy for XF page."
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="XF Page - Page Policy"
+                                layoutDisabled="false"
+                                clientlibsJsHead="lead2loyalty.homepage"
+                                clientlibs="[xp-comp-library.base,lead2loyalty.homepage]"
+                                sling:resourceType="wcm/core/components/policy/policy">
+                            <jcr:content jcr:primaryType="nt:unstructured"/>
+                        </policy_1669842399487>
+                    </page>
+                </organisms>
+            </content>
+        </components>
+    </lead2loyalty>
+</jcr:root>

@@ -1,1 +1,0 @@
-package com.deloitte.aem.lead2loyality.core;
