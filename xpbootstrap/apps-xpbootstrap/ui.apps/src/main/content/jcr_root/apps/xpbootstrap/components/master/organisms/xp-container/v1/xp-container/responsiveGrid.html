@@ -1,7 +1,7 @@
 
 <template data-sly-template.responsiveGrid="${ @ container}">
     <div id="${container.id}"
-         class="xp-cmp-container"
+         class="xp-cmp-container ${properties.marginTop} ${properties.mobileMarginTop} ${properties.marginBottom} ${properties.mobileMarginBottom}"
          aria-label="${container.accessibilityLabel}"
          role="${container.roleAttribute}"
          style="${container.backgroundStyle @ context='styleString'}">

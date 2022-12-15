@@ -2,7 +2,7 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2022-12-01T02:17:34.047+05:30"
+        cq:lastModified="{Date}2022-12-14T20:20:47.791+05:30"
         cq:lastModifiedBy="admin"
         cq:template="/conf/lead2loyalty/settings/wcm/templates/home-page"
         jcr:primaryType="cq:PageContent"
@@ -13,12 +13,694 @@
             sling:resourceType="xpbootstrap/components/content/organisms/xp-container"
             layout="responsiveGrid">
             <mlebanner
-                jcr:created="{Date}2022-12-01T02:17:34.039+05:30"
-                jcr:createdBy="admin"
-                jcr:lastModified="{Date}2022-12-01T02:17:34.039+05:30"
-                jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="xpbootstrap/components/content/molecules/mleBanner"/>
+            <container jcr:primaryType="nt:unstructured">
+                <container
+                    jcr:lastModified="{Date}2022-12-13T15:24:44.133+05:30"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="xpbootstrap/components/content/organisms/xp-container"
+                    layout="responsiveGrid">
+                    <header
+                        jcr:created="{Date}2022-12-12T13:57:35.328+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2022-12-12T14:00:59.559+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="lead2loyalty/components/content/organisms/header/v1/header">
+                        <utilityLinks jcr:primaryType="nt:unstructured">
+                            <item0
+                                jcr:primaryType="nt:unstructured"
+                                linkUrl="#"
+                                openInNewWindow="true"
+                                tr_linkTitle="Home"/>
+                            <item1
+                                jcr:primaryType="nt:unstructured"
+                                linkUrl="#"
+                                openInNewWindow="false"
+                                tr_linkTitle="Products">
+                                <secondaryLinks jcr:primaryType="nt:unstructured">
+                                    <item0
+                                        jcr:primaryType="nt:unstructured"
+                                        openInNewWindowsecondary="false"
+                                        secondarylinkUrl="#"
+                                        tr_secondarylinkTitle="Product-1"/>
+                                    <item1
+                                        jcr:primaryType="nt:unstructured"
+                                        openInNewWindowsecondary="false"
+                                        secondarylinkUrl="#"
+                                        tr_secondarylinkTitle="Product-2"/>
+                                    <item2
+                                        jcr:primaryType="nt:unstructured"
+                                        openInNewWindowsecondary="false"
+                                        secondarylinkUrl="#"
+                                        tr_secondarylinkTitle="Product-3"/>
+                                </secondaryLinks>
+                            </item1>
+                            <item2
+                                jcr:primaryType="nt:unstructured"
+                                linkUrl="#"
+                                openInNewWindow="false"
+                                tr_linkTitle="Training"/>
+                            <item3
+                                jcr:primaryType="nt:unstructured"
+                                linkUrl="#"
+                                openInNewWindow="false"
+                                tr_linkTitle="About"/>
+                            <item4
+                                jcr:primaryType="nt:unstructured"
+                                linkUrl="#"
+                                openInNewWindow="false"
+                                tr_linkTitle="Contact Us"/>
+                        </utilityLinks>
+                    </header>
+                    <xp_carousel
+                        jcr:created="{Date}2022-12-14T12:09:13.439+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2022-12-14T12:09:38.253+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="xpbootstrap/components/content/organisms/xp-carousel"
+                        autopauseDisabled="false"
+                        autoplay="false"
+                        delay="5000"
+                        marginBottom="margin-bottom-x"
+                        marginTop="margin-top-x"
+                        mobileMarginBottom="m-margin-bottom-x"
+                        mobileMarginTop="m-margin-top-x"
+                        order="[item_1670999967744,item_1670999973307]">
+                        <xp_container_copy_co_1037000870
+                            cq:panelTitle="text"
+                            cq:styleIds="[1670846692332,1670855059185]"
+                            jcr:created="{Date}2022-12-12T16:27:37.105+05:30"
+                            jcr:createdBy="admin"
+                            jcr:lastModified="{Date}2022-12-14T12:53:06.139+05:30"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="xpbootstrap/components/content/organisms/xp-container"
+                            layout="responsiveGrid"
+                            marginBottom="margin-bottom-4x"
+                            marginTop="margin-top-4x"
+                            mobileMarginBottom="m-margin-bottom-x"
+                            mobileMarginTop="m-margin-top-x">
+                            <mleimage
+                                jcr:created="{Date}2022-12-12T16:27:47.805+05:30"
+                                jcr:createdBy="admin"
+                                jcr:lastModified="{Date}2022-12-13T18:31:09.354+05:30"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="xpbootstrap/components/content/molecules/mleImage"
+                                atmIconSrcFileReference="/content/dam/lead2loyalty/circuit-7.jpg"
+                                marginBottom="none"
+                                marginTop="none"
+                                mobileMarginBottom="m-margin-bottom-x"
+                                mobileMarginTop="m-margin-top-x">
+                                <cq:responsive jcr:primaryType="nt:unstructured">
+                                    <default
+                                        jcr:primaryType="nt:unstructured"
+                                        offset="1"
+                                        width="6"/>
+                                </cq:responsive>
+                            </mleimage>
+                            <xp_container
+                                cq:styleIds="[1670845915845]"
+                                jcr:created="{Date}2022-12-12T17:08:17.300+05:30"
+                                jcr:createdBy="admin"
+                                jcr:lastModified="{Date}2022-12-12T17:08:17.300+05:30"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="xpbootstrap/components/content/organisms/xp-container">
+                                <mletitle
+                                    jcr:created="{Date}2022-12-12T16:39:11.644+05:30"
+                                    jcr:createdBy="admin"
+                                    jcr:lastModified="{Date}2022-12-14T12:26:44.935+05:30"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="xpbootstrap/components/content/molecules/mleTitle"
+                                    atmTitleText="IT Professional"
+                                    marginBottom="[none,none]"
+                                    marginTop="[margin-top-4x,none]"
+                                    mobileMarginBottom="[m-margin-bottom-x,m-margin-bottom-x]"
+                                    mobileMarginTop="[m-margin-top-x,m-margin-top-x]">
+                                    <cq:responsive jcr:primaryType="nt:unstructured">
+                                        <default
+                                            jcr:primaryType="nt:unstructured"
+                                            offset="0"
+                                            width="4"/>
+                                    </cq:responsive>
+                                </mletitle>
+                                <mletext
+                                    jcr:created="{Date}2022-12-12T16:39:44.173+05:30"
+                                    jcr:createdBy="admin"
+                                    jcr:lastModified="{Date}2022-12-14T12:25:16.609+05:30"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="xpbootstrap/components/content/molecules/mleText"
+                                    atmTextHtml="&lt;ul>&#xd;&#xa;&lt;li>Get a customizable catalog of our products and services tailored just for your organization&lt;/li>&#xd;&#xa;&lt;li>Apply pre-negotiated rates across the business&lt;/li>&#xd;&#xa;&lt;li>Eaily update your &amp;quot;standard&amp;quot; configurations as needed&lt;/li>&#xd;&#xa;&lt;li>Retain total control over purchasest, wih full visibility into the end-to-end purchasing journey&lt;/li>&#xd;&#xa;&lt;li>View and update your customized catalog in Excel&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;"
+                                    marginBottom="margin-bottom-4x"
+                                    marginTop="margin-top-4x"
+                                    mobileMarginBottom="m-margin-bottom-x"
+                                    mobileMarginTop="m-margin-top-x"
+                                    textIsRich="true">
+                                    <cq:responsive jcr:primaryType="nt:unstructured">
+                                        <default
+                                            jcr:primaryType="nt:unstructured"
+                                            offset="0"
+                                            width="4"/>
+                                    </cq:responsive>
+                                </mletext>
+                                <mlebuttongroup
+                                    jcr:created="{Date}2022-12-12T16:40:59.395+05:30"
+                                    jcr:createdBy="admin"
+                                    jcr:lastModified="{Date}2022-12-14T12:54:57.588+05:30"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="xpbootstrap/components/content/molecules/mleButtonGroup"
+                                    marginBottom="margin-bottom-4x"
+                                    marginTop="margin-top-x"
+                                    mobileMarginBottom="m-margin-bottom-x"
+                                    mobileMarginTop="m-margin-top-x">
+                                    <cq:responsive jcr:primaryType="nt:unstructured">
+                                        <default
+                                            jcr:primaryType="nt:unstructured"
+                                            offset="0"
+                                            width="4"/>
+                                    </cq:responsive>
+                                    <btnGrp jcr:primaryType="nt:unstructured">
+                                        <item0
+                                            jcr:primaryType="nt:unstructured"
+                                            atmCtaLabel="Learn More"
+                                            atmCtaLink="#"
+                                            atmCtaType="btn-primary"/>
+                                    </btnGrp>
+                                </mlebuttongroup>
+                                <cq:responsive jcr:primaryType="nt:unstructured">
+                                    <default
+                                        jcr:primaryType="nt:unstructured"
+                                        offset="0"
+                                        width="4"/>
+                                </cq:responsive>
+                            </xp_container>
+                        </xp_container_copy_co_1037000870>
+                        <xp_container_copy_co_1037000871
+                            cq:panelTitle="text"
+                            cq:styleIds="[1670846692332,1670855059185]"
+                            jcr:created="{Date}2022-12-12T16:27:37.105+05:30"
+                            jcr:createdBy="admin"
+                            jcr:lastModified="{Date}2022-12-14T12:53:06.139+05:30"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="xpbootstrap/components/content/organisms/xp-container"
+                            layout="responsiveGrid"
+                            marginBottom="margin-bottom-4x"
+                            marginTop="margin-top-4x"
+                            mobileMarginBottom="m-margin-bottom-x"
+                            mobileMarginTop="m-margin-top-x">
+                            <mleimage
+                                jcr:created="{Date}2022-12-12T16:27:47.805+05:30"
+                                jcr:createdBy="admin"
+                                jcr:lastModified="{Date}2022-12-13T18:31:09.354+05:30"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="xpbootstrap/components/content/molecules/mleImage"
+                                atmIconSrcFileReference="/content/dam/xpbootstrap/saturn_1.jpg"
+                                marginBottom="none"
+                                marginTop="none"
+                                mobileMarginBottom="m-margin-bottom-x"
+                                mobileMarginTop="m-margin-top-x">
+                                <cq:responsive jcr:primaryType="nt:unstructured">
+                                    <default
+                                        jcr:primaryType="nt:unstructured"
+                                        offset="1"
+                                        width="6"/>
+                                </cq:responsive>
+                            </mleimage>
+                            <xp_container
+                                cq:styleIds="[1670845915845]"
+                                jcr:created="{Date}2022-12-12T17:08:17.300+05:30"
+                                jcr:createdBy="admin"
+                                jcr:lastModified="{Date}2022-12-12T17:08:17.300+05:30"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="xpbootstrap/components/content/organisms/xp-container">
+                                <mletitle
+                                    jcr:created="{Date}2022-12-12T16:39:11.644+05:30"
+                                    jcr:createdBy="admin"
+                                    jcr:lastModified="{Date}2022-12-14T12:26:44.935+05:30"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="xpbootstrap/components/content/molecules/mleTitle"
+                                    atmTitleText="IT Professional"
+                                    marginBottom="[none,none]"
+                                    marginTop="[margin-top-4x,none]"
+                                    mobileMarginBottom="[m-margin-bottom-x,m-margin-bottom-x]"
+                                    mobileMarginTop="[m-margin-top-x,m-margin-top-x]">
+                                    <cq:responsive jcr:primaryType="nt:unstructured">
+                                        <default
+                                            jcr:primaryType="nt:unstructured"
+                                            offset="0"
+                                            width="4"/>
+                                    </cq:responsive>
+                                </mletitle>
+                                <mletext
+                                    jcr:created="{Date}2022-12-12T16:39:44.173+05:30"
+                                    jcr:createdBy="admin"
+                                    jcr:lastModified="{Date}2022-12-14T12:25:16.609+05:30"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="xpbootstrap/components/content/molecules/mleText"
+                                    atmTextHtml="&lt;ul>&#xd;&#xa;&lt;li>Get a customizable catalog of our products and services tailored just for your organization&lt;/li>&#xd;&#xa;&lt;li>Apply pre-negotiated rates across the business&lt;/li>&#xd;&#xa;&lt;li>Eaily update your &amp;quot;standard&amp;quot; configurations as needed&lt;/li>&#xd;&#xa;&lt;li>Retain total control over purchasest, wih full visibility into the end-to-end purchasing journey&lt;/li>&#xd;&#xa;&lt;li>View and update your customized catalog in Excel&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;"
+                                    marginBottom="margin-bottom-4x"
+                                    marginTop="margin-top-4x"
+                                    mobileMarginBottom="m-margin-bottom-x"
+                                    mobileMarginTop="m-margin-top-x"
+                                    textIsRich="true">
+                                    <cq:responsive jcr:primaryType="nt:unstructured">
+                                        <default
+                                            jcr:primaryType="nt:unstructured"
+                                            offset="0"
+                                            width="4"/>
+                                    </cq:responsive>
+                                </mletext>
+                                <mlebuttongroup
+                                    jcr:created="{Date}2022-12-12T16:40:59.395+05:30"
+                                    jcr:createdBy="admin"
+                                    jcr:lastModified="{Date}2022-12-14T12:54:57.588+05:30"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="xpbootstrap/components/content/molecules/mleButtonGroup"
+                                    marginBottom="margin-bottom-4x"
+                                    marginTop="margin-top-x"
+                                    mobileMarginBottom="m-margin-bottom-x"
+                                    mobileMarginTop="m-margin-top-x">
+                                    <cq:responsive jcr:primaryType="nt:unstructured">
+                                        <default
+                                            jcr:primaryType="nt:unstructured"
+                                            offset="0"
+                                            width="4"/>
+                                    </cq:responsive>
+                                    <btnGrp jcr:primaryType="nt:unstructured">
+                                        <item0
+                                            jcr:primaryType="nt:unstructured"
+                                            atmCtaLabel="Learn More"
+                                            atmCtaLink="#"
+                                            atmCtaType="btn-primary"/>
+                                    </btnGrp>
+                                </mlebuttongroup>
+                                <cq:responsive jcr:primaryType="nt:unstructured">
+                                    <default
+                                        jcr:primaryType="nt:unstructured"
+                                        offset="0"
+                                        width="4"/>
+                                </cq:responsive>
+                            </xp_container>
+                        </xp_container_copy_co_1037000871>
+                    </xp_carousel>
+                    <xp_container_927565429
+                        cq:styleIds="[1670845915845]"
+                        jcr:created="{Date}2022-12-14T11:32:39.665+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2022-12-14T11:32:39.665+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="xpbootstrap/components/content/organisms/xp-container">
+                        <mletitle_copy
+                            jcr:created="{Date}2022-12-13T15:26:52.422+05:30"
+                            jcr:createdBy="admin"
+                            jcr:lastModified="{Date}2022-12-14T11:27:06.027+05:30"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="xpbootstrap/components/content/molecules/mleTitle"
+                            atmTitleText="What can we help you find today ?"
+                            marginBottom="margin-bottom-x"
+                            marginTop="margin-top-8x"
+                            mobileMarginBottom="m-margin-bottom-x"
+                            mobileMarginTop="m-margin-top-x">
+                            <cq:responsive jcr:primaryType="nt:unstructured">
+                                <default
+                                    jcr:primaryType="nt:unstructured"
+                                    offset="1"
+                                    width="11"/>
+                            </cq:responsive>
+                        </mletitle_copy>
+                        <tiles_copy
+                            cq:styleIds="[1670928226762]"
+                            jcr:created="{Date}2022-12-12T14:02:20.280+05:30"
+                            jcr:createdBy="admin"
+                            jcr:lastModified="{Date}2022-12-14T11:25:55.051+05:30"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="lead2loyalty/components/content/organisms/tiles/v1/tiles"
+                            textIsRich="[true,true,true,true]">
+                            <tileListItems jcr:primaryType="nt:unstructured">
+                                <item0
+                                    jcr:primaryType="nt:unstructured"
+                                    productImageSource="/content/dam/lead2loyalty/circuit.jpg"
+                                    productTitle="Development Boards"/>
+                                <item1
+                                    jcr:primaryType="nt:unstructured"
+                                    productImageSource="/content/dam/lead2loyalty/circuit-1.jpg"
+                                    productTitle="Sensors"/>
+                                <item2
+                                    jcr:primaryType="nt:unstructured"
+                                    productImageSource="/content/dam/lead2loyalty/circuit-2.jpg"
+                                    productTitle="Electronic Components"/>
+                                <item3
+                                    jcr:primaryType="nt:unstructured"
+                                    productImageSource="/content/dam/lead2loyalty/circuit-4.jpg"
+                                    productTitle="Batteries and Accessories"/>
+                            </tileListItems>
+                            <cq:responsive jcr:primaryType="nt:unstructured">
+                                <default
+                                    jcr:primaryType="nt:unstructured"
+                                    offset="1"
+                                    width="11"/>
+                            </cq:responsive>
+                        </tiles_copy>
+                    </xp_container_927565429>
+                    <xp_container_copy_co
+                        cq:styleIds="[1670843762677,1670846692332,1670855059185]"
+                        jcr:created="{Date}2022-12-12T16:27:37.105+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2022-12-14T11:49:58.203+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="xpbootstrap/components/content/organisms/xp-container"
+                        layout="responsiveGrid"
+                        marginBottom="margin-bottom-8x"
+                        marginTop="margin-top-8x"
+                        mobileMarginBottom="m-margin-bottom-x"
+                        mobileMarginTop="none">
+                        <xp_container
+                            jcr:created="{Date}2022-12-12T17:08:17.300+05:30"
+                            jcr:createdBy="admin"
+                            jcr:lastModified="{Date}2022-12-12T17:08:17.300+05:30"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="xpbootstrap/components/content/organisms/xp-container">
+                            <mletitle
+                                jcr:created="{Date}2022-12-12T16:39:11.644+05:30"
+                                jcr:createdBy="admin"
+                                jcr:lastModified="{Date}2022-12-14T11:36:41.718+05:30"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="xpbootstrap/components/content/molecules/mleTitle"
+                                atmTitleText="Get the same HP2B experience, no matter where you are in the world"
+                                marginBottom="none"
+                                marginTop="none"
+                                mobileMarginBottom="m-margin-bottom-x"
+                                mobileMarginTop="m-margin-top-x">
+                                <cq:responsive jcr:primaryType="nt:unstructured">
+                                    <default
+                                        jcr:primaryType="nt:unstructured"
+                                        offset="1"
+                                        width="5"/>
+                                </cq:responsive>
+                            </mletitle>
+                            <mletext
+                                jcr:created="{Date}2022-12-12T16:39:44.173+05:30"
+                                jcr:createdBy="admin"
+                                jcr:lastModified="{Date}2022-12-14T11:42:25.450+05:30"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="xpbootstrap/components/content/molecules/mleText"
+                                atmTextHtml="&lt;p>Your users in Shanghai will getthe same capabilites and purchasining experience as those in San Francisco, only in their own language and currency.&lt;/p>&#xd;&#xa;&lt;ul>&#xd;&#xa;&lt;li>Start your purchases in one location, approve it in another, and order it from a third. Translates and converts everything for you automatically&lt;/li>&#xd;&#xa;&lt;li>This is available in 13 languages and 43 countries across more than 200 countries&lt;/li>&#xd;&#xa;&lt;li>Establish a globally consistent purchasing processes.&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;"
+                                marginBottom="margin-bottom-4x"
+                                marginTop="margin-top-4x"
+                                mobileMarginBottom="m-margin-bottom-x"
+                                mobileMarginTop="m-margin-top-x"
+                                textIsRich="true">
+                                <cq:responsive jcr:primaryType="nt:unstructured">
+                                    <default
+                                        jcr:primaryType="nt:unstructured"
+                                        offset="1"
+                                        width="4"/>
+                                </cq:responsive>
+                            </mletext>
+                            <cq:responsive jcr:primaryType="nt:unstructured">
+                                <default
+                                    jcr:primaryType="nt:unstructured"
+                                    offset="0"
+                                    width="6"/>
+                            </cq:responsive>
+                        </xp_container>
+                        <mleimage
+                            jcr:created="{Date}2022-12-12T16:27:47.805+05:30"
+                            jcr:createdBy="admin"
+                            jcr:lastModified="{Date}2022-12-14T20:18:01.574+05:30"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="xpbootstrap/components/content/molecules/mleImage"
+                            atmIconSrcFileReference="/content/dam/lead2loyalty/circuit-7.jpg"
+                            marginBottom="none"
+                            marginTop="none"
+                            mobileMarginBottom="m-margin-bottom-x"
+                            mobileMarginTop="m-margin-top-x">
+                            <cq:responsive jcr:primaryType="nt:unstructured">
+                                <default
+                                    jcr:primaryType="nt:unstructured"
+                                    offset="1"
+                                    width="5"/>
+                            </cq:responsive>
+                        </mleimage>
+                    </xp_container_copy_co>
+                    <xp_container_copy
+                        cq:styleIds="[1670843762677,1670845915845,1670846692332,1670855059185]"
+                        jcr:created="{Date}2022-12-12T16:27:37.105+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2022-12-14T11:52:45.771+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="xpbootstrap/components/content/organisms/xp-container"
+                        layout="responsiveGrid"
+                        marginBottom="margin-bottom-8x"
+                        marginTop="margin-top-8x"
+                        mobileMarginBottom="m-margin-bottom-x"
+                        mobileMarginTop="m-margin-top-x">
+                        <mleimage
+                            jcr:created="{Date}2022-12-12T16:27:47.805+05:30"
+                            jcr:createdBy="admin"
+                            jcr:lastModified="{Date}2022-12-14T20:20:35.939+05:30"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="xpbootstrap/components/content/molecules/mleImage"
+                            atmIconSrcFileReference="/content/dam/lead2loyalty/circuit-13.jpg"
+                            marginBottom="none"
+                            marginTop="none"
+                            mobileMarginBottom="m-margin-bottom-x"
+                            mobileMarginTop="m-margin-top-x">
+                            <cq:responsive jcr:primaryType="nt:unstructured">
+                                <default
+                                    jcr:primaryType="nt:unstructured"
+                                    offset="1"
+                                    width="5"/>
+                            </cq:responsive>
+                        </mleimage>
+                        <xp_container
+                            jcr:created="{Date}2022-12-12T17:08:17.300+05:30"
+                            jcr:createdBy="admin"
+                            jcr:lastModified="{Date}2022-12-12T17:08:17.300+05:30"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="xpbootstrap/components/content/organisms/xp-container">
+                            <mletitle
+                                jcr:created="{Date}2022-12-12T16:39:11.644+05:30"
+                                jcr:createdBy="admin"
+                                jcr:lastModified="{Date}2022-12-13T18:31:33.906+05:30"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="xpbootstrap/components/content/molecules/mleTitle"
+                                atmTitleText="Sample Component"
+                                marginBottom="none"
+                                marginTop="none"
+                                mobileMarginBottom="m-margin-bottom-x"
+                                mobileMarginTop="m-margin-top-x">
+                                <cq:responsive jcr:primaryType="nt:unstructured">
+                                    <default
+                                        jcr:primaryType="nt:unstructured"
+                                        offset="1"
+                                        width="5"/>
+                                </cq:responsive>
+                            </mletitle>
+                            <mletext
+                                jcr:created="{Date}2022-12-12T16:39:44.173+05:30"
+                                jcr:createdBy="admin"
+                                jcr:lastModified="{Date}2022-12-13T18:32:03.897+05:30"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="xpbootstrap/components/content/molecules/mleText"
+                                atmTextHtml="&lt;p>We offer low-cost coverage for children, adults, and families who qualify for state-sponsored programs. Explore programs available in your state.We offer low-cost coverage for children, adults, and families who qualify for state-sponsored programs. Explore programs available in your state.&lt;/p>&#xd;&#xa;"
+                                marginBottom="margin-bottom-4x"
+                                marginTop="margin-top-4x"
+                                mobileMarginBottom="m-margin-bottom-x"
+                                mobileMarginTop="m-margin-top-x"
+                                textIsRich="true">
+                                <cq:responsive jcr:primaryType="nt:unstructured">
+                                    <default
+                                        jcr:primaryType="nt:unstructured"
+                                        offset="1"
+                                        width="4"/>
+                                </cq:responsive>
+                            </mletext>
+                            <mlebuttongroup
+                                jcr:created="{Date}2022-12-12T16:40:59.395+05:30"
+                                jcr:createdBy="admin"
+                                jcr:lastModified="{Date}2022-12-12T16:41:41.957+05:30"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="xpbootstrap/components/content/molecules/mleButtonGroup"
+                                marginBottom="margin-bottom-x"
+                                marginTop="margin-top-x"
+                                mobileMarginBottom="m-margin-bottom-x"
+                                mobileMarginTop="m-margin-top-x">
+                                <btnGrp jcr:primaryType="nt:unstructured">
+                                    <item0
+                                        jcr:primaryType="nt:unstructured"
+                                        atmCtaLabel="Shop Now"
+                                        atmCtaLink="#"
+                                        atmCtaType="btn-primary"/>
+                                </btnGrp>
+                                <cq:responsive jcr:primaryType="nt:unstructured">
+                                    <default
+                                        jcr:primaryType="nt:unstructured"
+                                        offset="1"
+                                        width="5"/>
+                                </cq:responsive>
+                            </mlebuttongroup>
+                            <cq:responsive jcr:primaryType="nt:unstructured">
+                                <default
+                                    jcr:primaryType="nt:unstructured"
+                                    offset="0"
+                                    width="6"/>
+                            </cq:responsive>
+                        </xp_container>
+                    </xp_container_copy>
+                    <xp_container_9275654
+                        jcr:created="{Date}2022-12-14T11:32:39.665+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2022-12-14T11:32:39.665+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="xpbootstrap/components/content/organisms/xp-container">
+                        <mletitle_copy
+                            jcr:created="{Date}2022-12-13T15:26:52.422+05:30"
+                            jcr:createdBy="admin"
+                            jcr:lastModified="{Date}2022-12-14T11:54:46.745+05:30"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="xpbootstrap/components/content/molecules/mleTitle"
+                            atmTitleText="Training &amp; Articles"
+                            marginBottom="[margin-bottom-x,margin-bottom-x]"
+                            marginTop="[margin-top-8x,margin-top-8x]"
+                            mobileMarginBottom="[m-margin-bottom-x,m-margin-bottom-x]"
+                            mobileMarginTop="[m-margin-top-x,m-margin-top-x]">
+                            <cq:responsive jcr:primaryType="nt:unstructured">
+                                <default
+                                    jcr:primaryType="nt:unstructured"
+                                    offset="1"
+                                    width="11"/>
+                            </cq:responsive>
+                        </mletitle_copy>
+                        <tiles_copy
+                            jcr:created="{Date}2022-12-12T14:02:20.280+05:30"
+                            jcr:createdBy="admin"
+                            jcr:lastModified="{Date}2022-12-14T20:13:49.049+05:30"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="lead2loyalty/components/content/organisms/tiles/v1/tiles"
+                            textIsRich="[true,true,true,true]">
+                            <cq:responsive jcr:primaryType="nt:unstructured">
+                                <default
+                                    jcr:primaryType="nt:unstructured"
+                                    offset="1"
+                                    width="11"/>
+                            </cq:responsive>
+                            <tileListItems jcr:primaryType="nt:unstructured">
+                                <item0
+                                    jcr:primaryType="nt:unstructured"
+                                    productDescription="&lt;p>Some quick example text to build on the card title and make up the bulk of te card's content.&lt;/p>&#xd;&#xa;"
+                                    productImageSource="/content/dam/lead2loyalty/circuit-5.jpg"
+                                    productTitle="Products &amp; Services"/>
+                                <item1
+                                    jcr:primaryType="nt:unstructured"
+                                    productDescription="&lt;p>Some quick example text to build on the card title and makeup the bulk of the card's content. &lt;/p>&#xd;&#xa;"
+                                    productImageSource="/content/dam/lead2loyalty/circuit6.jpg"
+                                    productTitle="User &amp; Admin Roles"/>
+                                <item2
+                                    jcr:primaryType="nt:unstructured"
+                                    productDescription="&lt;p>Some quick example text to build on the card title and make up the bulk test.&lt;/p>&#xd;&#xa;"
+                                    productImageSource="/content/dam/lead2loyalty/circuit-7.jpg"
+                                    productTitle="How to Create a Quote &amp; Purchase Order"/>
+                                <item3
+                                    jcr:primaryType="nt:unstructured"
+                                    productDescription="&lt;p>Some quick example text to build on the card title and make up the bulk of the card's content.&lt;/p>&#xd;&#xa;"
+                                    productImageSource="/content/dam/lead2loyalty/circuit-8.jpg"
+                                    productTitle="Order &amp; Purchase"/>
+                            </tileListItems>
+                        </tiles_copy>
+                    </xp_container_9275654>
+                    <footer
+                        jcr:created="{Date}2022-12-12T14:04:01.021+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2022-12-12T14:05:44.210+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="lead2loyalty/components/content/organisms/footer/v1/footer">
+                        <utilityLinks jcr:primaryType="nt:unstructured">
+                            <item0
+                                jcr:primaryType="nt:unstructured"
+                                tr_linkTitle="WAY TO BUY">
+                                <secondaryLinks jcr:primaryType="nt:unstructured">
+                                    <item0
+                                        jcr:primaryType="nt:unstructured"
+                                        openInNewWindowsecondary="false"
+                                        secondarylinkUrl="#"
+                                        tr_secondarylinkTitle="Shop Online"/>
+                                    <item1
+                                        jcr:primaryType="nt:unstructured"
+                                        openInNewWindowsecondary="false"
+                                        secondarylinkUrl="#"
+                                        tr_secondarylinkTitle="Call our Customer Executive"/>
+                                    <item2
+                                        jcr:primaryType="nt:unstructured"
+                                        openInNewWindowsecondary="false"
+                                        secondarylinkUrl="#"
+                                        tr_secondarylinkTitle="Enterprise Store"/>
+                                </secondaryLinks>
+                            </item0>
+                            <item1
+                                jcr:primaryType="nt:unstructured"
+                                tr_linkTitle="SUPPORT">
+                                <secondaryLinks jcr:primaryType="nt:unstructured">
+                                    <item0
+                                        jcr:primaryType="nt:unstructured"
+                                        openInNewWindowsecondary="false"
+                                        secondarylinkUrl="#"
+                                        tr_secondarylinkTitle="Download Drivers"/>
+                                    <item1
+                                        jcr:primaryType="nt:unstructured"
+                                        openInNewWindowsecondary="false"
+                                        secondarylinkUrl="#"
+                                        tr_secondarylinkTitle="Support &amp; Troubleshooting"/>
+                                    <item2
+                                        jcr:primaryType="nt:unstructured"
+                                        openInNewWindowsecondary="false"
+                                        secondarylinkUrl="#"
+                                        tr_secondarylinkTitle="Traning &amp; Certification"/>
+                                </secondaryLinks>
+                            </item1>
+                        </utilityLinks>
+                    </footer>
+                    <xp_container_1595583875
+                        jcr:created="{Date}2022-12-12T17:07:22.396+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2022-12-12T17:07:22.396+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="xpbootstrap/components/content/organisms/xp-container"/>
+                </container>
+            </container>
         </root>
     </jcr:content>
 </jcr:root>

@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
-  xmlns:cq="http://www.day.com/jcr/cq/1.0"
-  xmlns:jcr="http://www.jcp.org/jcr/1.0"
-  xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
-  xmlns:rep="internal"
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:rep="internal"
     jcr:mixinTypes="[rep:AccessControllable]"
     jcr:primaryType="cq:Page">
     <rep:policy/>
@@ -16,20 +12,86 @@
                             jcr:description="Home Page Template Policy."
                             jcr:primaryType="nt:unstructured"
                             jcr:title="Home Page Template Policy"
-                            layoutDisabled="false"
+                            sling:resourceType="wcm/core/components/policy/policy"
                             components="[group:xpbootstrap.container,group:xpbootstrap.content,group:lead2loyalty]"
-                            sling:resourceType="wcm/core/components/policy/policy">
+                            layoutDisabled="false">
                             <jcr:content jcr:primaryType="nt:unstructured"/>
                         </policy_1669829412542>
                         <policy_1669829412541
                             jcr:description="XF Template Policy."
                             jcr:primaryType="nt:unstructured"
                             jcr:title="XF Template Policy"
-                            layoutDisabled="false"
+                            sling:resourceType="wcm/core/components/policy/policy"
                             components="[group:lead2loyalty]"
-                            sling:resourceType="wcm/core/components/policy/policy">
-                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                            layoutDisabled="false">
+                            <jcr:content jcr:primaryType="nt:unstructured"/>
                         </policy_1669829412541>
+                        <policy_1943641611500
+                            jcr:lastModified="{Date}2022-12-12T19:54:53.021+05:30"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Image Policy"
+                            sling:resourceType="wcm/core/components/policy/policy"
+                            layoutDisabled="false">
+                            <jcr:content jcr:primaryType="nt:unstructured"/>
+                            <cq:styleGroups jcr:primaryType="nt:unstructured">
+                                <item0
+                                    cq:styleGroupLabel="Image Left"
+                                    jcr:primaryType="nt:unstructured">
+                                    <cq:styles jcr:primaryType="nt:unstructured">
+                                        <item0
+                                            cq:styleClasses="image-left"
+                                            cq:styleId="1670843762677"
+                                            cq:styleLabel="Image Left"
+                                            jcr:primaryType="nt:unstructured"/>
+                                    </cq:styles>
+                                </item0>
+                                <item1
+                                    cq:styleGroupLabel="Image Right"
+                                    jcr:primaryType="nt:unstructured">
+                                    <cq:styles jcr:primaryType="nt:unstructured">
+                                        <item0
+                                            cq:styleClasses="image-right"
+                                            cq:styleId="1670843791964"
+                                            cq:styleLabel="Image Right"
+                                            jcr:primaryType="nt:unstructured"/>
+                                    </cq:styles>
+                                </item1>
+                                <item2
+                                    cq:styleGroupLabel="Background Color"
+                                    jcr:primaryType="nt:unstructured">
+                                    <cq:styles jcr:primaryType="nt:unstructured">
+                                        <item0
+                                            cq:styleClasses="background-color"
+                                            cq:styleId="1670845915845"
+                                            cq:styleLabel="Background Color"
+                                            jcr:primaryType="nt:unstructured"/>
+                                    </cq:styles>
+                                </item2>
+                                <item3
+                                    cq:styleGroupLabel="Align Center"
+                                    jcr:primaryType="nt:unstructured">
+                                    <cq:styles jcr:primaryType="nt:unstructured">
+                                        <item0
+                                            cq:styleClasses="align-center"
+                                            cq:styleId="1670846692332"
+                                            cq:styleLabel="Align Center"
+                                            jcr:primaryType="nt:unstructured"/>
+                                    </cq:styles>
+                                </item3>
+                                <item4
+                                    cq:styleGroupLabel="Stretch Image"
+                                    jcr:primaryType="nt:unstructured">
+                                    <cq:styles jcr:primaryType="nt:unstructured">
+                                        <item0
+                                            cq:styleClasses="stretch-image"
+                                            cq:styleId="1670855059185"
+                                            cq:styleLabel="Stretch Image"
+                                            jcr:primaryType="nt:unstructured"/>
+                                    </cq:styles>
+                                </item4>
+                            </cq:styleGroups>
+                        </policy_1943641611500>
                     </xp-container>
                 </organisms>
             </content>
@@ -41,26 +103,82 @@
                 <organisms jcr:primaryType="nt:unstructured">
                     <page jcr:primaryType="nt:unstructured">
                         <policy_1669842399486
-                                jcr:description="Page Policy for Home page."
-                                jcr:primaryType="nt:unstructured"
-                                jcr:title="Home Page - Page Policy"
-                                layoutDisabled="false"
-                                clientlibsJsHead="lead2loyalty.homepage"
-                                clientlibs="[xp-comp-library.base,lead2loyalty.homepage]"
-                                sling:resourceType="wcm/core/components/policy/policy">
+                            jcr:description="Page Policy for Home page."
+                            jcr:lastModified="{Date}2022-12-14T13:20:43.062+05:30"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Home Page - Page Policy"
+                            sling:resourceType="wcm/core/components/policy/policy"
+                            clientlibs="[xp-comp-library.base,lead2loyalty.homepage]"
+                            clientlibsJsHead="lead2loyalty.homepage"
+                            layoutDisabled="false">
                             <jcr:content jcr:primaryType="nt:unstructured"/>
                         </policy_1669842399486>
                         <policy_1669842399487
-                                jcr:description="Page Policy for XF page."
-                                jcr:primaryType="nt:unstructured"
-                                jcr:title="XF Page - Page Policy"
-                                layoutDisabled="false"
-                                clientlibsJsHead="lead2loyalty.homepage"
-                                clientlibs="[xp-comp-library.base,lead2loyalty.homepage]"
-                                sling:resourceType="wcm/core/components/policy/policy">
+                            jcr:description="Page Policy for XF page."
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="XF Page - Page Policy"
+                            sling:resourceType="wcm/core/components/policy/policy"
+                            clientlibs="[xp-comp-library.base,lead2loyalty.homepage]"
+                            clientlibsJsHead="lead2loyalty.homepage"
+                            layoutDisabled="false">
                             <jcr:content jcr:primaryType="nt:unstructured"/>
                         </policy_1669842399487>
                     </page>
+                    <tiles jcr:primaryType="nt:unstructured">
+                        <v1 jcr:primaryType="nt:unstructured">
+                            <tiles jcr:primaryType="nt:unstructured">
+                                <policy_1670928207613
+                                    jcr:lastModified="{Date}2022-12-13T16:15:18.839+05:30"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Tile Policy"
+                                    sling:resourceType="wcm/core/components/policy/policy"
+                                    autopauseDisabled="false"
+                                    autoplay="false"
+                                    delay="5000">
+                                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                                    <cq:styleGroups jcr:primaryType="nt:unstructured">
+                                        <item0
+                                            cq:styleGroupLabel="Text Center"
+                                            jcr:primaryType="nt:unstructured">
+                                            <cq:styles jcr:primaryType="nt:unstructured">
+                                                <item0
+                                                    cq:styleClasses="text-center"
+                                                    cq:styleId="1670928226762"
+                                                    cq:styleLabel="Text Center"
+                                                    jcr:primaryType="nt:unstructured"/>
+                                            </cq:styles>
+                                        </item0>
+                                    </cq:styleGroups>
+                                </policy_1670928207613>
+                                <policy_1670928207614
+                                    jcr:lastModified="{Date}2022-12-13T16:15:18.839+05:30"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Tile Policy"
+                                    sling:resourceType="wcm/core/components/policy/policy"
+                                    autopauseDisabled="false"
+                                    autoplay="false"
+                                    delay="5000">
+                                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                                    <cq:styleGroups jcr:primaryType="nt:unstructured">
+                                        <item0
+                                            cq:styleGroupLabel="Text Center"
+                                            jcr:primaryType="nt:unstructured">
+                                            <cq:styles jcr:primaryType="nt:unstructured">
+                                                <item0
+                                                    cq:styleClasses="text-center"
+                                                    cq:styleId="1670928226762"
+                                                    cq:styleLabel="Text Center"
+                                                    jcr:primaryType="nt:unstructured"/>
+                                            </cq:styles>
+                                        </item0>
+                                    </cq:styleGroups>
+                                </policy_1670928207614>
+                            </tiles>
+                        </v1>
+                    </tiles>
                 </organisms>
             </content>
         </components>
