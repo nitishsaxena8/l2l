@@ -23,8 +23,8 @@ const resolve = {
 module.exports = {
   resolve: resolve,
   entry: {
-    xpbootstrap: SOURCE_ROOT + "/xpbootstrap/main.ts",
-    xpbootstrapvendor: SOURCE_ROOT + "/xpbootstrap/vendor/vendor.ts",
+    lead2loyalty: SOURCE_ROOT + "/lead2loyalty/main.ts",
+    lead2loyaltyvendor: SOURCE_ROOT + "/lead2loyalty/vendor/vendor.ts",
     www: SOURCE_ROOT + "/www/main.ts",
     wwwvendor: SOURCE_ROOT + "/www/vendor/vendor.ts",
     global: SOURCE_ROOT + "/global/global.ts"
