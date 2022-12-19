@@ -59,6 +59,10 @@ public class ProductsJsonServlet extends SlingAllMethodsServlet {
 
 		while (rootPageIterator.hasNext()) {
 			Page childPage = rootPageIterator.next();
+
+			String parentTitle = childPage.getParent().getTitle();
+			String parentPath = childPage.getParent().getPath();
+
 			ValueMap pageProperties = childPage.getProperties();
 
 			String path = childPage.getPath();
@@ -87,7 +91,7 @@ public class ProductsJsonServlet extends SlingAllMethodsServlet {
 			productsBean.setDescription(pageProperties.get("jcr:description", String.class) != null
 					? pageProperties.get("jcr:description", String.class)
 					: StringUtils.EMPTY);
-			
+
 			productsBean.setImage(
 					pageProperties.get("image", String.class) != null ? pageProperties.get("image", String.class)
 							: StringUtils.EMPTY);
@@ -95,13 +99,16 @@ public class ProductsJsonServlet extends SlingAllMethodsServlet {
 			productsBean.setDepth(childPageDepth);
 			productsBean.setPath(childPage.getPath());
 
+			productsBean.setParentTitle(parentTitle != null ? parentTitle : StringUtils.EMPTY);
+			productsBean.setParentPath(parentPath != null ? parentPath : StringUtils.EMPTY);
+
 			productsList.add(productsBean);
 
 		}
 
 		try {
 			JsonArray jsonArray = new Gson().toJsonTree(productsList).getAsJsonArray();
-			jsonObj.add("all-products", jsonArray);
+			jsonObj.add("products", jsonArray);
 			response.getWriter().write(jsonObj.toString());
 		} catch (Exception e) {
 			LOG.error("Exception in ProductsJson {}", e);
