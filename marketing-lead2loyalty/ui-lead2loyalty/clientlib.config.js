@@ -26,7 +26,7 @@ const CLIENTLIB_DIR = path.join(
   "content",
   "jcr_root",
   "apps",
-  "ui-xpbootstrap",
+  "ui-lead2loyalty",
   "clientlibs"
 );
 
@@ -45,19 +45,19 @@ module.exports = {
 
     {
       ...libsBaseConfig,
-      name: "clientlib-xpbootstrapvendor",
-      categories: ["lib.xpbootstrapvendor"],
+      name: "clientlib-lead2loyaltyvendor",
+      categories: ["lib.lead2loyaltyvendor"],
       
       assets: {
         // Copy entrypoint scripts and stylesheets into the respective ClientLib
         // directories
         js: {
-          cwd: "clientlib-xpbootstrapvendor",
+          cwd: "clientlib-lead2loyaltyvendor",
           files: ["**/*.js"],
           flatten: false,
         },
         css: {
-          cwd: "clientlib-xpbootstrapvendor",
+          cwd: "clientlib-lead2loyaltyvendor",
           files: ["**/*.css"],
           flatten: false,
         },
@@ -66,20 +66,20 @@ module.exports = {
 
     {
       ...libsBaseConfig,
-      name: "clientlib-xpbootstrap",
-      categories: ["lib.xpbootstrap"],
+      name: "clientlib-lead2loyalty",
+      categories: ["lib.lead2loyalty"],
       embed: ["core.wcm.components.carousel.v1"],
-      dependencies: ["lib.xpbootstrapvendor","core.xpbootstrap.components.page.v2.editor"],
+      dependencies: ["lib.lead2loyaltyvendor","core.lead2loyalty.components.page.v2.editor"],
       assets: {
         // Copy entrypoint scripts and stylesheets into the respective ClientLib
         // directories
         js: {
-          cwd: "clientlib-xpbootstrap",
+          cwd: "clientlib-lead2loyalty",
           files: ["**/*.js"],
           flatten: false,
         },
         css: {
-          cwd: "clientlib-xpbootstrap",
+          cwd: "clientlib-lead2loyalty",
           files: ["**/*.css"],
           flatten: false,
         },
