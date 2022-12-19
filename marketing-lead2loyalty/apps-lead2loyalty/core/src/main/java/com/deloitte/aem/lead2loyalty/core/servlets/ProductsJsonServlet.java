@@ -46,17 +46,19 @@ public class ProductsJsonServlet extends SlingAllMethodsServlet {
 		String rootPage = request.getParameter("rootPage");
 
 		JsonObject jsonObj = new JsonObject();
+		JsonObject jsonObj2 = new JsonObject();
 		ResourceResolver resourceResolver = request.getResourceResolver();
 		PageManager pageManager = resourceResolver.adaptTo(PageManager.class);
 		Page parentPage = pageManager.getPage(rootPage);
 
 		TagManager tagManager = resourceResolver.adaptTo(TagManager.class);
 
-		// int rootPageDepth = parentPage.getDepth();
+		int rootPageDepth = parentPage.getDepth();
 
 		if (parentPage != null) {
 			Iterator<Page> rootPageIterator = parentPage.listChildren(new PageFilter(), true);
 			List<ProductsBean> productsList = new ArrayList<>();
+			List<ProductsBean> productsList2 = new ArrayList<>();
 
 			while (rootPageIterator.hasNext()) {
 				Page childPage = rootPageIterator.next();
@@ -72,45 +74,72 @@ public class ProductsJsonServlet extends SlingAllMethodsServlet {
 
 				List<String> category = new ArrayList<>();
 
-				if (pageProperties.get("cq:tags", String[].class) != null) {
-					String[] categoryTags = pageProperties.get("cq:tags", String[].class);
-					for (String tag : categoryTags) {
-						Tag categoryTag = tagManager.resolve(tag);
-						category.add(categoryTag.getTitle());
+				//Excluding Accordion Pages using if condition
+				if (childPageDepth > (rootPageDepth + 1)) {
+
+					if (pageProperties.get("cq:tags", String[].class) != null) {
+						String[] categoryTags = pageProperties.get("cq:tags", String[].class);
+						for (String tag : categoryTags) {
+							Tag categoryTag = tagManager.resolve(tag);
+							category.add(categoryTag.getTitle());
+						}
+
+						productsBean.setTags(category);
 					}
 
-					productsBean.setTags(category);
+					productsBean.setTitle(pageProperties.get("jcr:title", String.class) != null
+							? pageProperties.get("jcr:title", String.class)
+							: StringUtils.EMPTY);
+
+					if (StringUtils.isNotBlank(path) && path.contains("/")) {
+						productsBean.setName(path.substring(path.lastIndexOf("/") + 1));
+					}
+					productsBean.setDescription(pageProperties.get("jcr:description", String.class) != null
+							? pageProperties.get("jcr:description", String.class)
+							: StringUtils.EMPTY);
+
+					productsBean.setImage(pageProperties.get("image", String.class) != null
+							? pageProperties.get("image", String.class)
+							: StringUtils.EMPTY);
+
+					productsBean.setDepth(childPageDepth);
+					productsBean.setPath(childPage.getPath());
+
+					productsBean.setParentTitle(parentTitle != null ? parentTitle : StringUtils.EMPTY);
+					productsBean.setParentPath(parentPath != null ? parentPath : StringUtils.EMPTY);
+
+					productsList.add(productsBean);
 				}
-
-				productsBean.setTitle(pageProperties.get("jcr:title", String.class) != null
-						? pageProperties.get("jcr:title", String.class)
-						: StringUtils.EMPTY);
-
-				if (StringUtils.isNotBlank(path) && path.contains("/")) {
-					productsBean.setName(path.substring(path.lastIndexOf("/") + 1));
-				}
-				productsBean.setDescription(pageProperties.get("jcr:description", String.class) != null
-						? pageProperties.get("jcr:description", String.class)
-						: StringUtils.EMPTY);
-
-				productsBean.setImage(
-						pageProperties.get("image", String.class) != null ? pageProperties.get("image", String.class)
-								: StringUtils.EMPTY);
-
-				productsBean.setDepth(childPageDepth);
-				productsBean.setPath(childPage.getPath());
-
-				productsBean.setParentTitle(parentTitle != null ? parentTitle : StringUtils.EMPTY);
-				productsBean.setParentPath(parentPath != null ? parentPath : StringUtils.EMPTY);
-
-				productsList.add(productsBean);
 
 			}
 
+			/**** Category Accordion Title Page Start ****/
+			Iterator<Page> pageIterator = parentPage.listChildren();
+			while (pageIterator.hasNext()) {
+				Page childPage = pageIterator.next();
+				ProductsBean productsBean2 = new ProductsBean();
+
+				if (childPage != null) {
+					productsBean2.setTitle(childPage.getTitle());
+					productsBean2.setDepth(childPage.getDepth());
+					productsBean2.setPath(childPage.getPath());
+
+					productsList2.add(productsBean2);
+				}
+			}
+			/**** Category Accordion Title Page End ****/
+
 			try {
+				JsonArray finalJsonArray = new JsonArray();
 				JsonArray jsonArray = new Gson().toJsonTree(productsList).getAsJsonArray();
+				JsonArray jsonArray2 = new Gson().toJsonTree(productsList2).getAsJsonArray();
+				
 				jsonObj.add("products", jsonArray);
-				response.getWriter().write(jsonObj.toString());
+				finalJsonArray.add(jsonObj);
+				jsonObj2.add("category", jsonArray2);
+				finalJsonArray.add(jsonObj2);
+
+				response.getWriter().write(finalJsonArray.toString());
 			} catch (Exception e) {
 				LOG.error("Exception in ProductsJson {}", e);
 			}
