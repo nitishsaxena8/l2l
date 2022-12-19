@@ -54,65 +54,66 @@ public class ProductsJsonServlet extends SlingAllMethodsServlet {
 
 		// int rootPageDepth = parentPage.getDepth();
 
-		Iterator<Page> rootPageIterator = parentPage.listChildren(new PageFilter(), true);
-		List<ProductsBean> productsList = new ArrayList<>();
+		if (parentPage != null) {
+			Iterator<Page> rootPageIterator = parentPage.listChildren(new PageFilter(), true);
+			List<ProductsBean> productsList = new ArrayList<>();
 
-		while (rootPageIterator.hasNext()) {
-			Page childPage = rootPageIterator.next();
+			while (rootPageIterator.hasNext()) {
+				Page childPage = rootPageIterator.next();
 
-			String parentTitle = childPage.getParent().getTitle();
-			String parentPath = childPage.getParent().getPath();
+				String parentTitle = childPage.getParent().getTitle();
+				String parentPath = childPage.getParent().getPath();
 
-			ValueMap pageProperties = childPage.getProperties();
+				ValueMap pageProperties = childPage.getProperties();
 
-			String path = childPage.getPath();
-			int childPageDepth = childPage.getDepth();
-			ProductsBean productsBean = new ProductsBean();
+				String path = childPage.getPath();
+				int childPageDepth = childPage.getDepth();
+				ProductsBean productsBean = new ProductsBean();
 
-			List<String> category = new ArrayList<>();
+				List<String> category = new ArrayList<>();
 
-			if (pageProperties.get("cq:tags", String[].class) != null) {
-				String[] categoryTags = pageProperties.get("cq:tags", String[].class);
-				for (String tag : categoryTags) {
-					Tag categoryTag = tagManager.resolve(tag);
-					category.add(categoryTag.getTitle());
+				if (pageProperties.get("cq:tags", String[].class) != null) {
+					String[] categoryTags = pageProperties.get("cq:tags", String[].class);
+					for (String tag : categoryTags) {
+						Tag categoryTag = tagManager.resolve(tag);
+						category.add(categoryTag.getTitle());
+					}
+
+					productsBean.setTags(category);
 				}
 
-				productsBean.setTags(category);
+				productsBean.setTitle(pageProperties.get("jcr:title", String.class) != null
+						? pageProperties.get("jcr:title", String.class)
+						: StringUtils.EMPTY);
+
+				if (StringUtils.isNotBlank(path) && path.contains("/")) {
+					productsBean.setName(path.substring(path.lastIndexOf("/") + 1));
+				}
+				productsBean.setDescription(pageProperties.get("jcr:description", String.class) != null
+						? pageProperties.get("jcr:description", String.class)
+						: StringUtils.EMPTY);
+
+				productsBean.setImage(
+						pageProperties.get("image", String.class) != null ? pageProperties.get("image", String.class)
+								: StringUtils.EMPTY);
+
+				productsBean.setDepth(childPageDepth);
+				productsBean.setPath(childPage.getPath());
+
+				productsBean.setParentTitle(parentTitle != null ? parentTitle : StringUtils.EMPTY);
+				productsBean.setParentPath(parentPath != null ? parentPath : StringUtils.EMPTY);
+
+				productsList.add(productsBean);
+
 			}
 
-			productsBean.setTitle(pageProperties.get("jcr:title", String.class) != null
-					? pageProperties.get("jcr:title", String.class)
-					: StringUtils.EMPTY);
-
-			if (StringUtils.isNotBlank(path) && path.contains("/")) {
-				productsBean.setName(path.substring(path.lastIndexOf("/") + 1));
+			try {
+				JsonArray jsonArray = new Gson().toJsonTree(productsList).getAsJsonArray();
+				jsonObj.add("products", jsonArray);
+				response.getWriter().write(jsonObj.toString());
+			} catch (Exception e) {
+				LOG.error("Exception in ProductsJson {}", e);
 			}
-			productsBean.setDescription(pageProperties.get("jcr:description", String.class) != null
-					? pageProperties.get("jcr:description", String.class)
-					: StringUtils.EMPTY);
-
-			productsBean.setImage(
-					pageProperties.get("image", String.class) != null ? pageProperties.get("image", String.class)
-							: StringUtils.EMPTY);
-
-			productsBean.setDepth(childPageDepth);
-			productsBean.setPath(childPage.getPath());
-
-			productsBean.setParentTitle(parentTitle != null ? parentTitle : StringUtils.EMPTY);
-			productsBean.setParentPath(parentPath != null ? parentPath : StringUtils.EMPTY);
-
-			productsList.add(productsBean);
-
-		}
-
-		try {
-			JsonArray jsonArray = new Gson().toJsonTree(productsList).getAsJsonArray();
-			jsonObj.add("products", jsonArray);
-			response.getWriter().write(jsonObj.toString());
-		} catch (Exception e) {
-			LOG.error("Exception in ProductsJson {}", e);
 		}
 	}
-
 }
