@@ -1,0 +1,36 @@
+<div data-sly-use.template="core/wcm/components/commons/v1/templates.html"
+data-sly-call="${template.placeholder @ isEmpty='true'}"/>
+
+<div class="row ${properties.marginTop} ${properties.mobileMarginTop} ${properties.marginBottom} ${properties.mobileMarginBottom}"
+	data-product-endpoint="/content/lead2loyalty/_jcr_content/servlets/product-data.json"
+	data-rootpage=${properties.rootPagePath}
+
+>
+	<p><b>Root Page Path:</b> ${properties.rootPagePath}</p>
+</div>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+	var rootPath = '${properties.rootPagePath @ context="scriptString"}'
+
+	if(rootPath !== "") {
+
+    $.ajax({
+        type: "GET",
+        url: "/content/lead2loyalty/_jcr_content/servlets/product-data.json",
+        data: {"rootPage" : rootPath},
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function (response) {
+
+        },
+        error: function (response) {
+            var responseTextObject = jQuery.parseJSON(response.responseText);
+        }
+    });
+
+}
+</script>
