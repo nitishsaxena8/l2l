@@ -21,7 +21,9 @@ import org.osgi.service.component.propertytypes.ServiceDescription;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.day.cq.commons.jcr.JcrConstants;
 import com.day.cq.tagging.Tag;
+import com.day.cq.tagging.TagConstants;
 import com.day.cq.tagging.TagManager;
 import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.api.PageFilter;
@@ -33,7 +35,7 @@ import com.google.gson.JsonObject;
 
 @Component(service = Servlet.class)
 @SlingServletResourceTypes(resourceTypes = "services/products/json", methods = HttpConstants.METHOD_GET, extensions = "json")
-@ServiceDescription("Products Json Servlet")
+@ServiceDescription("Lead2Loyalty Products Json Servlet")
 public class ProductsJsonServlet extends SlingAllMethodsServlet {
 
 	private static final long serialVersionUID = 7859688600832568906L;
@@ -45,8 +47,8 @@ public class ProductsJsonServlet extends SlingAllMethodsServlet {
 		response.setHeader("Dispatcher", "no-cache");
 		String rootPage = request.getParameter("rootPage");
 
-		JsonObject jsonObj = new JsonObject();
-		JsonObject jsonObj2 = new JsonObject();
+		JsonObject productJsonObj = new JsonObject();
+		JsonObject categoryJsonObj = new JsonObject();
 		ResourceResolver resourceResolver = request.getResourceResolver();
 		PageManager pageManager = resourceResolver.adaptTo(PageManager.class);
 		Page parentPage = pageManager.getPage(rootPage);
@@ -77,8 +79,8 @@ public class ProductsJsonServlet extends SlingAllMethodsServlet {
 				//Excluding Accordion Pages using if condition
 				if (childPageDepth > (rootPageDepth + 1)) {
 
-					if (pageProperties.get("cq:tags", String[].class) != null) {
-						String[] categoryTags = pageProperties.get("cq:tags", String[].class);
+					if (pageProperties.get(TagConstants.PN_TAGS, String[].class) != null) {
+						String[] categoryTags = pageProperties.get(TagConstants.PN_TAGS, String[].class);
 						for (String tag : categoryTags) {
 							Tag categoryTag = tagManager.resolve(tag);
 							category.add(categoryTag.getTitle());
@@ -87,15 +89,15 @@ public class ProductsJsonServlet extends SlingAllMethodsServlet {
 						productsBean.setTags(category);
 					}
 
-					productsBean.setTitle(pageProperties.get("jcr:title", String.class) != null
-							? pageProperties.get("jcr:title", String.class)
+					productsBean.setTitle(pageProperties.get(JcrConstants.JCR_TITLE, String.class) != null
+							? pageProperties.get(JcrConstants.JCR_TITLE, String.class)
 							: StringUtils.EMPTY);
 
 					if (StringUtils.isNotBlank(path) && path.contains("/")) {
 						productsBean.setName(path.substring(path.lastIndexOf("/") + 1));
 					}
-					productsBean.setDescription(pageProperties.get("jcr:description", String.class) != null
-							? pageProperties.get("jcr:description", String.class)
+					productsBean.setDescription(pageProperties.get(JcrConstants.JCR_DESCRIPTION, String.class) != null
+							? pageProperties.get(JcrConstants.JCR_DESCRIPTION, String.class)
 							: StringUtils.EMPTY);
 
 					productsBean.setImage(pageProperties.get("image", String.class) != null
@@ -134,10 +136,10 @@ public class ProductsJsonServlet extends SlingAllMethodsServlet {
 				JsonArray jsonArray = new Gson().toJsonTree(productsList).getAsJsonArray();
 				JsonArray jsonArray2 = new Gson().toJsonTree(productsList2).getAsJsonArray();
 				
-				jsonObj.add("products", jsonArray);
-				finalJsonArray.add(jsonObj);
-				jsonObj2.add("category", jsonArray2);
-				finalJsonArray.add(jsonObj2);
+				productJsonObj.add("products", jsonArray);
+				finalJsonArray.add(productJsonObj);
+				categoryJsonObj.add("categories", jsonArray2);
+				finalJsonArray.add(categoryJsonObj);
 
 				response.getWriter().write(finalJsonArray.toString());
 			} catch (Exception e) {
