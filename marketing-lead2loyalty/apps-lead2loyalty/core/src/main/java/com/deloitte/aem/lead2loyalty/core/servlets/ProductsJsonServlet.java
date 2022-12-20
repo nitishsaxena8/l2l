@@ -116,7 +116,7 @@ public class ProductsJsonServlet extends SlingAllMethodsServlet {
 			}
 
 			/**** Category Accordion Title Page Start ****/
-			Iterator<Page> pageIterator = parentPage.listChildren();
+			Iterator<Page> pageIterator = parentPage.listChildren(new PageFilter(), false);
 			while (pageIterator.hasNext()) {
 				Page childPage = pageIterator.next();
 				ProductsBean productsBean2 = new ProductsBean();
