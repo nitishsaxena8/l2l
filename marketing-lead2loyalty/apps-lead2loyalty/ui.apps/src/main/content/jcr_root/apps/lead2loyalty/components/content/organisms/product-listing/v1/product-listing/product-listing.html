@@ -1,15 +1,13 @@
 <div data-sly-use.template="core/wcm/components/commons/v1/templates.html"
 data-sly-call="${template.placeholder @ isEmpty='true'}"/>
 
-<div class="row ${properties.marginTop} ${properties.mobileMarginTop} ${properties.marginBottom} ${properties.mobileMarginBottom}"
-	data-product-endpoint="/content/lead2loyalty/_jcr_content/servlets/product-data.json"
-	data-rootpage=${properties.rootPagePath}
 
->
-	<p><b>Root Page Path:</b> ${properties.rootPagePath}</p>
+<div class="plp-products ${properties.marginTop} ${properties.mobileMarginTop} ${properties.marginBottom} ${properties.mobileMarginBottom}"
+	data-product-endpoint="/content/lead2loyalty/_jcr_content/servlets/product-data.json"
+	data-rootpage=${properties.rootPagePath}>
 </div>
 
-
+<!-- ---------------------------------------------------------------------------------------
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script type="text/javascript">
@@ -34,3 +32,195 @@ data-sly-call="${template.placeholder @ isEmpty='true'}"/>
 
 }
 </script>
+
+-------------------------------------------------------------------------------------------------- -->
+
+<!-- Body -->
+    <div class="container my-5">
+      <div class="row">
+        <div class="col-3">
+          <div class="d-flex justify-content-between">
+            <div class="fw-bold fs-4">Filter</div>
+            <button class="btn btn-link">Clear All</button>
+          </div>
+          <div class="accordion" id="accordion">
+            <div class="card-header fw-bold my-2" id="headingOne">
+              <div
+                data-toggle="collapse"
+                data-target="#collapseOne"
+                aria-expanded="true"
+                aria-controls="collapseOne"
+              >
+                Development Board
+              </div>
+            </div>
+
+            <div
+              id="collapseOne"
+              class="collapse show"
+              aria-labelledby="headingOne"
+              data-parent="#accordion"
+            >
+              <div class="card-body my-3 ms-4">Original Arduino</div>
+              <div class="card-body my-3 ms-4">Raspberry Pi</div>
+              <div class="card-body my-3 ms-4">Compatible with Arduino</div>
+              <div class="card-body my-3 ms-4">Advanced Development Board</div>
+              <div class="card-body my-3 ms-4">8051 Board</div>
+            </div>
+          </div>
+          <div class="accordion" id="accordion">
+            <div class="card-header fw-bold my-3" id="headingOne">
+              <div
+                data-toggle="collapse"
+                data-target="#collapseOne"
+                aria-expanded="true"
+                aria-controls="collapseOne"
+              >
+                Sensors
+              </div>
+            </div>
+          </div>
+          <div class="accordion" id="accordion">
+            <div class="card-header fw-bold my-3" id="headingOne">
+              <div
+                data-toggle="collapse"
+                data-target="#collapseOne"
+                aria-expanded="true"
+                aria-controls="collapseOne"
+              >
+                Electronic Components
+              </div>
+            </div>
+          </div>
+          <div class="accordion" id="accordion">
+            <div class="card-header fw-bold my-3" id="headingOne">
+              <div
+                data-toggle="collapse"
+                data-target="#collapseOne"
+                aria-expanded="true"
+                aria-controls="collapseOne"
+              >
+                Batteries and Accessories
+              </div>
+            </div>
+          </div>
+          <div class="accordion" id="accordion">
+            <div class="card-header fw-bold my-3" id="headingOne">
+              <div
+                data-toggle="collapse"
+                data-target="#collapseOne"
+                aria-expanded="true"
+                aria-controls="collapseOne"
+              >
+                Drone Parts
+              </div>
+            </div>
+          </div>
+          <div class="accordion" id="accordion">
+            <div class="card-header fw-bold my-3" id="headingOne">
+              <div
+                data-toggle="collapse"
+                data-target="#collapseOne"
+                aria-expanded="true"
+                aria-controls="collapseOne"
+              >
+                Modules and Displays
+              </div>
+            </div>
+          </div>
+          <div class="accordion" id="accordion">
+            <div class="card-header fw-bold my-3" id="headingOne">
+              <div
+                data-toggle="collapse"
+                data-target="#collapseOne"
+                aria-expanded="true"
+                aria-controls="collapseOne"
+              >
+                IOT and Wireless
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-9 d-flex flex-wrap p-2 justify-content-between">
+          <div class="container px-4 d-flex flex-wrap">
+            <div class="row gx-3 d-flex flex-wrap">
+              <div class="col my-3" style="min-width: 30%">
+                <div class="p-3 shadow-sm">
+                  <img src="chip.jpg" class="card-img-top" alt="..." />
+                  <div class="card-body">
+                    <p class="card-text">
+                      Keyes Brick ESP-01 3V Relay Module WiFi Node loT Wireless
+                      Remote Control..
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col my-3" style="min-width: 30%">
+                <div class="p-3 shadow-sm">
+                  <img src="chip.jpg" class="card-img-top" alt="..." />
+                  <div class="card-body">
+                    <p class="card-text">
+                      Keyes Brick ESP-01 3V Relay Module WiFi Node loT Wireless
+                      Remote Control..
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col my-3" style="min-width: 30%">
+                <div class="p-3 shadow-sm">
+                  <img src="chip.jpg" class="card-img-top" alt="..." />
+                  <div class="card-body">
+                    <p class="card-text">
+                      Keyes Brick ESP-01 3V Relay Module WiFi Node loT Wireless
+                      Remote Control..
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col my-3" style="min-width: 30%">
+                <div class="p-3 shadow-sm">
+                  <img src="chip.jpg" class="card-img-top" alt="..." />
+                  <div class="card-body">
+                    <p class="card-text">
+                      Keyes Brick ESP-01 3V Relay Module WiFi Node loT Wireless
+                      Remote Control..
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col my-3" style="min-width: 30%">
+                <div class="p-3 shadow-sm">
+                  <img src="chip.jpg" class="card-img-top" alt="..." />
+                  <div class="card-body">
+                    <p class="card-text">
+                      Keyes Brick ESP-01 3V Relay Module WiFi Node loT Wireless
+                      Remote Control..
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col my-3" style="min-width: 30%">
+                <div class="p-3 shadow-sm">
+                  <img src="chip.jpg" class="card-img-top" alt="..." />
+                  <div class="card-body">
+                    <p class="card-text">
+                      Keyes Brick ESP-01 3V Relay Module WiFi Node loT Wireless
+                      Remote Control..
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Body -->
+
+
+
+
+
+
+

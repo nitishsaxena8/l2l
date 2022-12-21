@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2022-12-19T14:12:45.775+05:30"
+        cq:lastModifiedBy="admin"
+        cq:tags="[workflow:projects/wcm/launch,workflow:projects/wcm/email,workflow:projects/wcm/landingpage]"
+        cq:template="/conf/lead2loyalty/settings/wcm/templates/product-detail-page"
+        jcr:description="This is test description for Compatible with Ardunio Borad"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Compatible with Ardunio Borad"
+        sling:resourceType="lead2loyalty/components/content/organisms/page"
+        pwaCachestrategy="staleWhileRevalidate"
+        pwaDisplay="standalone"
+        pwaOrientation="any">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="xpbootstrap/components/content/organisms/xp-container"
+            layout="responsiveGrid"/>
+    </jcr:content>
+</jcr:root>
