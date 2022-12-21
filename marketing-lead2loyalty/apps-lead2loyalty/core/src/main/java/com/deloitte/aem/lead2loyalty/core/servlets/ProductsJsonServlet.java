@@ -125,6 +125,18 @@ public class ProductsJsonServlet extends SlingAllMethodsServlet {
 					productsBean2.setTitle(childPage.getTitle());
 					productsBean2.setDepth(childPage.getDepth());
 					productsBean2.setPath(childPage.getPath());
+					
+					ValueMap pageProperties = childPage.getProperties();
+					List<String> category = new ArrayList<>();
+					if (pageProperties.get(TagConstants.PN_TAGS, String[].class) != null) {
+						String[] categoryTags = pageProperties.get(TagConstants.PN_TAGS, String[].class);
+						for (String tag : categoryTags) {
+							Tag categoryTag = tagManager.resolve(tag);
+							category.add(categoryTag.getTitle());
+						}
+
+						productsBean2.setTags(category);
+					}
 
 					productsList2.add(productsBean2);
 				}
