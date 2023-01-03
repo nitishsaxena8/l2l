@@ -1,7 +1,6 @@
-<div data-sly-use.template="core/wcm/components/commons/v1/templates.html"
-data-sly-call="${template.placeholder @ isEmpty='true'}"/>
-
-<sly data-sly-use.productListingModel="com.deloitte.aem.lead2loyalty.core.models.ProductListingModel" />
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"
+	data-sly-call="${template.placeholder @ isEmpty='true'}"
+	data-sly-use.productListingModel="com.deloitte.aem.lead2loyalty.core.models.ProductListingModel" />
 
 <div class="plp-products ${properties.marginTop} ${properties.mobileMarginTop} ${properties.marginBottom} ${properties.mobileMarginBottom}"
 	data-product-endpoint="/content/lead2loyalty/_jcr_content/servlets/product-data.json"
