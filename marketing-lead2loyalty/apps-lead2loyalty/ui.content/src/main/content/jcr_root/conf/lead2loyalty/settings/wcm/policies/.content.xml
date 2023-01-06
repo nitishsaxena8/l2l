@@ -179,6 +179,30 @@
                             </tiles>
                         </v1>
                     </tiles>
+                    <xp-container jcr:primaryType="nt:unstructured">
+                        <policy_1673004757124
+                            jcr:lastModified="{Date}2023-01-06T17:03:52.415+05:30"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="L2L Container Policy"
+                            sling:resourceType="wcm/core/components/policy/policy"
+                            layoutDisabled="false">
+                            <jcr:content jcr:primaryType="nt:unstructured"/>
+                            <cq:styleGroups jcr:primaryType="nt:unstructured">
+                                <item0
+                                    cq:styleGroupLabel="Background Color"
+                                    jcr:primaryType="nt:unstructured">
+                                    <cq:styles jcr:primaryType="nt:unstructured">
+                                        <item0
+                                            cq:styleClasses="background-color"
+                                            cq:styleId="1673004790935"
+                                            cq:styleLabel="Background Color"
+                                            jcr:primaryType="nt:unstructured"/>
+                                    </cq:styles>
+                                </item0>
+                            </cq:styleGroups>
+                        </policy_1673004757124>
+                    </xp-container>
                 </organisms>
             </content>
         </components>
