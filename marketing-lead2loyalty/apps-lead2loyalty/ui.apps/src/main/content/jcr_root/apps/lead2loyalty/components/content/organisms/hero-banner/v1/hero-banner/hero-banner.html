@@ -1,0 +1,19 @@
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"
+	data-sly-call="${template.placeholder @ isEmpty=!properties.fileReference}"/>
+
+<div class="${properties.marginTop} ${properties.mobileMarginTop} ${properties.marginBottom} ${properties.mobileMarginBottom}">
+</div>
+
+
+
+<!-- ------------TEST HTML------------ -->
+<div style="background-image:url('${properties.fileReference @ context='styleString'}');">
+	${properties.heroTitle}
+</div>
+
+
+
+
+
+
+
