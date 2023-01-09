@@ -1,0 +1,26 @@
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"
+	data-sly-call="${template.placeholder @ isEmpty=!properties.title}"
+	data-sly-use.salesModel="com.deloitte.aem.lead2loyalty.core.models.SalesSupportModel" /> 
+
+<div class="${properties.marginTop} ${properties.mobileMarginTop} ${properties.marginBottom} ${properties.mobileMarginBottom}">
+
+  <div class="container my-3">
+    <div class="row">
+      <div class="col-6 p-0">
+  		<img src="${salesModel.image}" alt="${ticModel.imageAlt}" class="w-100" style="max-height:400px;">
+	  </div>
+      <div class="col-6" >
+		<div class="row h-100 mx-4 align-items-center">
+			<sly data-sly-list.child="${salesModel.saleSupportLinks.listChildren}">
+                <div class="col-6">
+                    <img src="${child.icon}" alt="${child.iconAlt}" style="max-height:100px;">
+                    <h5>${child.title}</h5>
+                    <p>${child.atmTextHtml @context='html'}</p>
+                </div>
+			<sly>
+		</div>
+      </div>
+    </div>
+  </div>
+
+</div>
