@@ -69,6 +69,12 @@
                                                                 value="img-left"/>
                                                         </items>
                                                     </imgAlign>
+                                                    <imgAlt
+                                                        granite:hide="${cqDesign.linkDisabled}"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Image Alt Text"
+                                                        name="./imageAlt"/>
                                                     <multifield
                                                         jcr:primaryType="nt:unstructured"
                                                         sling:resourceType="granite/ui/components/coral/foundation/form/multifield"

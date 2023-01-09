@@ -31,6 +31,9 @@ public class TextImageCtaModel {
 
 	@ValueMapValue
 	private String fileReference;
+	
+	@ValueMapValue
+	private String imageAlt;
 
 	@ValueMapValue
 	private String imgAlignment;
@@ -57,6 +60,10 @@ public class TextImageCtaModel {
 
 	public String getImage() {
 		return fileReference;
+	}
+	
+	public String getImageAlt() {
+		return imageAlt;
 	}
 
 	public String getImgAlignment() {
