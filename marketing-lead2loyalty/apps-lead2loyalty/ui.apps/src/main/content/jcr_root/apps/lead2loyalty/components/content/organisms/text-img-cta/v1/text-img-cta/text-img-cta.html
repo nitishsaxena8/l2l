@@ -14,7 +14,7 @@
 			<div class="row h-100 mx-2 align-items-center">
 				<div>
 	        		<h4>${ticModel.title}</h4>
-					<p class="mt-5"> ${ticModel.description @context='html'}</p>
+					<div class="mt-5"> ${ticModel.description @context='html'}</div>
 	
 					<sly data-sly-list.child="${ticModel.ctaButton.listChildren}">
 	        			<a class="btn ${child.atmCtaType} ${child.atmCtaSize} mt-3" href="${child.atmCtaLink}" target="${child.atmCtaTarget == 'true' ? '_blank' : '_self'}" data-analytics-context="${child.atmCtaContext}">${child.atmCtaLabel}</a>
@@ -33,7 +33,7 @@
 			<div class="row h-100 mx-2 align-items-center">
 				<div>
 	        		<h4>${ticModel.title}</h4>
-					<p class="mt-5"> ${ticModel.description @context='html'}</p>
+					<div class="mt-5"> ${ticModel.description @context='html'}</div>
 	
 					<sly data-sly-list.child="${ticModel.ctaButton.listChildren}">
 	        			<a class="btn ${child.atmCtaType} ${child.atmCtaSize} mt-3" href="${child.atmCtaLink}" target="${child.atmCtaTarget == 'true' ? '_blank' : '_self'}" data-analytics-context="${child.atmCtaContext}">${child.atmCtaLabel}</a>
