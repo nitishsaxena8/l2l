@@ -2,23 +2,50 @@
 	data-sly-call="${template.placeholder @ isEmpty=!properties.title}"
 	data-sly-use.ticModel="com.deloitte.aem.lead2loyalty.core.models.TextImageCtaModel" />
 
-<div class="plp-products ${properties.marginTop} ${properties.mobileMarginTop} ${properties.marginBottom} ${properties.mobileMarginBottom}"
-	data-product-endpoint="/content/lead2loyalty/_jcr_content/servlets/product-data.json"
-	data-rootpage=${properties.rootPagePath}>
-</div>
+<div class="${properties.marginTop} ${properties.mobileMarginTop} ${properties.marginBottom} ${properties.mobileMarginBottom}">
 
-<div>
-	${ticModel.title}</br>
-    ${ticModel.description @context='html'}</br>
-    ${ticModel.image}</br>
-    ${ticModel.imgAlignment}</br>
+	<sly data-sly-test="${ticModel.imgAlignment == 'img-left'}">
+	 <div class="container my-3">
+	    <div class="row">
+	      <div class="col-6 p-0">
+	  		<img src="${ticModel.image}" alt="${ticModel.imageAlt}" class="w-100" style="max-height:400px;">
+		  </div>
+	      <div class="col-6" >
+			<div class="row h-100 mx-2 align-items-center">
+				<div>
+	        		<h4>${ticModel.title}</h4>
+					<p class="mt-5"> ${ticModel.description @context='html'}</p>
+	
+					<sly data-sly-list.child="${ticModel.ctaButton.listChildren}">
+	        			<a class="btn ${child.atmCtaType} ${child.atmCtaSize} mt-3" href="${child.atmCtaLink}" target="${child.atmCtaTarget == 'true' ? '_blank' : '_self'}" data-analytics-context="${child.atmCtaContext}">${child.atmCtaLabel}</a>
+					</sly>
+				</div>
+			</div>
+	      </div>
+	    </div>
+	  </div>
+	</sly>
 
-<sly data-sly-list.child="${ticModel.ctaButton.listChildren}">
-	${child.atmCtaLabel}
-	${child.atmCtaLink}
-	${child.atmCtaTarget}
-	${child.atmCtaType}
-	${child.atmCtaSize}</br>
-</sly>
+	<sly data-sly-test="${ticModel.imgAlignment == 'img-right'}">
+	 <div class="container my-3">
+	    <div class="row">
+	      <div class="col-6" >
+			<div class="row h-100 mx-2 align-items-center">
+				<div>
+	        		<h4>${ticModel.title}</h4>
+					<p class="mt-5"> ${ticModel.description @context='html'}</p>
+	
+					<sly data-sly-list.child="${ticModel.ctaButton.listChildren}">
+	        			<a class="btn ${child.atmCtaType} ${child.atmCtaSize} mt-3" href="${child.atmCtaLink}" target="${child.atmCtaTarget == 'true' ? '_blank' : '_self'}" data-analytics-context="${child.atmCtaContext}">${child.atmCtaLabel}</a>
+					</sly>
+				</div>
+			</div>
+	      </div>
+		 <div class="col-6 p-0">
+	  		<img src="${ticModel.image}" alt="${ticModel.imageAlt}" class="w-100" style="max-height:400px;">
+		  </div>
+	    </div>
+	  </div>
+	</sly>
 
 </div>

@@ -21,53 +21,32 @@ import com.adobe.cq.export.json.ExporterConstants;
 		@ExporterOption(name = "MapperFeature.SORT_PROPERTIES_ALPHABETICALLY", value = "true"),
 		@ExporterOption(name = "SerializationFeature.WRITE_DATES_AS_TIMESTAMPS", value = "false") })
 
-public class TextImageCtaModel {
-
-	@ValueMapValue
-	private String title;
-
-	@ValueMapValue
-	private String atmTextHtml;
+public class SalesSupportModel {
 
 	@ValueMapValue
 	private String fileReference;
-	
+
 	@ValueMapValue
 	private String imageAlt;
 
-	@ValueMapValue
-	private String imgAlignment;
-
 	@Inject
 	@Via("resource")
-	private Resource ctaButton;
+	private Resource saleSupportLinks;
 
 	@PostConstruct
 	protected void init() {
 	}
 
-	public Resource getCtaButton() {
-		return ctaButton;
-	}
-
-	public String getTitle() {
-		return title;
-	}
-
-	public String getDescription() {
-		return atmTextHtml;
+	public Resource getSaleSupportLinks() {
+		return saleSupportLinks;
 	}
 
 	public String getImage() {
 		return fileReference;
 	}
-	
+
 	public String getImageAlt() {
 		return imageAlt;
-	}
-
-	public String getImgAlignment() {
-		return imgAlignment;
 	}
 
 }
