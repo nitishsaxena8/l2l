@@ -7,13 +7,15 @@
       <sly data-sly-test="${tilesModel.tileListItems}">
         <sly data-sly-repeat.item="${tilesModel.tileListItems}">
           <div class="col-3">
-            <div class="card">
-              <img class="card-img-top" src="${item.productImageSource}" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">${item.productTitle}</h5>
-                <p class="card-text">${item.productDescription @ context='html'}</p>
+            <a href="${item.productPath}">
+              <div class="card">
+                <img class="card-img-top" src="${item.productImageSource}" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">${item.productTitle}</h5>
+                  <p class="card-text">${item.productDescription @ context='html'}</p>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
         </sly>
       </sly>

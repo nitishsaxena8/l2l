@@ -9,6 +9,7 @@ import java.util.Map;
 
 import javax.net.ssl.SSLContext;
 
+import com.deloitte.aem.lead2loyalty.core.service.utility.RestClient;
 import org.apache.commons.lang.StringUtils;
 import org.apache.http.HttpResponse;
 import org.apache.http.MethodNotSupportedException;
@@ -42,7 +43,6 @@ import org.slf4j.LoggerFactory;
 
 import com.deloitte.aem.lead2loyalty.core.beans.APIResponse;
 import com.deloitte.aem.lead2loyalty.core.beans.BaseRequest;
-import com.deloitte.aem.lead2loyalty.core.service.utility.RestClient;
 import com.deloitte.aem.lead2loyalty.core.service.utility.configs.RestClientConfigurations;
 import com.deloitte.aem.lead2loyalty.core.util.RestServiceConstants;
 import com.deloitte.aem.lead2loyalty.core.util.RestServiceUtils;

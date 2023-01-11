@@ -1,9 +1,14 @@
 package com.deloitte.aem.lead2loyalty.core.models;
 
+import com.deloitte.aem.lead2loyalty.core.util.ServiceUtils;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import org.apache.sling.api.resource.Resource;
+import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.injectorspecific.OSGiService;
+import org.apache.sling.models.annotations.injectorspecific.SlingObject;
+import org.apache.sling.settings.SlingSettingsService;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
@@ -15,12 +20,20 @@ public class TileItem {
     @Inject
     private String productTitle;
 
+    @SlingObject
+    private ResourceResolver resourceResolver;
+
+    @OSGiService
+    private SlingSettingsService settingsService;
+
     @Inject
     private String productDescription;
 
-
     @Inject
     private String productImageSource;
+
+    @Inject
+    private String productPath;
 
     @PostConstruct
     protected void init() {
@@ -50,5 +63,13 @@ public class TileItem {
 
     public void setProductImageSource(String productImageSource) {
         this.productImageSource = productImageSource;
+    }
+
+    public String getProductPath() {
+        return ServiceUtils.getLink(resourceResolver, productPath, settingsService);
+    }
+
+    public void setProductPath(String productPath) {
+        this.productPath = ServiceUtils.getLink(resourceResolver, productPath, settingsService);
     }
 }

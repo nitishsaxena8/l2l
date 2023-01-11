@@ -1,31 +1,32 @@
 package com.deloitte.aem.lead2loyalty.core.models;
+
 import com.deloitte.aem.lead2loyalty.core.util.ServiceUtils;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
+import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
-import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.settings.SlingSettingsService;
-
-import javax.inject.Named;
 
 
 @Model(adaptables = { SlingHttpServletRequest.class,
 		Resource.class }, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
-public class SecondaryListModel {
-	
-	@ValueMapValue
-	@Named("tr_secondarylinkTitle")
-	private String secondarylinkTitle;
+public class CtaModel {
 
 	@ValueMapValue
-	private String secondarylinkUrl;
+	private String atmCtaLabel;
 
 	@ValueMapValue
-	private String openInNewWindowsecondary;
+	private String atmCtaLink;
+
+	@ValueMapValue
+	private String atmCtaTarget;
+
+	@ValueMapValue
+	private String atmCtaType;
 
 	@SlingObject
 	private ResourceResolver resourceResolver;
@@ -33,30 +34,35 @@ public class SecondaryListModel {
 	@OSGiService
 	private SlingSettingsService settingsService;
 
-	public String getSecondarylinkTitle() {
-		return secondarylinkTitle;
+	public String getAtmCtaLabel() {
+		return atmCtaLabel;
 	}
 
-	public void setSecondarylinkTitle(String secondarylinkTitle) {
-		this.secondarylinkTitle = secondarylinkTitle;
+	public void setAtmCtaLabel(String atmCtaLabel) {
+		this.atmCtaLabel = atmCtaLabel;
 	}
 
-	public String getSecondarylinkUrl() {
-		return ServiceUtils.getLink(resourceResolver, secondarylinkUrl, settingsService);
+	public String getAtmCtaLink() {
+		return ServiceUtils.getLink(resourceResolver, atmCtaLink, settingsService);
 	}
 
-	public void setSecondarylinkUrl(String secondarylinkUrl) {
-		this.secondarylinkUrl = secondarylinkUrl;
+	public void setAtmCtaLink(String atmCtaLink) {
+		this.atmCtaLink = atmCtaLink;
 	}
 
-	public String getOpenInNewWindowsecondary() {
-		return openInNewWindowsecondary;
+	public String getAtmCtaTarget() {
+		return atmCtaTarget;
 	}
 
-	public void setOpenInNewWindowsecondary(String openInNewWindowsecondary) {
-		this.openInNewWindowsecondary = openInNewWindowsecondary;
+	public void setAtmCtaTarget(String atmCtaTarget) {
+		this.atmCtaTarget = atmCtaTarget;
 	}
 
-	
+	public String getAtmCtaType() {
+		return atmCtaType;
+	}
 
+	public void setAtmCtaType(String atmCtaType) {
+		this.atmCtaType = atmCtaType;
+	}
 }

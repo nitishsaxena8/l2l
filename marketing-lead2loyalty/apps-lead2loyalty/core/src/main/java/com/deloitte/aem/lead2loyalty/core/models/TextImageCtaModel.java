@@ -14,6 +14,10 @@ import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
 import com.adobe.cq.export.json.ExporterConstants;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
 @Model(adaptables = { SlingHttpServletRequest.class,
 		Resource.class }, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 
@@ -42,8 +46,20 @@ public class TextImageCtaModel {
 	@Via("resource")
 	private Resource ctaButton;
 
+	List<CtaModel> ctaModelList = new ArrayList<>();
+
 	@PostConstruct
 	protected void init() {
+
+		if (ctaButton != null){
+			Iterator<Resource> ctaResourceItr = ctaButton.getChildren().iterator();
+			while (ctaResourceItr.hasNext()) {
+				Resource ctaResource = ctaResourceItr.next();
+				CtaModel ctaModel = ctaResource.adaptTo(CtaModel.class);
+				ctaModelList.add(ctaModel);
+			}
+		}
+
 	}
 
 	public Resource getCtaButton() {
@@ -70,4 +86,11 @@ public class TextImageCtaModel {
 		return imgAlignment;
 	}
 
+	public List<CtaModel> getCtaModelList() {
+		return ctaModelList;
+	}
+
+	public void setCtaModelList(List<CtaModel> ctaModelList) {
+		this.ctaModelList = ctaModelList;
+	}
 }

@@ -8,6 +8,7 @@ import java.util.Map;
 
 import javax.annotation.PostConstruct;
 
+import com.deloitte.aem.lead2loyalty.core.util.ServiceUtils;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.SlingHttpServletRequest;
@@ -16,6 +17,7 @@ import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.resource.ValueMap;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
@@ -27,6 +29,7 @@ import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.api.PageFilter;
 import com.day.cq.wcm.api.PageManager;
 import com.deloitte.aem.lead2loyalty.core.beans.ProductsBean;
+import org.apache.sling.settings.SlingSettingsService;
 
 @Model(adaptables = { SlingHttpServletRequest.class,
 		Resource.class }, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
@@ -42,6 +45,9 @@ public class ProductListingModel {
 	private List<ProductsBean> accordionCategoryList;
 
 	private Map<String, List<ProductsBean>> accordionMap;
+
+	@OSGiService
+	private SlingSettingsService settingsService;
 
 	@PostConstruct
 	protected void init() {
@@ -98,7 +104,9 @@ public class ProductListingModel {
 							: StringUtils.EMPTY);
 
 					productsBean.setDepth(childPageDepth);
-					productsBean.setPath(childPage.getPath());
+
+					productsBean.setPath(ServiceUtils.getLink(resourceResolver,
+							childPage.getPath(), settingsService));
 
 					productsBean.setParentTitle(parentTitle != null ? parentTitle : StringUtils.EMPTY);
 					productsBean.setParentPath(parentPath != null ? parentPath : StringUtils.EMPTY);

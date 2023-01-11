@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2022-11-02T21:30:02.162+05:30"
+        cq:lastModifiedBy="admin"
+        cq:tags="[experience-fragments:variation/web]"
+        cq:template="/conf/xpbootstrap/settings/wcm/templates/xf-web-variation"
+        cq:xfMasterVariation="{Boolean}true"
+        cq:xfVariantType="web"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Footer"
+        sling:resourceType="lead2loyalty/components/content/organisms/xfpage">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="xpbootstrap/components/content/organisms/root-container"
+            layout="responsiveGrid">
+            <footer
+                jcr:created="{Date}2022-12-12T14:04:01.021+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2022-12-12T14:05:44.210+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="lead2loyalty/components/content/organisms/footer/v1/footer">
+                <utilityLinks jcr:primaryType="nt:unstructured">
+                    <item0
+                        jcr:primaryType="nt:unstructured"
+                        tr_linkTitle="WAY TO BUY">
+                        <secondaryLinks jcr:primaryType="nt:unstructured">
+                            <item0
+                                jcr:primaryType="nt:unstructured"
+                                openInNewWindowsecondary="false"
+                                secondarylinkUrl="#"
+                                tr_secondarylinkTitle="Shop Online"/>
+                            <item1
+                                jcr:primaryType="nt:unstructured"
+                                openInNewWindowsecondary="false"
+                                secondarylinkUrl="#"
+                                tr_secondarylinkTitle="Call our Customer Executive"/>
+                            <item2
+                                jcr:primaryType="nt:unstructured"
+                                openInNewWindowsecondary="false"
+                                secondarylinkUrl="#"
+                                tr_secondarylinkTitle="Enterprise Store"/>
+                        </secondaryLinks>
+                    </item0>
+                    <item1
+                        jcr:primaryType="nt:unstructured"
+                        tr_linkTitle="SUPPORT">
+                        <secondaryLinks jcr:primaryType="nt:unstructured">
+                            <item0
+                                jcr:primaryType="nt:unstructured"
+                                openInNewWindowsecondary="false"
+                                secondarylinkUrl="#"
+                                tr_secondarylinkTitle="Download Drivers"/>
+                            <item1
+                                jcr:primaryType="nt:unstructured"
+                                openInNewWindowsecondary="false"
+                                secondarylinkUrl="#"
+                                tr_secondarylinkTitle="Support &amp; Troubleshooting"/>
+                            <item2
+                                jcr:primaryType="nt:unstructured"
+                                openInNewWindowsecondary="false"
+                                secondarylinkUrl="#"
+                                tr_secondarylinkTitle="Traning &amp; Certification"/>
+                        </secondaryLinks>
+                    </item1>
+                </utilityLinks>
+            </footer>
+        </root>
+    </jcr:content>
+</jcr:root>

@@ -709,3 +709,8 @@ $space-x: 8px;
 .stretch-image .aem-Grid.aem-Grid--12.aem-Grid--default--12 .mle--image {
     height: 100%;
 }
+
+.product-list-tile a {
+	text-decoration: none;
+    color: black;
+}

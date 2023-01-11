@@ -47,23 +47,23 @@
 			</div>
 
 			<sly data-sly-list.accordionMap="${productListingModel.accordionMap}">
-				<div class="accordionFilter" id="product-${accordionMapList.index}">
+				<div class="accordion" id="accordion">
 					<div class="card-header fw-bold my-2" id="headingOne">
-						<div class="cardTitle"
-							 data-toggle="collapse"
-							 data-target="#panel-${accordionMapList.index}"
-							 aria-expanded="true"
-							 aria-controls="collapseOne" data-title="${accordionMap}">
+						<div
+								data-toggle="collapse"
+								data-target="#collapseOne"
+								aria-expanded="true"
+								aria-controls="collapseOne">
 							${accordionMap}
 						</div>
 					</div>
 
 					<sly data-sly-test.accordionList="${productListingModel.accordionMap[accordionMap]}">
 						<div data-sly-list.accList="${accordionList}"
-							 id="panel-${accordionMapList.index}"
-							 class="collapse panel show"
+							 id="collapseOne"
+							 class="collapse show"
 							 aria-labelledby="headingOne"
-							 data-parent="product-${accordionMapList.index}">
+							 data-parent="#accordion">
 							<div class="card-body my-3 ms-4" data-sly-test="${accList.title}">${accList.title}</div>
 						</div>
 					</sly>
@@ -72,30 +72,23 @@
 		</div>
 
 
-		<div class="col-9 d-flex flex-wrap p-2 justify-content-between"  >
-			<div class="container px-4 d-flex flex-wrap " >
-				<div class="w-100">
-					<div class="w-100 d-flex justify-content-end">
-						<label for="sort">Sort by </label>
-						<select name="sort" id="sort" class="border-0 border-bottom">
-							<option value="Best seller">Best seller</option>
-							<option value="Popularity">Popularity</option>
-						</select>
-					</div>
-				</div>
-				<div class="row gx-3 d-flex flex-wrap " data-sly-list.product="${productListingModel.productList}">
-					<div class="col-sm-4 my-3 resultsWrapper d-none" style="min-width: 30%" id="product-${productList.index}-results" data-parent="${product.parentTitle}">
-						<div class="p-3 shadow-sm">
-							<img src="/content/dam/lead2loyalty/circuit.jpg" class="card-img-top" alt="product image" />
-							<div class="card-body">
-								<p class="card-text">
-									${product.description}
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
+		<div class="col-9 d-flex flex-wrap p-2 justify-content-between">
+			<div class="container px-4 d-flex flex-wrap">
 
+				<div class="row gx-3 d-flex flex-wrap"  data-sly-list.product="${productListingModel.productList}">
+					<div class="col my-3 product-list-tile" style="min-width: 30%">
+						<a href="${product.path}">
+							<div class="p-3 shadow-sm">
+								<img src="${product.image}" class="card-img-top" alt="product image" />
+								<div class="card-body">
+									<p class="card-text">
+										${product.description}
+									</p>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

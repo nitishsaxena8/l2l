@@ -5,15 +5,27 @@
 
 <sly data-sly-test.pagename = "${ dataLayerHelper.pageName ? dataLayerHelper.pageName : pageProperties.jcr:title}"></sly>
 
+
 <script type="text/javascript">
-	digitalData.page = {
-	"pageName" : "${pagename @context='text'}",
-	"pageType" : "${dataLayerHelper.pageType @context='text'}",
-	"type"     : "${dataLayerHelper.type @context='text'}",
-	"contentType" : "${dataLayerHelper.contentType @context='text'}",
-	"channel" : "${dataLayerHelper.channel @context='text'}",
-	"category" : "${dataLayerHelper.category @context='text'}",
-	"category1" : "${dataLayerHelper.category1 @context='text'}",
-	"category2" : "${dataLayerHelper.category2 @context='text'}"
-	}
+
+    digitalData.page = {};
+
+    digitalData.page = {
+        'pageInfo':{
+            'pageID':'',
+            'pageName': '${dataLayerHelper.pageName @ context="text"}',
+            'pageType': 'Product page',
+            'title': '${dataLayerHelper.pageTitle @ context="text"}',
+            'pageURL': '${dataLayerHelper.pagePath @ context="text"}',
+            'pageReferrer':''
+         }
+
+    }
+
+    digitalData.user = {
+        'authState':'not-authenticate',
+        'email':'',
+        'userId':''
+    }
+
 </script>
