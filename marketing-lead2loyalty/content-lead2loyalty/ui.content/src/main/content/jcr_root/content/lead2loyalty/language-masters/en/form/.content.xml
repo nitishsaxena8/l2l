@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2022-12-14T14:45:44.301+05:30"
+        cq:lastModifiedBy="admin"
+        cq:template="/conf/lead2loyalty/settings/wcm/templates/form-page"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Form"
+        sling:resourceType="lead2loyalty/components/content/organisms/page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="xpbootstrap/components/content/organisms/xp-container"
+            layout="responsiveGrid">
+            <container jcr:primaryType="nt:unstructured">
+                <container
+                    jcr:lastModified="{Date}2022-12-13T15:24:44.133+05:30"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="xpbootstrap/components/content/organisms/xp-container"
+                    layout="responsiveGrid">
+                    <form
+                        jcr:created="{Date}2022-12-12T14:04:01.021+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2022-12-14T14:45:44.284+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="lead2loyalty/components/content/organisms/form/v1/form"
+                        formDescription="For Product updates &amp; webinar information"
+                        formRequiredFieldIndicatorText="*Indicates required field"
+                        formTitle="Audio Solution's Product Update Sign-up"/>
+                </container>
+            </container>
+        </root>
+    </jcr:content>
+</jcr:root>

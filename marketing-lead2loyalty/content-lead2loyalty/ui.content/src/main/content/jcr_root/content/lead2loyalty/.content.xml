@@ -1,7 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
-    <jcr:content/>
+    <jcr:content
+        cq:allowedTemplates="[/conf/lead2loyalty/settings/wcm/templates/(?!xf-).*]"
+        cq:conf="/conf/lead2loyalty"
+        cq:redirectTarget="/content/lead2loyalty/us/en"
+        cq:template="/conf/lead2loyalty/settings/wcm/templates/home-page"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Lead2Loyalty"
+        sling:configRef="/conf/lead2loyalty"
+        sling:redirect="{Boolean}true"
+        sling:redirectStatus="{Long}302"
+        sling:resourceType="lead2loyalty/components/content/organisms/homepage">
+        <servlets jcr:primaryType="nt:unstructured">
+            <product-data
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="services/products/json"
+                rootPage="/content/lead2loyalty/language-masters/en/home-page/products"/>
+        </servlets>
+    </jcr:content>
     <language-masters/>
     <us/>
 </jcr:root>

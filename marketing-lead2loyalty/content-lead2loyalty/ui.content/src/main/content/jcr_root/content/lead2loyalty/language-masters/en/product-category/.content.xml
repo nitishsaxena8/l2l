@@ -4,7 +4,7 @@
     <jcr:content
         cq:lastModified="{Date}2023-01-05T15:57:11.634+05:30"
         cq:lastModifiedBy="admin"
-        cq:template="/conf/lead2loyalty/settings/wcm/templates/product-detail-page"
+        cq:template="/conf/lead2loyalty/settings/wcm/templates/product-category-page"
         jcr:primaryType="cq:PageContent"
         jcr:title="Product Category"
         sling:resourceType="lead2loyalty/components/content/organisms/page">

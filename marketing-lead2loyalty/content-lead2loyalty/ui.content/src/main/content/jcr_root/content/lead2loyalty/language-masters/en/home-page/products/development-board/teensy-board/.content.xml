@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
-    <product-detail-page/>
     <jcr:content
-        cq:contextHubPath="/etc/cloudsettings/default/contexthub"
-        cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
-        cq:template="/conf/lead2loyalty/settings/wcm/templates/home-page"
+        cq:lastModified="{Date}2022-12-19T13:12:30.526+05:30"
+        cq:lastModifiedBy="admin"
+        cq:template="/conf/lead2loyalty/settings/wcm/templates/product-detail-page"
+        jcr:description="This is test description for Teensy Board"
         jcr:primaryType="cq:PageContent"
-        jcr:title="English"
+        jcr:title="Teensy Board"
         sling:resourceType="lead2loyalty/components/content/organisms/page"
-        pageTitle="Lead2Loyalty">
+        image="/content/dam/lead2loyalty/circuit-7.jpg"
+        pwaCachestrategy="staleWhileRevalidate"
+        pwaDisplay="standalone"
+        pwaOrientation="any">
         <root
             jcr:primaryType="nt:unstructured"
             sling:resourceType="xpbootstrap/components/content/organisms/xp-container"
             layout="responsiveGrid"/>
     </jcr:content>
-    <home-page/>
-    <form/>
-    <test-page/>
-    <product-category/>
 </jcr:root>

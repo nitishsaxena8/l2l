@@ -1,6 +1,8 @@
 package com.deloitte.aem.lead2loyalty.core.models;
 
 import com.day.cq.wcm.api.Page;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.jackrabbit.JcrConstants;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
@@ -37,6 +39,8 @@ public class DataLayerModel {
 
 	private String pagePath;
 
+	private String action;
+
 	/** The current page. */
 	@Inject
 	private Page currentPage;
@@ -60,6 +64,12 @@ public class DataLayerModel {
 			}
 		}
 
+		String templatePath = currentPage.getProperties().get("cq:template", String.class);
+		if (StringUtils.isNotEmpty(templatePath)) {
+			String[] path = templatePath.split("/");
+			action = path[path.length - 1].replaceAll("-", " ");
+		}
+
 		pagePath = currentPage.getPath();
 
 		LOGGER.debug("Exiting DataLayerModel");
@@ -80,4 +90,7 @@ public class DataLayerModel {
 		return pageTitle;
 	}
 
+	public String getAction() {
+		return action;
+	}
 }

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2022-12-01T02:25:00.412+05:30"
+        cq:lastModifiedBy="admin"
+        cq:lastRolledout="{Date}2022-12-01T02:25:00.414+05:30"
+        cq:lastRolledoutBy="admin"
+        cq:template="/conf/lead2loyalty/settings/wcm/templates/home-page"
+        jcr:mixinTypes="[cq:LiveRelationship]"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Home Page"
+        sling:resourceType="lead2loyalty/components/content/organisms/page">
+        <root
+            cq:lastRolledout="{Date}2022-12-01T02:25:00.408+05:30"
+            cq:lastRolledoutBy="admin"
+            jcr:mixinTypes="[cq:LiveRelationship]"
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="xpbootstrap/components/content/organisms/xp-container"
+            layout="responsiveGrid">
+            <mlebanner
+                cq:lastRolledout="{Date}2022-12-01T02:25:00.413+05:30"
+                cq:lastRolledoutBy="admin"
+                jcr:created="{Date}2022-12-01T02:17:34.039+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2022-12-01T02:25:00.411+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:mixinTypes="[cq:LiveRelationship]"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="xpbootstrap/components/content/molecules/mleBanner"/>
+        </root>
+    </jcr:content>
+</jcr:root>
