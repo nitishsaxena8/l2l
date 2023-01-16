@@ -1,94 +1,135 @@
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"
+	 data-sly-call="${template.placeholder @ isEmpty=!properties.title}"
+	 data-sly-use.productModel="com.deloitte.aem.lead2loyalty.core.models.ProductDetailsModel" />
+
+
 <div class="row ${properties.marginTop} ${properties.mobileMarginTop} ${properties.marginBottom} ${properties.mobileMarginBottom}">
+	
+	<div class="row ">
       <div class="col-6">
-        <div id="carouselExampleIndicators" class="carousel slide h-100" data-ride="carousel">
-          <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1" class=""></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2" class=""></li>
-          </ol>
-          <div class="carousel-inner h-100">
-            <div class="carousel-item h-100 active">
-              <img class="d-block w-100 h-100" src="/content/dam/lead2loyalty/cell-2.jpg?$defaultResponsive$" alt="First slide">
-            </div>
-            <div class="carousel-item h-100">
-              <img class="d-block w-100 h-100" src="/content/dam/lead2loyalty/cell-3.jpg?$defaultResponsive$" alt="Second slide">
-            </div>
-            <div class="carousel-item h-100">
-              <img class="d-block w-100 h-100" src="/content/dam/lead2loyalty/cell-4.jpg?$defaultResponsive$" alt="Third slide">
-            </div>
-          </div>
-          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-        </div>
+        Carousel content
       </div>
       <div class="col-6">
+		<div class="d-flex justify-content-end ml-4">
+		  <button type="button" class="btn btn-link text-decoration-none mb-2" style="color: black;" data-bs-toggle="modal" id="shareWithTeamsBtn" data-bs-target="#exampleModal">${productModel.shareCtaLabel}</button>
+		</div>
         <div class="product-heading">
-          <h5>M18 Bluetooth 4.2Audio Receiver Module Lossless Car Speaker Headphone Amplifier Board Wireless Refit</h5>
-          <p>Product ID: AUD09345424</p>
+
+
+          <h5>${productModel.title}</h5>
+          <p>${productModel.productid}</p>
           <hr class="my-2">
           <div class="quote d-flex justify-content-between">
             <div>
-              <span>Pricing</span>
-              <p>Estimated cost for different quantities.</p>
+              <h6>${productModel.pricingTitle}</h6>
+              <p>${productModel.pricingDesc}</p>
             </div>
             <div>
-              <button type="button" class="btn btn-dark">Request a Quote</button>
+              <button type="button" class="btn btn-dark">${properties.pricingCtaLabel}</button>
             </div>
           </div>
-          <table class="table table-borderless shadow-sm p-3 mb-5 bg-white rounded">
-            <thead>
-              <tr>
-                <th>Quantity</th>
-                <th>Estimate</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>10</td>
-                <td>$100</td>
-              </tr>
-              <tr>
-                <td>100</td>
-                <td>$1000</td>
-              </tr>
-              <tr>
-                <td>1000</td>
-                <td>$10000</td>
-              </tr>
-            </tbody>
-          </table>
-          <div class="d-flex justify-content-between">
-            <div class="d-flex align-items-center">
-              <div><span>Quantity</span></div>
-              
-              <div class="d-flex align-items-center border border-dark rounded">
-                <span class="input-group-btn">
-                  <button type="button" class="btn btn-number btn-lg">
-                    <span>+</span>
-                  </button>
-                </span>
-                <span>1</span>
-                <span class="input-group-btn">
-                  <button type="button" class="btn btn-number btn-lg">
-                    <span>-</span>
-                  </button>
-                </span>
-              </div>
-              <!-- <button type="button" class="btn btn-outline-dark btn-lg">+ &nbsp&nbsp1&nbsp&nbsp -</button> -->
-              
-            </div>
-            <div>
-              <button type="button" class="btn btn-dark btn-lg">Buy Now</button>
-              <button type="button" class="btn btn-outline-dark btn-lg">Add to Cart</button>
-            </div>
+          <div>
+           		<!--   <h6>Product description</h6>
+              <p>This MH-M18 Wireless Bluetooth Audio Receiver Board is a low power design solution, which supports the latest Bluetooth 4.2 transmission. Convert your old speakers into a Bluetooth equipped speaker with help of this module. With a maximum range of 20 meters. This MH-M18 Wireless Bluetooth Receiver Board is a low power design solution, which supports the latest Bluetooth 4.2 transmission. Convert your old speakers into a Bluetooth equipped speaker with the help of this module. With a maximum range of 20 meters.</p>
+				-->
+					${productModel.description @context='html'}
+			</div>
+
+		   <div class="row background-color px-2 py-3 mx-1">
+			   <sly data-sly-list.child="${productModel.ctaModelList}">
+					<div class="col-6" >
+		              <button type="button" class="btn btn-dark btn-md w-100">${child.atmCtaLabel}</button>
+					</div>
+				</sly>
           </div>
 
         </div>
       </div>
     </div>
+
+
+
+<!-- Modal -->
+<div class="modal fade show" id="shareWithTeamsBtnModal" tabindex="-1" aria-labelledby="exampleModalLabel" style="display: block;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">${productModel.modalTitle}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+		<div class="row justify-content-center">
+      	<div class="col-12">
+		<form>
+		  <p class="mb-4">${productModel.modalDesc}</p>
+          <div class="row mb-4">
+            <div class="col-4">
+                <label for="exampleInputTeam1" class="form-label">${productModel.teamFieldLabel}</label>
+                <input type="text" class="form-control" id="exampleInputTeam1">
+            </div>
+        
+            <div class="col-4">
+                <label for="exampleInputName1" class="form-label">${productModel.nameFieldLabel}</label>
+                <input type="text" class="form-control" id="exampleInputName1">
+            </div>
+        
+            <div class="col-4">
+                <label for="exampleInputEmail1" class="form-label">${productModel.emailIdFieldLabel}</label>
+                <input type="email" class="form-control" id="exampleInputEmail1">
+            </div>
+          </div>
+        
+          <div class="row mb-4">
+            <div class="col-4">
+                <label for="exampleInputTeam2" class="form-label">${productModel.teamFieldLabel}</label>
+                <input type="text" class="form-control" id="exampleInputTeam2">
+            </div>
+        
+            <div class="col-4">
+                <label for="exampleInputName2" class="form-label">${productModel.nameFieldLabel}</label>
+                <input type="text" class="form-control" id="exampleInputName2">
+            </div>
+        
+            <div class="col-4">
+                <label for="exampleInputEmail2" class="form-label">${productModel.emailIdFieldLabel}</label>
+                <input type="email" class="form-control" id="exampleInputEmail2">
+            </div>
+          </div>
+        
+          <div class="row mb-4">
+            <div class="col-4">
+                <label for="exampleInputTeam3" class="form-label">${productModel.teamFieldLabel}</label>
+                <input type="text" class="form-control" id="exampleInputTeam3">
+            </div>
+        
+            <div class="col-4">
+                <label for="exampleInputName3" class="form-label">${productModel.nameFieldLabel}</label>
+                <input type="text" class="form-control" id="exampleInputName3">
+            </div>
+        
+            <div class="col-4">
+                <label for="exampleInputEmail3" class="form-label">${productModel.emailIdFieldLabel}</label>
+                <input type="email" class="form-control" id="exampleInputEmail3">
+            </div>
+          </div>
+          <div class="mb-3 form-addition">
+			<button type="button" class="btn btn-link text-decoration-none mb-2" style="color: black;">+ Add More</button>
+          </div>
+        </form>
+        </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary submit-btn">${productModel.modalCtaLabel}</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+</div>
