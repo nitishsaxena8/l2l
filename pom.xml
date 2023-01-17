@@ -12,7 +12,7 @@
     <description>xp-reactor</description>
 
     <modules>
-        <!-- <module>xpbootstrap</module> -->
+        <module>xpbootstrap</module>
 		<module>marketing-lead2loyalty</module>
     </modules>
 </project>
