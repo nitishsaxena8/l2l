@@ -1,135 +1,120 @@
 <sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"
-	 data-sly-call="${template.placeholder @ isEmpty=!properties.title}"
-	 data-sly-use.productModel="com.deloitte.aem.lead2loyalty.core.models.ProductDetailsModel" />
-
+     data-sly-call="${template.placeholder @ isEmpty=!properties.title}"
+     data-sly-use.productModel="com.deloitte.aem.lead2loyalty.core.models.ProductDetailsModel" />
 
 <div class="row ${properties.marginTop} ${properties.mobileMarginTop} ${properties.marginBottom} ${properties.mobileMarginBottom}">
-	
-	<div class="row ">
-      <div class="col-6">
-        Carousel content
-      </div>
-      <div class="col-6">
-		<div class="d-flex justify-content-end ml-4">
-		  <button type="button" class="btn btn-link text-decoration-none mb-2" style="color: black;" data-bs-toggle="modal" id="shareWithTeamsBtn" data-bs-target="#exampleModal">${productModel.shareCtaLabel}</button>
-		</div>
-        <div class="product-heading">
-
-
-          <h5>${productModel.title}</h5>
-          <p>${productModel.productId}</p>
-          <hr class="my-2">
-          <div class="quote d-flex justify-content-between">
-            <div>
-              <h6>${productModel.pricingTitle}</h6>
-              <p>${productModel.pricingDesc}</p>
-            </div>
-            <div>
-              <button type="button" class="btn btn-dark">${properties.pricingCtaLabel}</button>
-            </div>
-          </div>
-          <div>
-           		<!--   <h6>Product description</h6>
-              <p>This MH-M18 Wireless Bluetooth Audio Receiver Board is a low power design solution, which supports the latest Bluetooth 4.2 transmission. Convert your old speakers into a Bluetooth equipped speaker with help of this module. With a maximum range of 20 meters. This MH-M18 Wireless Bluetooth Receiver Board is a low power design solution, which supports the latest Bluetooth 4.2 transmission. Convert your old speakers into a Bluetooth equipped speaker with the help of this module. With a maximum range of 20 meters.</p>
-				-->
-					${productModel.description @context='html'}
-			</div>
-
-		   <div class="row background-color px-2 py-3 mx-1">
-			   <sly data-sly-list.child="${productModel.ctaModelList}">
-					<div class="col-6" >
-		              <button type="button" class="btn btn-dark btn-md w-100">${child.atmCtaLabel}</button>
-					</div>
-				</sly>
-          </div>
-
+    <div class="row ">
+        <div class="col-6">
+            Carousel content
         </div>
-      </div>
+        <div class="col-6">
+            <div class="d-flex justify-content-end ml-4">
+                <button type="button" class="btn btn-link text-decoration-none mb-2" style="color: black;" data-bs-toggle="modal" id="shareWithTeamsBtn" data-target="#shareWithTeamsBtnModal" data-toggle="modal">${productModel.shareCtaLabel}</button>
+            </div>
+            <div class="product-heading">
+                <h5>${productModel.title}</h5>
+                <p>${productModel.productId}</p>
+                <hr class="my-2">
+                <div class="quote d-flex justify-content-between">
+                    <div>
+                        <h6>${productModel.pricingTitle}</h6>
+                        <p>${productModel.pricingDesc}</p>
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn-dark">${properties.pricingCtaLabel}</button>
+                    </div>
+                </div>
+                <div>
+                    ${productModel.description @context='html'}
+                </div>
+                <div class="row background-color px-2 py-3 mx-1">
+                    <sly data-sly-list.child="${productModel.ctaModelList}">
+                        <div class="col-6" >
+                            <button type="button" class="btn btn-dark btn-md w-100">${child.atmCtaLabel}</button>
+                        </div>
+                    </sly>
+                </div>
+            </div>
+        </div>
     </div>
 
 
 
-<!-- Modal -->
-<div class="modal fade show" id="shareWithTeamsBtnModal" tabindex="-1" aria-labelledby="exampleModalLabel" style="display: none;">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">${productModel.modalTitle}</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
+    <!-- Modal -->
+    <div  class="modal fade" id="myModal" role="dialog" id="shareWithTeamsBtnModal" tabindex="-1" aria-labelledby="exampleModalLabel" style="display: none;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">${productModel.modalTitle}</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" data-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row justify-content-center">
+                        <div class="col-12">
+                            <form>
+                                <p class="mb-4">${productModel.modalDesc}</p>
+                                <div class="row mb-4">
+                                    <div class="col-4">
+                                        <label for="exampleInputTeam1" class="form-label">${productModel.teamFieldLabel}</label>
+                                        <input type="text" class="form-control" id="exampleInputTeam1">
+                                    </div>
 
-		<div class="row justify-content-center">
-      	<div class="col-12">
-		<form>
-		  <p class="mb-4">${productModel.modalDesc}</p>
-          <div class="row mb-4">
-            <div class="col-4">
-                <label for="exampleInputTeam1" class="form-label">${productModel.teamFieldLabel}</label>
-                <input type="text" class="form-control" id="exampleInputTeam1">
+                                    <div class="col-4">
+                                        <label for="exampleInputName1" class="form-label">${productModel.nameFieldLabel}</label>
+                                        <input type="text" class="form-control" id="exampleInputName1">
+                                    </div>
+
+                                    <div class="col-4">
+                                        <label for="exampleInputEmail1" class="form-label">${productModel.emailIdFieldLabel}</label>
+                                        <input type="email" class="form-control" id="exampleInputEmail1">
+                                    </div>
+                                </div>
+
+                                <div class="row mb-4">
+                                    <div class="col-4">
+                                        <label for="exampleInputTeam2" class="form-label">${productModel.teamFieldLabel}</label>
+                                        <input type="text" class="form-control" id="exampleInputTeam2">
+                                    </div>
+
+                                    <div class="col-4">
+                                        <label for="exampleInputName2" class="form-label">${productModel.nameFieldLabel}</label>
+                                        <input type="text" class="form-control" id="exampleInputName2">
+                                    </div>
+
+                                    <div class="col-4">
+                                        <label for="exampleInputEmail2" class="form-label">${productModel.emailIdFieldLabel}</label>
+                                        <input type="email" class="form-control" id="exampleInputEmail2">
+                                    </div>
+                                </div>
+
+                                <div class="row mb-4">
+                                    <div class="col-4">
+                                        <label for="exampleInputTeam3" class="form-label">${productModel.teamFieldLabel}</label>
+                                        <input type="text" class="form-control" id="exampleInputTeam3">
+                                    </div>
+
+                                    <div class="col-4">
+                                        <label for="exampleInputName3" class="form-label">${productModel.nameFieldLabel}</label>
+                                        <input type="text" class="form-control" id="exampleInputName3">
+                                    </div>
+
+                                    <div class="col-4">
+                                        <label for="exampleInputEmail3" class="form-label">${productModel.emailIdFieldLabel}</label>
+                                        <input type="email" class="form-control" id="exampleInputEmail3">
+                                    </div>
+                                </div>
+                                <div class="mb-3 form-addition">
+                                    <button type="button" class="btn btn-link text-decoration-none mb-2" style="color: black;">+ Add More</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary submit-btn" data-dismiss="modal">${productModel.modalCtaLabel}</button>
+                </div>
             </div>
-        
-            <div class="col-4">
-                <label for="exampleInputName1" class="form-label">${productModel.nameFieldLabel}</label>
-                <input type="text" class="form-control" id="exampleInputName1">
-            </div>
-        
-            <div class="col-4">
-                <label for="exampleInputEmail1" class="form-label">${productModel.emailIdFieldLabel}</label>
-                <input type="email" class="form-control" id="exampleInputEmail1">
-            </div>
-          </div>
-        
-          <div class="row mb-4">
-            <div class="col-4">
-                <label for="exampleInputTeam2" class="form-label">${productModel.teamFieldLabel}</label>
-                <input type="text" class="form-control" id="exampleInputTeam2">
-            </div>
-        
-            <div class="col-4">
-                <label for="exampleInputName2" class="form-label">${productModel.nameFieldLabel}</label>
-                <input type="text" class="form-control" id="exampleInputName2">
-            </div>
-        
-            <div class="col-4">
-                <label for="exampleInputEmail2" class="form-label">${productModel.emailIdFieldLabel}</label>
-                <input type="email" class="form-control" id="exampleInputEmail2">
-            </div>
-          </div>
-        
-          <div class="row mb-4">
-            <div class="col-4">
-                <label for="exampleInputTeam3" class="form-label">${productModel.teamFieldLabel}</label>
-                <input type="text" class="form-control" id="exampleInputTeam3">
-            </div>
-        
-            <div class="col-4">
-                <label for="exampleInputName3" class="form-label">${productModel.nameFieldLabel}</label>
-                <input type="text" class="form-control" id="exampleInputName3">
-            </div>
-        
-            <div class="col-4">
-                <label for="exampleInputEmail3" class="form-label">${productModel.emailIdFieldLabel}</label>
-                <input type="email" class="form-control" id="exampleInputEmail3">
-            </div>
-          </div>
-          <div class="mb-3 form-addition">
-			<button type="button" class="btn btn-link text-decoration-none mb-2" style="color: black;">+ Add More</button>
-          </div>
-        </form>
         </div>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary submit-btn">${productModel.modalCtaLabel}</button>
-      </div>
     </div>
-  </div>
-</div>
-
-
-
-
-
 
 </div>

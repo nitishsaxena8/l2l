@@ -5,7 +5,7 @@
         cq:lastModified="{Date}2022-12-21T11:27:15.096+05:30"
         cq:lastModifiedBy="admin"
         cq:tags="[experience-fragments:variation/web,experience-fragments:variation/screens]"
-        cq:template="/conf/lead2loyalty/settings/wcm/templates/product-detail-page"
+        cq:template="/conf/lead2loyalty/settings/wcm/templates/product-category-page"
         jcr:primaryType="cq:PageContent"
         jcr:title="Sensors"
         sling:resourceType="lead2loyalty/components/content/organisms/page"
@@ -15,6 +15,265 @@
         <root
             jcr:primaryType="nt:unstructured"
             sling:resourceType="xpbootstrap/components/content/organisms/xp-container"
-            layout="responsiveGrid"/>
+            layout="responsiveGrid">
+            <container jcr:primaryType="nt:unstructured">
+                <container
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="xpbootstrap/components/content/organisms/xp-container">
+                    <text_img_cta_copy
+                        jcr:created="{Date}2023-01-09T15:58:37.929+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2023-01-11T20:13:14.745+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="lead2loyalty/components/content/organisms/text-img-cta/v1/text-img-cta"
+                        atmTextHtml="&lt;p>Your users in Shanghai will getthe same capabilites and purchasining experience as those in San Francisco, only in their own language and currency. Your users in Shanghai will getthe same capabilites and purchasining experience as those in San Francisco, only in their own language.&lt;/p>&#xd;&#xa;&lt;p>Want to know more about different type of development boards?&lt;/p>&#xd;&#xa;&lt;p>&lt;a href=&quot;/editor.html/content/lead2loyalty/language-masters/en/product-category.html#&quot;>Read More&lt;/a>&lt;/p>&#xd;&#xa;"
+                        fileReference="/content/dam/lead2loyalty/circuit-7.jpg"
+                        imgAlignment="img-right"
+                        marginBottom="margin-bottom-x"
+                        marginTop="margin-top-x"
+                        mobileMarginBottom="m-margin-bottom-x"
+                        mobileMarginTop="m-margin-top-x"
+                        textIsRich="true"
+                        title="Development Boards">
+                        <cq:responsive jcr:primaryType="nt:unstructured">
+                            <default
+                                jcr:primaryType="nt:unstructured"
+                                offset="0"
+                                width="12"/>
+                        </cq:responsive>
+                        <ctaButton jcr:primaryType="nt:unstructured">
+                            <item0
+                                jcr:primaryType="nt:unstructured"
+                                atmCtaLabel="View Products"
+                                atmCtaLink="/content/lead2loyalty/language-masters/en/home-page/products/development-board"
+                                atmCtaType="btn-primary"/>
+                        </ctaButton>
+                    </text_img_cta_copy>
+                    <xp_container_9275655
+                        cq:styleIds="[1673004790935]"
+                        jcr:created="{Date}2022-12-14T11:32:39.665+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2022-12-14T11:32:39.665+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="lead2loyalty/components/content/organisms/xp-container">
+                        <text_img_cta_1958937571
+                            jcr:created="{Date}2023-01-09T16:04:48.450+05:30"
+                            jcr:createdBy="admin"
+                            jcr:lastModified="{Date}2023-01-11T20:13:34.788+05:30"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="lead2loyalty/components/content/organisms/text-img-cta/v1/text-img-cta"
+                            atmTextHtml="&lt;p>We offer low-cost coverage for children, adults, and families who qualify for state-sponsored programs. Explore programs available in your state.We offer low-cost coverage for children, adults, and families who qualify for state-sponsored programs. Explore programs available in your state.&lt;/p>&#xd;&#xa;&lt;p>Want to know more about different types of Sensors?&lt;/p>&#xd;&#xa;&lt;p>&lt;a href=&quot;/editor.html/content/lead2loyalty/language-masters/en/product-category.html#&quot;>Read More&lt;/a>&lt;/p>&#xd;&#xa;"
+                            fileReference="/content/dam/lead2loyalty/circuit-13.jpg"
+                            imgAlignment="img-left"
+                            marginBottom="margin-bottom-x"
+                            marginTop="margin-top-x"
+                            mobileMarginBottom="m-margin-bottom-x"
+                            mobileMarginTop="m-margin-top-x"
+                            textIsRich="true"
+                            title="Sensors">
+                            <ctaButton jcr:primaryType="nt:unstructured">
+                                <item0
+                                    jcr:primaryType="nt:unstructured"
+                                    atmCtaLabel="View Products"
+                                    atmCtaLink="/content/lead2loyalty/language-masters/en/home-page/products/sensors"
+                                    atmCtaTarget="true"
+                                    atmCtaType="btn-primary"/>
+                            </ctaButton>
+                        </text_img_cta_1958937571>
+                    </xp_container_9275655>
+                    <text_img_cta_copy_co
+                        jcr:created="{Date}2023-01-09T15:58:37.929+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2023-01-11T20:14:08.804+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="lead2loyalty/components/content/organisms/text-img-cta/v1/text-img-cta"
+                        atmTextHtml="&lt;p>Your users in Shanghai will getthe same capabilites and purchasining experience as those in San Francisco, only in their own language and currency. Your users in Shanghai will getthe same capabilites and purchasining experience as those in San Francisco, only in their own language.&lt;/p>&#xd;&#xa;&lt;p>Want to know more about different type of development boards?&lt;/p>&#xd;&#xa;&lt;p>&lt;a href=&quot;/editor.html/content/lead2loyalty/language-masters/en/product-category.html#&quot;>Read More&lt;/a>&lt;/p>&#xd;&#xa;"
+                        fileReference="/content/dam/lead2loyalty/circuit-8.jpg"
+                        imgAlignment="img-right"
+                        marginBottom="margin-bottom-x"
+                        marginTop="margin-top-x"
+                        mobileMarginBottom="m-margin-bottom-x"
+                        mobileMarginTop="m-margin-top-x"
+                        textIsRich="true"
+                        title="Electronic Components">
+                        <cq:responsive jcr:primaryType="nt:unstructured">
+                            <default
+                                jcr:primaryType="nt:unstructured"
+                                offset="0"
+                                width="12"/>
+                        </cq:responsive>
+                        <ctaButton jcr:primaryType="nt:unstructured">
+                            <item0
+                                jcr:primaryType="nt:unstructured"
+                                atmCtaLabel="View Products"
+                                atmCtaLink="/content/lead2loyalty/language-masters/en/home-page/products/electronic-components"
+                                atmCtaType="btn-primary"/>
+                        </ctaButton>
+                    </text_img_cta_copy_co>
+                    <xp_container_9275655_1822097876
+                        cq:styleIds="[1673004790935]"
+                        jcr:created="{Date}2022-12-14T11:32:39.665+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2022-12-14T11:32:39.665+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="lead2loyalty/components/content/organisms/xp-container">
+                        <text_img_cta_1958937571
+                            jcr:created="{Date}2023-01-09T16:04:48.450+05:30"
+                            jcr:createdBy="admin"
+                            jcr:lastModified="{Date}2023-01-11T20:14:27.351+05:30"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="lead2loyalty/components/content/organisms/text-img-cta/v1/text-img-cta"
+                            atmTextHtml="&lt;p>We offer low-cost coverage for children, adults, and families who qualify for state-sponsored programs. Explore programs available in your state.We offer low-cost coverage for children, adults, and families who qualify for state-sponsored programs. Explore programs available in your state.&lt;/p>&#xd;&#xa;&lt;p>Want to know more about different types of Batteries?&lt;/p>&#xd;&#xa;&lt;p>&lt;a href=&quot;/editor.html/content/lead2loyalty/language-masters/en/product-category.html#&quot;>Read More&lt;/a>&lt;/p>&#xd;&#xa;"
+                            fileReference="/content/dam/lead2loyalty/cell-4.jpg"
+                            imgAlignment="img-left"
+                            marginBottom="margin-bottom-x"
+                            marginTop="margin-top-x"
+                            mobileMarginBottom="m-margin-bottom-x"
+                            mobileMarginTop="m-margin-top-x"
+                            textIsRich="true"
+                            title="Batteries and Accessories">
+                            <ctaButton jcr:primaryType="nt:unstructured">
+                                <item0
+                                    jcr:primaryType="nt:unstructured"
+                                    atmCtaLabel="View Products"
+                                    atmCtaLink="/content/lead2loyalty/language-masters/en/home-page/products/batteries-and-accessoris"
+                                    atmCtaTarget="true"
+                                    atmCtaType="btn-primary"/>
+                            </ctaButton>
+                        </text_img_cta_1958937571>
+                    </xp_container_9275655_1822097876>
+                    <text_img_cta_copy_co_307452288
+                        jcr:created="{Date}2023-01-09T15:58:37.929+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2023-01-11T20:14:46.962+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="lead2loyalty/components/content/organisms/text-img-cta/v1/text-img-cta"
+                        atmTextHtml="&lt;p>Your users in Shanghai will getthe same capabilites and purchasining experience as those in San Francisco, only in their own language and currency. Your users in Shanghai will getthe same capabilites and purchasining experience as those in San Francisco, only in their own language.&lt;/p>&#xd;&#xa;&lt;p>Want to know more about different type of IoT components?&lt;/p>&#xd;&#xa;&lt;p>&lt;a href=&quot;/editor.html/content/lead2loyalty/language-masters/en/product-category.html#&quot;>Read More&lt;/a>&lt;/p>&#xd;&#xa;"
+                        fileReference="/content/dam/lead2loyalty/circuit-1.jpg"
+                        imgAlignment="img-right"
+                        marginBottom="margin-bottom-x"
+                        marginTop="margin-top-x"
+                        mobileMarginBottom="m-margin-bottom-x"
+                        mobileMarginTop="m-margin-top-x"
+                        textIsRich="true"
+                        title="IoT and Wireless">
+                        <cq:responsive jcr:primaryType="nt:unstructured">
+                            <default
+                                jcr:primaryType="nt:unstructured"
+                                offset="0"
+                                width="12"/>
+                        </cq:responsive>
+                        <ctaButton jcr:primaryType="nt:unstructured">
+                            <item0
+                                jcr:primaryType="nt:unstructured"
+                                atmCtaLabel="View Products"
+                                atmCtaLink="/content/lead2loyalty/language-masters/en/home-page/products/iot-and-wireless"
+                                atmCtaType="btn-primary"/>
+                        </ctaButton>
+                    </text_img_cta_copy_co_307452288>
+                    <xp_container_copy
+                        cq:styleIds="[1670845915845]"
+                        jcr:created="{Date}2023-01-04T13:12:43.711+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2023-01-04T13:12:43.711+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="xpbootstrap/components/content/organisms/xp-container">
+                        <mletitle_copy_copy
+                            jcr:created="{Date}2022-12-13T15:26:52.422+05:30"
+                            jcr:createdBy="admin"
+                            jcr:lastModified="{Date}2022-12-14T11:54:46.745+05:30"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="xpbootstrap/components/content/molecules/mleTitle"
+                            atmTitleText="Training &amp; Articles"
+                            marginBottom="[margin-bottom-x,margin-bottom-x]"
+                            marginTop="[margin-top-8x,margin-top-8x]"
+                            mobileMarginBottom="[m-margin-bottom-x,m-margin-bottom-x]"
+                            mobileMarginTop="[m-margin-top-x,m-margin-top-x]">
+                            <cq:responsive jcr:primaryType="nt:unstructured">
+                                <default
+                                    jcr:primaryType="nt:unstructured"
+                                    offset="1"
+                                    width="11"/>
+                            </cq:responsive>
+                        </mletitle_copy_copy>
+                        <tiles_copy_copy
+                            jcr:created="{Date}2022-12-12T14:02:20.280+05:30"
+                            jcr:createdBy="admin"
+                            jcr:lastModified="{Date}2022-12-14T20:13:49.049+05:30"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="lead2loyalty/components/content/organisms/tiles/v1/tiles"
+                            textIsRich="[true,true,true,true]">
+                            <cq:responsive jcr:primaryType="nt:unstructured">
+                                <default
+                                    jcr:primaryType="nt:unstructured"
+                                    offset="1"
+                                    width="11"/>
+                            </cq:responsive>
+                            <tileListItems jcr:primaryType="nt:unstructured">
+                                <item0
+                                    jcr:primaryType="nt:unstructured"
+                                    productDescription="&lt;p>Some quick example text to build on the card title and make up the bulk of te card's content.&lt;/p>&#xd;&#xa;"
+                                    productImageSource="/content/dam/lead2loyalty/circuit-5.jpg"
+                                    productTitle="Products &amp; Services"/>
+                                <item1
+                                    jcr:primaryType="nt:unstructured"
+                                    productDescription="&lt;p>Some quick example text to build on the card title and makeup the bulk of the card's content. &lt;/p>&#xd;&#xa;"
+                                    productImageSource="/content/dam/lead2loyalty/circuit6.jpg"
+                                    productTitle="User &amp; Admin Roles"/>
+                                <item2
+                                    jcr:primaryType="nt:unstructured"
+                                    productDescription="&lt;p>Some quick example text to build on the card title and make up the bulk test.&lt;/p>&#xd;&#xa;"
+                                    productImageSource="/content/dam/lead2loyalty/circuit-7.jpg"
+                                    productTitle="How to Create a Quote &amp; Purchase Order"/>
+                                <item3
+                                    jcr:primaryType="nt:unstructured"
+                                    productDescription="&lt;p>Some quick example text to build on the card title and make up the bulk of the card's content.&lt;/p>&#xd;&#xa;"
+                                    productImageSource="/content/dam/lead2loyalty/circuit-8.jpg"
+                                    productTitle="Order &amp; Purchase"/>
+                            </tileListItems>
+                        </tiles_copy_copy>
+                    </xp_container_copy>
+                    <sales_tech_support_c
+                        jcr:created="{Date}2023-01-09T13:51:12.135+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2023-01-11T19:42:33.244+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="lead2loyalty/components/content/organisms/sales-tech-support/v1/sales-tech-support"
+                        fileReference="/content/dam/lead2loyalty/circuit6.jpg"
+                        imageAlt="img alt text"
+                        marginBottom="margin-bottom-x"
+                        marginTop="margin-top-x"
+                        mobileMarginBottom="m-margin-bottom-x"
+                        mobileMarginTop="m-margin-top-x"
+                        textIsRich="[true,true]">
+                        <saleSupportLinks jcr:primaryType="nt:unstructured">
+                            <item0
+                                jcr:primaryType="nt:unstructured"
+                                atmTextHtml="&lt;p>Connect with an expert for more product related details&lt;/p>&#xd;&#xa;&lt;p>&lt;a href=&quot;#&quot; target=&quot;_blank&quot;>Connect with sales support&lt;/a>&lt;/p>&#xd;&#xa;"
+                                icon="/content/dam/lead2loyalty/lead2loylty-setting.png"
+                                iconAlt="icon-1"
+                                title="Sales Support"/>
+                            <item1
+                                jcr:primaryType="nt:unstructured"
+                                atmTextHtml="&lt;p>Support for service-related technical issues.&lt;/p>&#xd;&#xa;&lt;p>&lt;a href=&quot;#&quot; target=&quot;_blank&quot;>Connect with technical support&lt;/a>&lt;/p>&#xd;&#xa;"
+                                icon="/content/dam/lead2loyalty/lead2loyalty-customer-care.png"
+                                iconAlt="icon-2"
+                                title="Technical Support"/>
+                        </saleSupportLinks>
+                    </sales_tech_support_c>
+                </container>
+            </container>
+        </root>
     </jcr:content>
 </jcr:root>

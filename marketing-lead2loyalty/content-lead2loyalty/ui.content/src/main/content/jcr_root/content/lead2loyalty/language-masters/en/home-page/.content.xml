@@ -6,7 +6,7 @@
         cq:lastModifiedBy="admin"
         cq:template="/conf/lead2loyalty/settings/wcm/templates/home-page"
         jcr:primaryType="cq:PageContent"
-        jcr:title="Home Page"
+        jcr:title="Home"
         sling:resourceType="lead2loyalty/components/content/organisms/page">
         <root
             jcr:primaryType="nt:unstructured"

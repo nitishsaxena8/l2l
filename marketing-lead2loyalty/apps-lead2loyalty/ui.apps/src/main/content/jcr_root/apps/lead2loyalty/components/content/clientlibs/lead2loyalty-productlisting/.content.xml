@@ -3,5 +3,5 @@
     jcr:primaryType="cq:ClientLibraryFolder"
     allowProxy="{Boolean}true"
     categories="[lead2loyalty.productlisting]"
-    dependencies="[lead2loyalty.dependencies,granite.csrf.standalone]"
+    dependencies="[lead2loyalty.dependencies]"
     embed="[]"/>

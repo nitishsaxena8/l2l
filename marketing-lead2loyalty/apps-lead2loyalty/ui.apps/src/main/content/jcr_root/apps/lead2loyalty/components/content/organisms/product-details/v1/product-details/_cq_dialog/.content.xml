@@ -246,7 +246,7 @@
                                                                     <modalCtaLabel
                                                                         jcr:primaryType="nt:unstructured"
                                                                         sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                                                        fieldLabel="CTA Label"
+                                                                        fieldLabel="Close CTA Label"
                                                                         name="./modalCtaLabel"/>
                                                                 </items>
                                                             </column>

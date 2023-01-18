@@ -16,6 +16,274 @@
         <root
             jcr:primaryType="nt:unstructured"
             sling:resourceType="xpbootstrap/components/content/organisms/xp-container"
-            layout="responsiveGrid"/>
+            layout="responsiveGrid">
+            <mlebanner
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="xpbootstrap/components/content/molecules/mleBanner"/>
+            <container jcr:primaryType="nt:unstructured">
+                <container
+                    jcr:lastModified="{Date}2022-12-13T15:24:44.133+05:30"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="xpbootstrap/components/content/organisms/xp-container"
+                    layout="responsiveGrid">
+                    <product_details
+                            jcr:created="{Date}2022-12-12T14:02:04.067+05:30"
+                            jcr:createdBy="admin"
+                            jcr:lastModified="{Date}2023-01-18T23:11:08.687+05:30"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="lead2loyalty/components/content/organisms/product-details/v1/product-details"
+                            atmTextHtml="&lt;h4>Product Description&lt;/h4>&#xd;&#xa;&lt;p>This MH-M18 Wireless Bluetooth Audio Receiver Board is a lower design solution, which supports the laest Bluetooth 4.2 transmission. Convert your old speakers into a Bluetooth equipped speaker with the help of this module. With a maximum range of 20 meters. This MH-M18 Wireless Bluetooth Audio Reciever Board is a low power design solution, which supports the latest Bluetooth 4.2 transmission. Convert your old speakers into a Bluetooth equipped speaker with the help of this module. With a maximum range of 20 meters.&lt;/p>&#xd;&#xa;"
+                            emailIdFieldLabel="Email ID"
+                            marginBottom="margin-bottom-6x"
+                            marginTop="margin-top-6x"
+                            mobileMarginBottom="m-margin-bottom-x"
+                            mobileMarginTop="m-margin-top-6x"
+                            modalDesc="Share product details with the respective team member"
+                            modalTitle="Share With Team"
+                            modalCtaLabel="Close"
+                            nameFieldLabel="Name"
+                            pricingCtaLabel="Request aQuote"
+                            pricingCtaLink="#"
+                            pricingDesc="Get Quotation for the bulk order"
+                            pricingTitle="Pricing"
+                            productid="Product ID: AUD09345424"
+                            shareCtaLabel="Share With Team"
+                            shareCtaLink="#"
+                            subtitle="Audio Module / Amplifier"
+                            teamFieldLabel="Team"
+                            textIsRich="true"
+                            title="M18 Bluetooth 4.2 Audio Receiver Module Lossless Car Speaker Headphone Amplifier Board Wireless Refit">
+                        <cq:responsive jcr:primaryType="nt:unstructured">
+                            <default
+                                    jcr:primaryType="nt:unstructured"
+                                    offset="1"
+                                    width="10"/>
+                        </cq:responsive>
+                        <ctaButton jcr:primaryType="nt:unstructured">
+                            <item0
+                                    jcr:primaryType="nt:unstructured"
+                                    atmCtaLabel="Buy Now"
+                                    atmCtaLink="/content/lead2loyalty/language-masters/en/home-page/products/development-board/advance-development-board"
+                                    atmCtaType="btn-primary"/>
+                            <item1
+                                    jcr:primaryType="nt:unstructured"
+                                    atmCtaLabel="Add To Cart"
+                                    atmCtaLink="#"
+                                    atmCtaType="btn-outline-primary"/>
+                        </ctaButton>
+                    </product_details>
+                    <xp_container_1543464264
+                        cq:styleIds="[1673004790935]"
+                        jcr:created="{Date}2022-12-15T12:13:33.382+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2022-12-15T12:13:33.382+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="lead2loyalty/components/content/organisms/xp-container">
+                        <mletitle_copy
+                            jcr:created="{Date}2022-12-13T15:26:52.422+05:30"
+                            jcr:createdBy="admin"
+                            jcr:lastModified="{Date}2022-12-15T12:17:41.052+05:30"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="xpbootstrap/components/content/molecules/mleTitle"
+                            atmTitleText="Popular Industry Usecase"
+                            marginBottom="[margin-bottom-x,margin-bottom-x]"
+                            marginTop="[margin-top-x,margin-top-x]"
+                            mobileMarginBottom="[m-margin-bottom-x,m-margin-bottom-x]"
+                            mobileMarginTop="[m-margin-top-x,m-margin-top-x]">
+                            <cq:responsive jcr:primaryType="nt:unstructured">
+                                <default
+                                    jcr:primaryType="nt:unstructured"
+                                    offset="0"
+                                    width="9"/>
+                            </cq:responsive>
+                        </mletitle_copy>
+                        <tiles
+                            cq:styleIds="[1670928226762]"
+                            jcr:created="{Date}2022-12-12T14:02:20.280+05:30"
+                            jcr:createdBy="admin"
+                            jcr:lastModified="{Date}2022-12-15T12:09:13.029+05:30"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="lead2loyalty/components/content/organisms/tiles/v1/tiles"
+                            textIsRich="[true,true,true,true]">
+                            <tileListItems jcr:primaryType="nt:unstructured">
+                                <item0
+                                    jcr:primaryType="nt:unstructured"
+                                    productDescription="&lt;p>Some quick example text to build on the card title nad make up the bulk of the card's content.&amp;nbsp;&lt;/p>&#xd;&#xa;"
+                                    productImageSource="/content/dam/lead2loyalty/cell-2.jpg"
+                                    productTitle="Automative"/>
+                                <item1
+                                    jcr:primaryType="nt:unstructured"
+                                    productDescription="&lt;p>Some quick example text to build on the card title and make up the bulk of the card's content.&lt;/p>&#xd;&#xa;"
+                                    productImageSource="/content/dam/lead2loyalty/cell-1.jpg"
+                                    productTitle="Cellular Device"/>
+                                <item2
+                                    jcr:primaryType="nt:unstructured"
+                                    productDescription="&lt;p>Some quick example text to build on the card title and make up the bulk of the card's content.&lt;/p>&#xd;&#xa;"
+                                    productImageSource="/content/dam/lead2loyalty/cell-4.jpg"
+                                    productTitle="Automative"/>
+                                <item3
+                                    jcr:primaryType="nt:unstructured"
+                                    productDescription="&lt;p>Some quick example text to build on the card title and make up the bulk of the card's content.&lt;/p>&#xd;&#xa;"
+                                    productImageSource="/content/dam/lead2loyalty/cell-3.jpg"
+                                    productTitle="Cellular Device"/>
+                            </tileListItems>
+                        </tiles>
+                    </xp_container_1543464264>
+                    <xp_container_32384955
+                        jcr:created="{Date}2022-12-15T12:18:01.412+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2022-12-15T12:40:36.428+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="lead2loyalty/components/content/organisms/xp-container"
+                        layout="responsiveGrid"
+                        marginBottom="margin-bottom-x"
+                        marginTop="margin-top-6x"
+                        mobileMarginBottom="m-margin-bottom-x"
+                        mobileMarginTop="m-margin-top-x">
+                        <mletitle
+                            jcr:created="{Date}2022-12-13T15:26:52.422+05:30"
+                            jcr:createdBy="admin"
+                            jcr:lastModified="{Date}2022-12-15T12:19:13.328+05:30"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="xpbootstrap/components/content/molecules/mleTitle"
+                            atmTitleText="Customers who view this item also bought this"
+                            marginBottom="[margin-bottom-x,margin-bottom-x]"
+                            marginTop="[margin-top-x,margin-top-x]"
+                            mobileMarginBottom="[m-margin-bottom-x,m-margin-bottom-x]"
+                            mobileMarginTop="[m-margin-top-6x,m-margin-top-x]">
+                            <cq:responsive jcr:primaryType="nt:unstructured">
+                                <default
+                                    jcr:primaryType="nt:unstructured"
+                                    offset="0"
+                                    width="10"/>
+                            </cq:responsive>
+                        </mletitle>
+                        <tiles_copy
+                            jcr:created="{Date}2022-12-12T14:02:20.280+05:30"
+                            jcr:createdBy="admin"
+                            jcr:lastModified="{Date}2022-12-15T12:26:03.522+05:30"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="lead2loyalty/components/content/organisms/tiles/v1/tiles"
+                            textIsRich="[true,true,true,true]">
+                            <tileListItems jcr:primaryType="nt:unstructured">
+                                <item0
+                                    jcr:primaryType="nt:unstructured"
+                                    productImageSource="/content/dam/lead2loyalty/circuit-7.jpg"
+                                    productTitle="TDA2030A Audio Amplifier Module Support GSM / GPRS / EDGE - A7670E"/>
+                                <item1
+                                    jcr:primaryType="nt:unstructured"
+                                    productImageSource="/content/dam/lead2loyalty/circuit-8.jpg"
+                                    productTitle="LILYGO TTGO T-SIM A7670E R2 Wireless Module ESP32 Chip 4G LTE CAT1"/>
+                                <item2
+                                    jcr:primaryType="nt:unstructured"
+                                    productImageSource="/content/dam/lead2loyalty/circuit.jpg"
+                                    productTitle="GEEKcredit 433MHZ DC 12V 10A Relay 1CH Channel Wireless RF Remote Contr"/>
+                                <item3
+                                    jcr:primaryType="nt:unstructured"
+                                    productImageSource="/content/dam/lead2loyalty/circuit-2.jpg"
+                                    productTitle="LU-ASR01 Intelligent Speech Rocognition Moule Offline Recognition Custom 100"/>
+                            </tileListItems>
+                        </tiles_copy>
+                    </xp_container_32384955>
+                    <xp_container_3238495
+                        cq:styleIds="[1673004790935]"
+                        jcr:created="{Date}2022-12-15T12:18:01.412+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2022-12-15T12:40:25.062+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="lead2loyalty/components/content/organisms/xp-container"
+                        layout="responsiveGrid"
+                        marginBottom="margin-bottom-x"
+                        marginTop="margin-top-6x"
+                        mobileMarginBottom="m-margin-bottom-x"
+                        mobileMarginTop="m-margin-top-x">
+                        <mletitle
+                            jcr:created="{Date}2022-12-13T15:26:52.422+05:30"
+                            jcr:createdBy="admin"
+                            jcr:lastModified="{Date}2022-12-15T12:19:13.328+05:30"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="xpbootstrap/components/content/molecules/mleTitle"
+                            atmTitleText="Customers who view this item also bought this"
+                            marginBottom="[margin-bottom-x,margin-bottom-x]"
+                            marginTop="[margin-top-x,margin-top-x]"
+                            mobileMarginBottom="[m-margin-bottom-x,m-margin-bottom-x]"
+                            mobileMarginTop="[m-margin-top-6x,m-margin-top-x]">
+                            <cq:responsive jcr:primaryType="nt:unstructured">
+                                <default
+                                    jcr:primaryType="nt:unstructured"
+                                    offset="0"
+                                    width="10"/>
+                            </cq:responsive>
+                        </mletitle>
+                        <tiles_copy
+                            jcr:created="{Date}2022-12-12T14:02:20.280+05:30"
+                            jcr:createdBy="admin"
+                            jcr:lastModified="{Date}2022-12-15T12:33:04.741+05:30"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="lead2loyalty/components/content/organisms/tiles/v1/tiles"
+                            textIsRich="[true,true,true,true]">
+                            <tileListItems jcr:primaryType="nt:unstructured">
+                                <item0
+                                    jcr:primaryType="nt:unstructured"
+                                    productImageSource="/content/dam/lead2loyalty/circuit6.jpg"
+                                    productTitle="Bluetooth 4.2 Audio Receiver Module With 3.5mm Audio interface Lossless Car"/>
+                                <item1
+                                    jcr:primaryType="nt:unstructured"
+                                    productImageSource="/content/dam/lead2loyalty/circuit-5.jpg"
+                                    productTitle="Keyes Brick ESP-01 3V Relay Module Wifi Node IoT Wireless Remote Control"/>
+                                <item2
+                                    jcr:primaryType="nt:unstructured"
+                                    productImageSource="/content/dam/lead2loyalty/circuit-9.jpg"
+                                    productTitle="Bluetooth 4.0 Audio Receiver Module For Stereo Dual Channel Audio Speaker"/>
+                                <item3
+                                    jcr:primaryType="nt:unstructured"
+                                    productImageSource="/content/dam/lead2loyalty/circuit-1.jpg"
+                                    productTitle="Geekcreit DFPlayer Mini MP3 Player Module MP3 Voice Audio Decoder Board"/>
+                            </tileListItems>
+                        </tiles_copy>
+                    </xp_container_3238495>
+                    <sales_tech_support
+                        jcr:created="{Date}2023-01-09T13:51:12.135+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2023-01-11T19:42:33.244+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="lead2loyalty/components/content/organisms/sales-tech-support/v1/sales-tech-support"
+                        fileReference="/content/dam/lead2loyalty/circuit6.jpg"
+                        imageAlt="img alt text"
+                        marginBottom="margin-bottom-x"
+                        marginTop="margin-top-x"
+                        mobileMarginBottom="m-margin-bottom-x"
+                        mobileMarginTop="m-margin-top-x"
+                        textIsRich="[true,true]">
+                        <saleSupportLinks jcr:primaryType="nt:unstructured">
+                            <item0
+                                jcr:primaryType="nt:unstructured"
+                                atmTextHtml="&lt;p>Connect with an expert for more product related details&lt;/p>&#xd;&#xa;&lt;p>&lt;a href=&quot;#&quot; target=&quot;_blank&quot;>Connect with sales support&lt;/a>&lt;/p>&#xd;&#xa;"
+                                icon="/content/dam/lead2loyalty/lead2loylty-setting.png"
+                                iconAlt="icon-1"
+                                title="Sales Support"/>
+                            <item1
+                                jcr:primaryType="nt:unstructured"
+                                atmTextHtml="&lt;p>Support for service-related technical issues.&lt;/p>&#xd;&#xa;&lt;p>&lt;a href=&quot;#&quot; target=&quot;_blank&quot;>Connect with technical support&lt;/a>&lt;/p>&#xd;&#xa;"
+                                icon="/content/dam/lead2loyalty/lead2loyalty-customer-care.png"
+                                iconAlt="icon-2"
+                                title="Technical Support"/>
+                        </saleSupportLinks>
+                    </sales_tech_support>
+                </container>
+            </container>
+        </root>
     </jcr:content>
 </jcr:root>

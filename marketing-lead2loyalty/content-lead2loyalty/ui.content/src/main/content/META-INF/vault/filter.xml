@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workspaceFilter version="1.0">
-    <filter root="/content/lead2loyalty" mode="merge"/>
+    <filter root="/content/lead2loyalty"/>
+    <filter root="/content/experience-fragments"/>
 </workspaceFilter>
