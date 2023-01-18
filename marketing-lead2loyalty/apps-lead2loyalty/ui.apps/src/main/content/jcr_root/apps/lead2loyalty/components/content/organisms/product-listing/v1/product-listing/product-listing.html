@@ -38,7 +38,7 @@
 
 
 <!-- Body -->
-<div class="container my-5">
+<div class="container my-5 plp-container">
 	<div class="row">
 		<div class="col-3">
 			<div class="d-flex justify-content-between">
@@ -47,23 +47,23 @@
 			</div>
 
 			<sly data-sly-list.accordionMap="${productListingModel.accordionMap}">
-				<div class="accordion" id="accordion">
+				<div class="accordionFilter" id="product-${accordionMapList.index}">
 					<div class="card-header fw-bold my-2" id="headingOne">
-						<div
+						<div class="cardTitle"
 								data-toggle="collapse"
-								data-target="#collapseOne"
+								data-target="#panel-${accordionMapList.index}"
 								aria-expanded="true"
-								aria-controls="collapseOne">
+								aria-controls="collapseOne" data-title="${accordionMap}">
 							${accordionMap}
 						</div>
 					</div>
 
 					<sly data-sly-test.accordionList="${productListingModel.accordionMap[accordionMap]}">
 						<div data-sly-list.accList="${accordionList}"
-							 id="collapseOne"
-							 class="collapse show"
+							 id="panel-${accordionMapList.index}"
+							 class="collapse panel show"
 							 aria-labelledby="headingOne"
-							 data-parent="#accordion">
+							 data-parent="product-${accordionMapList.index}">
 							<div class="card-body my-3 ms-4" data-sly-test="${accList.title}">${accList.title}</div>
 						</div>
 					</sly>
@@ -74,16 +74,24 @@
 
 		<div class="col-9 d-flex flex-wrap p-2 justify-content-between">
 			<div class="container px-4 d-flex flex-wrap">
-
+			<div class="d-flex flex-row w-100 justify-content-end">
+				<div>
+                    <label for="sort">Sort by </label>
+                    <select name="sort" id="sort" class="border-0 border-bottom">
+                        <option value="Best seller">Best seller</option>
+                        <option value="Popularity">Popularity</option>
+                    </select>
+				</div>
+			</div>
 				<div class="row gx-3 d-flex flex-wrap"  data-sly-list.product="${productListingModel.productList}">
-					<div class="col my-3 product-list-tile" style="min-width: 30%">
-						<a href="${product.path}">
-							<div class="p-3 shadow-sm">
+					<div class="col-sm-4 my-3 resultsWrapper product-list-tile" style="min-width: 30%" id="product-${productList.index}-results" data-parent="${product.parentTitle}">
+						<a href="${product.path}" class="text-decoration-none">
+							<div class="p-3 shadow-lg">
 								<img src="${product.image}" class="card-img-top" alt="product image" />
-								<div class="card-body">
-									<p class="card-text">
-										${product.description}
-									</p>
+								<div class="card-body mt-3">
+									<h5 class="card-text card-name-wrap">
+                                      ${product.description}
+                                    </h5>
 								</div>
 							</div>
 						</a>

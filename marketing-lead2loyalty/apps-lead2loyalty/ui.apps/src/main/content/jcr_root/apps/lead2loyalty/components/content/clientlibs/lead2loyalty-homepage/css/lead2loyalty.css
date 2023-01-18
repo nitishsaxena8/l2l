@@ -709,3 +709,18 @@ $space-x: 8px;
 .stretch-image .aem-Grid.aem-Grid--12.aem-Grid--default--12 .mle--image {
     height: 100%;
 }
+
+.card-name-wrap {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.text-decoration-none a {
+	text-decoration: none;
+}
+
+.plp-container .accordionFilter .collapse.panel.show {
+    transition: max-height 0.2s ease-out 0s;
+}
