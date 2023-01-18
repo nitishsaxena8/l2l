@@ -1,7 +1,0 @@
-<template data-sly-template.picture="${ @ imgSrc, imgAlt, imgStyleModifier, mobileImgSrc, tabletImgSrc}">
-    <picture>
-        <source media="(max-width: 568)" srcset="${mobileImgSrc || imgSrc}" class="load-lazily lazy">
-        <source media="(max-width: 1023px)" class="load-lazily lazy" srcset="${tabletImgSrc || imgSrc}">
-        <img src="${imgSrc}" alt="${imgAlt}" class="${imgStyleModifier}" />
-    </picture>
-</template>

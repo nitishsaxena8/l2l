@@ -1,3 +1,0 @@
-#base=js
-style-picker.js
-color-picker.js

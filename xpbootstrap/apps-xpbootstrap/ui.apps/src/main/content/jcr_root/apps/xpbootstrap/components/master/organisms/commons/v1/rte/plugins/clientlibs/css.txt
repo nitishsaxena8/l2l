@@ -1,3 +1,0 @@
-#base=css
-style-picker.css
-color-picker.css
