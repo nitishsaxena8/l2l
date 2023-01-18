@@ -7,7 +7,7 @@
     <groupId>com.deloitte</groupId>
     <artifactId>lead2loyalty</artifactId>
     <packaging>pom</packaging>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
     <name>lead2loyalty</name>
     <description>Lead 2 Loyalty</description>
 
