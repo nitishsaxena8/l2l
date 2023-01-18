@@ -4,5 +4,5 @@
 node
 node_modules
 package-lock.json
-/dist/
-/ui.apps/src/main/content/jcr_root/apps/lead2loyaltyclientlibs/
+dist/*
+ui.apps/src/main/content/jcr_root/apps/ui-lead2loyalty/clientlibs/*

@@ -1,3 +1,0 @@
-#base=js
-
-ToolbarAction.ViewSelector.js
