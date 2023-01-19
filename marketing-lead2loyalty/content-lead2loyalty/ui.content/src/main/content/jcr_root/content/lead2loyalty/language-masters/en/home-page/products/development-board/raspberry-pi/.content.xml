@@ -8,6 +8,7 @@
         jcr:description="This is test description for Raspberry Pi"
         jcr:primaryType="cq:PageContent"
         jcr:title="Raspberry Pi"
+        pageType="Product Detail page"
         sling:resourceType="lead2loyalty/components/content/organisms/page"
         image="/content/dam/lead2loyalty/circuit-8.jpg"
         pwaCachestrategy="staleWhileRevalidate"

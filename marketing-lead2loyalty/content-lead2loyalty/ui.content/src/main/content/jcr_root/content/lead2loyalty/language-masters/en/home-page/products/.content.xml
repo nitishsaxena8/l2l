@@ -8,6 +8,7 @@
         cq:template="/conf/lead2loyalty/settings/wcm/templates/product-detail-page"
         jcr:primaryType="cq:PageContent"
         jcr:title="Products"
+        pageType="Product list page"
         sling:resourceType="lead2loyalty/components/content/organisms/page"
         pwaCachestrategy="staleWhileRevalidate"
         pwaDisplay="standalone"

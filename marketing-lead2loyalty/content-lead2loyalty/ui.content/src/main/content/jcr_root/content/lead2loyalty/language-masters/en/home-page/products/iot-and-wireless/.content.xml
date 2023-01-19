@@ -7,6 +7,7 @@
         cq:template="/conf/lead2loyalty/settings/wcm/templates/product-category-page"
         jcr:primaryType="cq:PageContent"
         jcr:title="IoT and Wireless"
+        pageType="Product Category page"
         sling:resourceType="lead2loyalty/components/content/organisms/page">
         <root
             jcr:primaryType="nt:unstructured"

@@ -7,6 +7,7 @@
         cq:template="/conf/lead2loyalty/settings/wcm/templates/product-detail-page"
         jcr:primaryType="cq:PageContent"
         jcr:title="Product Page"
+        pageType="Product Detail Page"
         sling:resourceType="lead2loyalty/components/content/organisms/page">
         <root
             jcr:primaryType="nt:unstructured"

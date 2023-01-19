@@ -8,6 +8,7 @@
         jcr:description="This is test description for PIC Development Board"
         jcr:primaryType="cq:PageContent"
         jcr:title="PIC Development Board"
+        pageType="Product Detail page"
         sling:resourceType="lead2loyalty/components/content/organisms/page"
         image="/content/dam/lead2loyalty/circuit-1.jpg"
         pwaCachestrategy="staleWhileRevalidate"
