@@ -47,7 +47,7 @@ public class ProductCategoryDropdownServlet extends SlingAllMethodsServlet {
 			// String rootPath = ROOT_PATH;
 			if (StringUtils.isNotEmpty(ROOT_PATH)) {
 				Resource resource = request.getResourceResolver().getResource(ROOT_PATH);
-				if (resource != null) {
+				if (resource != null && resource.hasChildren()) {
 					Iterator<Resource> iterator = resource.listChildren();
 					List<Resource> list = new ArrayList<>();
 					iterator.forEachRemaining(list::add);
