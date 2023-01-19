@@ -2,16 +2,12 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2022-12-21T11:27:15.096+05:30"
+        cq:lastModified="{Date}2022-12-19T13:15:45.162+05:30"
         cq:lastModifiedBy="admin"
-        cq:tags="[experience-fragments:variation/web,experience-fragments:variation/screens]"
-        cq:template="/conf/lead2loyalty/settings/wcm/templates/product-category-page"
+        cq:template="/conf/lead2loyalty/settings/wcm/templates/product-detail-page"
         jcr:primaryType="cq:PageContent"
-        jcr:title="Sensors"
-        sling:resourceType="lead2loyalty/components/content/organisms/page"
-        pwaCachestrategy="staleWhileRevalidate"
-        pwaDisplay="standalone"
-        pwaOrientation="any">
+        jcr:title="Batteries and Accessoris"
+        sling:resourceType="lead2loyalty/components/content/organisms/page">
         <root
             jcr:primaryType="nt:unstructured"
             sling:resourceType="xpbootstrap/components/content/organisms/xp-container"
@@ -46,7 +42,7 @@
                             <item0
                                 jcr:primaryType="nt:unstructured"
                                 atmCtaLabel="View Products"
-                                atmCtaLink="/content/lead2loyalty/language-masters/en/home-page/products/development-board"
+                                atmCtaLink="/content/lead2loyalty/language-masters/en/home-page/products"
                                 atmCtaType="btn-primary"/>
                         </ctaButton>
                     </text_img_cta_copy>
@@ -78,7 +74,7 @@
                                 <item0
                                     jcr:primaryType="nt:unstructured"
                                     atmCtaLabel="View Products"
-                                    atmCtaLink="/content/lead2loyalty/language-masters/en/home-page/products/sensors"
+                                    atmCtaLink="/content/lead2loyalty/language-masters/en/home-page/products"
                                     atmCtaTarget="true"
                                     atmCtaType="btn-primary"/>
                             </ctaButton>
@@ -110,7 +106,7 @@
                             <item0
                                 jcr:primaryType="nt:unstructured"
                                 atmCtaLabel="View Products"
-                                atmCtaLink="/content/lead2loyalty/language-masters/en/home-page/products/electronic-components"
+                                atmCtaLink="/content/lead2loyalty/language-masters/en/home-page/products"
                                 atmCtaType="btn-primary"/>
                         </ctaButton>
                     </text_img_cta_copy_co>
@@ -142,7 +138,7 @@
                                 <item0
                                     jcr:primaryType="nt:unstructured"
                                     atmCtaLabel="View Products"
-                                    atmCtaLink="/content/lead2loyalty/language-masters/en/home-page/products/batteries-and-accessoris"
+                                    atmCtaLink="/content/lead2loyalty/language-masters/en/home-page/products"
                                     atmCtaTarget="true"
                                     atmCtaType="btn-primary"/>
                             </ctaButton>
@@ -174,7 +170,7 @@
                             <item0
                                 jcr:primaryType="nt:unstructured"
                                 atmCtaLabel="View Products"
-                                atmCtaLink="/content/lead2loyalty/language-masters/en/home-page/products/iot-and-wireless"
+                                atmCtaLink="/content/lead2loyalty/language-masters/en/home-page/products"
                                 atmCtaType="btn-primary"/>
                         </ctaButton>
                     </text_img_cta_copy_co_307452288>

@@ -25,20 +25,51 @@
                     <product_details
                         jcr:created="{Date}2022-12-12T14:02:04.067+05:30"
                         jcr:createdBy="admin"
-                        jcr:lastModified="{Date}2022-12-15T12:39:47.025+05:30"
+                        jcr:lastModified="{Date}2023-01-19T10:33:39.345+05:30"
                         jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="lead2loyalty/components/content/organisms/product-details/v1/product-details"
+                        atmTextHtml="&lt;h6>Product description&lt;/h6>&#xd;&#xa;&lt;p>This MH-M18 Wireless Bluetooth Audio Receiver Board is a low power design solution, which supports the latest Bluetooth 4.2 transmission. Convert your old speakers into a Bluetooth equipped speaker with help of this module. With a maximum range of 20 meters. This MH-M18 Wireless Bluetooth Receiver Board is a low power design solution, which supports the latest Bluetooth 4.2 transmission. Convert your old speakers into a Bluetooth equipped speaker with the help of this module. With a maximum range of 20 meters&lt;/p>&#xd;&#xa;"
+                        emailIdFieldLabel="Email ID"
                         marginBottom="margin-bottom-6x"
                         marginTop="margin-top-6x"
                         mobileMarginBottom="m-margin-bottom-x"
-                        mobileMarginTop="m-margin-top-6x">
+                        mobileMarginTop="m-margin-top-6x"
+                        modalCtaLabel="Submit"
+                        modalDesc="Share project details with respective team member"
+                        modalTitle="Share with Team"
+                        nameFieldLabel="Name"
+                        pricingCtaLabel="Request a Quote"
+                        pricingCtaLink="#"
+                        pricingCtaTarget="_blank"
+                        pricingDesc="Estimated cost for different quantities."
+                        pricingTitle="Pricing"
+                        productid="Product ID: AUD09345424"
+                        shareCtaLabel="Share with Team"
+                        shareCtaLink="#"
+                        subtitle="Audio Module / Amplifier"
+                        teamFieldLabel="Team"
+                        textIsRich="true"
+                        title="M18 Bluetooth 4.2Audio Receiver Module Lossless Car Speaker Headphone Amplifier Board Wireless Refit">
                         <cq:responsive jcr:primaryType="nt:unstructured">
                             <default
                                 jcr:primaryType="nt:unstructured"
                                 offset="1"
                                 width="10"/>
                         </cq:responsive>
+                        <ctaButton jcr:primaryType="nt:unstructured">
+                            <item0
+                                jcr:primaryType="nt:unstructured"
+                                atmCtaLabel="Buy Now"
+                                atmCtaLink="#"
+                                atmCtaTarget="true"
+                                atmCtaType="btn-primary"/>
+                            <item1
+                                jcr:primaryType="nt:unstructured"
+                                atmCtaLabel="Add to Cart"
+                                atmCtaLink="#"
+                                atmCtaType="btn-outline-primary"/>
+                        </ctaButton>
                     </product_details>
                     <xp_container_1543464264
                         cq:styleIds="[1673004790935]"
@@ -48,27 +79,12 @@
                         jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="lead2loyalty/components/content/organisms/xp-container">
-                        <mletitle_copy
-                            jcr:created="{Date}2022-12-13T15:26:52.422+05:30"
-                            jcr:createdBy="admin"
-                            jcr:lastModified="{Date}2022-12-15T12:17:41.052+05:30"
-                            jcr:lastModifiedBy="admin"
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="xpbootstrap/components/content/molecules/mleTitle"
-                            atmTitleText="Popular Industry Usecase"
-                            marginBottom="[margin-bottom-x,margin-bottom-x]"
-                            marginTop="[margin-top-x,margin-top-x]"
-                            mobileMarginBottom="[m-margin-bottom-x,m-margin-bottom-x]"
-                            mobileMarginTop="[m-margin-top-x,m-margin-top-x]">
-                            <cq:responsive jcr:primaryType="nt:unstructured">
-                                <default
-                                    jcr:primaryType="nt:unstructured"
-                                    offset="0"
-                                    width="9"/>
-                            </cq:responsive>
-                        </mletitle_copy>
                         <tiles
                             cq:styleIds="[1670928226762]"
+                            tileHeading="Popular Industry Usecase"
+							ctaLabel="View More"
+							ctaLink="/content/lead2loyalty/language-masters/en/home-page/products"
+							ctaTarget="_blank"
                             jcr:created="{Date}2022-12-12T14:02:20.280+05:30"
                             jcr:createdBy="admin"
                             jcr:lastModified="{Date}2022-12-15T12:09:13.029+05:30"
@@ -112,26 +128,11 @@
                         marginTop="margin-top-6x"
                         mobileMarginBottom="m-margin-bottom-x"
                         mobileMarginTop="m-margin-top-x">
-                        <mletitle
-                            jcr:created="{Date}2022-12-13T15:26:52.422+05:30"
-                            jcr:createdBy="admin"
-                            jcr:lastModified="{Date}2022-12-15T12:19:13.328+05:30"
-                            jcr:lastModifiedBy="admin"
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="xpbootstrap/components/content/molecules/mleTitle"
-                            atmTitleText="Customers who view this item also bought this"
-                            marginBottom="[margin-bottom-x,margin-bottom-x]"
-                            marginTop="[margin-top-x,margin-top-x]"
-                            mobileMarginBottom="[m-margin-bottom-x,m-margin-bottom-x]"
-                            mobileMarginTop="[m-margin-top-6x,m-margin-top-x]">
-                            <cq:responsive jcr:primaryType="nt:unstructured">
-                                <default
-                                    jcr:primaryType="nt:unstructured"
-                                    offset="0"
-                                    width="10"/>
-                            </cq:responsive>
-                        </mletitle>
                         <tiles_copy
+                        	tileHeading="Customers who view this item also bought this"
+							ctaLabel="View More"
+							ctaLink="/content/lead2loyalty/language-masters/en/home-page/products"
+							ctaTarget="_blank"
                             jcr:created="{Date}2022-12-12T14:02:20.280+05:30"
                             jcr:createdBy="admin"
                             jcr:lastModified="{Date}2022-12-15T12:26:03.522+05:30"
@@ -172,26 +173,11 @@
                         marginTop="margin-top-6x"
                         mobileMarginBottom="m-margin-bottom-x"
                         mobileMarginTop="m-margin-top-x">
-                        <mletitle
-                            jcr:created="{Date}2022-12-13T15:26:52.422+05:30"
-                            jcr:createdBy="admin"
-                            jcr:lastModified="{Date}2022-12-15T12:19:13.328+05:30"
-                            jcr:lastModifiedBy="admin"
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="xpbootstrap/components/content/molecules/mleTitle"
-                            atmTitleText="Customers who view this item also bought this"
-                            marginBottom="[margin-bottom-x,margin-bottom-x]"
-                            marginTop="[margin-top-x,margin-top-x]"
-                            mobileMarginBottom="[m-margin-bottom-x,m-margin-bottom-x]"
-                            mobileMarginTop="[m-margin-top-6x,m-margin-top-x]">
-                            <cq:responsive jcr:primaryType="nt:unstructured">
-                                <default
-                                    jcr:primaryType="nt:unstructured"
-                                    offset="0"
-                                    width="10"/>
-                            </cq:responsive>
-                        </mletitle>
                         <tiles_copy
+                        	tileHeading="Customers who view this item also bought this"
+							ctaLabel="View More"
+							ctaLink="/content/lead2loyalty/language-masters/en/home-page/products"
+							ctaTarget="_blank"
                             jcr:created="{Date}2022-12-12T14:02:20.280+05:30"
                             jcr:createdBy="admin"
                             jcr:lastModified="{Date}2022-12-15T12:33:04.741+05:30"

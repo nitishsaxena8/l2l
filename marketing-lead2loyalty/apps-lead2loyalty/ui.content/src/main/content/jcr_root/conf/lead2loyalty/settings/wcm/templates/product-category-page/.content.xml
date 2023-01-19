@@ -5,8 +5,8 @@
         cq:lastModified="{Date}2022-12-13T16:15:18.872+05:30"
         cq:lastModifiedBy="admin"
         cq:templateType="/conf/lead2loyalty/settings/wcm/template-types/page"
-        jcr:description="Product Detail Page Template"
+        jcr:description="Product Category Page Template"
         jcr:primaryType="cq:PageContent"
-        jcr:title="Product Detail Page"
+        jcr:title="Product Category Page"
         status="enabled"/>
 </jcr:root>
