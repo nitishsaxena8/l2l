@@ -45,21 +45,24 @@ public class ProductCategoryDropdownServlet extends SlingAllMethodsServlet {
 			// String rootPath =
 			// pathResource.getChild("datasource").getValueMap().get("rootPath",String.class);
 			// String rootPath = ROOT_PATH;
-			Resource resource = request.getResourceResolver().getResource(ROOT_PATH);
-			Iterator<Resource> iterator = resource.listChildren();
-			List<Resource> list = new ArrayList<>();
-			iterator.forEachRemaining(list::add);
-			list.forEach(res -> {
-				// ValueMap valueMap = res.getValueMap();
-				String key = res.getName();
-				String value = res.getName();
-				if (key.equals(JcrConstants.JCR_CONTENT)) {
-					key = "None";
-					value = StringUtils.EMPTY;
-				}
+			if (StringUtils.isNotEmpty(ROOT_PATH)) {
+				Resource resource = request.getResourceResolver().getResource(ROOT_PATH);
+				if (resource != null) {
+					Iterator<Resource> iterator = resource.listChildren();
+					List<Resource> list = new ArrayList<>();
+					iterator.forEachRemaining(list::add);
+					list.forEach(res -> {
+						// ValueMap valueMap = res.getValueMap();
+						String key = res.getName();
+						String value = res.getName();
+						if (key.equals(JcrConstants.JCR_CONTENT)) {
+							key = "None";
+							value = StringUtils.EMPTY;
+						}
 
-				dropDownList.add(new KeyValue(value, key));
-			});
+						dropDownList.add(new KeyValue(value, key));
+					});
+				}}
 			DataSource ds = new SimpleDataSource(new TransformIterator<>(dropDownList.iterator(), input -> {
 				KeyValue keyValue = (KeyValue) input;
 				ValueMap vm = new ValueMapDecorator(new HashMap<>());
