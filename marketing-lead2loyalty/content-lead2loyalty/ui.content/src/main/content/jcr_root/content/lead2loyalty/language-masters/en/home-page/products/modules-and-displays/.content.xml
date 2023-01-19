@@ -4,9 +4,9 @@
     <jcr:content
         cq:lastModified="{Date}2022-12-19T13:15:45.162+05:30"
         cq:lastModifiedBy="admin"
-        cq:template="/conf/lead2loyalty/settings/wcm/templates/product-detail-page"
+        cq:template="/conf/lead2loyalty/settings/wcm/templates/product-category-page"
         jcr:primaryType="cq:PageContent"
-        jcr:title="Batteries and Accessoris"
+        jcr:title="Modules and Displays"
         sling:resourceType="lead2loyalty/components/content/organisms/page">
         <root
             jcr:primaryType="nt:unstructured"
@@ -182,26 +182,11 @@
                         jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="xpbootstrap/components/content/organisms/xp-container">
-                        <mletitle_copy_copy
-                            jcr:created="{Date}2022-12-13T15:26:52.422+05:30"
-                            jcr:createdBy="admin"
-                            jcr:lastModified="{Date}2022-12-14T11:54:46.745+05:30"
-                            jcr:lastModifiedBy="admin"
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="xpbootstrap/components/content/molecules/mleTitle"
-                            atmTitleText="Training &amp; Articles"
-                            marginBottom="[margin-bottom-x,margin-bottom-x]"
-                            marginTop="[margin-top-8x,margin-top-8x]"
-                            mobileMarginBottom="[m-margin-bottom-x,m-margin-bottom-x]"
-                            mobileMarginTop="[m-margin-top-x,m-margin-top-x]">
-                            <cq:responsive jcr:primaryType="nt:unstructured">
-                                <default
-                                    jcr:primaryType="nt:unstructured"
-                                    offset="1"
-                                    width="11"/>
-                            </cq:responsive>
-                        </mletitle_copy_copy>
                         <tiles_copy_copy
+                        	tileHeading="Training &amp; Articles"
+							ctaLabel="View More"
+							ctaLink="/content/lead2loyalty/language-masters/en/home-page/products"
+							ctaTarget="_blank"
                             jcr:created="{Date}2022-12-12T14:02:20.280+05:30"
                             jcr:createdBy="admin"
                             jcr:lastModified="{Date}2022-12-14T20:13:49.049+05:30"

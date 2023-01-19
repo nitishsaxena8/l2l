@@ -7,7 +7,7 @@
         cq:template="/conf/lead2loyalty/settings/wcm/templates/product-detail-page"
         jcr:description="This is test description 8051 Board"
         jcr:primaryType="cq:PageContent"
-        jcr:title="8051 Board"
+        jcr:title="Compatible with Ardunio Board"
         sling:resourceType="lead2loyalty/components/content/organisms/page"
         image="/content/dam/lead2loyalty/circuit-7.jpg"
         pwaCachestrategy="staleWhileRevalidate"
