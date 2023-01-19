@@ -5,11 +5,11 @@
         cq:lastModified="{Date}2022-12-19T13:11:40.214+05:30"
         cq:lastModifiedBy="admin"
         cq:template="/conf/lead2loyalty/settings/wcm/templates/product-detail-page"
-        jcr:description="This is test description 8051 Board"
+        jcr:description="This is test description for PIC Development Board"
         jcr:primaryType="cq:PageContent"
         jcr:title="PIC Development Board"
         sling:resourceType="lead2loyalty/components/content/organisms/page"
-        image="/content/dam/lead2loyalty/circuit-7.jpg"
+        image="/content/dam/lead2loyalty/circuit-1.jpg"
         pwaCachestrategy="staleWhileRevalidate"
         pwaDisplay="standalone"
         pwaOrientation="any">
