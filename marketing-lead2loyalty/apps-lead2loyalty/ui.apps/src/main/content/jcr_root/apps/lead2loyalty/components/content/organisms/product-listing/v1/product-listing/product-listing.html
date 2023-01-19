@@ -86,9 +86,9 @@
 				<div class="row gx-3 d-flex flex-wrap"  data-sly-list.product="${productListingModel.productList}">
 					<div class="col-sm-4 my-3 resultsWrapper product-list-tile" style="min-width: 30%" id="product-${productList.index}-results" data-parent="${product.parentTitle}">
 						<a href="${product.path}" class="text-decoration-none">
-							<div class="p-3 shadow-lg">
+							<div class="card shadow-lg">
 								<img src="${product.image}" class="card-img-top" alt="product image" />
-								<div class="card-body mt-3">
+								<div class="card-body">
 									<h5 class="card-text card-name-wrap">
                                       ${product.description}
                                     </h5>

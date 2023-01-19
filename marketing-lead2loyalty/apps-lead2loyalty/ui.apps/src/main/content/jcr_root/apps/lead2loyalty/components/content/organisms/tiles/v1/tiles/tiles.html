@@ -4,11 +4,9 @@
 
   <div class="container my-5">
   	<div class="row tile-header mb-4">
-        <div class="d-flex flex-row w-100 justify-content-start">
+        <div class="d-flex flex-row w-100 justify-content-between">
             <h4>${tilesModel.tileHeading}</h4>
-        </div>
-        <div class="d-flex flex-row w-100 justify-content-end">
-            <a href="${tilesModel.ctaLink}" target="${tilesModel.ctaTarget}">${tilesModel.ctaLabel}</a>
+            <a href="${tilesModel.ctaLink}" class="mt-1" target="${tilesModel.ctaTarget}">${tilesModel.ctaLabel}</a>
         </div>
      </div>
   
@@ -16,7 +14,7 @@
       <sly data-sly-test="${tilesModel.tileListItems}">
         <sly data-sly-repeat.item="${tilesModel.tileListItems}">
           <div class="col-3">
-            <a href="${item.productPath}">
+            <a href="${item.productPath}" class="text-decoration-none">
               <div class="card">
                 <img class="card-img-top" src="${item.productImageSource}" alt="Card image cap">
                 <div class="card-body">

@@ -21,7 +21,7 @@
                         <p>${productModel.pricingDesc}</p>
                     </div>
                     <div>
-                        <button type="button" class="btn btn-dark">${properties.pricingCtaLabel}</button>
+                        <button type="button" class="btn btn-primary">${properties.pricingCtaLabel}</button>
                     </div>
                 </div>
                 <div>
@@ -30,7 +30,7 @@
                 <div class="row background-color px-2 py-3 mx-1">
                     <sly data-sly-list.child="${productModel.ctaModelList}">
                         <div class="col-6" >
-                            <button type="button" class="btn btn-dark btn-md w-100">${child.atmCtaLabel}</button>
+                            <button type="button" class="btn btn-outline-primary btn-md w-100">${child.atmCtaLabel}</button>
                         </div>
                     </sly>
                 </div>
@@ -51,8 +51,9 @@
                 <div class="modal-body">
                     <div class="row justify-content-center">
                         <div class="col-12">
-                            <form>
+                            <form class="share-team-form">
                                 <p class="mb-4">${productModel.modalDesc}</p>
+
                                 <div class="row mb-4">
                                     <div class="col-4">
                                         <label for="exampleInputTeam1" class="form-label">${productModel.teamFieldLabel}</label>
@@ -64,7 +65,7 @@
                                         <input type="text" class="form-control" id="exampleInputName1">
                                     </div>
 
-                                    <div class="col-4">
+									<div class="col-4">
                                         <label for="exampleInputEmail1" class="form-label">${productModel.emailIdFieldLabel}</label>
                                         <input type="email" class="form-control" id="exampleInputEmail1">
                                     </div>
@@ -86,25 +87,10 @@
                                         <input type="email" class="form-control" id="exampleInputEmail2">
                                     </div>
                                 </div>
+								<div class="table-container"></div>
 
-                                <div class="row mb-4">
-                                    <div class="col-4">
-                                        <label for="exampleInputTeam3" class="form-label">${productModel.teamFieldLabel}</label>
-                                        <input type="text" class="form-control" id="exampleInputTeam3">
-                                    </div>
-
-                                    <div class="col-4">
-                                        <label for="exampleInputName3" class="form-label">${productModel.nameFieldLabel}</label>
-                                        <input type="text" class="form-control" id="exampleInputName3">
-                                    </div>
-
-                                    <div class="col-4">
-                                        <label for="exampleInputEmail3" class="form-label">${productModel.emailIdFieldLabel}</label>
-                                        <input type="email" class="form-control" id="exampleInputEmail3">
-                                    </div>
-                                </div>
                                 <div class="mb-3 form-addition">
-                                    <button type="button" class="btn btn-link text-decoration-none mb-2" style="color: black;">+ Add More</button>
+                                    <button type="button" class="btn btn-link add-team-details text-decoration-none mb-2">+ Add More</button>
                                 </div>
                             </form>
                         </div>
