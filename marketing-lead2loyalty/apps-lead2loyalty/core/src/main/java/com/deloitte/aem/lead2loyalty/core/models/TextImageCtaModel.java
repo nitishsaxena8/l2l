@@ -41,7 +41,10 @@ public class TextImageCtaModel {
 
 	@ValueMapValue
 	private String imgAlignment;
-
+	
+	@ValueMapValue
+	private String productCategory;
+	
 	@Inject
 	@Via("resource")
 	private Resource ctaButton;
@@ -56,6 +59,7 @@ public class TextImageCtaModel {
 			while (ctaResourceItr.hasNext()) {
 				Resource ctaResource = ctaResourceItr.next();
 				CtaModel ctaModel = ctaResource.adaptTo(CtaModel.class);
+				ctaModel.setProductCategory(productCategory);
 				ctaModelList.add(ctaModel);
 			}
 		}
