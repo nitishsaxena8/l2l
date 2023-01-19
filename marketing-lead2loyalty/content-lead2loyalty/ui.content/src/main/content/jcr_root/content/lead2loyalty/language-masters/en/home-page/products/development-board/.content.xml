@@ -71,7 +71,7 @@
                             mobileMarginBottom="m-margin-bottom-x"
                             mobileMarginTop="m-margin-top-x"
                             textIsRich="true"
-                            productCategory="development-board"
+                            productCategory="sensors"
                             title="Sensors">
                             <ctaButton jcr:primaryType="nt:unstructured">
                                 <item0
@@ -164,7 +164,7 @@
                         mobileMarginBottom="m-margin-bottom-x"
                         mobileMarginTop="m-margin-top-x"
                         textIsRich="true"
-                        productCategory="batteries-and-accessoris"
+                        productCategory="iot-and-wireless"
                         title="iot-and-wireless">
                         <cq:responsive jcr:primaryType="nt:unstructured">
                             <default
