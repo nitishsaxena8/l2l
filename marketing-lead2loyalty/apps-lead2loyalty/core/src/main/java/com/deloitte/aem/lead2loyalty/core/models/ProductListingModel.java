@@ -67,6 +67,7 @@ public class ProductListingModel {
 				Page childPage = rootPageIterator.next();
 
 				String parentTitle = childPage.getParent().getTitle();
+				String parentName = childPage.getParent().getName();
 				String parentPath = childPage.getParent().getPath();
 
 				ValueMap pageProperties = childPage.getProperties();
@@ -111,6 +112,7 @@ public class ProductListingModel {
 							childPage.getPath(), settingsService));
 
 					productsBean.setParentTitle(parentTitle != null ? parentTitle : StringUtils.EMPTY);
+					productsBean.setParentName(parentName != null ? parentName : StringUtils.EMPTY);
 					productsBean.setParentPath(parentPath != null ? parentPath : StringUtils.EMPTY);
 
 					productList.add(productsBean);
