@@ -34,25 +34,20 @@ public class ProductCategoryDropdownServlet extends SlingAllMethodsServlet {
 	private static final long serialVersionUID = 1L;
 	private static Logger LOGGER = LoggerFactory.getLogger(ProductCategoryDropdownServlet.class);
 
-	private static final String ROOT_PATH = "/content/lead2loyalty/language-masters/en/home-page/products";
-
 	@Override
 	protected void doGet(SlingHttpServletRequest request, SlingHttpServletResponse response) {
 		try {
 			ResourceResolver resourceResolver = request.getResourceResolver();
 			List<KeyValue> dropDownList = new ArrayList<>();
-			// Resource pathResource = request.getResource();
-			// String rootPath =
-			// pathResource.getChild("datasource").getValueMap().get("rootPath",String.class);
-			// String rootPath = ROOT_PATH;
-			if (StringUtils.isNotEmpty(ROOT_PATH)) {
-				Resource resource = request.getResourceResolver().getResource(ROOT_PATH);
+			Resource pathResource = request.getResource();
+			String rootPath = pathResource.getChild("datasource").getValueMap().get("rootPath", String.class);
+			if (StringUtils.isNotEmpty(rootPath)) {
+				Resource resource = request.getResourceResolver().getResource(rootPath);
 				if (resource != null && resource.hasChildren()) {
 					Iterator<Resource> iterator = resource.listChildren();
 					List<Resource> list = new ArrayList<>();
 					iterator.forEachRemaining(list::add);
 					list.forEach(res -> {
-						// ValueMap valueMap = res.getValueMap();
 						String key = res.getName();
 						String value = res.getName();
 						if (key.equals(JcrConstants.JCR_CONTENT)) {
@@ -62,7 +57,8 @@ public class ProductCategoryDropdownServlet extends SlingAllMethodsServlet {
 
 						dropDownList.add(new KeyValue(value, key));
 					});
-				}}
+				}
+			}
 			DataSource ds = new SimpleDataSource(new TransformIterator<>(dropDownList.iterator(), input -> {
 				KeyValue keyValue = (KeyValue) input;
 				ValueMap vm = new ValueMapDecorator(new HashMap<>());
@@ -79,21 +75,9 @@ public class ProductCategoryDropdownServlet extends SlingAllMethodsServlet {
 
 	private class KeyValue {
 
-		/**
-		 * key property.
-		 */
 		private String key;
-		/**
-		 * value property.
-		 */
 		private String value;
 
-		/**
-		 * constructor instance intance.
-		 *
-		 * @param newKey   -
-		 * @param newValue -
-		 */
 		private KeyValue(final String newKey, final String newValue) {
 			this.key = newKey;
 			this.value = newValue;

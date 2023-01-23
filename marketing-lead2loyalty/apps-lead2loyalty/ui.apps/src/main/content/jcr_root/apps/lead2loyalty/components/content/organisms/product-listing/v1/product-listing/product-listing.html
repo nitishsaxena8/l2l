@@ -7,7 +7,7 @@
 	 data-rootpage=${properties.rootPagePath}>
 </div>
 
-<!-- ---------------------------------------------------------------------------------------
+<!--/* ---------------------------------------------------------------------------------------
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script type="text/javascript">
@@ -33,58 +33,66 @@
 }
 </script>
 
--------------------------------------------------------------------------------------------------- -->
+-------------------------------------------------------------------------------------------------- */-->
 
+<!--/* ----------------- Body ------------------ */-->
 
-
-<!-- Body -->
 <div class="container my-5 plp-container">
 	<div class="row">
 		<div class="col-3">
 			<div class="d-flex justify-content-between">
 				<div class="fw-bold fs-4">Filter</div>
-				<button class="btn btn-link">Clear All</button>
+				<button class="btn btn-link clear-all-btn">Clear All</button>
 			</div>
 
-			<sly data-sly-list.accordionMap="${productListingModel.accordionMap}">
-				<div class="accordionFilter" id="product-${accordionMapList.index}">
-					<div class="card-header fw-bold my-2" id="headingOne">
-						<div class="cardTitle"
-								data-toggle="collapse"
-								data-target="#panel-${accordionMapList.index}"
-								aria-expanded="true"
-								aria-controls="collapseOne" data-title="${accordionMap}">
-							${accordionMap}
-						</div>
-					</div>
-
-					<sly data-sly-test.accordionList="${productListingModel.accordionMap[accordionMap]}">
-						<div data-sly-list.accList="${accordionList}"
-							 id="panel-${accordionMapList.index}"
-							 class="collapse panel show"
-							 aria-labelledby="headingOne"
-							 data-parent="product-${accordionMapList.index}">
-							<div class="card-body my-3 ms-4" data-sly-test="${accList.title}">${accList.title}</div>
-						</div>
-					</sly>
+			<!--/* ----------------- accordian start ------------------ */-->
+			<div id="accordion">
+			  <sly data-sly-list.accordionMap="${productListingModel.accordionMap}">
+              <div>
+                <div class="card-header my-2" id="headingOne">
+					<button class="btn fw-bold filter-header" 
+						data-toggle="collapse" 
+						data-target="#collapse-${accordionMapList.index}" 
+						aria-expanded="true" 
+						aria-controls="collapse-${accordionMapList.index}" 
+						data-title="${accordionMap}" data-name="${productListingModel.pageNameMap[accordionMap]}">
+						${accordionMap}
+					</button>
 				</div>
-			</sly>
+				<sly data-sly-test.accordionList="${productListingModel.accordionMap[accordionMap]}">
+                <div id="collapse-${accordionMapList.index}" 
+					class="collapse show" 
+					aria-labelledby="headingOne" 
+					data-parent="#accordion">
+                  <div class="card-body">
+                    <ul class="list-group ms-4" 
+						data-sly-list.accList="${accordionList}">
+						<li class="list-group-item border-0">${accList.title}</li>
+					</ul>
+                  </div>
+                </div>
+				</sly>
+              </div>
+			 </sly>
+            </div>
+			<!--/* ----------------- accordian end ------------------ */-->
 		</div>
 
-
+		<!--/* ----------------- results start ------------------ */-->
 		<div class="col-9 d-flex flex-wrap p-2 justify-content-between">
 			<div class="container px-4 d-flex flex-wrap">
-			<div class="d-flex flex-row w-100 justify-content-end">
-				<div>
-                    <label for="sort">Sort by </label>
-                    <select name="sort" id="sort" class="border-0 border-bottom">
-                        <option value="Best seller">Best seller</option>
-                        <option value="Popularity">Popularity</option>
-                    </select>
+				<div class="d-flex flex-row w-100 justify-content-end">
+					<div>
+						<label for="sort">Sort by </label>
+						<select name="sort" id="sort" class="border-0 border-bottom">
+							<option value="Best seller">Best seller</option>
+							<option value="Popularity">Popularity</option>
+						</select>
+					</div>
 				</div>
-			</div>
-				<div class="row gx-3 d-flex flex-wrap"  data-sly-list.product="${productListingModel.productList}">
-					<div class="col-sm-4 my-3 resultsWrapper product-list-tile" style="min-width: 30%" id="product-${productList.index}-results" data-parent="${product.parentTitle}">
+
+				<div class="row gx-3 d-flex flex-wrap" data-sly-list.product="${productListingModel.productList}">
+					<div class="col-sm-4 my-3 resultsWrapper product-list-tile" style="min-width: 30%" id="product-results" data-parent="${product.parentTitle}" data-name="${product.parentName}">
 						<a href="${product.path}" class="text-decoration-none">
 							<div class="card shadow-lg">
 								<img src="${product.image}" class="card-img-top" alt="product image" />
@@ -99,5 +107,6 @@
 				</div>
 			</div>
 		</div>
+		<!--/* ----------------- results end ------------------ */-->
 	</div>
 </div>

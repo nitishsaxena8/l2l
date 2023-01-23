@@ -1,6 +1,7 @@
 package com.deloitte.aem.lead2loyalty.core.models;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -45,6 +46,7 @@ public class ProductListingModel {
 	private List<ProductsBean> accordionCategoryList;
 
 	private Map<String, List<ProductsBean>> accordionMap;
+	private Map<String, String> pageNameMap;
 
 	@OSGiService
 	private SlingSettingsService settingsService;
@@ -65,6 +67,7 @@ public class ProductListingModel {
 				Page childPage = rootPageIterator.next();
 
 				String parentTitle = childPage.getParent().getTitle();
+				String parentName = childPage.getParent().getName();
 				String parentPath = childPage.getParent().getPath();
 
 				ValueMap pageProperties = childPage.getProperties();
@@ -109,6 +112,7 @@ public class ProductListingModel {
 							childPage.getPath(), settingsService));
 
 					productsBean.setParentTitle(parentTitle != null ? parentTitle : StringUtils.EMPTY);
+					productsBean.setParentName(parentName != null ? parentName : StringUtils.EMPTY);
 					productsBean.setParentPath(parentPath != null ? parentPath : StringUtils.EMPTY);
 
 					productList.add(productsBean);
@@ -120,6 +124,7 @@ public class ProductListingModel {
 
 			Iterator<Page> pageIterator = parentPage.listChildren(new PageFilter(), false);
 			accordionMap = new LinkedHashMap<>();
+			pageNameMap = new HashMap<>();
 			while (pageIterator.hasNext()) {
 				Page childPage = pageIterator.next();
 				ProductsBean childBean = new ProductsBean();
@@ -151,6 +156,7 @@ public class ProductListingModel {
 					}
 
 					accordionMap.put(childPage.getTitle(), accordionCategoryList);
+					pageNameMap.put(childPage.getTitle(), childPage.getName());
 
 				}
 			}
@@ -170,6 +176,10 @@ public class ProductListingModel {
 
 	public Map<String, List<ProductsBean>> getAccordionMap() {
 		return accordionMap;
+	}
+	
+	public Map<String, String> getPageNameMap() {
+		return pageNameMap;
 	}
 
 }

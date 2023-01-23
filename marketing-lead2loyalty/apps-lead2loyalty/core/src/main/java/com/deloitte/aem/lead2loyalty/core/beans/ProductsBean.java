@@ -12,6 +12,7 @@ public class ProductsBean {
 	private int depth;
 	private List<String> tags;
 	private String parentTitle;
+	private String parentName;
 	private String parentPath;
 
 	public List<String> getTags() {
@@ -76,6 +77,14 @@ public class ProductsBean {
 
 	public void setParentTitle(String parentTitle) {
 		this.parentTitle = parentTitle;
+	}
+	
+	public String getParentName() {
+		return parentName;
+	}
+
+	public void setParentName(String parentName) {
+		this.parentName = parentName;
 	}
 
 	public String getParentPath() {
