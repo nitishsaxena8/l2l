@@ -79,12 +79,60 @@
                   />
                 </svg>
               </button>
-              <div class="">
-                <button type="button" class="btn btn-dark">Sign In</button>
+              <div class="user-log-in">
+                <button type="button" class="btn btn-dark" data-bs-toggle="modal" id="signInBtn" data-target="#signInFormModal" data-toggle="modal">Sign In</button>
               </div>
+
+                <!-- user dropdown start -->
+                <div class="dropdown user-logged-in d-none">
+                  <a class="btn btn-dark dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    My Account
+                  </a>
+
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="#">Profile</a>
+                    <a class="dropdown-item logout-app" href="javascript:void(0)">Logout</a>
+                  </div>
+                </div>
+			        <!-- user dropdown end -->
             </div>
           </div>
         </div>
       </nav>
     </header>
     <!-- Header -->
+
+ <!-- Sign in Modal -->
+ <div  class="modal fade" id="myModal" role="dialog" id="signInFormModal" tabindex="-1" aria-labelledby="signInLabel" style="display: none;">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="signInLabel">Login</h5>
+          </div>
+          <div class="modal-body">
+              <form id="signInForm">
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="form2Example1">Email address</label>
+                    <input type="email" id="form2Example1" name="email" class="form-control" />
+                  </div>
+                
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="form2Example2">Password</label>
+                    <input type="password" id="form2Example2" name="password" class="form-control" />
+                  </div>
+                
+                  <div class="row mb-4">
+                    <div class="col d-flex justify-content-start">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="rememberMe" value="true" id="form2Example31" checked />
+                        <label class="form-check-label" for="form2Example31"> Remember me </label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <button type="submit" class="btn btn-primary btn-block mb-4 w-100">Sign in</button>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>
