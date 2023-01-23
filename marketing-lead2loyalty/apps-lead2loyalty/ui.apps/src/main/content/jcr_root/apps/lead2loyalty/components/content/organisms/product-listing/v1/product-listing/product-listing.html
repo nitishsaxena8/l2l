@@ -7,7 +7,7 @@
 	 data-rootpage=${properties.rootPagePath}>
 </div>
 
-<!-- ---------------------------------------------------------------------------------------
+<!--/* ---------------------------------------------------------------------------------------
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script type="text/javascript">
@@ -33,11 +33,10 @@
 }
 </script>
 
--------------------------------------------------------------------------------------------------- -->
+-------------------------------------------------------------------------------------------------- */-->
 
+<!--/* ----------------- Body ------------------ */-->
 
-
-<!-- Body -->
 <div class="container my-5 plp-container">
 	<div class="row">
 		<div class="col-3">
@@ -53,7 +52,9 @@
 								data-toggle="collapse"
 								data-target="#panel-${accordionMapList.index}"
 								aria-expanded="true"
-								aria-controls="collapseOne" data-title="${accordionMap}">
+								aria-controls="collapseOne"
+								data-title="${accordionMap}"
+								data-name="${productListingModel.pageNameMap[accordionMap]}">
 							${accordionMap}
 						</div>
 					</div>
