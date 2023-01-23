@@ -75,21 +75,9 @@ public class ProductCategoryDropdownServlet extends SlingAllMethodsServlet {
 
 	private class KeyValue {
 
-		/**
-		 * key property.
-		 */
 		private String key;
-		/**
-		 * value property.
-		 */
 		private String value;
 
-		/**
-		 * constructor instance intance.
-		 *
-		 * @param newKey   -
-		 * @param newValue -
-		 */
 		private KeyValue(final String newKey, final String newValue) {
 			this.key = newKey;
 			this.value = newValue;
