@@ -2,4 +2,8 @@
 <workspaceFilter version="1.0">
     <filter root="/content/lead2loyalty"/>
     <filter root="/content/experience-fragments"/>
+
+    <filter root="/content/forms/af/user-signup"/>
+    <filter root="/content/dam/formsanddocuments/user-signup"/>
+    <filter root="/content/dam/formsanddocuments/user.schema.json"/>
 </workspaceFilter>
