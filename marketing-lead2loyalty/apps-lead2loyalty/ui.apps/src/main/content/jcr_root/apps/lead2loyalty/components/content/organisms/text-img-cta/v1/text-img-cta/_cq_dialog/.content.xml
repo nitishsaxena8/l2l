@@ -42,6 +42,7 @@
                                                         name="./productCategory">
                                                         <datasource
                                                             jcr:primaryType="nt:unstructured"
+                                                           	rootPath ="/content/lead2loyalty/language-masters/en/home-page/products"
                                                             sling:resourceType="/apps/dropDownListing"/>
                                                     </category>
                                                     <title
