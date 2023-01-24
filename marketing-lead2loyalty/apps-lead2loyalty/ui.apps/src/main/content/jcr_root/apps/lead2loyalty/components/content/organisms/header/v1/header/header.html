@@ -111,35 +111,26 @@
             </div>
             <div class="modal-body">
                 <form id="signInForm">
+
+					<p class="sign-in-error text-danger d-none">Sign in Error</p>
                     <div class="form-outline mb-4">
-                        <label class="form-label" for="form2Example1">Email address</label>
-                        <input type="email" id="form2Example1" name="email" class="form-control" />
+                        <label class="form-label" for="loginEmail">Email address</label>
+                        <input type="email" id="loginEmail" name="email" class="form-control" />
                     </div>
 
                     <div class="form-outline mb-4">
-                        <label class="form-label" for="form2Example2">Password</label>
-                        <input type="password" id="form2Example2" name="password" class="form-control" />
+                        <label class="form-label" for="loginPassword">Password</label>
+                        <input type="password" id="loginPassword" name="password" class="form-control" />
                     </div>
 
-                    <div class="row mb-4">
-                        <div class="col d-flex justify-content-start">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="rememberMe" value="true" id="form2Example31" checked />
-                                <label class="form-check-label" for="form2Example31"> Remember me </label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <button type="button" class="btn btn-primary btn-block mb-4 w-100 login-btn">Sign in</button>
+                    <button type="submit" class="btn btn-primary btn-block mb-1 w-100 login-btn">Sign in</button>
                 </form>
+            </div>
+			<div class="modal-footer">
+				<a class="btn btn-primary w-100 mb-3" href="#" role="button">Create Account</a>
             </div>
         </div>
     </div>
 </div>
-
-
-
-
-
 
 

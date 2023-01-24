@@ -50,38 +50,42 @@ if($('.product-details').length) {
 }
 
 
-$('.login-btn').click(function(event) {
+$('#signInForm').submit(function(event) {
+    $('.sign-in-error').addClass('d-none');
+    if(this.checkValidity()) {
+        event.preventDefault();
+        var loginData = {
+            "username" : $('#loginEmail').val(),
+            "password" : $('#loginPassword').val()
+        };
 
-    var loginData = {
-        "username" : "test@gmail.com",
-        "password" : "test"
-    };
-
-	$.ajax({
-      type: "POST",
-      url: "/bin/user",
-      data: JSON.stringify(loginData),
-      contentType: "application/json",
-      dataType: "json",
-      success: function(resultData){
-          alert("User Logged in Successfully !!!");
-
-          if(this.checkValidity()) {
-              event.preventDefault();
-            var formValues = JSON.stringify($(this).serializeArray());
-            localStorage.setItem('userDetails', formValues);
+        $.ajax({
+          type: "POST",
+          url: "/bin/user",
+          data: JSON.stringify(loginData),
+          contentType: "application/json",
+          dataType: "json",
+          success: function(resultData) {
+              alert("User Logged in Successfully !!!");
+			  localStorage.setItem('userDetails', JSON.stringify(resultData));              
               $('.user-logged-in').removeClass('d-none');
               $('.user-log-in').addClass('d-none');
-            $('#signInFormModal').modal('hide');
-            $('.modal-backdrop').remove();
+              $('#signInFormModal').modal('hide');
+              $('.modal-backdrop').remove();
+          },
+          error: function(errorData) {
+			  $('.sign-in-error').removeClass('d-none');
           }
-      }
-	});
+        });
+    }
 });
-
 
 $('.logout-app').click(function(event) {
 	localStorage.setItem('userDetails', '');
     $('.user-log-in').removeClass('d-none');
     $('.user-logged-in').addClass('d-none');
+});
+
+$("#signInFormModal .form-control").change(function() { 
+    $('.sign-in-error').addClass('d-none'); 
 });
