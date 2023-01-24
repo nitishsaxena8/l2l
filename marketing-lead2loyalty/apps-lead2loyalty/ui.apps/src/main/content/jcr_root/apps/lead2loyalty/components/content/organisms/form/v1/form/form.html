@@ -3,33 +3,6 @@
   <p>${properties.formDescription}</p>
   <span>${properties.formRequiredFieldIndicatorText}</span>
   <div class="form-container">
-    <form id="mktoForm_1304"></form>
+    <div data-sly-resource="${'user-signup' @resourceType='fd/af/components/aemform'}"></div>
   </div>
 </div>
-
-<script>
-  MktoForms2.loadForm("//686-MGA-012.mktoweb.com", "686-MGA-012", 1304);
-</script>
-
-<script type="text/javascript">
-  (function () {
-    var didInit = false;
-    function initMunchkin() {
-      if (didInit === false) {
-        didInit = true;
-        Munchkin.init("686-MGA-012", { wsInfo: "j0hRedjOKwEO" });
-      }
-    }
-    var s = document.createElement("script");
-    s.type = "text/javascript";
-    s.async = true;
-    s.src = "//munchkin.marketo.net/munchkin.js";
-    s.onreadystatechange = function () {
-      if (this.readyState == "complete" || this.readyState == "loaded") {
-        initMunchkin();
-      }
-    };
-    s.onload = initMunchkin;
-    document.getElementsByTagName("head")[0].appendChild(s);
-  })();
-</script>

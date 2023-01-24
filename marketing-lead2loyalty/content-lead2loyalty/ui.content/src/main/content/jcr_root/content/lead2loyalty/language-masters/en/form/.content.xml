@@ -29,7 +29,21 @@
                         sling:resourceType="lead2loyalty/components/content/organisms/form/v1/form"
                         formDescription="For Product updates &amp; webinar information"
                         formRequiredFieldIndicatorText="*Indicates required field"
-                        formTitle="Audio Solution's Product Update Sign-up"/>
+                        formTitle="Audio Solution's Product Update Sign-up">
+                        <user-signup
+                            jcr:lastModified="{Date}2023-01-23T22:52:35.630+05:30"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="fd/af/components/aemform"
+                            formRef="/content/dam/formsanddocuments/user-signup"
+                            formType="adaptiveForm"
+                            submitType="inline"
+                            textIsRich="true"
+                            thankyouConfig="message"
+                            thankyouMessage="&lt;p>Thank you !!!&lt;/p>&#xd;&#xa;"
+                            useiframe="false"
+                            usePageLocale="true"/>
+                    </form>
                 </container>
             </container>
         </root>
