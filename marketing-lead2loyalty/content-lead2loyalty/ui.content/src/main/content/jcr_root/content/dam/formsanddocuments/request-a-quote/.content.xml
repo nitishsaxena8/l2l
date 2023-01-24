@@ -3,7 +3,7 @@
     jcr:primaryType="dam:Asset">
     <jcr:content
         cq:conf=""
-        jcr:lastModified="{Date}2023-01-24T16:02:42.605+05:30"
+        jcr:lastModified="{Date}2023-01-24T15:41:34.293+05:30"
         jcr:primaryType="dam:AssetContent"
         sling:resourceType="fd/fm/af/render"
         guide="1"
@@ -14,12 +14,9 @@
             xmp:CreatorTool="AEM Forms"
             allowedRenderFormat="HTML"
             author="admin"
-            availableInMobileApp="{Boolean}false"
-            dorTemplateChanged="Boolean"
-            dorType="none"
             formmodel="jsonschema"
-            schemaRef="/content/dam/formsanddocuments/user.schema.json"
+            schemaRef="/content/dam/formsanddocuments/request-a-quote.schema.json"
             themeRef="/content/dam/formsanddocuments-themes/aem-forms-reference-content/canvas-3-0"
-            title="user-signup"/>
+            title="request-a-quote"/>
     </jcr:content>
 </jcr:root>

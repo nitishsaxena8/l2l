@@ -2,18 +2,18 @@
 <jcr:root xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dam="http://www.day.com/dam/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:mixinTypes="[mix:referenceable]"
     jcr:primaryType="dam:Asset"
-    jcr:uuid="5412481d-bc3e-4740-aa51-b01744a4bbfe">
+    jcr:uuid="90bf458f-5d9d-4a25-a15f-571cc0de4735">
     <jcr:content
         dam:assetState="processed"
-        jcr:lastModified="{Date}2023-01-24T15:59:51.500+05:30"
+        jcr:lastModified="{Date}2023-01-24T15:59:47.997+05:30"
         jcr:lastModifiedBy="Administrator"
         jcr:primaryType="dam:AssetContent"
         lcResource="{Long}1"
         type="lcResource">
         <metadata
-            dam:extracted="{Date}2023-01-24T15:59:51.353+05:30"
-            dam:sha1="e5366cfd82c75263a65429d8854503ec3f87cdbd"
-            dam:size="{Long}619"
+            dam:extracted="{Date}2023-01-24T15:59:47.702+05:30"
+            dam:sha1="ca80de352cf61b96e56ee5deb7df8c147005431e"
+            dam:size="{Long}574"
             dc:format="application/json"
             jcr:lastModified="{Date}2023-01-23T17:56:53.528+05:30"
             jcr:lastModifiedBy="admin"

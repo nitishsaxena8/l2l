@@ -13,7 +13,7 @@
                             jcr:primaryType="nt:unstructured"
                             jcr:title="Home Page Template Policy"
                             sling:resourceType="wcm/core/components/policy/policy"
-                            components="[group:xpbootstrap.container,group:xpbootstrap.content,group:lead2loyalty]"
+                            components="[group:xpbootstrap.container,group:xpbootstrap.content,group:lead2loyalty,group:General]"
                             layoutDisabled="false">
                             <jcr:content jcr:primaryType="nt:unstructured"/>
                         </policy_1669829412542>

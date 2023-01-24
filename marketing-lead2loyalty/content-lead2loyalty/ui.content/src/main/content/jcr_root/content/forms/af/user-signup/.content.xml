@@ -3,7 +3,7 @@
     jcr:primaryType="cq:Page">
     <jcr:content
         cq:deviceGroups="[mobile/groups/responsive]"
-        cq:lastModified="{Date}2023-01-23T21:02:49.553+05:30"
+        cq:lastModified="{Date}2023-01-24T16:02:42.606+05:30"
         cq:lastModifiedBy="admin"
         cq:template="/conf/aem-forms-reference-content/settings/wcm/templates/blank-af"
         jcr:language="en"
@@ -114,11 +114,12 @@
                     <guidepasswordbox
                         jcr:created="{Date}2023-01-23T21:01:56.204+05:30"
                         jcr:createdBy="admin"
-                        jcr:lastModified="{Date}2023-01-23T21:02:35.075+05:30"
+                        jcr:lastModified="{Date}2023-01-24T16:02:42.592+05:30"
                         jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
                         jcr:title="Password"
                         sling:resourceType="fd/af/components/guidepasswordbox"
+                        bindRef="/password"
                         dorExclusion="true"
                         guideNodeClass="guidePasswordBox"
                         mandatory="true"

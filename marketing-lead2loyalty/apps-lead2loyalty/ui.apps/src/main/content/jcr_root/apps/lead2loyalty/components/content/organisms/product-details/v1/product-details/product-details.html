@@ -21,7 +21,7 @@
                         <p>${productModel.pricingDesc}</p>
                     </div>
                     <div>
-                        <button type="button" class="btn btn-primary">${properties.pricingCtaLabel}</button>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-target="#requestAQuote" data-toggle="modal">${properties.pricingCtaLabel}</button>
                     </div>
                 </div>
                 <div>
@@ -39,6 +39,23 @@
     </div>
 
 
+    <div  class="modal fade" id="myModal" role="dialog" id="requestAQuote" tabindex="-1" aria-labelledby="exampleModalLabel" style="display: none;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Request a Quote</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" data-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row justify-content-center">
+                        <div>
+                            <div data-sly-resource="${'container' @resourceType='lead2loyalty/components/content/organisms/xp-container'}"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Modal -->
     <div  class="modal fade" id="myModal" role="dialog" id="shareWithTeamsBtnModal" tabindex="-1" aria-labelledby="exampleModalLabel" style="display: none;">
@@ -65,7 +82,7 @@
                                         <input type="text" class="form-control" id="exampleInputName1">
                                     </div>
 
-									<div class="col-4">
+                                    <div class="col-4">
                                         <label for="exampleInputEmail1" class="form-label">${productModel.emailIdFieldLabel}</label>
                                         <input type="email" class="form-control" id="exampleInputEmail1">
                                     </div>
@@ -87,7 +104,7 @@
                                         <input type="email" class="form-control" id="exampleInputEmail2">
                                     </div>
                                 </div>
-								<div class="table-container"></div>
+                                <div class="table-container"></div>
 
                                 <div class="mb-3 form-addition">
                                     <button type="button" class="btn btn-link add-team-details text-decoration-none mb-2">+ Add More</button>
