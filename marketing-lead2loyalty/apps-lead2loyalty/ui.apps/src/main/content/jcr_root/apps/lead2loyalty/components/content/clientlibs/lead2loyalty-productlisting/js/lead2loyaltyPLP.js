@@ -33,7 +33,7 @@ if($('.product-details').length) {
         $('.table-container').empty();
         variableIndex = 2;
     });
-    
+
     $('.add-team-details').click(function(event) {
         var additionalRow = '<div class="row mb-4">'+
         '<div class="col-4"><label for="exampleInputTeam'+(variableIndex+1)+'" class="form-label">Team</label><input type="text" class="form-control" id="exampleInputTeam'+(variableIndex+1)+'"></div>'+
@@ -44,17 +44,36 @@ if($('.product-details').length) {
     });
 }
 
-$('#signInForm').submit(function(event) {
-    if(this.checkValidity()) {
-        event.preventDefault();
-		var formValues = JSON.stringify($(this).serializeArray());
-		localStorage.setItem('userDetails', formValues);
-        $('.user-logged-in').removeClass('d-none');
-        $('.user-log-in').addClass('d-none');
-		$('#signInFormModal').modal('hide');
-		$('.modal-backdrop').remove();
-    }
+
+$('.login-btn').click(function(event) {
+
+    var loginData = {
+        "username" : "test@gmail.com",
+        "password" : "test"
+    };
+
+	$.ajax({
+      type: "POST",
+      url: "/bin/user",
+      data: JSON.stringify(loginData),
+      contentType: "application/json",
+      dataType: "json",
+      success: function(resultData){
+          alert("User Logged in Successfully !!!");
+
+          if(this.checkValidity()) {
+              event.preventDefault();
+            var formValues = JSON.stringify($(this).serializeArray());
+            localStorage.setItem('userDetails', formValues);
+              $('.user-logged-in').removeClass('d-none');
+              $('.user-log-in').addClass('d-none');
+            $('#signInFormModal').modal('hide');
+            $('.modal-backdrop').remove();
+          }
+      }
+	});
 });
+
 
 $('.logout-app').click(function(event) {
 	localStorage.setItem('userDetails', '');
