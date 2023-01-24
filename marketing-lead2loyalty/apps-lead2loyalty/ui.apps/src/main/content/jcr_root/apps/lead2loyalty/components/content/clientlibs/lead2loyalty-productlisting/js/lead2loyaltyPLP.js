@@ -1,3 +1,8 @@
+if(localStorage.getItem('userDetails')) {
+	$('.user-logged-in').removeClass('d-none');
+    $('.user-log-in').addClass('d-none');
+}
+
 if($('.plp-container').length) {
     var url = document.location.href;
 	var queryURL = url.substring(url.indexOf('&') + 1);
