@@ -9,7 +9,7 @@
         jcr:primaryType="cq:PageContent"
         jcr:title="Compatible with Ardunio Board"
         pageType="Product Detail page"
-        sling:resourceType="lead2loyalty/components/content/organisms/page"
+        sling:resourceType="lead2loyalty/components/content/organisms/product-page"
         image="/content/dam/lead2loyalty/circuit-5.jpg"
         pwaCachestrategy="staleWhileRevalidate"
         pwaDisplay="standalone"
