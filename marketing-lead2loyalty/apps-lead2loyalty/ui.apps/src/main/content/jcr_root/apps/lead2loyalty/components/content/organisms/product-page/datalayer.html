@@ -1,0 +1,52 @@
+<script type="text/javascript">
+    var digitalData = {};
+</script>
+<sly data-sly-use.dataLayerHelper="${'com.deloitte.aem.lead2loyalty.core.models.DataLayerModel'}"/>
+
+<sly data-sly-test.pagename = "${ dataLayerHelper.pageName ? dataLayerHelper.pageName : pageProperties.jcr:title}"></sly>
+
+
+<script type="text/javascript">
+
+    digitalData.page = {};
+
+    digitalData.page = {
+        'pageInfo':{
+            'pageID':'',
+            'pageName': '${dataLayerHelper.pageName @ context="text"}',
+            'pageType': '${pageproperties.pageType @ context="text"}',
+            'title': '${dataLayerHelper.pageTitle @ context="text"}',
+            'pageURL': '${dataLayerHelper.pagePath @ context="text"}',
+            'pageReferrer':''
+         }
+
+    };
+
+    digitalData.user = {
+        'authState':'not-authenticate',
+        'email':'',
+        'userId':''
+    };
+
+    digitalData.ecommerce = {};
+    digitalData.ecommerce.detail = {};
+    digitalData.ecommerce.detail.products = {};
+    digitalData.ecommerce.detail.products.items = {};
+
+    digitalData.ecommerce = {
+        'detail':{
+            'products':{
+				'items':[
+                    {
+                        'productName':'${dataLayerHelper.pageTitle @ context="text"}',
+                        'productID':'${dataLayerHelper.productID @ context="text"}',
+                        'productURL':'${dataLayerHelper.pagePath @ context="text"}',
+                        'primaryCategory':'${dataLayerHelper.parentPageTitle @ context="text"}'
+                    }
+				]
+            }
+        }
+    };
+
+
+</script>
