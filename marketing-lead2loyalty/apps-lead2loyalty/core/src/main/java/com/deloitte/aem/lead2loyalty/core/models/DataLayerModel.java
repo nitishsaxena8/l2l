@@ -1,10 +1,11 @@
 package com.deloitte.aem.lead2loyalty.core.models;
 
+import com.day.cq.commons.jcr.JcrConstants;
 import com.day.cq.wcm.api.Page;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.jackrabbit.JcrConstants;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
+import org.apache.sling.api.resource.ValueMap;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.OSGiService;
@@ -48,6 +49,10 @@ public class DataLayerModel {
 	@OSGiService
 	private SlingSettingsService settingsService;
 
+	private String productID;
+
+	private String parentPageTitle;
+
 	/**
 	 * Gets invoked after completion of all injections.
 	 *
@@ -64,12 +69,17 @@ public class DataLayerModel {
 			}
 		}
 
-		String templatePath = currentPage.getProperties().get("cq:template", String.class);
+		ValueMap pageProperties = currentPage.getProperties();
+
+		String templatePath = pageProperties.get("cq:template", String.class);
 		if (StringUtils.isNotEmpty(templatePath)) {
 			String[] path = templatePath.split("/");
 			action = path[path.length - 1].replaceAll("-", " ");
 		}
 
+		//String title = pageProperties.get(JcrConstants.JCR_TITLE, String.class);
+		productID = pageProperties.get("productID", String.class);
+		parentPageTitle = currentPage.getParent().getTitle();
 		pagePath = currentPage.getPath();
 
 		LOGGER.debug("Exiting DataLayerModel");
@@ -92,5 +102,13 @@ public class DataLayerModel {
 
 	public String getAction() {
 		return action;
+	}
+
+	public String getProductID() {
+		return productID;
+	}
+
+	public String getParentPageTitle() {
+		return parentPageTitle;
 	}
 }

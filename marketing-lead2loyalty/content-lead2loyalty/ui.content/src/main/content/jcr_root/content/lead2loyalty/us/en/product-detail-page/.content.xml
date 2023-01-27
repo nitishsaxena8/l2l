@@ -10,7 +10,7 @@
         jcr:mixinTypes="[cq:LiveRelationship]"
         jcr:primaryType="cq:PageContent"
         jcr:title="Home Page"
-        sling:resourceType="lead2loyalty/components/content/organisms/page">
+        sling:resourceType="lead2loyalty/components/content/organisms/product-page">
         <root
             cq:lastRolledout="{Date}2022-12-01T02:25:00.408+05:30"
             cq:lastRolledoutBy="admin"
