@@ -66,12 +66,17 @@ $('#signInForm').submit(function(event) {
           contentType: "application/json",
           dataType: "json",
           success: function(resultData) {
-              alert("User Logged in Successfully !!!");
-			  localStorage.setItem('userDetails', JSON.stringify(resultData));              
-              $('.user-logged-in').removeClass('d-none');
-              $('.user-log-in').addClass('d-none');
-              $('#signInFormModal').modal('hide');
-              $('.modal-backdrop').remove();
+              if (resultData.errorCode) {
+                $('.sign-in-error').removeClass('d-none');
+                $('.sign-in-error').text(resultData.errorMessage);
+              } else {
+                console.log(resultData);
+                localStorage.setItem('userDetails', JSON.stringify(resultData));
+                $('.user-logged-in').removeClass('d-none');
+                $('.user-log-in').addClass('d-none');
+                $('#signInFormModal').modal('hide');
+                $('.modal-backdrop').remove();
+                }
           },
           error: function(errorData) {
 			  $('.sign-in-error').removeClass('d-none');

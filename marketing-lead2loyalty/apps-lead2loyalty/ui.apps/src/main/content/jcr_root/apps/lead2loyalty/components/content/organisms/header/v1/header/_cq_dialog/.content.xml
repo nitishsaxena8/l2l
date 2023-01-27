@@ -92,6 +92,15 @@
                                                 </items>
                                             </field>
                                         </subpages>
+                                        <SignUpPageUrl
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                            emptyText="SignUp Page URL"
+                                            fieldDescription="Please Enter SignUp Page URL."
+                                            fieldLabel="SignUp Page URL"
+                                            name="./SignUpPageUrl"
+                                            required="{Boolean}true"
+                                            rootPath="/content"/>
                                     </items>
                                 </field>
                             </expandedItems>
