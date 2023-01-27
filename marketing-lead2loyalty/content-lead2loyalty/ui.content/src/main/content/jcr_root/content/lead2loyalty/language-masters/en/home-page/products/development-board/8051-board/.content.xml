@@ -9,6 +9,7 @@
         jcr:primaryType="cq:PageContent"
         jcr:title="8051 Board"
         pageType="Product Detail page"
+        productID="1234567890"
         sling:resourceType="lead2loyalty/components/content/organisms/product-page"
         image="/content/dam/lead2loyalty/circuit-7.jpg"
         pwaCachestrategy="staleWhileRevalidate"
