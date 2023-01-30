@@ -9,7 +9,10 @@
         </div>
         <div class="col-6">
             <div class="d-flex justify-content-end ml-4">
-                <button type="button" class="btn btn-link text-decoration-none mb-2" style="color: black;" data-bs-toggle="modal" id="shareWithTeamsBtn" data-target="#shareWithTeamsBtnModal" data-toggle="modal">${productModel.shareCtaLabel}</button>
+                <button type="button" class="btn btn-link share-with-teams-btn text-decoration-none mb-2 p-0" data-bs-toggle="modal" id="shareWithTeamsBtn" data-target="#shareWithTeamsBtnModal" data-toggle="modal">
+                    <img src="/content/dam/lead2loyalty/share-with-teams.png" alt="share with team">
+                    ${productModel.shareCtaLabel}
+                </button>
             </div>
             <div class="product-heading">
                 <h5>${productModel.title}</h5>
@@ -49,7 +52,9 @@
                 <div class="modal-body">
                     <div class="row justify-content-center">
                         <div>
-                            <p class="form-success-container text-success d-none">Request successfully submitted !!!</p>
+                            <div class="alert alert-success form-success-container d-none">
+								Request successfully submitted !!!
+                            </div>
                             <div data-sly-resource="${'container' @resourceType='lead2loyalty/components/content/organisms/xp-container'}"></div>
                         </div>
                     </div>
