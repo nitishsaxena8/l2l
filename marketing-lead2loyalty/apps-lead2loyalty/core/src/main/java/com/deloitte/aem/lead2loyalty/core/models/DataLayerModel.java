@@ -1,17 +1,21 @@
 package com.deloitte.aem.lead2loyalty.core.models;
 
-import com.day.cq.commons.jcr.JcrConstants;
 import com.day.cq.wcm.api.Page;
+import com.deloitte.aem.lead2loyalty.core.util.ServiceUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
+import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.resource.ValueMap;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.Self;
+import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import org.apache.sling.settings.SlingSettingsService;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -53,6 +57,9 @@ public class DataLayerModel {
 
 	private String parentPageTitle;
 
+	@SlingObject
+	private ResourceResolver resourceResolver;
+
 	/**
 	 * Gets invoked after completion of all injections.
 	 *
@@ -80,7 +87,19 @@ public class DataLayerModel {
 		//String title = pageProperties.get(JcrConstants.JCR_TITLE, String.class);
 		productID = pageProperties.get("productID", String.class);
 		parentPageTitle = currentPage.getParent().getTitle();
-		pagePath = currentPage.getPath();
+		pagePath = ServiceUtils.getLink(resourceResolver, currentPage.getPath(), settingsService);
+
+		JSONObject productJson = new JSONObject();
+
+		try {
+			productJson.put("productId","");
+			productJson.put("productDescription","");
+			productJson.put("productTitle","");
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
+
+
 
 		LOGGER.debug("Exiting DataLayerModel");
 	}

@@ -20,6 +20,7 @@
             enableServerValidation="true"
             guideCss="guideContainer"
             guideNodeClass="guideContainerNode"
+            clientLibRef="lead2loyalty.forms"
             name="guide1"
             schemaRef="/content/dam/formsanddocuments/request-a-quote.schema.json"
             schemaType="jsonschema"
@@ -149,18 +150,23 @@
                                 name="updates"
                                 parentCollectionPath=""/>
                             <guidebutton
-                                jcr:created="{Date}2023-01-24T15:23:41.223+05:30"
+                                jcr:created="{Date}2023-01-27T14:56:21.430+05:30"
                                 jcr:createdBy="admin"
-                                jcr:lastModified="{Date}2023-01-24T15:24:10.200+05:30"
+                                jcr:lastModified="{Date}2023-01-27T14:56:57.474+05:30"
                                 jcr:lastModifiedBy="admin"
                                 jcr:primaryType="nt:unstructured"
                                 jcr:title="Submit"
                                 sling:resourceType="fd/af/components/guidebutton"
+                                css="quote-submit-btn"
                                 dorExclusion="true"
                                 guideNodeClass="guideButton"
                                 name="submit"
                                 textIsRich="[true,true]"
-                                type="Button"/>
+                                type="Button">
+                                <fd:rules
+                                    fd:click="[{&quot;nodeName&quot;:&quot;ROOT&quot;\,&quot;items&quot;:[{&quot;nodeName&quot;:&quot;STATEMENT&quot;\,&quot;choice&quot;:{&quot;nodeName&quot;:&quot;EVENT_SCRIPTS&quot;\,&quot;items&quot;:[{&quot;nodeName&quot;:&quot;EVENT_CONDITION&quot;\,&quot;choice&quot;:{&quot;nodeName&quot;:&quot;EVENT_AND_COMPARISON&quot;\,&quot;items&quot;:[{&quot;nodeName&quot;:&quot;COMPONENT&quot;\,&quot;value&quot;:{&quot;id&quot;:&quot;guide.guideRootPanel.submit&quot;\,&quot;type&quot;:&quot;BUTTON&quot;\,&quot;name&quot;:&quot;submit&quot;}}\,{&quot;nodeName&quot;:&quot;EVENT_AND_COMPARISON_OPERATOR&quot;\,&quot;choice&quot;:{&quot;nodeName&quot;:&quot;is clicked&quot;\,&quot;value&quot;:null}}\,{&quot;nodeName&quot;:&quot;PRIMITIVE_EXPRESSION&quot;\,&quot;choice&quot;:null}]}\,&quot;nested&quot;:false}\,{&quot;nodeName&quot;:&quot;Then&quot;\,&quot;value&quot;:null}\,{&quot;nodeName&quot;:&quot;BLOCK_STATEMENTS&quot;\,&quot;items&quot;:[{&quot;nodeName&quot;:&quot;BLOCK_STATEMENT&quot;\,&quot;choice&quot;:{&quot;nodeName&quot;:&quot;VALIDATE_FORM&quot;\,&quot;items&quot;:[]}}]}]}}]\,&quot;isValid&quot;:true\,&quot;enabled&quot;:true\,&quot;version&quot;:1\,&quot;script&quot;:&quot;/**\\n\\n * This is a machine-generated code for the rule.\\n * If you modify it in the code editor\, you will not be able to view and edit the rule in the visual editor.\\n */\\n\\nguideBridge.validate();\\n\\n&quot;\,&quot;eventName&quot;:&quot;Click&quot;\,&quot;ruleType&quot;:&quot;&quot;\,&quot;description&quot;:&quot;&quot;}]"
+                                    jcr:primaryType="nt:unstructured"/>
+                            </guidebutton>
                         </items>
                     </afJsonSchemaRoot>
                 </items>

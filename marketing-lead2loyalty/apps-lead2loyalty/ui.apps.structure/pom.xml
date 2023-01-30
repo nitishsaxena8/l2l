@@ -54,8 +54,7 @@
 
                         <!-- Immutable context-aware configurations -->
                         <filter><root>/apps/settings</root></filter>
-
-                        
+                        <filter><root>/apps/fd/af/components/guideContainer</root></filter>
 
                     </filters>
                 </configuration>

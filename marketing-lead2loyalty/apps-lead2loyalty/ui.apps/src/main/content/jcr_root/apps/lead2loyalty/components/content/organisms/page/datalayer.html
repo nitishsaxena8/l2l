@@ -24,8 +24,18 @@
 
     digitalData.user = {
         'authState':'not-authenticate',
-        'email':'',
-        'userId':''
+        'userType': 'guest'
+    };
+
+    if (localStorage.getItem('userDetails')) {
+		var user = JSON.parse(localStorage.getItem('userDetails'));
+
+		digitalData.user.authState = 'authenticate';
+        digitalData.user.userType = 'member';
+        digitalData.user.profile = {
+            'userID' : user.email,
+			'email' : user.email
+        };
     }
 
     digitalData.ecommerce = {
