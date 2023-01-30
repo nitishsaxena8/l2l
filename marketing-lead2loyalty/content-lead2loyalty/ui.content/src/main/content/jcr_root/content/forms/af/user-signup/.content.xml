@@ -111,22 +111,22 @@
                         textIsRich="[true,true]"
                         validatePictureClause="^(([^&lt;>()\\[\\]\\\\.,;:\\s@&quot;]+(\\.[^&lt;>()\\[\\]\\\\.,;:\\s@&quot;]+)*)|(&quot;.+&quot;))@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$"
                         validationPatternType="custom"/>
-                    <guidepasswordbox
-                        jcr:created="{Date}2023-01-23T21:01:56.204+05:30"
+                    <password
+                        jcr:created="{Date}2023-01-23T18:57:44.263+05:30"
                         jcr:createdBy="admin"
-                        jcr:lastModified="{Date}2023-01-24T16:02:42.592+05:30"
+                        jcr:lastModified="{Date}2023-01-23T19:01:09.790+05:30"
                         jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
                         jcr:title="Password"
-                        sling:resourceType="fd/af/components/guidepasswordbox"
+                        sling:resourceType="fd/af/components/guidetextbox"
+                        autofillFieldKeyword="name"
                         bindRef="/password"
-                        dorExclusion="true"
-                        guideNodeClass="guidePasswordBox"
+                        guideNodeClass="guideTextBox"
                         mandatory="true"
                         mandatoryMessage="Please fill require field !!!"
                         name="password"
                         placeholderText="Password"
-                        textIsRich="[true,true]"/>
+                        textIsRich="[true,true,true]"/>
                     <guidetextbox_1628210266
                         jcr:created="{Date}2023-01-23T18:57:44.263+05:30"
                         jcr:createdBy="admin"

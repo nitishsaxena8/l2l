@@ -1,16 +1,21 @@
 package com.deloitte.aem.lead2loyalty.core.models;
 
 import com.day.cq.wcm.api.Page;
+import com.deloitte.aem.lead2loyalty.core.util.ServiceUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.jackrabbit.JcrConstants;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
+import org.apache.sling.api.resource.ResourceResolver;
+import org.apache.sling.api.resource.ValueMap;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.Self;
+import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import org.apache.sling.settings.SlingSettingsService;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -39,6 +44,9 @@ public class DataLayerModel {
 
 	private String pagePath;
 
+	@ValueMapValue
+	private String productImg;
+
 	private String action;
 
 	/** The current page. */
@@ -47,6 +55,13 @@ public class DataLayerModel {
 
 	@OSGiService
 	private SlingSettingsService settingsService;
+
+	private String productID;
+
+	private String parentPageTitle;
+
+	@SlingObject
+	private ResourceResolver resourceResolver;
 
 	/**
 	 * Gets invoked after completion of all injections.
@@ -64,13 +79,30 @@ public class DataLayerModel {
 			}
 		}
 
-		String templatePath = currentPage.getProperties().get("cq:template", String.class);
+		ValueMap pageProperties = currentPage.getProperties();
+
+		String templatePath = pageProperties.get("cq:template", String.class);
 		if (StringUtils.isNotEmpty(templatePath)) {
 			String[] path = templatePath.split("/");
 			action = path[path.length - 1].replaceAll("-", " ");
 		}
 
+		//String title = pageProperties.get(JcrConstants.JCR_TITLE, String.class);
+		productID = pageProperties.get("productID", String.class);
+		parentPageTitle = currentPage.getParent().getTitle();
 		pagePath = currentPage.getPath();
+
+		JSONObject productJson = new JSONObject();
+
+		try {
+			productJson.put("productId","");
+			productJson.put("productDescription","");
+			productJson.put("productTitle","");
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
+
+
 
 		LOGGER.debug("Exiting DataLayerModel");
 	}
@@ -83,7 +115,7 @@ public class DataLayerModel {
 	}
 
 	public String getPagePath() {
-		return pagePath;
+		return ServiceUtils.getExternalizeContentLink(resourceResolver, pagePath);
 	}
 
 	public String getPageTitle() {
@@ -92,5 +124,17 @@ public class DataLayerModel {
 
 	public String getAction() {
 		return action;
+	}
+
+	public String getProductID() {
+		return productID;
+	}
+
+	public String getParentPageTitle() {
+		return parentPageTitle;
+	}
+
+	public String getProductImg() {
+		return ServiceUtils.getExternalizeAssetLink(resourceResolver, productImg);
 	}
 }

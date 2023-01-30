@@ -9,7 +9,7 @@
         jcr:primaryType="cq:PageContent"
         jcr:title="Products"
         pageType="Product list page"
-        sling:resourceType="lead2loyalty/components/content/organisms/page"
+        sling:resourceType="lead2loyalty/components/content/organisms/product-page"
         pwaCachestrategy="staleWhileRevalidate"
         pwaDisplay="standalone"
         pwaOrientation="any">

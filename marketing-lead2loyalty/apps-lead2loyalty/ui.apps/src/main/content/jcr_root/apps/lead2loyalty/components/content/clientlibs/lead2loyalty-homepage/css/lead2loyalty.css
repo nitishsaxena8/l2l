@@ -726,7 +726,7 @@ $space-x: 8px;
 }
 
 a.text-decoration-none {
-    color: black;
+    color: #000;
 }
 
 .modal-backdrop:nth-child(2n-1) {
@@ -735,4 +735,13 @@ a.text-decoration-none {
 
 .cmp-carousel__item--active {
 	display: block !important;
+}
+
+button#shareWithTeamsBtn {
+    color: #000;
+}
+
+.share-with-teams-btn img {
+    max-height: 18px;
+    padding-bottom: 2px;
 }
