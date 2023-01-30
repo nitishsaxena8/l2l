@@ -16,5 +16,5 @@
             layout="responsiveGrid"/>
     </jcr:content>
     <home-page/>
-    <form/>
+    <signup/>
 </jcr:root>

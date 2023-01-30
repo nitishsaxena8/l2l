@@ -2,6 +2,10 @@
      data-sly-call="${template.placeholder @ isEmpty=!properties.title}"
      data-sly-use.productModel="com.deloitte.aem.lead2loyalty.core.models.ProductDetailsModel" />
 
+<script src="//733-JCL-696.mktoweb.com/js/forms2/js/forms2.min.js"></script>
+<form id="mktoForm_1001" style="display: none;"></form>
+<script>MktoForms2.loadForm("//733-JCL-696.mktoweb.com", "733-JCL-696", 1001);</script>
+
 <div class="row ${properties.marginTop} ${properties.mobileMarginTop} ${properties.marginBottom} ${properties.mobileMarginBottom}">
     <div class="row ">
         <div class="col-6">
@@ -21,7 +25,9 @@
                         <p>${productModel.pricingDesc}</p>
                     </div>
                     <div>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-target="#requestAQuote" data-toggle="modal">${properties.pricingCtaLabel}</button>
+                        <p class="form-success-container request-quote-member text-success d-none">Request successfully submitted !!!</p>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" id="requestAQuoteGuest" data-target="#requestAQuote" data-toggle="modal">${properties.pricingCtaLabel}</button>
+                        <button type="button" class="btn btn-primary d-none" id="requestAQuoteMember">Request QUOTE</button>
                     </div>
                 </div>
                 <div>
@@ -57,6 +63,7 @@
             </div>
         </div>
     </div>
+
 
     <!-- Modal -->
     <div  class="modal fade" id="myModal" role="dialog" id="shareWithTeamsBtnModal" tabindex="-1" aria-labelledby="shareWithTeamsLabel" style="display: none;">

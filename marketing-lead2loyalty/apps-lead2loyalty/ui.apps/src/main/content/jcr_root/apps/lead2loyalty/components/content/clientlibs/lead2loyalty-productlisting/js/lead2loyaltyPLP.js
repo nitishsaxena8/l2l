@@ -3,6 +3,16 @@ if(localStorage.getItem('userDetails')) {
     $('.user-log-in').addClass('d-none');
 }
 
+
+
+if (digitalData && digitalData.user && digitalData.user.profile && digitalData.user.profile.email) {
+   $("#requestAQuoteMember").removeClass("d-none");
+   $("#requestAQuoteGuest").addClass("d-none");
+} else {
+	$("#requestAQuoteMember").addClass("d-none");
+    $("#requestAQuoteGuest").removeClass("d-none");
+}
+
 if($('.plp-container').length) {
     var url = document.location.href;
 	var queryURL = url.substring(url.indexOf('&') + 1);
@@ -76,7 +86,13 @@ $('#signInForm').submit(function(event) {
                 $('.user-log-in').addClass('d-none');
                 $('#signInFormModal').modal('hide');
                 $('.modal-backdrop').remove();
-                }
+
+                if($("#requestAQuoteMember")) {
+   					$("#requestAQuoteMember").removeClass("d-none");
+   				$("#requestAQuoteGuest").addClass("d-none");
+                  }
+
+              }
           },
           error: function(errorData) {
 			  $('.sign-in-error').removeClass('d-none');
@@ -91,6 +107,67 @@ $('.logout-app').click(function(event) {
     $('.user-logged-in').addClass('d-none');
 });
 
-$("#signInFormModal .form-control").change(function() { 
-    $('.sign-in-error').addClass('d-none'); 
+$("#signInFormModal .form-control").change(function() {
+    $('.sign-in-error').addClass('d-none');
+});
+
+
+$( document ).ready(function() {
+    $('#requestAQuoteMember').click(function(event) {
+    	$("#guideContainerForm input").change(function() { 
+            $('.form-success-container').addClass('d-none'); 
+        });     $('.request-quote-btn').click(function(event) {
+            $('.form-success-container').addClass('d-none'); 
+        });
+
+        var quote = {};
+
+        if (localStorage.getItem('userDetails')) {
+            var user = JSON.parse(localStorage.getItem('userDetails'));
+            if (user) {
+
+				quote = {
+                    "FirstName": user.email,
+                    "LastName": user.lastName,
+                    "Email": user.email,
+                    "Company": user.organization,
+                    "jobRole": user.role,
+                    "Phone": user.website,
+                    "webpage": user.email,
+                    "mktoupdate": user.updates
+                }
+            }
+        }
+
+        if ($('.product-page-details', parent.document).attr('product-id') !== 'undefined') {
+            quote["productId"] = $('.product-page-details', parent.document).attr("product-id");
+        }
+
+        if ($('.product-page-details', parent.document).attr("product-title") !== 'undefined') {
+            quote["productTitle"] = $('.product-page-details', parent.document).attr("product-title");
+        }
+
+        if ($('.product-page-details', parent.document).attr("product-description") !== 'undefined') {
+            quote["productDescription"] = $('.product-page-details', parent.document).attr("product-description");
+        }
+
+        if ($('.product-page-details', parent.document).attr("product-path") !== 'undefined') {
+            quote["productPath"] = $('.product-page-details', parent.document).attr("product-path");
+        }
+
+        MktoForms2.whenReady(function(form) { 
+            form.addHiddenFields(quote);
+            form.submit();
+            console.log("Form Submitted !!!")
+			console.log(quote);
+            form.onSuccess(function(vals,thanksURL){
+                $('.form-success-container', parent.document).removeClass('d-none'); 
+                return false;
+            });
+        });
+
+        if ($('.product-page-details', parent.document) && $('.product-page-details', parent.document).attr("product-title")) {
+            $('#requestAQuotemdelTitle', parent.document).text("Request a Quote - "+$('.product-page-details', parent.document).attr("product-title"));
+        }
+    });
 });

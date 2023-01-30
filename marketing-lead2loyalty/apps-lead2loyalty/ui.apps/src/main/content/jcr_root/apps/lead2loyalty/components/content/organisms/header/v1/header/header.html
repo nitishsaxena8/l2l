@@ -103,7 +103,7 @@
 <!-- Header -->
 
 <!-- Sign in Modal -->
-<div  class="modal fade" id="myModal" role="dialog" id="signInFormModal" tabindex="-1" aria-labelledby="signInLabel" style="display: none;">
+<div  class="modal fade" id="myModal" role="dialog" id="signInFormModal" tabindex="-1" aria-labelledby="signInLabel" style="display: none;" data-sly-use.loginModel="${'com.deloitte.aem.lead2loyalty.core.models.HeaderModel'}">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -127,7 +127,7 @@
                 </form>
             </div>
 			<div class="modal-footer">
-				<a class="btn btn-primary w-100 mb-3" href="${properties.SignUpPageUrl}" role="button">Create Account</a>
+				<a class="btn btn-primary w-100 mb-3" href="${loginModel.signUpPageUrl}" role="button">Create Account</a>
             </div>
         </div>
     </div>

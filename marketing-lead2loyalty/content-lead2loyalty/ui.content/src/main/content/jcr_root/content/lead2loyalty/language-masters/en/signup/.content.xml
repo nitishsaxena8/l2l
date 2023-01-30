@@ -6,7 +6,7 @@
         cq:lastModifiedBy="admin"
         cq:template="/conf/lead2loyalty/settings/wcm/templates/home-page"
         jcr:primaryType="cq:PageContent"
-        jcr:title="Form"
+        jcr:title="Sign Up Page"
         pageType="Form Page"
         sling:resourceType="lead2loyalty/components/content/organisms/page">
         <root
@@ -35,7 +35,7 @@
                             jcr:lastModifiedBy="admin"
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="fd/af/components/aemform"
-                            formRef="/content/dam/formsanddocuments/user-signup"
+                            formRef="/content/dam/formsanddocuments/quote"
                             formType="adaptiveForm"
                             submitType="inline"
                             textIsRich="true"

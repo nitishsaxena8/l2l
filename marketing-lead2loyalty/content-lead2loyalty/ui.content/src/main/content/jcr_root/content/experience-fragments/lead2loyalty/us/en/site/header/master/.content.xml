@@ -20,6 +20,7 @@
                 jcr:createdBy="admin"
                 jcr:lastModified="{Date}2023-01-11T20:23:20.489+05:30"
                 jcr:lastModifiedBy="admin"
+                signUpPageUrl="/content/lead2loyalty/language-masters/en/signup"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="lead2loyalty/components/content/organisms/header/v1/header">
                 <utilityLinks jcr:primaryType="nt:unstructured">

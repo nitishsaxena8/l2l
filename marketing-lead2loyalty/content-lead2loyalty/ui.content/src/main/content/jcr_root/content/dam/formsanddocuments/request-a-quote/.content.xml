@@ -15,7 +15,7 @@
             allowedRenderFormat="HTML"
             author="admin"
             formmodel="jsonschema"
-            schemaRef="/content/dam/formsanddocuments/request-a-quote.schema.json"
+            schemaRef="/content/dam/formsanddocuments/quote.schema.json"
             themeRef="/content/dam/formsanddocuments-themes/aem-forms-reference-content/canvas-3-0"
             title="request-a-quote"/>
     </jcr:content>

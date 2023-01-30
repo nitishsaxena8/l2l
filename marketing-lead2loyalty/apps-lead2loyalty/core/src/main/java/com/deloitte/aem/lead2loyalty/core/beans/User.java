@@ -4,34 +4,36 @@ import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
 import javax.inject.Inject;
+import javax.inject.Named;
 
 @Model(adaptables = {Resource.class, SlingHttpServletRequest.class}, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class User {
 
-    @Inject
+    @ValueMapValue(name = "FirstName")
     private String firstName;
 
-    @Inject
+    @ValueMapValue(name = "LastName")
     private String lastName;
 
-    @Inject
+    @ValueMapValue(name = "Email")
     private String email;
 
-    @Inject
+    @ValueMapValue(name = "Company")
     private String organization;
 
-    @Inject
+    @ValueMapValue(name = "jobRole")
     private String role;
 
-    @Inject
+    @ValueMapValue(name = "Phone")
     private String phone;
 
-    @Inject
+    @ValueMapValue(name = "webpage")
     private String website;
 
-    @Inject
+    @ValueMapValue(name = "mktoupdate")
     private String updates;
 
     public String getFirstName() {

@@ -2,7 +2,8 @@
     var digitalData = {};
 </script>
 <sly data-sly-use.dataLayerHelper="${'com.deloitte.aem.lead2loyalty.core.models.DataLayerModel'}"/>
-
+<div class="product-page-details" product-id="${pageProperties['productID']}" product-title="${pageProperties['jcr:title']}"
+     product-description="${pageProperties['jcr:description']}" product-path="${dataLayerHelper.pagePath}"></div>
 <sly data-sly-test.pagename = "${ dataLayerHelper.pageName ? dataLayerHelper.pageName : pageProperties.jcr:title}"></sly>
 
 
