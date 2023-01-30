@@ -44,6 +44,9 @@ public class DataLayerModel {
 
 	private String pagePath;
 
+	@ValueMapValue
+	private String productImg;
+
 	private String action;
 
 	/** The current page. */
@@ -87,7 +90,7 @@ public class DataLayerModel {
 		//String title = pageProperties.get(JcrConstants.JCR_TITLE, String.class);
 		productID = pageProperties.get("productID", String.class);
 		parentPageTitle = currentPage.getParent().getTitle();
-		pagePath = ServiceUtils.getLink(resourceResolver, currentPage.getPath(), settingsService);
+		pagePath = currentPage.getPath();
 
 		JSONObject productJson = new JSONObject();
 
@@ -112,7 +115,7 @@ public class DataLayerModel {
 	}
 
 	public String getPagePath() {
-		return pagePath;
+		return ServiceUtils.getExternalizeContentLink(resourceResolver, pagePath);
 	}
 
 	public String getPageTitle() {
@@ -129,5 +132,9 @@ public class DataLayerModel {
 
 	public String getParentPageTitle() {
 		return parentPageTitle;
+	}
+
+	public String getProductImg() {
+		return ServiceUtils.getExternalizeAssetLink(resourceResolver, productImg);
 	}
 }

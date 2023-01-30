@@ -5,9 +5,11 @@
         cq:lastModified="{Date}2022-12-19T13:11:40.214+05:30"
         cq:lastModifiedBy="admin"
         cq:template="/conf/lead2loyalty/settings/wcm/templates/product-detail-page"
-        jcr:description="This is test description for Original Arduino"
+        jcr:description="The Arduino Due is a microcontroller board based Original Arduino Due Board on theAtmel SAM3X8E ARM Cortex-M3 CPU. It is the first Arduino board based on a 32-bit ARM core microcontroller. It has 54 digital input/output pins (of which 12 can be used as PWM outputs), 12 analog inputs, 4 UARTs (hardware serial ports), a 84 MHz clock, an USB OTG capable connection, 2 DAC (digital to analog), 2 TWI, a power jack, an SPI header, a JTAG header, a reset button and an erase button."
         jcr:primaryType="cq:PageContent"
-        jcr:title="Original Arduino"
+        jcr:title="Original Arduino Due Board"
+        productImg="/content/dam/lead2loyalty/circuit-8.jpg"
+        productID="5"
         pageType="Product Detail page"
         sling:resourceType="lead2loyalty/components/content/organisms/product-page"
         image="/content/dam/lead2loyalty/circuit-7.jpg"
@@ -35,7 +37,7 @@
                             jcr:lastModifiedBy="admin"
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="lead2loyalty/components/content/organisms/product-details/v1/product-details"
-                            atmTextHtml="&lt;h4>Product Description&lt;/h4>&#xd;&#xa;&lt;p>This MH-M18 Wireless Bluetooth Audio Receiver Board is a lower design solution, which supports the laest Bluetooth 4.2 transmission. Convert your old speakers into a Bluetooth equipped speaker with the help of this module. With a maximum range of 20 meters. This MH-M18 Wireless Bluetooth Audio Reciever Board is a low power design solution, which supports the latest Bluetooth 4.2 transmission. Convert your old speakers into a Bluetooth equipped speaker with the help of this module. With a maximum range of 20 meters.&lt;/p>&#xd;&#xa;"
+                            atmTextHtml="&lt;h4>Product Description&lt;/h4>&#xd;&#xa;&lt;p>The Arduino Due is a microcontroller board based Original Arduino Due Board on theAtmel SAM3X8E ARM Cortex-M3 CPU. It is the first Arduino board based on a 32-bit ARM core microcontroller. It has 54 digital input/output pins (of which 12 can be used as PWM outputs), 12 analog inputs, 4 UARTs (hardware serial ports), a 84 MHz clock, an USB OTG capable connection, 2 DAC (digital to analog), 2 TWI, a power jack, an SPI header, a JTAG header, a reset button and an erase button.&lt;/p>&#xd;&#xa;"
                             emailIdFieldLabel="Email ID"
                             marginBottom="margin-bottom-6x"
                             marginTop="margin-top-6x"
@@ -55,7 +57,7 @@
                             subtitle="Audio Module / Amplifier"
                             teamFieldLabel="Team"
                             textIsRich="true"
-                            title="M18 Bluetooth 4.2 Audio Receiver Module Lossless Car Speaker Headphone Amplifier Board Wireless Refit">
+                            title="Original Arduino Due Board">
                         <cq:responsive jcr:primaryType="nt:unstructured">
                             <default
                                     jcr:primaryType="nt:unstructured"

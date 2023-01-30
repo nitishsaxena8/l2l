@@ -1,6 +1,12 @@
 $( document ).ready(function() {
 	$( ".quote-submit-btn button" ).on( "click", function() {
 
+	    $("#guideContainerForm input").change(function() { 
+             $('.form-success-container').addClass('d-none'); 
+        });     $('.request-quote-btn').click(function(event) {
+             $('.form-success-container').addClass('d-none'); 
+        });
+
         var quote = {};
         $('#guideContainerForm').find("div.guideFieldNode").each(function(){
             var name, value;
@@ -50,9 +56,14 @@ $( document ).ready(function() {
             form.submit();
 
             form.onSuccess(function(vals,thanksURL){
+            $('.form-success-container', parent.document).removeClass('d-none'); 
                 return false;
             });
         });
+
+        if ($('.product-page-details', parent.document) && $('.product-page-details', parent.document).attr("product-title")) {
+            $('#requestAQuotemdelTitle', parent.document).text("Request a Quote - "+$('.product-page-details', parent.document).attr("product-title"));
+        }
 
     });
 });

@@ -39,6 +39,17 @@
                                             jcr:primaryType="nt:unstructured"
                                             cq-msm-lockable="productID"/>
                                     </productID>
+                                    <productPath
+                                        cq:showOnCreate="{Boolean}true"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                        fieldDescription="Select Product Image Path"
+                                        fieldLabel="Product Image Path"
+                                        name="./productImg">
+                                        <granite:data
+                                            jcr:primaryType="nt:unstructured"
+                                            cq-msm-lockable="productImg"/>
+                                    </productPath>
                                 </items>
                             </column>
                         </items>
