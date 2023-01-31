@@ -131,10 +131,15 @@ public class UserServlet extends SlingAllMethodsServlet {
 			while ((line = reader.readLine()) != null)
 				jb.append(line);
 		} catch (Exception e) {
-
+			logger.error("Exception in UserServlet class loginUser() - {}", e);
 		}
 
-		JSONObject loginJSONObject = new JSONObject(jb);
+		JSONObject loginJSONObject = null;
+		try {
+			loginJSONObject = new JSONObject(jb.toString());
+		} catch (JSONException e) {
+			logger.error("JSONException Exception in UserServlet class {}", e);
+		}
 
 		if (loginJSONObject != null && loginJSONObject.has("username") && loginJSONObject.has("password")) {
 
@@ -147,7 +152,7 @@ public class UserServlet extends SlingAllMethodsServlet {
 					Node userNode = varNode.getNode("lead2loyalty-users/" + loginJSONObject.getString("username"));
 					Resource resource = resourceResolver.getResource(userNode.getPath());
 
-					if (StringUtils.equalsIgnoreCase(loginJSONObject.getString("username"), resource.getValueMap().get("email", String.class)) &&
+					if (StringUtils.equalsIgnoreCase(loginJSONObject.getString("username"), resource.getValueMap().get("Email", String.class)) &&
 							StringUtils.equalsIgnoreCase(loginJSONObject.getString("password"), resource.getValueMap().get("password", String.class))) {
 						User user = resource.adaptTo(User.class);
 
