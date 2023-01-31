@@ -215,7 +215,7 @@
                                 bindRef="/updates"
                                 guideNodeClass="guideCheckBox"
                                 name="mktoupdate"
-                                options="[true=I would lik to receive marketing matrial from Audio Solutions]"
+                                options="[true=I would like to receive marketing material from Audio Solutions]"
                                 textIsRich="[true,true]"/>
                             <guidebutton
                                 jcr:created="{Date}2023-01-30T20:11:48.384+05:30"

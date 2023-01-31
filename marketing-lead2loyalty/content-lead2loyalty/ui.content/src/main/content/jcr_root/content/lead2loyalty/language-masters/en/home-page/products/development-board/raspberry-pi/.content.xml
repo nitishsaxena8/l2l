@@ -46,7 +46,7 @@
                             modalDesc="Share product details with the respective team member"
                             modalTitle="Share With Team"
                             nameFieldLabel="Name"
-                            pricingCtaLabel="Request aQuote"
+                            pricingCtaLabel="Request a Quote"
                             pricingCtaLink="#"
                             modalCtaLabel="Close"
                             pricingDesc="Get Quotation for the bulk order"
@@ -177,50 +177,6 @@
                             </tileListItems>
                         </tiles>
                     </xp_container_1543464264>
-                    <xp_container_32384955
-                        jcr:created="{Date}2022-12-15T12:18:01.412+05:30"
-                        jcr:createdBy="admin"
-                        jcr:lastModified="{Date}2022-12-15T12:40:36.428+05:30"
-                        jcr:lastModifiedBy="admin"
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="lead2loyalty/components/content/organisms/xp-container"
-                        layout="responsiveGrid"
-                        marginBottom="margin-bottom-x"
-                        marginTop="margin-top-6x"
-                        mobileMarginBottom="m-margin-bottom-x"
-                        mobileMarginTop="m-margin-top-x">
-                        <tiles_copy
-                        	tileHeading="Customers who view this item also bought this"
-							ctaLabel="View More"
-							ctaLink="/content/lead2loyalty/language-masters/en/home-page/products"
-							ctaTarget="_blank"
-                            jcr:created="{Date}2022-12-12T14:02:20.280+05:30"
-                            jcr:createdBy="admin"
-                            jcr:lastModified="{Date}2022-12-15T12:26:03.522+05:30"
-                            jcr:lastModifiedBy="admin"
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="lead2loyalty/components/content/organisms/tiles/v1/tiles"
-                            textIsRich="[true,true,true,true]">
-                            <tileListItems jcr:primaryType="nt:unstructured">
-                                <item0
-                                    jcr:primaryType="nt:unstructured"
-                                    productImageSource="/content/dam/lead2loyalty/circuit-7.jpg"
-                                    productTitle="TDA2030A Audio Amplifier Module Support GSM / GPRS / EDGE - A7670E"/>
-                                <item1
-                                    jcr:primaryType="nt:unstructured"
-                                    productImageSource="/content/dam/lead2loyalty/circuit-8.jpg"
-                                    productTitle="LILYGO TTGO T-SIM A7670E R2 Wireless Module ESP32 Chip 4G LTE CAT1"/>
-                                <item2
-                                    jcr:primaryType="nt:unstructured"
-                                    productImageSource="/content/dam/lead2loyalty/circuit.jpg"
-                                    productTitle="GEEKcredit 433MHZ DC 12V 10A Relay 1CH Channel Wireless RF Remote Contr"/>
-                                <item3
-                                    jcr:primaryType="nt:unstructured"
-                                    productImageSource="/content/dam/lead2loyalty/circuit-2.jpg"
-                                    productTitle="LU-ASR01 Intelligent Speech Rocognition Moule Offline Recognition Custom 100"/>
-                            </tileListItems>
-                        </tiles_copy>
-                    </xp_container_32384955>
                     <xp_container_3238495
                         cq:styleIds="[1673004790935]"
                         jcr:created="{Date}2022-12-15T12:18:01.412+05:30"
@@ -283,13 +239,13 @@
                         <saleSupportLinks jcr:primaryType="nt:unstructured">
                             <item0
                                 jcr:primaryType="nt:unstructured"
-                                atmTextHtml="&lt;p>Connect with an expert for more product related details&lt;/p>&#xd;&#xa;&lt;p>&lt;a href=&quot;#&quot; target=&quot;_blank&quot;>Connect with sales support&lt;/a>&lt;/p>&#xd;&#xa;"
+                                atmTextHtml="&lt;p>Connect with an expert for more product related details&lt;/p>&#xd;&#xa;&lt;p>&lt;a href=&quot;#&quot;>Connect with sales support&lt;/a>&lt;/p>&#xd;&#xa;"
                                 icon="/content/dam/lead2loyalty/lead2loylty-setting.png"
                                 iconAlt="icon-1"
                                 title="Sales Support"/>
                             <item1
                                 jcr:primaryType="nt:unstructured"
-                                atmTextHtml="&lt;p>Support for service-related technical issues.&lt;/p>&#xd;&#xa;&lt;p>&lt;a href=&quot;#&quot; target=&quot;_blank&quot;>Connect with technical support&lt;/a>&lt;/p>&#xd;&#xa;"
+                                atmTextHtml="&lt;p>Support for service-related technical issues.&lt;/p>&#xd;&#xa;&lt;p>&lt;a href=&quot;#&quot;>Connect with technical support&lt;/a>&lt;/p>&#xd;&#xa;"
                                 icon="/content/dam/lead2loyalty/lead2loyalty-customer-care.png"
                                 iconAlt="icon-2"
                                 title="Technical Support"/>

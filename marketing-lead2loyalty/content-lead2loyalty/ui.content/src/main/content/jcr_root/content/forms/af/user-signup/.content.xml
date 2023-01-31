@@ -197,7 +197,7 @@
                         bindRef="/updates"
                         guideNodeClass="guideCheckBox"
                         name="update"
-                        options="[true=I would lik to receive marketing matrial from Audio Solutions]"
+                        options="[true=I would like to receive marketing material from Audio Solutions]"
                         textIsRich="[true,true]"/>
                     <submit
                         jcr:created="{Date}2023-01-23T19:08:19.770+05:30"

@@ -130,7 +130,7 @@
                         mobileMarginBottom="m-margin-bottom-x"
                         mobileMarginTop="m-margin-top-x">
                         <tiles_copy
-                        	tileHeading="Customers who view this item also bought this"
+                        	tileHeading="You may also like"
 							ctaLabel="View More"
 							ctaLink="/content/lead2loyalty/language-masters/en/home-page/products"
 							ctaTarget="_blank"
@@ -223,13 +223,13 @@
                         <saleSupportLinks jcr:primaryType="nt:unstructured">
                             <item0
                                 jcr:primaryType="nt:unstructured"
-                                atmTextHtml="&lt;p>Connect with an expert for more product related details&lt;/p>&#xd;&#xa;&lt;p>&lt;a href=&quot;#&quot; target=&quot;_blank&quot;>Connect with sales support&lt;/a>&lt;/p>&#xd;&#xa;"
+                                atmTextHtml="&lt;p>Connect with an expert for more product related details&lt;/p>&#xd;&#xa;&lt;p>&lt;a href=&quot;#&quot;>Connect with sales support&lt;/a>&lt;/p>&#xd;&#xa;"
                                 icon="/content/dam/lead2loyalty/lead2loylty-setting.png"
                                 iconAlt="icon-1"
                                 title="Sales Support"/>
                             <item1
                                 jcr:primaryType="nt:unstructured"
-                                atmTextHtml="&lt;p>Support for service-related technical issues.&lt;/p>&#xd;&#xa;&lt;p>&lt;a href=&quot;#&quot; target=&quot;_blank&quot;>Connect with technical support&lt;/a>&lt;/p>&#xd;&#xa;"
+                                atmTextHtml="&lt;p>Support for service-related technical issues.&lt;/p>&#xd;&#xa;&lt;p>&lt;a href=&quot;#&quot;>Connect with technical support&lt;/a>&lt;/p>&#xd;&#xa;"
                                 icon="/content/dam/lead2loyalty/lead2loyalty-customer-care.png"
                                 iconAlt="icon-2"
                                 title="Technical Support"/>
