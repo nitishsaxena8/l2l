@@ -2,13 +2,17 @@ package com.deloitte.aem.lead2loyalty.core.util;
 
 import com.day.cq.commons.Externalizer;
 import com.day.cq.wcm.api.Page;
+import org.apache.sling.api.resource.LoginException;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
+import org.apache.sling.api.resource.ResourceResolverFactory;
 import org.apache.sling.settings.SlingSettingsService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.annotation.Nullable;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Assorted mix of helper methods.
@@ -83,4 +87,5 @@ public class ServiceUtils {
         }
         return result;
     }
+
 }

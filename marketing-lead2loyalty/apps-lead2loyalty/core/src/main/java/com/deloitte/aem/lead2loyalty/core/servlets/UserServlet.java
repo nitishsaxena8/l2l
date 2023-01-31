@@ -1,7 +1,8 @@
 package com.deloitte.aem.lead2loyalty.core.servlets;
 
-import com.deloitte.aem.lead2loyalty.core.beans.Login;
+
 import com.deloitte.aem.lead2loyalty.core.beans.User;
+import com.deloitte.aem.lead2loyalty.core.service.utility.Lead2loyaltyService;
 import com.deloitte.aem.lead2loyalty.core.util.Lead2loyaltyException;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -15,6 +16,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.osgi.framework.Constants;
 import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Reference;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -28,18 +30,21 @@ import java.io.IOException;
 import java.util.Iterator;
 
 @Component(
-		service=Servlet.class,
-		property={
-				Constants.SERVICE_DESCRIPTION + "=Custom Servlet",
-				"sling.servlet.methods=POST",
-				"sling.servlet.paths=" + "/bin/user"
-		}
+	service=Servlet.class,
+	property={
+		Constants.SERVICE_DESCRIPTION + "=Custom Servlet",
+		"sling.servlet.methods=POST",
+		"sling.servlet.paths=" + "/bin/user"
+	}
 )
 public class UserServlet extends SlingAllMethodsServlet {
 
 	private static final long serialVersionUID = 1L;
 
 	private final Logger logger = LoggerFactory.getLogger(getClass());
+
+	@Reference
+	Lead2loyaltyService lead2loyaltyService;
 
 	@Override
 	protected void doPost(final SlingHttpServletRequest req,
@@ -65,7 +70,7 @@ public class UserServlet extends SlingAllMethodsServlet {
 			JSONObject data = new JSONObject(userStr);
 			if (data != null) {
 
-				ResourceResolver resourceResolver = req.getResourceResolver();
+				ResourceResolver resourceResolver = lead2loyaltyService.getServiceResolver();
 				Session session = resourceResolver.adaptTo(Session.class);
 
 				Node varNode = session.getNode("/var");
@@ -143,7 +148,7 @@ public class UserServlet extends SlingAllMethodsServlet {
 
 		if (loginJSONObject != null && loginJSONObject.has("username") && loginJSONObject.has("password")) {
 
-			ResourceResolver resourceResolver = req.getResourceResolver();
+			ResourceResolver resourceResolver = lead2loyaltyService.getServiceResolver();
 			Session session = resourceResolver.adaptTo(Session.class);
 
 			try {
