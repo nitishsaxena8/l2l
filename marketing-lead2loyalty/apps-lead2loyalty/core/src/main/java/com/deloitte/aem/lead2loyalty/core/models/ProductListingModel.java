@@ -145,8 +145,8 @@ public class ProductListingModel {
 							ValueMap vm = gChildPage.getProperties();
 
 							gChaildBean.setTitle(gChildPage.getTitle());
-							gChaildBean.setDepth(gChaildBean.getDepth());
-							gChaildBean.setPath(gChaildBean.getPath());
+							gChaildBean.setDepth(gChildPage.getDepth());
+							gChaildBean.setPath(ServiceUtils.getLink(resourceResolver, gChildPage.getPath(), settingsService));
 							gChaildBean.setDescription(vm.get(JcrConstants.JCR_DESCRIPTION, String.class) != null
 									? vm.get(JcrConstants.JCR_DESCRIPTION, String.class)
 									: StringUtils.EMPTY);

@@ -41,7 +41,6 @@
                             textIsRich="true"
                             thankyouConfig="message"
                             thankyouMessage="&lt;p>Thank you !!!&lt;/p>&#xd;&#xa;"
-                            useiframe="false"
                             usePageLocale="true"/>
                     </form>
                 </container>

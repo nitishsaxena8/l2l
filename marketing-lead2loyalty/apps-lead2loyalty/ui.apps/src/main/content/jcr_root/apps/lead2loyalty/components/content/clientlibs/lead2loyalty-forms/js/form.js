@@ -1,72 +1,88 @@
 $( document ).ready(function() {
+
+    if (window.location.href.indexOf("/signup") > -1) {
+        $("#guideContainer-rootPanel-afJsonSchemaRoot-password___guide-item").removeClass("hidden");
+    }
+
+    if ($('.product-page-details', parent.document) && $('.product-page-details', parent.document).attr("product-title")) {
+        $('#requestAQuotemdelTitle', parent.document).text("Request a Quote - "+$('.product-page-details', parent.document).attr("product-title"));
+    }
+
 	$( ".quote-submit-btn button" ).on( "click", function() {
-
-        if (window.location.href.indexOf("/signup") > -1) {
-            $("#guideContainer-rootPanel-afJsonSchemaRoot-password___guide-item").removeClass("hidden")
-        }
-
-        if ($('.product-page-details', parent.document) && $('.product-page-details', parent.document).attr("product-title")) {
-            $('#requestAQuotemdelTitle', parent.document).text("Request a Quote - "+$('.product-page-details', parent.document).attr("product-title"));
-        }
 
         $('.signup-fail-container').addClass('d-none');
 		$('.signup-fail-container').text('');
         $('.signup-success-container').addClass('d-none');
         $('.signup-success-container').text('');
 
+        $("#guideContainer-rootPanel-afJsonSchemaRoot-password___guide-item").find(".guideFieldNode").attr("data-mandatory","true");
+
+
+        if($("#guideContainer-rootPanel-afJsonSchemaRoot-password___guide-item").find("input").val()) {
+			$("#guideContainer-rootPanel-afJsonSchemaRoot-password___guide-item").find(".guideFieldNode").addClass("validation-success");
+            $("#guideContainer-rootPanel-afJsonSchemaRoot-password___guide-item").find(".guideFieldNode").removeClass("validation-failure");
+			$("#guideContainer-rootPanel-afJsonSchemaRoot-password___guide-item").find(".guideFieldError").text("");
+        } else {
+            $("#guideContainer-rootPanel-afJsonSchemaRoot-password___guide-item").find(".guideFieldNode").removeClass("validation-success");
+			$("#guideContainer-rootPanel-afJsonSchemaRoot-password___guide-item").find(".guideFieldNode").addClass("validation-failure");
+			$("#guideContainer-rootPanel-afJsonSchemaRoot-password___guide-item").find(".guideFieldError").text("This is a required field !!!");
+        }
+
+
         if($("#guideContainer-rootPanel-afJsonSchemaRoot-password___guide-item").length > 0 && window.location.href.indexOf("/signup") > -1) {
 
-			var loginData = collectFormData();
+			var loginData = collectFormData("signup");
 
-            $.ajax({
-              type: "POST",
-              url: "/bin/user",
-              data: JSON.stringify(loginData),
-              contentType: "application/json",
-              dataType: "json",
-              success: function(resultData) {
-                  if (resultData && resultData.errorCode) {
+            if(loginData != false) {
 
-						$('.signup-fail-container').removeClass('d-none');
-						$('.signup-fail-container').text(resultData.errorMessage);
+                $.ajax({
+                  type: "POST",
+                  url: "/bin/user",
+                  data: JSON.stringify(loginData),
+                  contentType: "application/json",
+                  dataType: "json",
+                  success: function(resultData) {
+                      if (resultData && resultData.errorCode) {
 
-                      	$('.signup-success-container').text('');
-					  	$('.signup-success-container').addClass('d-none');
+                            $('.signup-fail-container').removeClass('d-none');
+                            $('.signup-fail-container').text(resultData.errorMessage);
 
-                  } else {
+                            $('.signup-success-container').text('');
+                            $('.signup-success-container').addClass('d-none');
 
-                    	$('.signup-success-container').removeClass('d-none');
-						$('.signup-success-container').text("Thanks For Signing Up !!!");
+                      } else {
 
-                      	$('.signup-fail-container').text('');
-					  	$('.signup-fail-container').addClass('d-none');
+                            $('.signup-success-container').removeClass('d-none');
+                            $('.signup-success-container').text("Thanks For Signing Up !!!");
+
+                            $('.signup-fail-container').text('');
+                            $('.signup-fail-container').addClass('d-none');
 
 
-						delete loginData.password;
+                            delete loginData.password;
 
-                        console.log(loginData);
+                            MktoForms2.whenReady(function(form){ 
+                                form.addHiddenFields(loginData);
+                                form.submit();
 
-                        MktoForms2.whenReady(function(form){ 
-                        	form.addHiddenFields(loginData);
-                          	form.submit();
+                                form.onSuccess(function(vals,thanksURL){
+                                    $('.form-success-container', parent.document).removeClass('d-none'); 
+                                    return false;
+                                });
+                            });
 
-                          	form.onSuccess(function(vals,thanksURL){
-                              	$('.form-success-container', parent.document).removeClass('d-none'); 
-                              	return false;
-                          	});
-                        });
+                      }
+                  },
+                  error: function(errorData) {
 
+                    $('.signup-fail-container').removeClass('d-none');
+                    $('.signup-fail-container').text("Something went wrong !!!");
+
+                    $('.signup-success-container').text('');
+                    $('.signup-success-container').addClass('d-none');
                   }
-              },
-              error: function(errorData) {
-
-				$('.signup-fail-container').removeClass('d-none');
-				$('.signup-fail-container').text("Something went wrong !!!");
-
-                $('.signup-success-container').text('');
-				$('.signup-success-container').addClass('d-none');
-              }
-            });
+                });
+            }
         } else {
 
             $("#guideContainerForm input").change(function() { 
@@ -75,13 +91,17 @@ $( document ).ready(function() {
                  $('.form-success-container').addClass('d-none'); 
             });
 
-            var quote = collectFormData();
 
-            callMarketoForm(quote);
+            var quote = collectFormData("quote");
+            delete loginData.submit;
+
+            if(quote != false) {
+            	callMarketoForm(quote);
+            }
         }
     });
 
-    function collectFormData() {
+    function collectFormData(type) {
 		var loginData = {};
         $('#guideContainerForm').find("div.guideFieldNode").each(function(){
             var name, value;
@@ -98,11 +118,14 @@ $( document ).ready(function() {
             }
 
             if($(this).find("select").length != 0) {
-                value = $(this).find("select option:selected").text();
+                value = $(this).find("select option:selected").val();
             }
 
-            if(value === 'undefined' || value === null ) {
-                return false;
+            if((value === '' || value === 'undefined' || value === null ) && $(this).attr("data-mandatory")) {
+                if(name != "password") {
+                    loginData = false;
+                	return false;
+                }
             }
 
             loginData[name] = value;
