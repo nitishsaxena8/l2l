@@ -1,13 +1,88 @@
 $( document ).ready(function() {
 	$( ".quote-submit-btn button" ).on( "click", function() {
 
-	    $("#guideContainerForm input").change(function() { 
-             $('.form-success-container').addClass('d-none'); 
-        });     $('.request-quote-btn').click(function(event) {
-             $('.form-success-container').addClass('d-none'); 
-        });
+        if (window.location.href.indexOf("/signup") > -1) {
+            $("#guideContainer-rootPanel-afJsonSchemaRoot-password___guide-item").removeClass("hidden")
+        }
 
-        var quote = {};
+        if ($('.product-page-details', parent.document) && $('.product-page-details', parent.document).attr("product-title")) {
+            $('#requestAQuotemdelTitle', parent.document).text("Request a Quote - "+$('.product-page-details', parent.document).attr("product-title"));
+        }
+
+        $('.signup-fail-container').addClass('d-none');
+		$('.signup-fail-container').text('');
+        $('.signup-success-container').addClass('d-none');
+        $('.signup-success-container').text('');
+
+        if($("#guideContainer-rootPanel-afJsonSchemaRoot-password___guide-item").length > 0 && window.location.href.indexOf("/signup") > -1) {
+
+			var loginData = collectFormData();
+
+            $.ajax({
+              type: "POST",
+              url: "/bin/user",
+              data: JSON.stringify(loginData),
+              contentType: "application/json",
+              dataType: "json",
+              success: function(resultData) {
+                  if (resultData && resultData.errorCode) {
+
+						$('.signup-fail-container').removeClass('d-none');
+						$('.signup-fail-container').text(resultData.errorMessage);
+
+                      	$('.signup-success-container').text('');
+					  	$('.signup-success-container').addClass('d-none');
+
+                  } else {
+
+                    	$('.signup-success-container').removeClass('d-none');
+						$('.signup-success-container').text("Thanks For Signing Up !!!");
+
+                      	$('.signup-fail-container').text('');
+					  	$('.signup-fail-container').addClass('d-none');
+
+
+						delete loginData.password;
+
+                        console.log(loginData);
+
+                        MktoForms2.whenReady(function(form){ 
+                        	form.addHiddenFields(loginData);
+                          	form.submit();
+
+                          	form.onSuccess(function(vals,thanksURL){
+                              	$('.form-success-container', parent.document).removeClass('d-none'); 
+                              	return false;
+                          	});
+                        });
+
+                  }
+              },
+              error: function(errorData) {
+
+				$('.signup-fail-container').removeClass('d-none');
+				$('.signup-fail-container').text("Something went wrong !!!");
+
+                $('.signup-success-container').text('');
+				$('.signup-success-container').addClass('d-none');
+              }
+            });
+        } else {
+
+            $("#guideContainerForm input").change(function() { 
+                 $('.form-success-container').addClass('d-none'); 
+            });     $('.request-quote-btn').click(function(event) {
+                 $('.form-success-container').addClass('d-none'); 
+            });
+
+            var quote = collectFormData();
+
+            callMarketoForm(quote);
+        }
+    });
+
+    function collectFormData() {
+		var loginData = {};
         $('#guideContainerForm').find("div.guideFieldNode").each(function(){
             var name, value;
 
@@ -30,40 +105,40 @@ $( document ).ready(function() {
                 return false;
             }
 
-            quote[name] = value;
+            loginData[name] = value;
         });
+        return loginData;
+    }
 
+    function callMarketoForm (loginData) {
 		if ($('.product-page-details', parent.document).attr('product-id') !== 'undefined') {
-			quote["productId"] = $('.product-page-details', parent.document).attr("product-id");
+            loginData["productId"] = $('.product-page-details', parent.document).attr("product-id");
         }
 
         if ($('.product-page-details', parent.document).attr("product-title") !== 'undefined') {
-            quote["productTitle"] = $('.product-page-details', parent.document).attr("product-title");
+            loginData["productTitle"] = $('.product-page-details', parent.document).attr("product-title");
         }
 
         if ($('.product-page-details', parent.document).attr("product-description") !== 'undefined') {
-            quote["productDescription"] = $('.product-page-details', parent.document).attr("product-description");
+            loginData["productDescription"] = $('.product-page-details', parent.document).attr("product-description");
         }
 
         if ($('.product-page-details', parent.document).attr("product-path") !== 'undefined') {
-            quote["productPath"] = $('.product-page-details', parent.document).attr("product-path");
+            loginData["productPath"] = $('.product-page-details', parent.document).attr("product-path");
         }
 
-        console.log(quote);
+        delete loginData.password;
+
+        console.log(loginData);
 
         MktoForms2.whenReady(function(form){ 
-            form.addHiddenFields(quote);
+            form.addHiddenFields(loginData);
             form.submit();
 
             form.onSuccess(function(vals,thanksURL){
-            $('.form-success-container', parent.document).removeClass('d-none'); 
+                $('.form-success-container', parent.document).removeClass('d-none'); 
                 return false;
             });
         });
-
-        if ($('.product-page-details', parent.document) && $('.product-page-details', parent.document).attr("product-title")) {
-            $('#requestAQuotemdelTitle', parent.document).text("Request a Quote - "+$('.product-page-details', parent.document).attr("product-title"));
-        }
-
-    });
+    }
 });

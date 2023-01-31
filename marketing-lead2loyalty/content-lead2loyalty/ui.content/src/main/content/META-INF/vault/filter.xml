@@ -6,4 +6,9 @@
     <filter root="/content/forms/af/user-signup"/>
     <filter root="/content/dam/formsanddocuments/user-signup"/>
     <filter root="/content/dam/formsanddocuments/user.schema.json"/>
+
+    <filter root="/content/forms/af/quote"/>
+    <filter root="/content/dam/formsanddocuments/quote"/>
+    <filter root="/content/dam/formsanddocuments/quote.schema.json"/>
+
 </workspaceFilter>

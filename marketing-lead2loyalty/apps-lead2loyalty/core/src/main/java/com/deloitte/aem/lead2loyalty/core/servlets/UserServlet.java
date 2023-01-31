@@ -56,17 +56,14 @@ public class UserServlet extends SlingAllMethodsServlet {
 			resp.getWriter().print(response);
 		}
 
-		logger.error("Entering UserServlet >>>>>>>");
+		logger.error("Exiting UserServlet >>>>>>>");
 	}
 
-	private String signUpUser(String dataXml, SlingHttpServletRequest req) {
+	private String signUpUser(String userStr, SlingHttpServletRequest req) {
 		ObjectMapper responseObjectMapper = new ObjectMapper();
 		try {
-			JSONObject data = new JSONObject(dataXml);
-			if (data.has("afData") && data.getJSONObject("afData").has("afBoundData") &&
-					data.getJSONObject("afData").getJSONObject("afBoundData").has("data") ) {
-				JSONObject userObject = data.getJSONObject("afData").getJSONObject("afBoundData").getJSONObject("data");
-				logger.error(userObject.toString());
+			JSONObject data = new JSONObject(userStr);
+			if (data != null) {
 
 				ResourceResolver resourceResolver = req.getResourceResolver();
 				Session session = resourceResolver.adaptTo(Session.class);
@@ -82,30 +79,27 @@ public class UserServlet extends SlingAllMethodsServlet {
 					}
 				}
 
-				if (loyaltyNode.hasNode(userObject.getString("email"))) {
+				if (loyaltyNode.hasNode(data.getString("Email"))) {
 					return responseObjectMapper.writeValueAsString(new Lead2loyaltyException("User already exist !!!", 1001));
 				} else {
-					Node userNode = loyaltyNode.addNode(userObject.getString("email"));
+					Node userNode = loyaltyNode.addNode(data.getString("Email"));
 
-					Iterator keys = userObject.keys();
+					Iterator keys = data.keys();
 					while (keys.hasNext()) {
 						String key = (String) keys.next();
-						String value = userObject.getString(key);
+						String value = data.getString(key);
 
 						userNode.setProperty(key, value);
 					}
 
-					if (userObject.has("password")) {
-						userObject.remove("password");
+					if (data.has("Password")) {
+						data.remove("Password");
 					}
 
 					session.save();
 					session.refresh(true);
-					if(resourceResolver != null && resourceResolver.isLive()) {
-						resourceResolver.close();
-					}
 
-					return userObject.toString();
+					return data.toString();
 				}
 			}
 		} catch (JSONException e) {
@@ -137,29 +131,29 @@ public class UserServlet extends SlingAllMethodsServlet {
 			while ((line = reader.readLine()) != null)
 				jb.append(line);
 		} catch (Exception e) {
-
+			logger.error("Exception in UserServlet class loginUser() - {}", e);
 		}
 
-		ObjectMapper mapper = new ObjectMapper();
-		Login login = null;
+		JSONObject loginJSONObject = null;
 		try {
-			login = mapper.readValue(jb.toString(), Login.class);
-		} catch (IOException e) {
-			logger.error("Error in UserServlet class login() {}", e);
+			loginJSONObject = new JSONObject(jb.toString());
+		} catch (JSONException e) {
+			logger.error("JSONException Exception in UserServlet class {}", e);
 		}
-		if (login != null && StringUtils.isNotEmpty(login.getUsername()) && StringUtils.isNotEmpty(login.getPassword())) {
+
+		if (loginJSONObject != null && loginJSONObject.has("username") && loginJSONObject.has("password")) {
 
 			ResourceResolver resourceResolver = req.getResourceResolver();
 			Session session = resourceResolver.adaptTo(Session.class);
 
 			try {
 				Node varNode = session.getNode("/var");
-				if (varNode.hasNode("lead2loyalty-users/" + login.getUsername())) {
-					Node userNode = varNode.getNode("lead2loyalty-users/" + login.getUsername());
+				if (varNode.hasNode("lead2loyalty-users/" + loginJSONObject.getString("username"))) {
+					Node userNode = varNode.getNode("lead2loyalty-users/" + loginJSONObject.getString("username"));
 					Resource resource = resourceResolver.getResource(userNode.getPath());
 
-					if (StringUtils.equalsIgnoreCase(login.getUsername(), resource.getValueMap().get("email", String.class)) &&
-							StringUtils.equalsIgnoreCase(login.getPassword(), resource.getValueMap().get("password", String.class))) {
+					if (StringUtils.equalsIgnoreCase(loginJSONObject.getString("username"), resource.getValueMap().get("Email", String.class)) &&
+							StringUtils.equalsIgnoreCase(loginJSONObject.getString("password"), resource.getValueMap().get("password", String.class))) {
 						User user = resource.adaptTo(User.class);
 
 						return responseObjectMapper.writeValueAsString(user);
@@ -173,11 +167,11 @@ public class UserServlet extends SlingAllMethodsServlet {
 				logger.error("RepositoryException Exception in UserServlet class {}", e);
 			} catch (JsonProcessingException e) {
 				logger.error("JsonProcessingException Exception in UserServlet class {}", e);
+			} catch (JSONException e) {
+				logger.error("JSONException Exception in UserServlet class {}", e);
 			}
 		} else {
-			String dataXml = req.getParameter("dataXml");
-			logger.debug("User Data = {}",dataXml);
-			return signUpUser(dataXml, req);
+			return signUpUser(jb.toString(), req);
 		}
 		return null;
 	}

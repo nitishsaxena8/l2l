@@ -37,6 +37,9 @@ public class HeaderModel {
 	private String openInNewWindow;
 
 	@ValueMapValue
+	private String signUpPageUrl;
+
+	@ValueMapValue
 	private String rowLabel;
 
 	@ChildResource(name = "secondaryLinks")
@@ -62,4 +65,7 @@ public class HeaderModel {
 		return secondaryLinks;
 	}
 
+	public String getSignUpPageUrl() {
+		return ServiceUtils.getLink(resourceResolver, signUpPageUrl, settingsService);
+	}
 }
