@@ -53,7 +53,6 @@ import java.util.Map;
  * Connection is set with max connections with 200
  */
 @Component(service = RestClient.class, immediate = true)
-@Designate(ocd = RestClientConfigurations.class)
 public class Lead2loyaltyServiceImpl implements Lead2loyaltyService {
 
     /**
