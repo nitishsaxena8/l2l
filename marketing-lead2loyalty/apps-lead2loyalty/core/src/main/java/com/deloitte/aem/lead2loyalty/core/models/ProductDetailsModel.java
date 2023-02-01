@@ -67,9 +67,6 @@ public class ProductDetailsModel {
 	private String modalDesc;
 
 	@ValueMapValue
-	private String teamFieldLabel;
-
-	@ValueMapValue
 	private String nameFieldLabel;
 
 	@ValueMapValue
@@ -152,10 +149,6 @@ public class ProductDetailsModel {
 
 	public String getModalDesc() {
 		return modalDesc;
-	}
-
-	public String getTeamFieldLabel() {
-		return teamFieldLabel;
 	}
 
 	public String getNameFieldLabel() {

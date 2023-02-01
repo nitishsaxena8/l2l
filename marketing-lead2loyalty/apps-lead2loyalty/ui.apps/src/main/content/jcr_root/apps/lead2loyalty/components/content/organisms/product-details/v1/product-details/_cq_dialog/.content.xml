@@ -228,11 +228,6 @@
                                                                         sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                                                         fieldLabel="Modal Description"
                                                                         name="./modalDesc"/>
-                                                                    <teamFieldLabel
-                                                                        jcr:primaryType="nt:unstructured"
-                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                                                        fieldLabel="Team Field Label"
-                                                                        name="./teamFieldLabel"/>
                                                                     <nameFieldLabel
                                                                         jcr:primaryType="nt:unstructured"
                                                                         sling:resourceType="granite/ui/components/coral/foundation/form/textfield"

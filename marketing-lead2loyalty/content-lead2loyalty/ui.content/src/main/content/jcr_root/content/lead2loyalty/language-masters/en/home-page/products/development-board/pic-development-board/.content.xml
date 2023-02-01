@@ -38,7 +38,7 @@
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="lead2loyalty/components/content/organisms/product-details/v1/product-details"
                             atmTextHtml="&lt;h4>Product Description&lt;/h4>&#xd;&#xa;&lt;p>PIC is a popular industry level microcontroller from Microchip. It is commonly used in industries and various other products and designs. A PIC microcontroller can be easily programmed by MPLABX software using XC8 compiler both of which are free to download and use&lt;/p>&#xd;&#xa;"
-                            emailIdFieldLabel="Email ID"
+                            emailIdFieldLabel="Email"
                             marginBottom="margin-bottom-6x"
                             marginTop="margin-top-6x"
                             mobileMarginBottom="m-margin-bottom-x"
@@ -55,7 +55,6 @@
                             shareCtaLabel="Share With Team"
                             shareCtaLink="#"
                             subtitle="Audio Module / Amplifier"
-                            teamFieldLabel="Team"
                             textIsRich="true"
                             title="PIC Development Board">
                         <cq:responsive jcr:primaryType="nt:unstructured">
@@ -142,10 +141,7 @@
                         sling:resourceType="lead2loyalty/components/content/organisms/xp-container">
                         <tiles
                         	tileHeading="Popular Industry Usecase"
-							ctaLabel="View More"
-							ctaLink="/content/lead2loyalty/language-masters/en/home-page/products"
-							ctaTarget="_blank"
-                            cq:styleIds="[1670928226762]"
+							cq:styleIds="[1670928226762]"
                             jcr:created="{Date}2022-12-12T14:02:20.280+05:30"
                             jcr:createdBy="admin"
                             jcr:lastModified="{Date}2022-12-15T12:09:13.029+05:30"

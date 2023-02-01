@@ -38,7 +38,7 @@
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="lead2loyalty/components/content/organisms/product-details/v1/product-details"
                             atmTextHtml="&lt;h4>Product Description&lt;/h4>&#xd;&#xa;&lt;p>The Arduino Due is a microcontroller board based Original Arduino Due Board on theAtmel SAM3X8E ARM Cortex-M3 CPU. It is the first Arduino board based on a 32-bit ARM core microcontroller. It has 54 digital input/output pins (of which 12 can be used as PWM outputs), 12 analog inputs, 4 UARTs (hardware serial ports), a 84 MHz clock, an USB OTG capable connection, 2 DAC (digital to analog), 2 TWI, a power jack, an SPI header, a JTAG header, a reset button and an erase button.&lt;/p>&#xd;&#xa;"
-                            emailIdFieldLabel="Email ID"
+                            emailIdFieldLabel="Email"
                             marginBottom="margin-bottom-6x"
                             marginTop="margin-top-6x"
                             mobileMarginBottom="m-margin-bottom-x"
@@ -55,7 +55,6 @@
                             shareCtaLabel="Share With Team"
                             shareCtaLink="#"
                             subtitle="Audio Module / Amplifier"
-                            teamFieldLabel="Team"
                             textIsRich="true"
                             title="Original Arduino Due Board">
                         <cq:responsive jcr:primaryType="nt:unstructured">
@@ -141,11 +140,8 @@
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="lead2loyalty/components/content/organisms/xp-container">
                         <tiles
-                        	tileHeading="Popular Industry Usecase"
-							ctaLabel="View More"
-							ctaLink="/content/lead2loyalty/language-masters/en/home-page/products"
-							ctaTarget="_blank"
-                            cq:styleIds="[1670928226762]"
+                        	tileHeading="Popular Industry Use Case"
+							cq:styleIds="[1670928226762]"
                             jcr:created="{Date}2022-12-12T14:02:20.280+05:30"
                             jcr:createdBy="admin"
                             jcr:lastModified="{Date}2022-12-15T12:09:13.029+05:30"
