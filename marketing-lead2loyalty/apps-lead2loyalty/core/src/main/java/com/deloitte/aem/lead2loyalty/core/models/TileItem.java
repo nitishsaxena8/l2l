@@ -2,6 +2,7 @@ package com.deloitte.aem.lead2loyalty.core.models;
 
 import com.deloitte.aem.lead2loyalty.core.util.ServiceUtils;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import org.apache.commons.lang.StringUtils;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
@@ -12,6 +13,7 @@ import org.apache.sling.settings.SlingSettingsService;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
+import java.util.Objects;
 
 @Model(adaptables = {Resource.class}, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
@@ -34,6 +36,9 @@ public class TileItem {
 
     @Inject
     private String productPath;
+
+    @Inject
+    private String productScrollId;
 
     @PostConstruct
     protected void init() {
@@ -66,10 +71,21 @@ public class TileItem {
     }
 
     public String getProductPath() {
-        return ServiceUtils.getLink(resourceResolver, productPath, settingsService);
+        if(StringUtils.isNotBlank(productScrollId) && StringUtils.isNotBlank(productPath))
+            return Objects.requireNonNull(ServiceUtils.getLink(resourceResolver, productPath, settingsService)).concat("#").concat(productScrollId);
+        else
+            return ServiceUtils.getLink(resourceResolver, productPath, settingsService);
     }
 
     public void setProductPath(String productPath) {
         this.productPath = ServiceUtils.getLink(resourceResolver, productPath, settingsService);
+    }
+
+    public String getProductScrollId() {
+        return productScrollId;
+    }
+
+    public void setProductScrollId(String productScrollId) {
+        this.productScrollId = productScrollId;
     }
 }

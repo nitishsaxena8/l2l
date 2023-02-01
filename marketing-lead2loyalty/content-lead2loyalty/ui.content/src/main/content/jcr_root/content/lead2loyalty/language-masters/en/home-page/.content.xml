@@ -297,21 +297,25 @@
                                     jcr:primaryType="nt:unstructured"
                                     productImageSource="/content/dam/lead2loyalty/circuit.jpg"
                                     productPath="/content/lead2loyalty/language-masters/en/home-page/products/development-board"
+                                    productScrollId="development-boards"
                                     productTitle="Development Boards"/>
                                 <item1
                                     jcr:primaryType="nt:unstructured"
                                     productImageSource="/content/dam/lead2loyalty/circuit-1.jpg"
                                     productPath="/content/lead2loyalty/language-masters/en/home-page/products/sensors"
+                                    productScrollId="sensors"
                                     productTitle="Sensors"/>
                                 <item2
                                     jcr:primaryType="nt:unstructured"
                                     productImageSource="/content/dam/lead2loyalty/circuit-2.jpg"
                                     productPath="/content/lead2loyalty/language-masters/en/home-page/products/electronic-components"
+                                    productScrollId="electronic-components"
                                     productTitle="Electronic Components"/>
                                 <item3
                                     jcr:primaryType="nt:unstructured"
                                     productImageSource="/content/dam/lead2loyalty/circuit-4.jpg"
                                     productPath="/content/lead2loyalty/language-masters/en/home-page/products/batteries-and-accessoris"
+                                    productScrollId="batteries-and-accessories"
                                     productTitle="Batteries and Accessories"/>
                             </tileListItems>
                         </tiles_copy>

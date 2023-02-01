@@ -2,7 +2,7 @@
 	 data-sly-call="${template.placeholder @ isEmpty=!properties.title}"
 	 data-sly-use.ticModel="com.deloitte.aem.lead2loyalty.core.models.TextImageCtaModel" />
 
-<div class="${properties.marginTop} ${properties.mobileMarginTop} ${properties.marginBottom} ${properties.mobileMarginBottom}">
+<div class="${properties.marginTop} ${properties.mobileMarginTop} ${properties.marginBottom} ${properties.mobileMarginBottom}" id="${properties.productScrollId}">
 	<div class="container my-5">
 		<div class="${ticModel.imgAlignment == 'img-right' ? 'row flex-row-reverse' : ''} row">
 			<div class="col-6 p-0">

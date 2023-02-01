@@ -6,7 +6,7 @@
         cq:lastModifiedBy="admin"
         cq:template="/conf/lead2loyalty/settings/wcm/templates/product-category-page"
         jcr:primaryType="cq:PageContent"
-        jcr:title="Batteries and Accessoris"
+        jcr:title="Batteries and Accessories"
         pageType="Product Category page"
         sling:resourceType="lead2loyalty/components/content/organisms/page">
         <root
@@ -32,6 +32,8 @@
                         mobileMarginBottom="m-margin-bottom-x"
                         mobileMarginTop="m-margin-top-x"
                         textIsRich="true"
+                        productCategory="development-board"
+                        productScrollId="development-boards"
                         title="Development Boards">
                         <cq:responsive jcr:primaryType="nt:unstructured">
                             <default
@@ -70,6 +72,8 @@
                             mobileMarginBottom="m-margin-bottom-x"
                             mobileMarginTop="m-margin-top-x"
                             textIsRich="true"
+                            productCategory="sensors"
+                            productScrollId="sensors"
                             title="Sensors">
                             <ctaButton jcr:primaryType="nt:unstructured">
                                 <item0
@@ -96,6 +100,8 @@
                         mobileMarginBottom="m-margin-bottom-x"
                         mobileMarginTop="m-margin-top-x"
                         textIsRich="true"
+                        productCategory="electronic-components"
+                        productScrollId="electronic-components"
                         title="Electronic Components">
                         <cq:responsive jcr:primaryType="nt:unstructured">
                             <default
@@ -134,6 +140,8 @@
                             mobileMarginBottom="m-margin-bottom-x"
                             mobileMarginTop="m-margin-top-x"
                             textIsRich="true"
+                            productCategory="batteries-and-accessoris"
+                            productScrollId="batteries-and-accessories"
                             title="Batteries and Accessories">
                             <ctaButton jcr:primaryType="nt:unstructured">
                                 <item0
@@ -160,6 +168,8 @@
                         mobileMarginBottom="m-margin-bottom-x"
                         mobileMarginTop="m-margin-top-x"
                         textIsRich="true"
+                        productCategory="iot-and-wireless"
+                        productScrollId="iot-and-wireless"
                         title="IoT and Wireless">
                         <cq:responsive jcr:primaryType="nt:unstructured">
                             <default

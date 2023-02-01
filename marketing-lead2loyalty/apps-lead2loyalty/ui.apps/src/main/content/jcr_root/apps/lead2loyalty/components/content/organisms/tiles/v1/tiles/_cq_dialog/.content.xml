@@ -102,7 +102,7 @@
                                                                 <productDescription
                                                                     jcr:primaryType="nt:unstructured"
                                                                     sling:resourceType="cq/gui/components/authoring/dialog/richtext"
-                                                                    fieldLabel="Text"
+                                                                    fieldLabel="Product Description"
                                                                     name="./productDescription"
                                                                     useFixedInlineToolbar="{Boolean}true">
                                                                     <uiSettings jcr:primaryType="nt:unstructured">
@@ -715,6 +715,12 @@
                                                                     fieldDescription="Product Page Path"
                                                                     fieldLabel="Product Path"
                                                                     name="./productPath"/>
+																<productScrollId
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                    fieldDescription="Product Scroll ID should be same as corresponding Text-Image-CTA component, for scroll to work properly"
+                                                                    fieldLabel="Product Scroll ID"
+                                                                    name="./productScrollId"/>
                                                             </items>
                                                         </column>
                                                     </items>

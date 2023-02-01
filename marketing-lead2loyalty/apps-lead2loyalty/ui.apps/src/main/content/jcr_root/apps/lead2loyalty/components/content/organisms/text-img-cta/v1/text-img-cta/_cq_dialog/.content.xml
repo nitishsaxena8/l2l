@@ -86,6 +86,12 @@
                                                         sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                                         fieldLabel="Image Alt Text"
                                                         name="./imageAlt"/>
+													<productScrollId
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldDescription="Product Scroll ID should be same as corresponding Tiles component, for scroll to work properly"
+                                                        fieldLabel="Product Scroll ID"
+                                                        name="./productScrollId"/>
                                                     <multifield
                                                         jcr:primaryType="nt:unstructured"
                                                         sling:resourceType="granite/ui/components/coral/foundation/form/multifield"

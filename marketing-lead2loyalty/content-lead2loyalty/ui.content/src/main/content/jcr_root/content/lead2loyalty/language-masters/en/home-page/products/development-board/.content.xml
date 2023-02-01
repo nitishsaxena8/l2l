@@ -33,6 +33,7 @@
                         mobileMarginTop="m-margin-top-x"
                         textIsRich="true"
                         productCategory="development-board"
+                        productScrollId="development-boards"
                         title="Development Boards">
                         <cq:responsive jcr:primaryType="nt:unstructured">
                             <default
@@ -72,6 +73,7 @@
                             mobileMarginTop="m-margin-top-x"
                             textIsRich="true"
                             productCategory="sensors"
+                            productScrollId="sensors"
                             title="Sensors">
                             <ctaButton jcr:primaryType="nt:unstructured">
                                 <item0
@@ -99,6 +101,7 @@
                         mobileMarginTop="m-margin-top-x"
                         textIsRich="true"
                         productCategory="electronic-components"
+                        productScrollId="electronic-components"
                         title="Electronic Components">
                         <cq:responsive jcr:primaryType="nt:unstructured">
                             <default
@@ -138,6 +141,7 @@
                             mobileMarginTop="m-margin-top-x"
                             textIsRich="true"
                             productCategory="batteries-and-accessoris"
+                            productScrollId="batteries-and-accessories"
                             title="Batteries and Accessories">
                             <ctaButton jcr:primaryType="nt:unstructured">
                                 <item0
@@ -165,7 +169,8 @@
                         mobileMarginTop="m-margin-top-x"
                         textIsRich="true"
                         productCategory="iot-and-wireless"
-                        title="iot-and-wireless">
+                        productScrollId="iot-and-wireless"
+                        title="IoT and Wireless">
                         <cq:responsive jcr:primaryType="nt:unstructured">
                             <default
                                 jcr:primaryType="nt:unstructured"
