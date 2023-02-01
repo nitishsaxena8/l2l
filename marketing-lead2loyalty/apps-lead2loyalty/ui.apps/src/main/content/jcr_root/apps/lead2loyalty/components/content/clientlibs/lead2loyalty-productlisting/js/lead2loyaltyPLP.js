@@ -51,8 +51,8 @@ if($('.product-details').length) {
 
     $('.add-team-details').click(function(event) {
         var additionalRow = '<div class="row mb-4">'+
-        '<div class="col-6"><label for="exampleInputName'+(variableIndex+1)+'" class="form-label">Name</label><input type="text" class="form-control" id="exampleInputName'+(variableIndex+1)+'"></div>'+
-        '<div class="col-6"><label for="exampleInputEmail'+(variableIndex+1)+'" class="form-label">Email ID</label><input type="email" class="form-control" id="exampleInputEmail'+(variableIndex+1)+'"></div></div>';
+        '<div class="col-6"><label for="exampleInputName'+(variableIndex+1)+'" class="form-label">First Name</label><input type="text" class="form-control" id="exampleInputName'+(variableIndex+1)+'"></div>'+
+        '<div class="col-6"><label for="exampleInputEmail'+(variableIndex+1)+'" class="form-label">Email</label><input type="email" class="form-control" id="exampleInputEmail'+(variableIndex+1)+'"></div></div>';
         $('.share-team-form .table-container').append(additionalRow);
         variableIndex++;
     });
