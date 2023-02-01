@@ -93,7 +93,7 @@ $( document ).ready(function() {
 
 
             var quote = collectFormData("quote");
-            delete loginData.submit;
+            delete quote.submit;
 
             if(quote != false) {
             	callMarketoForm(quote);
