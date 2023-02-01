@@ -31,7 +31,7 @@
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="xpbootstrap/components/content/organisms/xp-carousel"
                         autopauseDisabled="false"
-                        autoplay="false"
+                        autoplay="true"
                         delay="5000"
                         marginBottom="margin-bottom-x"
                         marginTop="margin-top-x"
@@ -78,7 +78,7 @@
                                 jcr:lastModified="{Date}2022-12-12T17:08:17.300+05:30"
                                 jcr:lastModifiedBy="admin"
                                 jcr:primaryType="nt:unstructured"
-                                sling:resourceType="xpbootstrap/components/content/organisms/xp-container">
+                                sling:resourceType="lead2loyalty/components/content/organisms/xp-container">
                                 <mletitle
                                     jcr:created="{Date}2022-12-12T16:39:11.644+05:30"
                                     jcr:createdBy="admin"
@@ -191,7 +191,7 @@
                                 jcr:lastModified="{Date}2022-12-12T17:08:17.300+05:30"
                                 jcr:lastModifiedBy="admin"
                                 jcr:primaryType="nt:unstructured"
-                                sling:resourceType="xpbootstrap/components/content/organisms/xp-container">
+                                sling:resourceType="lead2loyalty/components/content/organisms/xp-container">
                                 <mletitle
                                     jcr:created="{Date}2022-12-12T16:39:11.644+05:30"
                                     jcr:createdBy="admin"
