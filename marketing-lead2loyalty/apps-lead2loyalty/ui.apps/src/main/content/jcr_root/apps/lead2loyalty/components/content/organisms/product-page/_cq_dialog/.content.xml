@@ -45,10 +45,10 @@
                                         sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
                                         fieldDescription="Select Product Image Path"
                                         fieldLabel="Product Image Path"
-                                        name="./productImg">
+                                        name="./image">
                                         <granite:data
                                             jcr:primaryType="nt:unstructured"
-                                            cq-msm-lockable="productImg"/>
+                                            cq-msm-lockable="image"/>
                                     </productPath>
                                 </items>
                             </column>

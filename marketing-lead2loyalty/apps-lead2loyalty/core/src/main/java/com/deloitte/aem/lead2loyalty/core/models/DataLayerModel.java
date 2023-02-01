@@ -45,7 +45,7 @@ public class DataLayerModel {
 	private String pagePath;
 
 	@ValueMapValue
-	private String productImg;
+	private String image;
 
 	private String action;
 
@@ -134,7 +134,8 @@ public class DataLayerModel {
 		return parentPageTitle;
 	}
 
-	public String getProductImg() {
-		return ServiceUtils.getExternalizeAssetLink(resourceResolver, productImg);
+	public String getImage() {
+		return ServiceUtils.getExternalizeAssetLink(resourceResolver, image);
 	}
+
 }

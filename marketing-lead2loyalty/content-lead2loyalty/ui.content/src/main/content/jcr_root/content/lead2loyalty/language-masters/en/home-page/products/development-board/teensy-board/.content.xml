@@ -4,12 +4,11 @@
     <jcr:content
         cq:lastModified="{Date}2022-12-19T13:11:40.214+05:30"
         cq:lastModifiedBy="admin"
-        productImg="/content/dam/lead2loyalty/circuit-8.jpg"
         cq:template="/conf/lead2loyalty/settings/wcm/templates/product-detail-page"
         jcr:description="The Teensy 4.1 is the newest iteration of the astoundingly popular development platform that features an ARM Cortex-M7 processor at 600MHz, with an NXP iMXRT1062 chip, four times larger flash memory than the 4.0, and two new locations to optionally add more memory. The Teensy 4.1 is the same size and shape as the Teensy 3.6 (2.4in by 0.7in) and provides greater I/O capability, including an ethernet PHY, SD card socket, and USB host port."
         jcr:primaryType="cq:PageContent"
         jcr:title="Teensy Board"
-        productID="8"
+        productID="18"
         pageType="Product Detail page"
         sling:resourceType="lead2loyalty/components/content/organisms/product-page"
         image="/content/dam/lead2loyalty/circuit-7.jpg"
