@@ -49,8 +49,7 @@
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                                 fieldDescription="Form Required Field Indicator Text"
                                                 fieldLabel="Required Indicator Text"
-                                                name="./formRequiredFieldIndicatorText"
-                                                required="{Boolean}true"/>
+                                                name="./formRequiredFieldIndicatorText"/>
                                         </items>
                                     </column>
                                 </items>
