@@ -745,3 +745,7 @@ button#shareWithTeamsBtn {
     max-height: 18px;
     padding-bottom: 2px;
 }
+
+.basicpage:not(.product-page) .cmp-carousel__actions button  {
+	pointer-events: none;
+}

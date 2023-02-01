@@ -87,6 +87,12 @@ $('#signInForm').submit(function(event) {
                 $('[data-target="#signInFormModal"]').trigger('click');
                 $('.modal-backdrop').remove();
 
+                //analytics
+                digitalData.event = 'loggedIn';
+                digitalData.user.authState = 'authenticated';
+                digitalData.user.userType = 'member';
+                digitalData.user.email = resultData.email;
+
                 if($("#requestAQuoteMember")) {
    					$("#requestAQuoteMember").removeClass("d-none");
    				$("#requestAQuoteGuest").addClass("d-none");
@@ -105,6 +111,12 @@ $('.logout-app').click(function(event) {
 	localStorage.setItem('userDetails', '');
     $('.user-log-in').removeClass('d-none');
     $('.user-logged-in').addClass('d-none');
+
+    //analytics
+    digitalData.eventType = '';
+    digitalData.user.authState = 'not-authenticated';
+    digitalData.user.userType = 'guest';
+    digitalData.user.email = '';
 });
 
 $("#signInFormModal .form-control").change(function() {
@@ -166,6 +178,8 @@ $( document ).ready(function() {
 			console.log(quote);
             form.onSuccess(function(vals,thanksURL){
                 $('.form-success-container', parent.document).removeClass('d-none'); 
+                digitalData.event = 'formSubmission';
+                digitalData.form.formName = 'Request Quote';
                 return false;
             });
         });
