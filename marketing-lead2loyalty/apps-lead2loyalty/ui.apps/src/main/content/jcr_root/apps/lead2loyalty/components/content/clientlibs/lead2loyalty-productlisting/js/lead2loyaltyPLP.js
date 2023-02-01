@@ -32,6 +32,7 @@ if($('.plp-container').length) {
         $('.resultsWrapper').addClass('d-none');
         var filterTitle = $(event.currentTarget).attr('data-title');
         $('.resultsWrapper[data-parent="'+filterTitle+'"]').removeClass('d-none');
+        $('#accordion .collapse').removeClass('show');
     });
 
     $('.clear-all-btn').click(function(event) {
@@ -83,7 +84,7 @@ $('#signInForm').submit(function(event) {
                 localStorage.setItem('userDetails', JSON.stringify(resultData));
                 $('.user-logged-in').removeClass('d-none');
                 $('.user-log-in').addClass('d-none');
-                $('#signInFormModal').modal('hide');
+                $('[data-target="#signInFormModal"]').trigger('click');
                 $('.modal-backdrop').remove();
 
                 if($("#requestAQuoteMember")) {
@@ -110,6 +111,10 @@ $("#signInFormModal .form-control").change(function() {
     $('.sign-in-error').addClass('d-none');
 });
 
+$('[data-bs-toggle="modal"]').click(function(event) {
+    var modalTarget = $(this).attr('data-target');    
+    $(modalTarget).find('form')[0].reset(); 
+});
 
 $( document ).ready(function() {
     $('#requestAQuoteMember').click(function(event) {

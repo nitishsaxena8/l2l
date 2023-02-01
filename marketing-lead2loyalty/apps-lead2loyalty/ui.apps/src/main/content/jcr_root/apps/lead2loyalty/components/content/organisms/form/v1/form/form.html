@@ -1,9 +1,13 @@
 <div class="container">
-  <h2>${properties.formTitle}</h2>
-  <p>${properties.formDescription}</p>
-  <span>${properties.formRequiredFieldIndicatorText}</span>
-  <div class="form-container">
+  <div class="signup-form-header mt-4">
+    <div class="d-flex flex-column align-items-center">
+      <h2>${properties.formTitle}</h2>
+      <p>${properties.formDescription}</p>
+      <span>${properties.formRequiredFieldIndicatorText}</span>
+  </div>
+  </div>
 
+  <div class="form-container">
     <p class="signup-fail-container text-danger d-none">Something went wrong !!!</p>
     <p class="signup-success-container text-success d-none">Request successfully submitted !!!</p>
     <div data-sly-resource="${'user-signup' @resourceType='fd/af/components/aemform'}"></div>
