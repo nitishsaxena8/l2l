@@ -1,0 +1,71 @@
+.container.container-padding-right-zero {
+    padding-right: 0;
+}
+
+.container.container-padding-right-x {
+    padding-right: 8px;
+}
+
+.container.container-padding-right-2x {
+    padding-right: 16px;
+}
+
+.container.container-padding-right-3x {
+    padding-right: 24px;
+}
+
+.container.container-padding-right-4x {
+    padding-right: 32px;
+}
+
+.container.container-padding-right-5x {
+    padding-right: 40px;
+}
+
+.container.container-padding-right-6x {
+    padding-right: 48px;
+}
+
+.container.container-padding-right-7x {
+    padding-right: 56px;
+}
+
+.container.container-padding-right-8x {
+    padding-right: 64;
+}
+
+.container.container-padding-left-zero {
+    padding-left: 0;
+}
+
+.container.container-padding-left-x {
+    padding-left: 8px;
+}
+
+.container.container-padding-left-2x {
+    padding-left: 16px;
+}
+
+.container.container-padding-left-3x {
+    padding-left: 24px;
+}
+
+.container.container-padding-left-4x {
+    padding-left: 32px;
+}
+
+.container.container-padding-left-5x {
+    padding-left: 40px;
+}
+
+.container.container-padding-left-6x {
+    padding-left: 48px;
+}
+
+.container.container-padding-left-7x {
+    padding-left: 56px;
+}
+
+.container.container-padding-left-8x {
+    padding-left: 64px;
+}

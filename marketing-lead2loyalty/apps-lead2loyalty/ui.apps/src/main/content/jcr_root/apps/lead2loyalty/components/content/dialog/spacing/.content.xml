@@ -195,35 +195,35 @@
                 <x
                     jcr:primaryType="nt:unstructured"
                     text="X"
-                    value="m-padding-left-x"/>
+                    value="container-padding-left-x"/>
                 <_x0032_x
                     jcr:primaryType="nt:unstructured"
                     text="2X"
-                    value="m-padding-left-2x"/>
+                    value="container-padding-left-2x"/>
                 <_x0033_x
                     jcr:primaryType="nt:unstructured"
                     text="3X"
-                    value="m-padding-left-3x"/>
+                    value="container-padding-left-3x"/>
                 <_x0034_x
                     jcr:primaryType="nt:unstructured"
                     text="4X"
-                    value="m-padding-left-4x"/>
+                    value="container-padding-left-4x"/>
                 <_x0035_x
                     jcr:primaryType="nt:unstructured"
                     text="5X"
-                    value="m-padding-left-5x"/>
+                    value="container-padding-left-5x"/>
                 <_x0036_x
                     jcr:primaryType="nt:unstructured"
                     text="6X"
-                    value="m-padding-left-6x"/>
+                    value="container-padding-left-6x"/>
                 <_x0037_x
                     jcr:primaryType="nt:unstructured"
                     text="7X"
-                    value="m-padding-left-7x"/>
+                    value="container-padding-left-7x"/>
                 <_x0038_x
                     jcr:primaryType="nt:unstructured"
                     text="8X"
-                    value="m-padding-left-8x"/>
+                    value="container-padding-left-8x"/>
                 <none
                     jcr:primaryType="nt:unstructured"
                     text="None"
@@ -240,35 +240,35 @@
                 <x
                     jcr:primaryType="nt:unstructured"
                     text="X"
-                    value="m-padding-right-x"/>
+                    value="container-padding-right-x"/>
                 <_x0032_x
                     jcr:primaryType="nt:unstructured"
                     text="2X"
-                    value="m-padding-right-2x"/>
+                    value="container-padding-right-2x"/>
                 <_x0033_x
                     jcr:primaryType="nt:unstructured"
                     text="3X"
-                    value="m-padding-right-3x"/>
+                    value="container-padding-right-3x"/>
                 <_x0034_x
                     jcr:primaryType="nt:unstructured"
                     text="4X"
-                    value="m-margin-right-4x"/>
+                    value="container-margin-right-4x"/>
                 <_x0035_x
                     jcr:primaryType="nt:unstructured"
                     text="5X"
-                    value="m-padding-right-5x"/>
+                    value="container-padding-right-5x"/>
                 <_x0036_x
                     jcr:primaryType="nt:unstructured"
                     text="6X"
-                    value="m-padding-right-6x"/>
+                    value="container-padding-right-6x"/>
                 <_x0037_x
                     jcr:primaryType="nt:unstructured"
                     text="7X"
-                    value="m-padding-right-7x"/>
+                    value="container-padding-right-7x"/>
                 <_x0038_x
                     jcr:primaryType="nt:unstructured"
                     text="8X"
-                    value="m-padding-right-8x"/>
+                    value="container-padding-right-8x"/>
                 <none
                     jcr:primaryType="nt:unstructured"
                     text="None"

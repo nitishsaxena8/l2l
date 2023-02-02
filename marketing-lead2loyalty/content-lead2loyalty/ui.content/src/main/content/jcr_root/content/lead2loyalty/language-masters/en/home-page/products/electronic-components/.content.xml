@@ -195,10 +195,7 @@
                         sling:resourceType="xpbootstrap/components/content/organisms/xp-container">
                         <tiles_copy_copy
                         	tileHeading="Training &amp; Articles"
-							ctaLabel="View More"
-							ctaLink="/content/lead2loyalty/language-masters/en/home-page/products"
-							ctaTarget="_blank"
-                            jcr:created="{Date}2022-12-12T14:02:20.280+05:30"
+							jcr:created="{Date}2022-12-12T14:02:20.280+05:30"
                             jcr:createdBy="admin"
                             jcr:lastModified="{Date}2022-12-14T20:13:49.049+05:30"
                             jcr:lastModifiedBy="admin"
