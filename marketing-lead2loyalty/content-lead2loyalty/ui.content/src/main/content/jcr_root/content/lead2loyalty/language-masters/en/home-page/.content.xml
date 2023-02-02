@@ -87,7 +87,7 @@
                                     jcr:lastModifiedBy="admin"
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="xpbootstrap/components/content/molecules/mleTitle"
-                                    atmTitleText="IT Professional"
+                                    atmTitleText="How our B2B Solution helps you !"
                                     marginBottom="[none,none]"
                                     marginTop="[margin-top-4x,none]"
                                     mobileMarginBottom="[m-margin-bottom-x,m-margin-bottom-x]"
@@ -140,7 +140,7 @@
                                         <item0
                                             jcr:primaryType="nt:unstructured"
                                             atmCtaLabel="Learn More"
-                                            atmCtaLink="#"
+                                            atmCtaLink="/content/lead2loyalty/language-masters/en/home-page/products/development-board"
                                             atmCtaType="btn-primary"/>
                                     </btnGrp>
                                 </mlebuttongroup>
@@ -254,7 +254,7 @@
                                         <item0
                                             jcr:primaryType="nt:unstructured"
                                             atmCtaLabel="Learn More"
-                                            atmCtaLink="#"
+                                            atmCtaLink="/content/lead2loyalty/language-masters/en/home-page/products/development-board"
                                             atmCtaType="btn-primary"/>
                                     </btnGrp>
                                 </mlebuttongroup>
@@ -318,7 +318,7 @@
                                     productImageSource="/content/dam/lead2loyalty/circuit-4.jpg"
                                     productPath="/content/lead2loyalty/language-masters/en/home-page/products/batteries-and-accessoris"
                                     productScrollId="batteries-and-accessories"
-                                    productTitle="Batteries and Accessories"/>
+                                    productTitle="Batteries &amp; Accessories"/>
                             </tileListItems>
                         </tiles_copy>
                         <cq:responsive jcr:primaryType="nt:unstructured">
@@ -422,7 +422,7 @@
                                     jcr:primaryType="nt:unstructured"
                                     productDescription="&lt;p>Some quick example text to build on the card title and make up the bulk test.&lt;/p>&#xd;&#xa;"
                                     productImageSource="/content/dam/lead2loyalty/circuit-7.jpg"
-                                    productTitle="How to Create a Quote &amp; Purchase Order"/>
+                                    productTitle="How to Create a Quote"/>
                                 <item3
                                     jcr:primaryType="nt:unstructured"
                                     productDescription="&lt;p>Some quick example text to build on the card title and make up the bulk of the card's content.&lt;/p>&#xd;&#xa;"

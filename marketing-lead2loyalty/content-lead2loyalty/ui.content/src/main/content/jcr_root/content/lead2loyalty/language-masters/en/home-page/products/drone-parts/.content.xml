@@ -142,7 +142,7 @@
                             textIsRich="true"
                             productCategory="batteries-and-accessoris"
                             productScrollId="batteries-and-accessories"
-                            title="Batteries and Accessories">
+                            title="Batteries &amp; Accessories">
                             <ctaButton jcr:primaryType="nt:unstructured">
                                 <item0
                                     jcr:primaryType="nt:unstructured"
@@ -223,7 +223,7 @@
                                     jcr:primaryType="nt:unstructured"
                                     productDescription="&lt;p>Some quick example text to build on the card title and make up the bulk test.&lt;/p>&#xd;&#xa;"
                                     productImageSource="/content/dam/lead2loyalty/circuit-7.jpg"
-                                    productTitle="How to Create a Quote &amp; Purchase Order"/>
+                                    productTitle="How to Create a Quote"/>
                                 <item3
                                     jcr:primaryType="nt:unstructured"
                                     productDescription="&lt;p>Some quick example text to build on the card title and make up the bulk of the card's content.&lt;/p>&#xd;&#xa;"
