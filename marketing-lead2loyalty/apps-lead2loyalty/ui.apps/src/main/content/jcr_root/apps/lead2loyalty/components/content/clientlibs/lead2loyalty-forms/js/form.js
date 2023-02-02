@@ -67,6 +67,14 @@ $( document ).ready(function() {
 
                                 form.onSuccess(function(vals,thanksURL){
                                     $('.form-success-container', parent.document).removeClass('d-none'); 
+                                    //analytics
+									parent.window.digitalData.event = 'formSubmission';
+                                    parent.window.digitalData.user.authState = 'authenticated';
+                                    parent.window.digitalData.form = {};
+                                    parent.window.digitalData.form.formName = 'Signup';
+                                    parent.window.digitalData.user = parent.window.digitalData.user || {};
+                                    parent.window.digitalData.user.userType = 'member';
+                                    parent.window.digitalData.user.email = loginData.Email;
                                     return false;
                                 });
                             });
@@ -160,6 +168,10 @@ $( document ).ready(function() {
 
             form.onSuccess(function(vals,thanksURL){
                 $('.form-success-container', parent.document).removeClass('d-none'); 
+                //analytics
+                parent.window.digitalData.event = 'formSubmission';
+                parent.window.digitalData.form = {};
+                parent.window.digitalData.form.formName = 'Request Quote';
                 return false;
             });
         });
