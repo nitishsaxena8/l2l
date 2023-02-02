@@ -265,4 +265,6 @@
             </container>
         </root>
     </jcr:content>
+	<relay-switch-module/>
+	<electronic-switches-and-keypads/>
 </jcr:root>

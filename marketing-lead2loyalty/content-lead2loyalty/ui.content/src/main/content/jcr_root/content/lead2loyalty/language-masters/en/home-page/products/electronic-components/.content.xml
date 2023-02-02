@@ -265,4 +265,6 @@
             </container>
         </root>
     </jcr:content>
+	<leds-and-indicators/>
+	<fuse/>
 </jcr:root>

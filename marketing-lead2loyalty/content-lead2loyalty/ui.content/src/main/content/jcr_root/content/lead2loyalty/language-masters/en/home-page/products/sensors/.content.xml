@@ -265,4 +265,6 @@
             </container>
         </root>
     </jcr:content>
+	<proximity-sensor/>
+	<ultrasonic-sensor/>
 </jcr:root>

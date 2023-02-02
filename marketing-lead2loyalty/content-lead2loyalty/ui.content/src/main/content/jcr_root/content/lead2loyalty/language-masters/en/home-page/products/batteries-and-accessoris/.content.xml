@@ -265,4 +265,6 @@
             </container>
         </root>
     </jcr:content>
+	<rechargeable-battery/>
+	<power-adapter-and-cable/>
 </jcr:root>

@@ -265,4 +265,6 @@
             </container>
         </root>
     </jcr:content>
+	<wireless-smart-switches/>
+	<cameras/>
 </jcr:root>

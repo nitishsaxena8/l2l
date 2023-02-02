@@ -265,4 +265,6 @@
             </container>
         </root>
     </jcr:content>
+	<drone-transmitter-and-receiver/>
+	<propellers/>
 </jcr:root>
