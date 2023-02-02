@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2023-02-02T12:48:55.907+05:30"
+        cq:lastModifiedBy="admin"
+        cq:template="/conf/lead2loyalty/settings/wcm/templates/product-detail-page"
+        jcr:description="Complete LED Assortment Kit includes 3mm and 5mm Red, Yellow, Green and Blue LEDs with a diffused lens and White LEDs with clear lens, a total of 310 LEDs. The LED kit comes with a 250 pcs bonus resistor assortment kit that includes the most commonly used resistor values (47Ω – 1MΩ), always useful for your electronic circuits"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="LEDs and Indicators"
+        sling:resourceType="lead2loyalty/components/content/organisms/product-page"
+        image="/content/dam/lead2loyalty/LEDs-Assortment-Kit.jpg"
+        productID="31"
+        pwaCachestrategy="staleWhileRevalidate"
+        pwaDisplay="standalone"
+        pwaOrientation="any">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="xpbootstrap/components/content/organisms/xp-container"
+            layout="responsiveGrid">
+            <mlebanner
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="xpbootstrap/components/content/molecules/mleBanner"/>
+            <container jcr:primaryType="nt:unstructured">
+                <container
+                    jcr:lastModified="{Date}2022-12-13T15:24:44.133+05:30"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="xpbootstrap/components/content/organisms/xp-container"
+                    layout="responsiveGrid">
+                    <product_details
+                        jcr:created="{Date}2022-12-12T14:02:04.067+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2023-02-02T12:42:24.980+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="lead2loyalty/components/content/organisms/product-details/v1/product-details"
+                        atmTextHtml="&lt;h4>Product Description&lt;/h4>&#xd;&#xa;&lt;p>LEDs (Light Emitting Diodes) are commonly used for&amp;nbsp;indicator lights (such as power on/off lights) on electronic devices. They have several other applications, including electronic signs, clock displays, and flashlights. LEDs convert electrical energy directly into light, delivering efficient light generation with little-wasted electricity. Buy the 3mm and 5mm assorted (diffused lens and clear white lens) LEDs in a variety of colours to choose from, which are just suitable for your Arduino and electronics projects&lt;/p>&#xd;&#xa;"
+                        emailIdFieldLabel="Email"
+                        marginBottom="margin-bottom-6x"
+                        marginTop="margin-top-6x"
+                        mobileMarginBottom="m-margin-bottom-x"
+                        mobileMarginTop="m-margin-top-6x"
+                        modalCtaLabel="Send"
+                        modalDesc="Share product details with the respective team member"
+                        modalTitle="Share With Team"
+                        nameFieldLabel="First Name"
+                        pricingCtaLabel="Request Quote"
+                        pricingCtaLink="#"
+                        pricingDesc="Get Quotation for the bulk order"
+                        pricingTitle="Pricing"
+                        productid="Product ID: AUD09345424"
+                        shareCtaLabel="Share With Team"
+                        shareCtaLink="#"
+                        subtitle="Audio Module / Amplifier"
+                        textIsRich="true"
+                        title="LEDs and Indicators">
+                        <cq:responsive jcr:primaryType="nt:unstructured">
+                            <default
+                                jcr:primaryType="nt:unstructured"
+                                offset="1"
+                                width="10"/>
+                        </cq:responsive>
+                        <banner
+                            jcr:lastModified="{Date}2023-01-22T23:47:05.721+05:30"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="xpbootstrap/components/content/organisms/carousel"
+                            autopauseDisabled="false"
+                            autoplay="true"
+                            delay="5000"
+                            marginBottom="margin-bottom-x"
+                            marginTop="margin-top-x"
+                            mobileMarginBottom="m-margin-bottom-x"
+                            mobileMarginTop="m-margin-top-x"
+                            order="[mleimage,item_1674411416192]">
+                            <mleimage
+                                cq:panelTitle="image-1"
+                                jcr:created="{Date}2023-01-22T23:46:40.858+05:30"
+                                jcr:createdBy="admin"
+                                jcr:lastModified="{Date}2023-01-22T23:48:01.635+05:30"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="xpbootstrap/components/content/molecules/mleImage"
+                                atmIconSrcFileReference="/content/dam/lead2loyalty/circuit-8.jpg"
+                                marginBottom="margin-bottom-x"
+                                marginTop="margin-top-x"
+                                mobileMarginBottom="m-margin-bottom-x"
+                                mobileMarginTop="m-margin-top-x"/>
+                            <item_1674411416192
+                                cq:panelTitle="image-2"
+                                jcr:lastModified="{Date}2023-01-22T23:47:46.937+05:30"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="xpbootstrap/components/content/molecules/mleImage"
+                                atmIconSrcFileReference="/content/dam/lead2loyalty/circuit-7.jpg"
+                                marginBottom="margin-bottom-x"
+                                marginTop="margin-top-x"
+                                mobileMarginBottom="m-margin-bottom-x"
+                                mobileMarginTop="m-margin-top-x"/>
+                        </banner>
+                        <container
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="lead2loyalty/components/content/organisms/xp-container">
+                            <aemform
+                                jcr:created="{Date}2023-01-24T17:23:48.043+05:30"
+                                jcr:createdBy="admin"
+                                jcr:lastModified="{Date}2023-01-24T17:54:12.942+05:30"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="fd/af/components/aemform"
+                                cssClientlib="lead2loyalty.forms"
+                                formRef="/content/dam/formsanddocuments/quote"
+                                formType="adaptiveForm"
+                                submitType="inline"
+                                textIsRich="true"
+                                thankyouConfig="message"
+                                usePageLocale="true"/>
+                        </container>
+                        <ctaButton jcr:primaryType="nt:unstructured">
+                            <item0
+                                jcr:primaryType="nt:unstructured"
+                                atmCtaLabel="Buy Now"
+                                atmCtaLink="/content/lead2loyalty/language-masters/en/home-page/products/development-board/advance-development-board"
+                                atmCtaType="btn-primary"/>
+                            <item1
+                                jcr:primaryType="nt:unstructured"
+                                atmCtaLabel="Add To Cart"
+                                atmCtaLink="#"
+                                atmCtaType="btn-outline-primary"/>
+                        </ctaButton>
+                    </product_details>
+                    <xp_container_1543464264
+                        cq:styleIds="[1673004790935]"
+                        jcr:created="{Date}2022-12-15T12:13:33.382+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2022-12-15T12:13:33.382+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="lead2loyalty/components/content/organisms/xp-container">
+                        <tiles
+                            cq:styleIds="[1670928226762]"
+                            jcr:created="{Date}2022-12-12T14:02:20.280+05:30"
+                            jcr:createdBy="admin"
+                            jcr:lastModified="{Date}2022-12-15T12:09:13.029+05:30"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="lead2loyalty/components/content/organisms/tiles/v1/tiles"
+                            textIsRich="[true,true,true,true]"
+                            tileHeading="Popular Industry Use Case">
+                            <tileListItems jcr:primaryType="nt:unstructured">
+                                <item0
+                                    jcr:primaryType="nt:unstructured"
+                                    productDescription="&lt;p>Some quick example text to build on the card title nad make up the bulk of the card's content.&amp;nbsp;&lt;/p>&#xd;&#xa;"
+                                    productImageSource="/content/dam/lead2loyalty/cell-2.jpg"
+                                    productTitle="Automative"/>
+                                <item1
+                                    jcr:primaryType="nt:unstructured"
+                                    productDescription="&lt;p>Some quick example text to build on the card title and make up the bulk of the card's content.&lt;/p>&#xd;&#xa;"
+                                    productImageSource="/content/dam/lead2loyalty/cell-1.jpg"
+                                    productTitle="Cellular Device"/>
+                                <item2
+                                    jcr:primaryType="nt:unstructured"
+                                    productDescription="&lt;p>Some quick example text to build on the card title and make up the bulk of the card's content.&lt;/p>&#xd;&#xa;"
+                                    productImageSource="/content/dam/lead2loyalty/cell-4.jpg"
+                                    productTitle="Automative"/>
+                                <item3
+                                    jcr:primaryType="nt:unstructured"
+                                    productDescription="&lt;p>Some quick example text to build on the card title and make up the bulk of the card's content.&lt;/p>&#xd;&#xa;"
+                                    productImageSource="/content/dam/lead2loyalty/cell-3.jpg"
+                                    productTitle="Cellular Device"/>
+                            </tileListItems>
+                        </tiles>
+                    </xp_container_1543464264>
+                    <xp_container_32384955
+                        jcr:created="{Date}2022-12-15T12:18:01.412+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2022-12-15T12:40:36.428+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="lead2loyalty/components/content/organisms/xp-container"
+                        layout="responsiveGrid"
+                        marginBottom="margin-bottom-x"
+                        marginTop="margin-top-6x"
+                        mobileMarginBottom="m-margin-bottom-x"
+                        mobileMarginTop="m-margin-top-x">
+                        <tiles_copy
+                            jcr:created="{Date}2022-12-12T14:02:20.280+05:30"
+                            jcr:createdBy="admin"
+                            jcr:lastModified="{Date}2022-12-15T12:26:03.522+05:30"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="lead2loyalty/components/content/organisms/tiles/v1/tiles"
+                            ctaLabel="View More"
+                            ctaLink="/content/lead2loyalty/language-masters/en/home-page/products"
+                            ctaTarget="_blank"
+                            textIsRich="[true,true,true,true]"
+                            tileHeading="You may also like">
+                            <tileListItems jcr:primaryType="nt:unstructured">
+                                <item0
+                                    jcr:primaryType="nt:unstructured"
+                                    productImageSource="/content/dam/lead2loyalty/circuit-7.jpg"
+                                    productTitle="TDA2030A Audio Amplifier Module Support GSM / GPRS / EDGE - A7670E"/>
+                                <item1
+                                    jcr:primaryType="nt:unstructured"
+                                    productImageSource="/content/dam/lead2loyalty/circuit-8.jpg"
+                                    productTitle="LILYGO TTGO T-SIM A7670E R2 Wireless Module ESP32 Chip 4G LTE CAT1"/>
+                                <item2
+                                    jcr:primaryType="nt:unstructured"
+                                    productImageSource="/content/dam/lead2loyalty/circuit.jpg"
+                                    productTitle="GEEKcredit 433MHZ DC 12V 10A Relay 1CH Channel Wireless RF Remote Contr"/>
+                                <item3
+                                    jcr:primaryType="nt:unstructured"
+                                    productImageSource="/content/dam/lead2loyalty/circuit-2.jpg"
+                                    productTitle="LU-ASR01 Intelligent Speech Rocognition Moule Offline Recognition Custom 100"/>
+                            </tileListItems>
+                        </tiles_copy>
+                    </xp_container_32384955>
+                    <xp_container_3238495
+                        cq:styleIds="[1673004790935]"
+                        jcr:created="{Date}2022-12-15T12:18:01.412+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2022-12-15T12:40:25.062+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="lead2loyalty/components/content/organisms/xp-container"
+                        layout="responsiveGrid"
+                        marginBottom="margin-bottom-x"
+                        marginTop="margin-top-6x"
+                        mobileMarginBottom="m-margin-bottom-x"
+                        mobileMarginTop="m-margin-top-x">
+                        <tiles_copy
+                            jcr:created="{Date}2022-12-12T14:02:20.280+05:30"
+                            jcr:createdBy="admin"
+                            jcr:lastModified="{Date}2022-12-15T12:33:04.741+05:30"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="lead2loyalty/components/content/organisms/tiles/v1/tiles"
+                            ctaLabel="View More"
+                            ctaLink="/content/lead2loyalty/language-masters/en/home-page/products"
+                            ctaTarget="_blank"
+                            textIsRich="[true,true,true,true]"
+                            tileHeading="Customers who view this item also bought this">
+                            <tileListItems jcr:primaryType="nt:unstructured">
+                                <item0
+                                    jcr:primaryType="nt:unstructured"
+                                    productImageSource="/content/dam/lead2loyalty/circuit6.jpg"
+                                    productTitle="Bluetooth 4.2 Audio Receiver Module With 3.5mm Audio interface Lossless Car"/>
+                                <item1
+                                    jcr:primaryType="nt:unstructured"
+                                    productImageSource="/content/dam/lead2loyalty/circuit-5.jpg"
+                                    productTitle="Keyes Brick ESP-01 3V Relay Module Wifi Node IoT Wireless Remote Control"/>
+                                <item2
+                                    jcr:primaryType="nt:unstructured"
+                                    productImageSource="/content/dam/lead2loyalty/circuit-9.jpg"
+                                    productTitle="Bluetooth 4.0 Audio Receiver Module For Stereo Dual Channel Audio Speaker"/>
+                                <item3
+                                    jcr:primaryType="nt:unstructured"
+                                    productImageSource="/content/dam/lead2loyalty/circuit-1.jpg"
+                                    productTitle="Geekcreit DFPlayer Mini MP3 Player Module MP3 Voice Audio Decoder Board"/>
+                            </tileListItems>
+                        </tiles_copy>
+                    </xp_container_3238495>
+                    <sales_tech_support
+                        jcr:created="{Date}2023-01-09T13:51:12.135+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2023-01-11T19:42:33.244+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="lead2loyalty/components/content/organisms/sales-tech-support/v1/sales-tech-support"
+                        fileReference="/content/dam/lead2loyalty/circuit6.jpg"
+                        imageAlt="img alt text"
+                        marginBottom="margin-bottom-x"
+                        marginTop="margin-top-x"
+                        mobileMarginBottom="m-margin-bottom-x"
+                        mobileMarginTop="m-margin-top-x"
+                        textIsRich="[true,true]">
+                        <saleSupportLinks jcr:primaryType="nt:unstructured">
+                            <item0
+                                jcr:primaryType="nt:unstructured"
+                                atmTextHtml="&lt;p>Connect with an expert for more product related details&lt;/p>&#xd;&#xa;&lt;p>&lt;a href=&quot;#&quot;>Connect with sales support&lt;/a>&lt;/p>&#xd;&#xa;"
+                                icon="/content/dam/lead2loyalty/lead2loylty-setting.png"
+                                iconAlt="icon-1"
+                                title="Sales Support"/>
+                            <item1
+                                jcr:primaryType="nt:unstructured"
+                                atmTextHtml="&lt;p>Support for service-related technical issues.&lt;/p>&#xd;&#xa;&lt;p>&lt;a href=&quot;#&quot;>Connect with technical support&lt;/a>&lt;/p>&#xd;&#xa;"
+                                icon="/content/dam/lead2loyalty/lead2loyalty-customer-care.png"
+                                iconAlt="icon-2"
+                                title="Technical Support"/>
+                        </saleSupportLinks>
+                    </sales_tech_support>
+                </container>
+            </container>
+        </root>
+    </jcr:content>
+</jcr:root>
