@@ -141,7 +141,9 @@ $("#signInFormModal .form-control").change(function() {
 
 $('[data-bs-toggle="modal"]').click(function(event) {
     var modalTarget = $(this).attr('data-target');    
-    $(modalTarget).find('form')[0].reset(); 
+    if($(modalTarget).find('form').length) {
+        $(modalTarget).find('form')[0].reset(); 
+    }
 });
 
 $( document ).ready(function() {
