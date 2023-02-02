@@ -89,6 +89,7 @@ $('#signInForm').submit(function(event) {
 
                 //analytics
                 digitalData.event = 'loggedIn';
+                digitalData.user = digitalData.user || {};
                 digitalData.user.authState = 'authenticated';
                 digitalData.user.userType = 'member';
                 digitalData.user.email = resultData.email;
@@ -114,6 +115,7 @@ $('.logout-app').click(function(event) {
 
     //analytics
     digitalData.eventType = '';
+    digitalData.user = digitalData.user || {};
     digitalData.user.authState = 'not-authenticated';
     digitalData.user.userType = 'guest';
     digitalData.user.email = '';
