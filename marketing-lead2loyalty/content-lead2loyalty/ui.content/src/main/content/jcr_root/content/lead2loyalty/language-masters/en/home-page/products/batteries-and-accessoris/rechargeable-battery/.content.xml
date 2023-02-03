@@ -186,6 +186,7 @@
                                 jcr:lastModified="{Date}2023-01-31T20:50:27.727+05:30"
                                 jcr:lastModifiedBy="admin"
                                 jcr:primaryType="nt:unstructured"
+                                openRequestQuoteForm="true"
                                 sling:resourceType="lead2loyalty/components/content/organisms/text-img-cta/v1/text-img-cta"
                                 atmTextHtml="&lt;p>Business to Business integration (B2Bi) allows you to use your own internal processes to securely shop with us, and drive purchasing through your own e-procurement system.&lt;/p>&#xd;&#xa;&lt;ul>&#xd;&#xa;&lt;li>No doubt entry data for purchase orders.&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;&lt;ul>&#xd;&#xa;&lt;li>Consolidate and digitalize eProcurement flows in one system&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;&lt;ul>&#xd;&#xa;&lt;li>Strengthen compliance and control by adhering to your internal purchasing processes&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;"
                                 fileReference="/content/dam/lead2loyalty/circuit-13.jpg"
