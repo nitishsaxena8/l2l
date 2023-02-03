@@ -201,7 +201,7 @@
                                     jcr:lastModifiedBy="admin"
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="xpbootstrap/components/content/molecules/mleTitle"
-                                    atmTitleText="IT Professional"
+                                    atmTitleText="Welcome to the world of B2B!"
                                     marginBottom="[none,none]"
                                     marginTop="[margin-top-4x,none]"
                                     mobileMarginBottom="[m-margin-bottom-x,m-margin-bottom-x]"
