@@ -68,47 +68,6 @@
                                                             </coulmns>
                                                         </items>
                                                     </titleAndId>
-                                                    <pricing
-                                                        jcr:primaryType="nt:unstructured"
-                                                        sling:resourceType="granite/ui/components/coral/foundation/accordion">
-                                                        <items jcr:primaryType="nt:unstructured">
-                                                            <coulmns
-                                                                jcr:primaryType="nt:unstructured"
-                                                                jcr:title="Pricing"
-                                                                sling:resourceType="granite/ui/components/coral/foundation/container">
-                                                                <items jcr:primaryType="nt:unstructured">
-                                                                    <pricingTitle
-                                                                        granite:hide="${cqDesign.linkDisabled}"
-                                                                        jcr:primaryType="nt:unstructured"
-                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                                                        fieldLabel="Pricing Title"
-                                                                        name="./pricingTitle"/>
-                                                                    <pricingDesc
-                                                                        granite:hide="${cqDesign.linkDisabled}"
-                                                                        jcr:primaryType="nt:unstructured"
-                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
-                                                                        fieldLabel="Pricing Description"
-                                                                        name="./pricingDesc"/>
-                                                                    <pricingCtaLabel
-                                                                        jcr:primaryType="nt:unstructured"
-                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                                                        fieldLabel="Pricing CTA Label"
-                                                                        name="./pricingCtaLabel"/>
-                                                                    <pricingCtaLink
-                                                                        jcr:primaryType="nt:unstructured"
-                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
-                                                                        fieldLabel="Pricing CTA Link"
-                                                                        name="./pricingCtaLink"/>
-                                                                    <pricingCtaTarget
-                                                                        jcr:primaryType="nt:unstructured"
-                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
-                                                                        name="./pricingCtaTarget"
-                                                                        text="Open in new tab ?"
-                                                                        value="_blank"/>
-                                                                </items>
-                                                            </coulmns>
-                                                        </items>
-                                                    </pricing>
                                                     <description
                                                         jcr:primaryType="nt:unstructured"
                                                         sling:resourceType="granite/ui/components/coral/foundation/accordion">

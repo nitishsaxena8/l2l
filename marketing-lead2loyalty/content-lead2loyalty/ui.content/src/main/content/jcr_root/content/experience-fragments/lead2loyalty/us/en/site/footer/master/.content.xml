@@ -62,7 +62,7 @@
                                 jcr:primaryType="nt:unstructured"
                                 openInNewWindowsecondary="false"
                                 secondarylinkUrl="#"
-                                tr_secondarylinkTitle="Traning &amp; Certification"/>
+                                tr_secondarylinkTitle="Training &amp; Certification"/>
                         </secondaryLinks>
                     </item1>
                 </utilityLinks>

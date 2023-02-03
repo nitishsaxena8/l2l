@@ -22,26 +22,8 @@
                 <h5>${productModel.title}</h5>
                 <p>${productModel.productId}</p>
                 <hr class="my-2">
-                <div class="quote d-flex justify-content-between mt-4">
-                    <div>
-                        <h6>${productModel.pricingTitle}</h6>
-                        <p>${productModel.pricingDesc}</p>
-                    </div>
-                    <div>
-                        <p class="form-success-container request-quote-member text-success d-none">Request successfully submitted !!!</p>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" id="requestAQuoteGuest" data-target="#requestAQuote" data-toggle="modal">${properties.pricingCtaLabel}</button>
-                        <button type="button" class="btn btn-primary d-none" id="requestAQuoteMember">${properties.pricingCtaLabel}</button>
-                    </div>
-                </div>
                 <div>
                     ${productModel.description @context='html'}
-                </div>
-                <div class="row background-color px-2 py-3 mx-1">
-                    <sly data-sly-list.child="${productModel.ctaModelList}">
-                        <div class="col-6" >
-                            <button type="button" class="btn ${child.atmCtaType} btn-md w-100">${child.atmCtaLabel}</button>
-                        </div>
-                    </sly>
                 </div>
             </div>
         </div>

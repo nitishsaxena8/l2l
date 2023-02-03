@@ -37,21 +37,6 @@ public class ProductDetailsModel {
 	private String productid;
 
 	@ValueMapValue
-	private String pricingTitle;
-
-	@ValueMapValue
-	private String pricingDesc;
-
-	@ValueMapValue
-	private String pricingCtaLabel;
-
-	@ValueMapValue
-	private String pricingCtaLink;
-
-	@ValueMapValue
-	private String pricingCtaTarget;
-
-	@ValueMapValue
 	private String atmTextHtml;
 
 	@ValueMapValue
@@ -79,21 +64,8 @@ public class ProductDetailsModel {
 	@Via("resource")
 	private Resource ctaButton;
 
-	List<CtaModel> ctaModelList = new ArrayList<>();
-
 	@PostConstruct
-	protected void init() {
-
-		if (ctaButton != null) {
-			Iterator<Resource> ctaResourceItr = ctaButton.getChildren().iterator();
-			while (ctaResourceItr.hasNext()) {
-				Resource ctaResource = ctaResourceItr.next();
-				CtaModel ctaModel = ctaResource.adaptTo(CtaModel.class);
-				ctaModelList.add(ctaModel);
-			}
-		}
-
-	}
+	protected void init() { }
 
 	public Resource getCtaButton() {
 		return ctaButton;
@@ -109,26 +81,6 @@ public class ProductDetailsModel {
 
 	public String getProductId() {
 		return productid;
-	}
-
-	public String getPricingTitle() {
-		return pricingTitle;
-	}
-
-	public String getPricingDesc() {
-		return pricingDesc;
-	}
-
-	public String getPricingCtaLabel() {
-		return pricingCtaLabel;
-	}
-
-	public String getPricingCtaLink() {
-		return pricingCtaLink;
-	}
-
-	public String getPricingCtaTarget() {
-		return pricingCtaTarget;
 	}
 
 	public String getDescription() {
@@ -163,11 +115,4 @@ public class ProductDetailsModel {
 		return modalCtaLabel;
 	}
 
-	public List<CtaModel> getCtaModelList() {
-		return ctaModelList;
-	}
-
-	public void setCtaModelList(List<CtaModel> ctaModelList) {
-		this.ctaModelList = ctaModelList;
-	}
 }
