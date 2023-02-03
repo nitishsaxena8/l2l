@@ -110,7 +110,7 @@
                         <text_img_cta_21958937571
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="lead2loyalty/components/content/organisms/text-img-cta/v1/text-img-cta"
-                            atmTextHtml="&lt;p>We are as an organization, provide the best quality lithium batteries with all its accessories. Being a quality-driven organization we strive to bring forth a vast variety of Lithium Batteries at low price. We trust on customers satisfaction!! So we are always the first choice of our customers in the domain of lithium polymer battery.&lt;/p>&#xd;&#xa;&lt;p>Want to know more about different types of Batteries?&lt;/p>&#xd;&#xa;&lt;p>&lt;/p>&#xd;&#xa;"
+                            atmTextHtml="&lt;p>We as an organization, provide the best quality lithium batteries with all its accessories. Being a quality-driven organization we strive to bring forth a vast variety of Lithium Batteries at low price. We trust on customers satisfaction!! So we are always the first choice of our customers in the domain of lithium polymer battery.&lt;/p>&#xd;&#xa;&lt;p>Want to know more about different types of Batteries?&lt;/p>&#xd;&#xa;&lt;p>&lt;/p>&#xd;&#xa;"
                             fileReference="/content/dam/lead2loyalty/circuit-1.jpg"
                             imgAlignment="img-left"
                             marginBottom="margin-bottom-x"
