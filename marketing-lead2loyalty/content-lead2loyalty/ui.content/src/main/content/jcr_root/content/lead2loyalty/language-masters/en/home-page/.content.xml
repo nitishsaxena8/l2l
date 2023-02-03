@@ -380,7 +380,6 @@
                                         jcr:primaryType="nt:unstructured"
                                         atmCtaLabel="Request Detailed Specs"
                                         atmCtaLink="#"
-                                        atmCtaTarget="true"
                                         atmCtaType="btn-primary"/>
                             </ctaButton>
                         </text_img_cta_1958937571>
