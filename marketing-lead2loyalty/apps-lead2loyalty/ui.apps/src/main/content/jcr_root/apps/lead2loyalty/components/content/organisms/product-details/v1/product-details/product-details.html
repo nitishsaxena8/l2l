@@ -12,15 +12,19 @@
             <div data-sly-resource="${'banner' @resourceType='xpbootstrap/components/content/organisms/carousel'}"></div>
         </div>
         <div class="col-6">
-            <div class="d-flex justify-content-end ml-4">
-                <button type="button" class="btn btn-link share-with-teams-btn text-decoration-none mb-2 p-0" data-bs-toggle="modal" id="shareWithTeamsBtn" data-target="#shareWithTeamsBtnModal" data-toggle="modal">
-                    <img src="/content/dam/lead2loyalty/share-with-teams.png" alt="share with team">
-                    ${productModel.shareCtaLabel}
-                </button>
-            </div>
             <div class="product-heading">
-                <h5>${productModel.title}</h5>
-                <p>${productModel.productId}</p>
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <h5>8051 Development Board</h5>
+                        <p>Product ID: AUD09345424</p>
+                    </div>
+                    <div class="">
+                        <button type="button" class="btn btn-link share-with-teams-btn text-decoration-none mb-2 p-0" data-bs-toggle="modal" id="shareWithTeamsBtn" data-target="#shareWithTeamsBtnModal" data-toggle="modal">
+                            <img src="/content/dam/lead2loyalty/share-with-teams.png" alt="share with team">
+                            ${productModel.shareCtaLabel}
+                        </button>
+                    </div>
+                </div>
                 <hr class="my-2">
                 <div>
                     ${productModel.description @context='html'}
