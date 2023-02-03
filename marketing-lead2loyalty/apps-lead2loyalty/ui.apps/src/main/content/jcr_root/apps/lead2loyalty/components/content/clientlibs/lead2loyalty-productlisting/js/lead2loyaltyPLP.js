@@ -25,6 +25,7 @@ if($('.plp-container').length) {
         filterCode = $('.filter-header').eq(0).attr('data-name');
     }
     $('.filter-header[data-name="'+filterCode+'"]').trigger('click');
+    $('.filter-header[data-name="'+filterCode+'"]').addClass('expanded');
     var filterName = $('.filter-header[data-name="'+filterCode+'"]').attr('data-title');
     $('.resultsWrapper[data-parent="'+filterName+'"]').removeClass('d-none');
 
@@ -33,10 +34,18 @@ if($('.plp-container').length) {
         var filterTitle = $(event.currentTarget).attr('data-title');
         $('.resultsWrapper[data-parent="'+filterTitle+'"]').removeClass('d-none');
         $('#accordion .collapse').removeClass('show');
+		$('.filter-header').removeClass('expanded');
+        var isCollapsed = $(event.currentTarget).parent('.card-header').siblings('.collapse').hasClass('show');
+        if(isCollapsed) {
+			$(event.currentTarget).removeClass('expanded');
+        } else {
+            $(event.currentTarget).addClass('expanded');
+        }
     });
 
     $('.clear-all-btn').click(function(event) {
-        $('.resultsWrapper').addClass('d-none');
+        $('.resultsWrapper').removeClass('d-none');
+        $('.filter-header').removeClass('expanded');
         $('#accordion .collapse').removeClass('show');
     });
 }
@@ -112,13 +121,18 @@ $('.logout-app').click(function(event) {
 	localStorage.setItem('userDetails', '');
     $('.user-log-in').removeClass('d-none');
     $('.user-logged-in').addClass('d-none');
+    $('.user-logged-in  .dropdown-menu').removeClass('show');
 
     //analytics
-    digitalData.eventType = '';
+    digitalData.event = '';
     digitalData.user = digitalData.user || {};
     digitalData.user.authState = 'not-authenticated';
     digitalData.user.userType = 'guest';
     digitalData.user.email = '';
+});
+
+$('.user-logged-in .dropdown-toggle').click(function(event) {
+    $('.user-logged-in .dropdown-menu').toggleClass('show');
 });
 
 $("#signInFormModal .form-control").change(function() {
@@ -127,7 +141,9 @@ $("#signInFormModal .form-control").change(function() {
 
 $('[data-bs-toggle="modal"]').click(function(event) {
     var modalTarget = $(this).attr('data-target');    
-    $(modalTarget).find('form')[0].reset(); 
+    if($(modalTarget).find('form').length) {
+        $(modalTarget).find('form')[0].reset(); 
+    }
 });
 
 $( document ).ready(function() {

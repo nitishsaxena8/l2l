@@ -749,3 +749,27 @@ button#shareWithTeamsBtn {
 .basicpage:not(.product-page) .cmp-carousel__actions button  {
 	pointer-events: none;
 }
+
+.category-filter .card-header .filter-header {
+    position: relative;
+}
+
+.category-filter .card-header .arrow-icons {
+    position: absolute;
+    right: 0;
+}
+.category-filter .card-header .arrow-icons .fa-solid {
+    opacity: 0.7;
+} 
+.category-filter .filter-header.expanded .arrow-up {
+	display: block;
+}
+.category-filter .filter-header.expanded .arrow-down {
+	display: none;
+}
+.category-filter .filter-header .arrow-up {
+	display: none;
+}                                        
+.category-filter .filter-header .arrow-down {
+	display: block;
+}                                        
