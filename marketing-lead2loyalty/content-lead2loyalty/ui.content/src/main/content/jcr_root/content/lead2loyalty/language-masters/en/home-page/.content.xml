@@ -300,13 +300,9 @@
                                 mobileMarginBottom="m-margin-bottom-x"
                                 mobileMarginTop="m-margin-top-x"
                                 textIsRich="true"
+                                openRequestQuoteForm="true"
                                 title="Business to Business integration">
                             <ctaButton jcr:primaryType="nt:unstructured">
-                                <item0
-                                        jcr:primaryType="nt:unstructured"
-                                        atmCtaLabel="Request Detailed Specs"
-                                        atmCtaLink="#"
-                                        atmCtaType="btn-primary"/>
                             </ctaButton>
                         </text_img_cta_1958937571>
                     </xp_container_9275655>
