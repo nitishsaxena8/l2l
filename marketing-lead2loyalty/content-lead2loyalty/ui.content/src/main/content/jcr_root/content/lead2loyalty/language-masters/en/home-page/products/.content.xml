@@ -32,6 +32,7 @@
                         filterLabel="Filter"
                         sortByLabel="Sort By"
                         sortBestSellerLabel="Best Seller"
+                        rootPagePath="/content/lead2loyalty/language-masters/en/home-page/products"
                         sortPopularityLabel="Popularity"
                         clearFilterLabel="Clear All"
                         marginTop="margin-top-5x"/>
