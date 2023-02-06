@@ -133,7 +133,7 @@
                                 jcr:lastModifiedBy="admin"
                                 jcr:primaryType="nt:unstructured"
                                 jcr:title="Password"
-                                sling:resourceType="fd/af/components/guidetextbox"
+                                sling:resourceType="fd/af/components/guidepasswordbox"
                                 autofillFieldKeyword="name"
                                 bindRef="/password"
                                 collectionLevel="{Double}0.0"
