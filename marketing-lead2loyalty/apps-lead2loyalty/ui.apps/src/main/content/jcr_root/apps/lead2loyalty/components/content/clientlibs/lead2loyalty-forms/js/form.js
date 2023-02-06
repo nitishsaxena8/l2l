@@ -44,19 +44,19 @@ $( document ).ready(function() {
                   success: function(resultData) {
                       if (resultData && resultData.errorCode) {
 
-                            $('.signup-fail-container').removeClass('d-none');
-                            $('.signup-fail-container').text(resultData.errorMessage);
+                            $('.signup-fail-container', parent.document).removeClass('d-none');
+                            $('.signup-fail-container', parent.document).text(resultData.errorMessage);
 
-                            $('.signup-success-container').text('');
-                            $('.signup-success-container').addClass('d-none');
+                            $('.signup-success-container', parent.document).text('');
+                            $('.signup-success-container', parent.document).addClass('d-none');
 
                       } else {
 
-                            $('.signup-success-container').removeClass('d-none');
+                            $('.signup-success-container', parent.document).removeClass('d-none');
                             $('.signup-success-container').text("Thanks For Signing Up !!!");
 
-                            $('.signup-fail-container').text('');
-                            $('.signup-fail-container').addClass('d-none');
+                            $('.signup-fail-container', parent.document).text('');
+                            $('.signup-fail-container', parent.document).addClass('d-none');
 
 
                             delete loginData.password;
@@ -83,11 +83,11 @@ $( document ).ready(function() {
                   },
                   error: function(errorData) {
 
-                    $('.signup-fail-container').removeClass('d-none');
-                    $('.signup-fail-container').text("Something went wrong !!!");
+                    $('.signup-fail-container', parent.document).removeClass('d-none');
+                    $('.signup-fail-container', parent.document).text("Something went wrong !!!");
 
-                    $('.signup-success-container').text('');
-                    $('.signup-success-container').addClass('d-none');
+                    $('.signup-success-container', parent.document).text('');
+                    $('.signup-success-container', parent.document).addClass('d-none');
                   }
                 });
             }
