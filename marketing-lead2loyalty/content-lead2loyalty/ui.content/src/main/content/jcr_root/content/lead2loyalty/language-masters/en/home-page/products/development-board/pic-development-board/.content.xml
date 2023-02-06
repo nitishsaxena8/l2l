@@ -112,24 +112,6 @@
                                     mobileMarginBottom="m-margin-bottom-x"
                                     mobileMarginTop="m-margin-top-x"/>
                         </banner>
-                        <container
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="lead2loyalty/components/content/organisms/xp-container">
-                            <aemform
-                                jcr:created="{Date}2023-01-24T17:23:48.043+05:30"
-                                jcr:createdBy="admin"
-                                jcr:lastModified="{Date}2023-01-24T17:54:12.942+05:30"
-                                jcr:lastModifiedBy="admin"
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="fd/af/components/aemform"
-                                formRef="/content/dam/formsanddocuments/quote"
-                                formType="adaptiveForm"
-                                submitType="inline"
-                                textIsRich="true"
-                                thankyouConfig="message"
-                                usePageLocale="true"/>
-                        </container>
-                    </product_details>
                     <xp_container_1543464264
                         cq:styleIds="[1673004790935]"
                         jcr:created="{Date}2022-12-15T12:13:33.382+05:30"
@@ -199,6 +181,23 @@
                                 title="Connect with one of our Sales Reps">
                             <ctaButton jcr:primaryType="nt:unstructured">
                             </ctaButton>
+                            <container
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="lead2loyalty/components/content/organisms/xp-container">
+                                <aemform
+                                        jcr:created="{Date}2023-01-24T17:23:48.043+05:30"
+                                        jcr:createdBy="admin"
+                                        jcr:lastModified="{Date}2023-01-24T17:54:12.942+05:30"
+                                        jcr:lastModifiedBy="admin"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="fd/af/components/aemform"
+                                        formRef="/content/dam/formsanddocuments/quote"
+                                        formType="adaptiveForm"
+                                        submitType="inline"
+                                        textIsRich="true"
+                                        thankyouConfig="message"
+                                        usePageLocale="true"/>
+                            </container>
                         </text_img_cta_1958937571>
                     </xp_container_9275655>
                     <xp_container_32384955
