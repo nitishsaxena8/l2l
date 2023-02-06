@@ -300,7 +300,6 @@
                                 mobileMarginBottom="m-margin-bottom-x"
                                 mobileMarginTop="m-margin-top-x"
                                 textIsRich="true"
-                                openRequestQuoteForm="true"
                                 title="Business to Business integration">
                             <ctaButton jcr:primaryType="nt:unstructured">
                             </ctaButton>
