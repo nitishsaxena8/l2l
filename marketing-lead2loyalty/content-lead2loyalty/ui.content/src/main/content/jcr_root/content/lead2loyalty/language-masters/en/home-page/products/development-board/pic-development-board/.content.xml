@@ -112,6 +112,7 @@
                                     mobileMarginBottom="m-margin-bottom-x"
                                     mobileMarginTop="m-margin-top-x"/>
                         </banner>
+                    </product_details>
                     <xp_container_1543464264
                         cq:styleIds="[1673004790935]"
                         jcr:created="{Date}2022-12-15T12:13:33.382+05:30"
