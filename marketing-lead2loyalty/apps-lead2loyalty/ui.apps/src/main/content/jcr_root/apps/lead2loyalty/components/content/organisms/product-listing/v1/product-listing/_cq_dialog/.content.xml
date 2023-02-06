@@ -40,6 +40,31 @@
                                                         sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
                                                         fieldLabel="Select Root Page"
                                                         name="./rootPagePath"/>
+                                                    <filterLabel
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Filter Label"
+                                                        name="./filterLabel"/>
+                                                    <clearFilterLabel
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Clear Filter Label"
+                                                        name="./clearFilterLabel"/>
+                                                    <sortByLabel
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Sort By Label"
+                                                        name="./sortByLabel"/>
+                                                    <sortBestSellerLabel
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Sort By Best Seller Label"
+                                                        name="./sortBestSellerLabel"/>
+                                                    <sortPopularityLabel
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Sort By Popularity Label"
+                                                        name="./sortPopularityLabel"/>
                                                 </items>
                                             </column>
                                         </items>

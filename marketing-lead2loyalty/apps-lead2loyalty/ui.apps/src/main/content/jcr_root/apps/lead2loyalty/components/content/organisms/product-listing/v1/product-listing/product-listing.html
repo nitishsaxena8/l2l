@@ -41,8 +41,8 @@
 	<div class="row">
 		<div class="col-3">
 			<div class="d-flex justify-content-between">
-				<div class="fw-bold fs-4">Filter</div>
-				<button class="btn btn-link clear-all-btn">Clear All</button>
+				<div class="fw-bold fs-4">${properties.filterLabel}</div>
+				<button class="btn btn-link clear-all-btn">${properties.clearFilterLabel}</button>
 			</div>
 
 			<!--/* ----------------- accordian start ------------------ */-->
@@ -85,10 +85,10 @@
 			<div class="container px-4 d-flex flex-column">
 				<div class="d-flex flex-row w-100 justify-content-end">
 					<div>
-						<label for="sort">Sort by </label>
+						<label for="sort">${properties.sortByLabel} </label>
 						<select name="sort" id="sort" class="border-0 border-bottom">
-							<option value="Best seller">Best seller</option>
-							<option value="Popularity">Popularity</option>
+							<option value="Best seller">${properties.sortBestSellerLabel}</option>
+							<option value="Popularity">${properties.sortPopularityLabel}</option>
 						</select>
 					</div>
 				</div>
