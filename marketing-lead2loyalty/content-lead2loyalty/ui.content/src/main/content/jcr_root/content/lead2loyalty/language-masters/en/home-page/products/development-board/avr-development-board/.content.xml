@@ -259,7 +259,7 @@
                         mobileMarginBottom="m-margin-bottom-x"
                         mobileMarginTop="m-margin-top-x">
                         <tiles_copy
-                        	tileHeading="You may also like"
+                        	tileHeading="Customer who view this item also brought this"
 							ctaLabel="View More"
 							ctaLink="/content/lead2loyalty/language-masters/en/home-page/products"
 							ctaTarget="_blank"
