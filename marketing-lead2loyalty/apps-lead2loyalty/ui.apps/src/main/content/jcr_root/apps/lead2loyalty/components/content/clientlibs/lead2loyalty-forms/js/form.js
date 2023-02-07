@@ -167,7 +167,9 @@ $( document ).ready(function() {
             form.submit();
 
             form.onSuccess(function(vals,thanksURL){
-                $('.form-success-container', parent.document).removeClass('d-none'); 
+                $('.form-success-container', parent.document).removeClass('d-none');
+                $('.form-success-container', parent.document).text('Request for Quote Submitted Successfully !!!');
+
                 //analytics
                 parent.window.digitalData.event = 'formSubmission';
                 parent.window.digitalData.form = {};

@@ -110,7 +110,7 @@
                                         <item0
                                             jcr:primaryType="nt:unstructured"
                                             atmCtaLabel="Learn More"
-                                            atmCtaLink="/content/lead2loyalty/language-masters/en/home-page/products/development-board"
+                                            atmCtaLink="/content/lead2loyalty/language-masters/en/home-page/products/development-board.html"
                                             atmCtaType="btn-primary"/>
                                     </btnGrp>
                                 </mlebuttongroup>
