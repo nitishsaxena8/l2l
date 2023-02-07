@@ -112,48 +112,6 @@
                                 atmCtaType="btn-outline-primary"/>
                         </ctaButton>
                     </product_details>
-                    <xp_container_1543464264
-                        cq:styleIds="[1673004790935]"
-                        jcr:created="{Date}2022-12-15T12:13:33.382+05:30"
-                        jcr:createdBy="admin"
-                        jcr:lastModified="{Date}2022-12-15T12:13:33.382+05:30"
-                        jcr:lastModifiedBy="admin"
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="lead2loyalty/components/content/organisms/xp-container">
-                        <tiles
-                            cq:styleIds="[1670928226762]"
-                            jcr:created="{Date}2022-12-12T14:02:20.280+05:30"
-                            jcr:createdBy="admin"
-                            jcr:lastModified="{Date}2022-12-15T12:09:13.029+05:30"
-                            jcr:lastModifiedBy="admin"
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="lead2loyalty/components/content/organisms/tiles/v1/tiles"
-                            textIsRich="[true,true,true,true]"
-                            tileHeading="Popular Industry Use Case">
-                            <tileListItems jcr:primaryType="nt:unstructured">
-                                <item0
-                                    jcr:primaryType="nt:unstructured"
-                                    productDescription="&lt;p>Some quick example text to build on the card title nad make up the bulk of the card's content.&amp;nbsp;&lt;/p>&#xd;&#xa;"
-                                    productImageSource="/content/dam/lead2loyalty/cell-2.jpg"
-                                    productTitle="Automative"/>
-                                <item1
-                                    jcr:primaryType="nt:unstructured"
-                                    productDescription="&lt;p>Some quick example text to build on the card title and make up the bulk of the card's content.&lt;/p>&#xd;&#xa;"
-                                    productImageSource="/content/dam/lead2loyalty/cell-1.jpg"
-                                    productTitle="Cellular Device"/>
-                                <item2
-                                    jcr:primaryType="nt:unstructured"
-                                    productDescription="&lt;p>Some quick example text to build on the card title and make up the bulk of the card's content.&lt;/p>&#xd;&#xa;"
-                                    productImageSource="/content/dam/lead2loyalty/cell-4.jpg"
-                                    productTitle="Automative"/>
-                                <item3
-                                    jcr:primaryType="nt:unstructured"
-                                    productDescription="&lt;p>Some quick example text to build on the card title and make up the bulk of the card's content.&lt;/p>&#xd;&#xa;"
-                                    productImageSource="/content/dam/lead2loyalty/cell-3.jpg"
-                                    productTitle="Cellular Device"/>
-                            </tileListItems>
-                        </tiles>
-                    </xp_container_1543464264>
                     <xp_container_9275655
                             cq:styleIds="[1673004790935]"
                             jcr:created="{Date}2022-12-14T11:32:39.665+05:30"
@@ -306,6 +264,48 @@
                             </tileListItems>
                         </tiles_copy>
                     </xp_container_3238495>
+                    <xp_container_1543464264
+                            cq:styleIds="[1673004790934]"
+                            jcr:created="{Date}2022-12-15T12:13:33.382+05:30"
+                            jcr:createdBy="admin"
+                            jcr:lastModified="{Date}2022-12-15T12:13:33.382+05:30"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="lead2loyalty/components/content/organisms/xp-container">
+                        <tiles
+                                cq:styleIds="[1670928226762]"
+                                jcr:created="{Date}2022-12-12T14:02:20.280+05:30"
+                                jcr:createdBy="admin"
+                                jcr:lastModified="{Date}2022-12-15T12:09:13.029+05:30"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="lead2loyalty/components/content/organisms/tiles/v1/tiles"
+                                textIsRich="[true,true,true,true]"
+                                tileHeading="Popular Industry Use Case">
+                            <tileListItems jcr:primaryType="nt:unstructured">
+                                <item0
+                                        jcr:primaryType="nt:unstructured"
+                                        productDescription="&lt;p>Some quick example text to build on the card title nad make up the bulk of the card's content.&amp;nbsp;&lt;/p>&#xd;&#xa;"
+                                        productImageSource="/content/dam/lead2loyalty/cell-2.jpg"
+                                        productTitle="Automative"/>
+                                <item1
+                                        jcr:primaryType="nt:unstructured"
+                                        productDescription="&lt;p>Some quick example text to build on the card title and make up the bulk of the card's content.&lt;/p>&#xd;&#xa;"
+                                        productImageSource="/content/dam/lead2loyalty/cell-1.jpg"
+                                        productTitle="Cellular Device"/>
+                                <item2
+                                        jcr:primaryType="nt:unstructured"
+                                        productDescription="&lt;p>Some quick example text to build on the card title and make up the bulk of the card's content.&lt;/p>&#xd;&#xa;"
+                                        productImageSource="/content/dam/lead2loyalty/cell-4.jpg"
+                                        productTitle="Automative"/>
+                                <item3
+                                        jcr:primaryType="nt:unstructured"
+                                        productDescription="&lt;p>Some quick example text to build on the card title and make up the bulk of the card's content.&lt;/p>&#xd;&#xa;"
+                                        productImageSource="/content/dam/lead2loyalty/cell-3.jpg"
+                                        productTitle="Cellular Device"/>
+                            </tileListItems>
+                        </tiles>
+                    </xp_container_1543464264>
                     <sales_tech_support
                         jcr:created="{Date}2023-01-09T13:51:12.135+05:30"
                         jcr:createdBy="admin"
