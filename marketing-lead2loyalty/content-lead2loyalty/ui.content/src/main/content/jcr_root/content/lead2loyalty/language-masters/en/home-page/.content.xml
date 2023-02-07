@@ -155,7 +155,7 @@
                                 <mletitle
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="xpbootstrap/components/content/molecules/mleTitle"
-                                        atmTitleText="How our B2B Solution helps you !"
+                                        atmTitleText="How our B2B Solution helps you!"
                                         marginBottom="[none,none]"
                                         marginTop="[margin-top-4x,none]"
                                         mobileMarginBottom="[m-margin-bottom-x,m-margin-bottom-x]"
