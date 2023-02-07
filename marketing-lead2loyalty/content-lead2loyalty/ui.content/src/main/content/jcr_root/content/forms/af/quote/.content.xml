@@ -116,7 +116,7 @@
                                 jcr:lastModified="{Date}2023-01-30T20:48:09.449+05:30"
                                 jcr:lastModifiedBy="admin"
                                 jcr:primaryType="nt:unstructured"
-                                jcr:title="Email Address"
+                                jcr:title="Email"
                                 sling:resourceType="fd/af/components/guideemail"
                                 autofillFieldKeyword="email"
                                 bindRef="/email"

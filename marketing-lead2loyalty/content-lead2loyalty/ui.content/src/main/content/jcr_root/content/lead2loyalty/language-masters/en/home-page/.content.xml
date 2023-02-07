@@ -32,96 +32,6 @@
                         mobileMarginBottom="m-margin-bottom-x"
                         mobileMarginTop="m-margin-top-x"
                         order="[item_1670999967744,item_1670999973307]">
-                        <xp_container_copy_co_1037000870
-                            cq:panelTitle="text"
-                            cq:styleIds="[1670846692332,1670855059185]"
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="xpbootstrap/components/content/organisms/xp-container"
-                            layout="responsiveGrid"
-                            marginBottom="margin-bottom-4x"
-                            marginTop="margin-top-4x"
-                            mobileMarginBottom="m-margin-bottom-x"
-                            mobileMarginTop="m-margin-top-x">
-                            <mleimage
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="xpbootstrap/components/content/molecules/mleImage"
-                                atmIconSrcFileReference="/content/dam/lead2loyalty/circuit-7.jpg"
-                                marginBottom="none"
-                                marginTop="none"
-                                mobileMarginBottom="m-margin-bottom-x"
-                                mobileMarginTop="m-margin-top-x">
-                                <cq:responsive jcr:primaryType="nt:unstructured">
-                                    <default
-                                        jcr:primaryType="nt:unstructured"
-                                        offset="1"
-                                        width="6"/>
-                                </cq:responsive>
-                            </mleimage>
-                            <xp_container
-                                cq:styleIds="[1670845915845]"
-                                paddingLeft="container-padding-left-5x"
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="lead2loyalty/components/content/organisms/xp-container">
-                                <mletitle
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="xpbootstrap/components/content/molecules/mleTitle"
-                                    atmTitleText="How our B2B Solution helps you !"
-                                    marginBottom="[none,none]"
-                                    marginTop="[margin-top-4x,none]"
-                                    mobileMarginBottom="[m-margin-bottom-x,m-margin-bottom-x]"
-                                    mobileMarginTop="[m-margin-top-x,m-margin-top-x]">
-                                    <cq:responsive jcr:primaryType="nt:unstructured">
-                                        <default
-                                            jcr:primaryType="nt:unstructured"
-                                            offset="0"
-                                            width="4"/>
-                                    </cq:responsive>
-                                </mletitle>
-                                <mletext
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="xpbootstrap/components/content/molecules/mleText"
-                                    atmTextHtml="&lt;ul>&#xd;&#xa;&lt;li>Get a customizable catalog of our products and services tailored just for your organization&lt;/li>&#xd;&#xa;&lt;li>Apply pre-negotiated rates across the business&lt;/li>&#xd;&#xa;&lt;li>Easily update your &amp;quot;standard&amp;quot; configurations as needed&lt;/li>&#xd;&#xa;&lt;li>Retain total control over purchase, wih full visibility into the end-to-end purchasing journey&lt;/li>&#xd;&#xa;&lt;li>View and update your customized catalog in Excel&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;"
-                                    marginBottom="margin-bottom-4x"
-                                    marginTop="margin-top-4x"
-                                    mobileMarginBottom="m-margin-bottom-x"
-                                    mobileMarginTop="m-margin-top-x"
-                                    textIsRich="true">
-                                    <cq:responsive jcr:primaryType="nt:unstructured">
-                                        <default
-                                            jcr:primaryType="nt:unstructured"
-                                            offset="0"
-                                            width="4"/>
-                                    </cq:responsive>
-                                </mletext>
-                                <mlebuttongroup
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="xpbootstrap/components/content/molecules/mleButtonGroup"
-                                    marginBottom="margin-bottom-4x"
-                                    marginTop="margin-top-x"
-                                    mobileMarginBottom="m-margin-bottom-x"
-                                    mobileMarginTop="m-margin-top-x">
-                                    <cq:responsive jcr:primaryType="nt:unstructured">
-                                        <default
-                                            jcr:primaryType="nt:unstructured"
-                                            offset="0"
-                                            width="4"/>
-                                    </cq:responsive>
-                                    <btnGrp jcr:primaryType="nt:unstructured">
-                                        <item0
-                                            jcr:primaryType="nt:unstructured"
-                                            atmCtaLabel="Learn More"
-                                            atmCtaLink="/content/lead2loyalty/language-masters/en/home-page/products/development-board.html"
-                                            atmCtaType="btn-primary"/>
-                                    </btnGrp>
-                                </mlebuttongroup>
-                                <cq:responsive jcr:primaryType="nt:unstructured">
-                                    <default
-                                        jcr:primaryType="nt:unstructured"
-                                        offset="0"
-                                        width="4"/>
-                                </cq:responsive>
-                            </xp_container>
-                        </xp_container_copy_co_1037000870>
                         <xp_container_copy_co_1037000871
                             cq:panelTitle="text"
                             cq:styleIds="[1670846692332,1670855059185]"
@@ -212,6 +122,96 @@
                                 </cq:responsive>
                             </xp_container>
                         </xp_container_copy_co_1037000871>
+                        <xp_container_copy_co_1037000870
+                                cq:panelTitle="text"
+                                cq:styleIds="[1670846692332,1670855059185]"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="xpbootstrap/components/content/organisms/xp-container"
+                                layout="responsiveGrid"
+                                marginBottom="margin-bottom-4x"
+                                marginTop="margin-top-4x"
+                                mobileMarginBottom="m-margin-bottom-x"
+                                mobileMarginTop="m-margin-top-x">
+                            <mleimage
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="xpbootstrap/components/content/molecules/mleImage"
+                                    atmIconSrcFileReference="/content/dam/lead2loyalty/circuit-7.jpg"
+                                    marginBottom="none"
+                                    marginTop="none"
+                                    mobileMarginBottom="m-margin-bottom-x"
+                                    mobileMarginTop="m-margin-top-x">
+                                <cq:responsive jcr:primaryType="nt:unstructured">
+                                    <default
+                                            jcr:primaryType="nt:unstructured"
+                                            offset="1"
+                                            width="6"/>
+                                </cq:responsive>
+                            </mleimage>
+                            <xp_container
+                                    cq:styleIds="[1670845915845]"
+                                    paddingLeft="container-padding-left-5x"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="lead2loyalty/components/content/organisms/xp-container">
+                                <mletitle
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="xpbootstrap/components/content/molecules/mleTitle"
+                                        atmTitleText="How our B2B Solution helps you !"
+                                        marginBottom="[none,none]"
+                                        marginTop="[margin-top-4x,none]"
+                                        mobileMarginBottom="[m-margin-bottom-x,m-margin-bottom-x]"
+                                        mobileMarginTop="[m-margin-top-x,m-margin-top-x]">
+                                    <cq:responsive jcr:primaryType="nt:unstructured">
+                                        <default
+                                                jcr:primaryType="nt:unstructured"
+                                                offset="0"
+                                                width="4"/>
+                                    </cq:responsive>
+                                </mletitle>
+                                <mletext
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="xpbootstrap/components/content/molecules/mleText"
+                                        atmTextHtml="&lt;ul>&#xd;&#xa;&lt;li>Get a customizable catalog of our products and services tailored just for your organization&lt;/li>&#xd;&#xa;&lt;li>Apply pre-negotiated rates across the business&lt;/li>&#xd;&#xa;&lt;li>Easily update your &amp;quot;standard&amp;quot; configurations as needed&lt;/li>&#xd;&#xa;&lt;li>Retain total control over purchase, wih full visibility into the end-to-end purchasing journey&lt;/li>&#xd;&#xa;&lt;li>View and update your customized catalog in Excel&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;"
+                                        marginBottom="margin-bottom-4x"
+                                        marginTop="margin-top-4x"
+                                        mobileMarginBottom="m-margin-bottom-x"
+                                        mobileMarginTop="m-margin-top-x"
+                                        textIsRich="true">
+                                    <cq:responsive jcr:primaryType="nt:unstructured">
+                                        <default
+                                                jcr:primaryType="nt:unstructured"
+                                                offset="0"
+                                                width="4"/>
+                                    </cq:responsive>
+                                </mletext>
+                                <mlebuttongroup
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="xpbootstrap/components/content/molecules/mleButtonGroup"
+                                        marginBottom="margin-bottom-4x"
+                                        marginTop="margin-top-x"
+                                        mobileMarginBottom="m-margin-bottom-x"
+                                        mobileMarginTop="m-margin-top-x">
+                                    <cq:responsive jcr:primaryType="nt:unstructured">
+                                        <default
+                                                jcr:primaryType="nt:unstructured"
+                                                offset="0"
+                                                width="4"/>
+                                    </cq:responsive>
+                                    <btnGrp jcr:primaryType="nt:unstructured">
+                                        <item0
+                                                jcr:primaryType="nt:unstructured"
+                                                atmCtaLabel="Learn More"
+                                                atmCtaLink="/content/lead2loyalty/language-masters/en/home-page/products/development-board.html"
+                                                atmCtaType="btn-primary"/>
+                                    </btnGrp>
+                                </mlebuttongroup>
+                                <cq:responsive jcr:primaryType="nt:unstructured">
+                                    <default
+                                            jcr:primaryType="nt:unstructured"
+                                            offset="0"
+                                            width="4"/>
+                                </cq:responsive>
+                            </xp_container>
+                        </xp_container_copy_co_1037000870>
                     </xp_carousel>
                     <xp_container_927565429
                         cq:styleIds="[1673004790935]"
