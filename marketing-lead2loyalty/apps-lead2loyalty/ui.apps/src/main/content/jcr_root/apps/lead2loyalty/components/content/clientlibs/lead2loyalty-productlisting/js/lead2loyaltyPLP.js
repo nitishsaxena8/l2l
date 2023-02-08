@@ -145,3 +145,63 @@ $('[data-bs-toggle="modal"]').click(function(event) {
         $(modalTarget).find('form')[0].reset(); 
     }
 });
+
+
+
+$( document ).ready(function() {
+    $('#requestAQuoteMember').click(function(event) {
+    	$("#guideContainerForm input").change(function() { 
+            $('.form-success-container').addClass('d-none'); 
+        });     $('.request-quote-btn').click(function(event) {
+            $('.form-success-container').addClass('d-none'); 
+        });
+
+        var quote = {};
+
+        if (localStorage.getItem('userDetails')) {
+            var user = JSON.parse(localStorage.getItem('userDetails'));
+            if (user) {
+
+				quote = {
+                    "firstName": user.email,
+                    "lastName": user.lastName,
+                    "email": user.email
+                }
+            }
+        }
+
+        if ($('.product-page-details', parent.document).attr('product-id') !== 'undefined') {
+            quote["productId"] = $('.product-page-details', parent.document).attr("product-id");
+        }
+
+        if ($('.product-page-details', parent.document).attr("product-title") !== 'undefined') {
+            quote["productTitle"] = $('.product-page-details', parent.document).attr("product-title");
+        }
+
+        if ($('.product-page-details', parent.document).attr("product-description") !== 'undefined') {
+            quote["productDescription"] = $('.product-page-details', parent.document).attr("product-description");
+        }
+
+        if ($('.product-page-details', parent.document).attr("product-path") !== 'undefined') {
+            quote["productPath"] = $('.product-page-details', parent.document).attr("product-path");
+        }
+
+        MktoForms2.loadForm("//733-JCL-696.mktoweb.com", "733-JCL-696", 1008, function(form) {
+            form.addHiddenFields(quote);
+            form.submit();
+            console.log("Form Submitted !!!")
+			console.log(quote);
+            form.onSuccess(function(vals,thanksURL){
+                $('.form-success-container', parent.document).removeClass('d-none'); 
+                digitalData.event = 'formSubmission';
+                digitalData.form = {};
+                digitalData.form.formName = 'Request Quote';
+                return false;
+            });
+        });
+
+        if ($('.product-page-details', parent.document) && $('.product-page-details', parent.document).attr("product-title")) {
+            $('#requestAQuotemdelTitle', parent.document).text("Request a Quote - "+$('.product-page-details', parent.document).attr("product-title"));
+        }
+    });
+});
