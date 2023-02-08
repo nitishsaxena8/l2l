@@ -1,37 +1,24 @@
 $( document ).ready(function() {
 
-    if (window.location.href.indexOf("/signup") > -1) {
-        $("#guideContainer-rootPanel-afJsonSchemaRoot-password___guide-item").removeClass("hidden");
-    }
-
     if ($('.product-page-details', parent.document) && $('.product-page-details', parent.document).attr("product-title")) {
         $('#requestAQuotemdelTitle', parent.document).text("Request a Quote - "+$('.product-page-details', parent.document).attr("product-title"));
     }
 
-	$( ".quote-submit-btn button" ).on( "click", function() {
+    $( ".signup-submit-btn button" ).on( "click", function() {
 
         $('.signup-fail-container').addClass('d-none');
 		$('.signup-fail-container').text('');
         $('.signup-success-container').addClass('d-none');
         $('.signup-success-container').text('');
 
-        $("#guideContainer-rootPanel-afJsonSchemaRoot-password___guide-item").find(".guideFieldNode").attr("data-mandatory","true");
+        $("#guideContainerForm input").change(function() { 
+            $('.form-success-container').addClass('d-none'); 
+        });     $('.request-quote-btn').click(function(event) {
+            $('.form-success-container').addClass('d-none'); 
+        });
 
 
-        if($("#guideContainer-rootPanel-afJsonSchemaRoot-password___guide-item").find("input").val()) {
-			$("#guideContainer-rootPanel-afJsonSchemaRoot-password___guide-item").find(".guideFieldNode").addClass("validation-success");
-            $("#guideContainer-rootPanel-afJsonSchemaRoot-password___guide-item").find(".guideFieldNode").removeClass("validation-failure");
-			$("#guideContainer-rootPanel-afJsonSchemaRoot-password___guide-item").find(".guideFieldError").text("");
-        } else {
-            $("#guideContainer-rootPanel-afJsonSchemaRoot-password___guide-item").find(".guideFieldNode").removeClass("validation-success");
-			$("#guideContainer-rootPanel-afJsonSchemaRoot-password___guide-item").find(".guideFieldNode").addClass("validation-failure");
-			$("#guideContainer-rootPanel-afJsonSchemaRoot-password___guide-item").find(".guideFieldError").text("This is a required field !!!");
-        }
-
-
-        if($("#guideContainer-rootPanel-afJsonSchemaRoot-password___guide-item").length > 0 && window.location.href.indexOf("/signup") > -1) {
-
-			var loginData = collectFormData("signup");
+        var loginData = collectFormData("signup");
 
             if(loginData != false) {
 
@@ -61,7 +48,7 @@ $( document ).ready(function() {
 
                             delete loginData.password;
 
-                            MktoForms2.whenReady(function(form){ 
+                            MktoForms2.loadForm("//733-JCL-696.mktoweb.com", "733-JCL-696", 1001, function(form) {
                                 form.addHiddenFields(loginData);
                                 form.submit();
 
@@ -91,22 +78,30 @@ $( document ).ready(function() {
                   }
                 });
             }
-        } else {
 
-            $("#guideContainerForm input").change(function() { 
-                 $('.form-success-container').addClass('d-none'); 
-            });     $('.request-quote-btn').click(function(event) {
-                 $('.form-success-container').addClass('d-none'); 
-            });
+    });
 
 
-            var quote = collectFormData("quote");
-            delete quote.submit;
+	$( ".quote-submit-btn button" ).on( "click", function() {
 
-            if(quote != false) {
-            	callMarketoForm(quote);
-            }
+        $('.signup-fail-container').addClass('d-none');
+		$('.signup-fail-container').text('');
+        $('.signup-success-container').addClass('d-none');
+        $('.signup-success-container').text('');
+
+        $("#guideContainerForm input").change(function() { 
+            $('.form-success-container').addClass('d-none'); 
+        });     $('.request-quote-btn').click(function(event) {
+            $('.form-success-container').addClass('d-none'); 
+        });
+
+        var quote = collectFormData("quote");
+        delete quote.submit;
+
+        if(quote != false) {
+            callMarketoForm(quote, 1008);
         }
+
     });
 
     function collectFormData(type) {
@@ -129,19 +124,12 @@ $( document ).ready(function() {
                 value = $(this).find("select option:selected").val();
             }
 
-            if((value === '' || value === 'undefined' || value === null ) && $(this).attr("data-mandatory")) {
-                if(name != "password") {
-                    loginData = false;
-                	return false;
-                }
-            }
-
             loginData[name] = value;
         });
         return loginData;
     }
 
-    function callMarketoForm (loginData) {
+    function callMarketoForm (loginData, formId) {
 		if ($('.product-page-details', parent.document).attr('product-id') !== 'undefined') {
             loginData["productId"] = $('.product-page-details', parent.document).attr("product-id");
         }
@@ -158,12 +146,10 @@ $( document ).ready(function() {
             loginData["productPath"] = $('.product-page-details', parent.document).attr("product-path");
         }
 
-        delete loginData.password;
-
         console.log(loginData);
 
-        MktoForms2.whenReady(function(form){ 
-            form.addHiddenFields(loginData);
+        MktoForms2.loadForm("//733-JCL-696.mktoweb.com", "733-JCL-696", formId, function(form) {
+			form.addHiddenFields(loginData);
             form.submit();
 
             form.onSuccess(function(vals,thanksURL){

@@ -34,7 +34,7 @@
                             jcr:lastModifiedBy="admin"
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="fd/af/components/aemform"
-                            formRef="/content/dam/formsanddocuments/quote"
+                            formRef="/content/dam/formsanddocuments/signup"
                             formType="adaptiveForm"
                             submitType="inline"
                             textIsRich="true"

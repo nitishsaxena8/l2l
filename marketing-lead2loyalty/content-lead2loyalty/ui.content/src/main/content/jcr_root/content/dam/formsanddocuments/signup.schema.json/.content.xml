@@ -2,20 +2,20 @@
 <jcr:root xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dam="http://www.day.com/dam/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:mixinTypes="[mix:referenceable]"
     jcr:primaryType="dam:Asset"
-    jcr:uuid="5412481d-bc3e-4740-aa51-b01744a4bbfe">
+    jcr:uuid="2ad9b9fc-860c-4319-b53f-204c22c0744f">
     <jcr:content
         dam:assetState="processed"
-        jcr:lastModified="{Date}2023-01-24T15:59:51.500+05:30"
-        jcr:lastModifiedBy="Administrator"
+        jcr:lastModified="{Date}2023-02-08T13:24:35.972+05:30"
+        jcr:lastModifiedBy="admin"
         jcr:primaryType="dam:AssetContent"
         lcResource="{Long}1"
         type="lcResource">
         <metadata
-            dam:extracted="{Date}2023-01-24T15:59:51.353+05:30"
-            dam:sha1="e5366cfd82c75263a65429d8854503ec3f87cdbd"
-            dam:size="{Long}619"
+            dam:extracted="{Date}2023-02-08T13:24:28.298+05:30"
+            dam:sha1="862e1a698d3e795823370a83011100b05a5a4aac"
+            dam:size="{Long}654"
             dc:format="application/json"
-            jcr:lastModified="{Date}2023-01-23T17:56:53.528+05:30"
+            jcr:lastModified="{Date}2023-02-08T13:24:21.041+05:30"
             jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[mix:created,mix:lastModified]"
             jcr:primaryType="nt:unstructured"/>

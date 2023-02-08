@@ -13,24 +13,6 @@
     },
     "email": {
       "type": "string"
-    },
-	"password": {
-      "type": "string"
-    },
-	"organization": {
-      "type": "string"
-    },
-    "role": {
-      "type": "string"
-    },
-    "phone": {
-      "type": "string"
-    },
-    "website": {
-      "type": "string"
-    },
-    "updates": {
-      "type": "string"
     }
   }
 }

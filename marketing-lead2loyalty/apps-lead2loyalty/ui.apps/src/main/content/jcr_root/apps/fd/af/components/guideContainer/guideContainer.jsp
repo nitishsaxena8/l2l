@@ -331,8 +331,6 @@ boolean showRuleEditor = AdaptiveFormUtil.showRuleEditor(slingRequest.getUserPri
     <c:if test="${!isEditMode}">
 
         <script src="//733-JCL-696.mktoweb.com/js/forms2/js/forms2.min.js"></script>
-        <form id="mktoForm_1001" style="display: none;"></form>
-        <script>MktoForms2.loadForm("//733-JCL-696.mktoweb.com", "733-JCL-696", 1001);</script>
 
 	    <%-- populating the customContextPropJson object with the map obtained from request attribute --%>
         <%
