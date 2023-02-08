@@ -15,6 +15,7 @@
         <module>all</module>
         <module>apps-lead2loyalty</module>
         <module>content-lead2loyalty</module>
+        <module>ui-lead2loyalty</module>
     </modules>
 
     <properties>
