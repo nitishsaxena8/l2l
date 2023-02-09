@@ -5,10 +5,11 @@
         cq:lastModified="{Date}2022-12-19T13:15:45.162+05:30"
         cq:lastModifiedBy="admin"
         cq:template="/conf/lead2loyalty/settings/wcm/templates/product-category-page"
+        jcr:description="Drone Parts description."
         jcr:primaryType="cq:PageContent"
         jcr:title="Drone Parts"
-        pageType="Product Category page"
-        sling:resourceType="lead2loyalty/components/content/organisms/page">
+        sling:resourceType="lead2loyalty/components/content/organisms/page"
+        pageType="Product Category page">
         <root
             jcr:primaryType="nt:unstructured"
             sling:resourceType="xpbootstrap/components/content/organisms/xp-container"
@@ -27,9 +28,9 @@
                         marginTop="margin-top-x"
                         mobileMarginBottom="m-margin-bottom-x"
                         mobileMarginTop="m-margin-top-x"
-                        textIsRich="true"
                         productCategory="development-board"
                         productScrollId="development-boards"
+                        textIsRich="true"
                         title="Development Boards">
                         <cq:responsive jcr:primaryType="nt:unstructured">
                             <default
@@ -60,9 +61,9 @@
                             marginTop="margin-top-x"
                             mobileMarginBottom="m-margin-bottom-x"
                             mobileMarginTop="m-margin-top-x"
-                            textIsRich="true"
                             productCategory="sensors"
                             productScrollId="sensors"
+                            textIsRich="true"
                             title="Sensors">
                             <ctaButton jcr:primaryType="nt:unstructured">
                                 <item0
@@ -84,9 +85,9 @@
                         marginTop="margin-top-x"
                         mobileMarginBottom="m-margin-bottom-x"
                         mobileMarginTop="m-margin-top-x"
-                        textIsRich="true"
                         productCategory="electronic-components"
                         productScrollId="electronic-components"
+                        textIsRich="true"
                         title="Electronic Components">
                         <cq:responsive jcr:primaryType="nt:unstructured">
                             <default
@@ -117,9 +118,9 @@
                             marginTop="margin-top-x"
                             mobileMarginBottom="m-margin-bottom-x"
                             mobileMarginTop="m-margin-top-x"
-                            textIsRich="true"
                             productCategory="batteries-and-accessoris"
                             productScrollId="batteries-and-accessories"
+                            textIsRich="true"
                             title="Batteries &amp; Accessories">
                             <ctaButton jcr:primaryType="nt:unstructured">
                                 <item0
@@ -141,9 +142,9 @@
                         marginTop="margin-top-x"
                         mobileMarginBottom="m-margin-bottom-x"
                         mobileMarginTop="m-margin-top-x"
-                        textIsRich="true"
                         productCategory="iot-and-wireless"
                         productScrollId="iot-and-wireless"
+                        textIsRich="true"
                         title="IoT and Wireless">
                         <cq:responsive jcr:primaryType="nt:unstructured">
                             <default
@@ -165,10 +166,10 @@
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="xpbootstrap/components/content/organisms/xp-container">
                         <tiles_copy_copy
-                        	tileHeading="Training &amp; Articles"
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="lead2loyalty/components/content/organisms/tiles/v1/tiles"
-                            textIsRich="[true,true,true,true]">
+                            textIsRich="[true,true,true,true]"
+                            tileHeading="Training &amp; Articles">
                             <cq:responsive jcr:primaryType="nt:unstructured">
                                 <default
                                     jcr:primaryType="nt:unstructured"
@@ -227,6 +228,9 @@
                 </container>
             </container>
         </root>
+        <image
+            jcr:primaryType="nt:unstructured"
+            fileReference="/content/dam/lead2loyalty/circuit-5.jpg"/>
     </jcr:content>
 	<drone-transmitter-and-receiver/>
 	<propellers/>
