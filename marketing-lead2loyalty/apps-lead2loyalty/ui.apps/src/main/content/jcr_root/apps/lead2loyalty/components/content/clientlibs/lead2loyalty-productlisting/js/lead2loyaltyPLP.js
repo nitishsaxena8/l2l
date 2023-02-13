@@ -56,15 +56,58 @@ if($('.product-details').length) {
         $(".modal-backdrop").not(':first').remove();
         $('.share-team-form')[0].reset();
         $('.table-container').empty();
-        variableIndex = 2;
     });
 
     $('.add-team-details').click(function(event) {
-        var additionalRow = '<div class="row mb-4">'+
-        '<div class="col-6"><label for="exampleInputName'+(variableIndex+1)+'" class="form-label">First Name</label><input type="text" class="form-control" id="exampleInputName'+(variableIndex+1)+'"></div>'+
-        '<div class="col-6"><label for="exampleInputEmail'+(variableIndex+1)+'" class="form-label">Email</label><input type="email" class="form-control" id="exampleInputEmail'+(variableIndex+1)+'"></div></div>';
+        var additionalRow = '<div class="row mb-4 team-line-item">'+
+        '<div class="col-6"><label for="inputTeamName'+(variableIndex+1)+'" class="form-label">First Name</label><input type="text" class="form-control" name="firstnameTeam'+(variableIndex+1)+'" id="inputTeamName'+(variableIndex+1)+'"></div>'+
+        '<div class="col-6"><label for="inputTeamEmail'+(variableIndex+1)+'" class="form-label">Email</label><input type="email" class="form-control" name="emailTeam'+(variableIndex+1)+'" id="inputTeamEmail'+(variableIndex+1)+'"></div></div>';
         $('.share-team-form .table-container').append(additionalRow);
         variableIndex++;
+    });
+
+    $('#shareWithTeamsBtn').click(function() {        
+        variableIndex = 2;
+    });
+
+    $('#shareWithTeamForm').submit(function(event) {
+        if(this.checkValidity()) {
+            event.preventDefault();
+			var requestData = [];
+            var transferSingleObj = {};
+            if($('.share-team-form input').length) {
+                $.each($('.share-team-form .team-line-item'), function(index, obj) {
+					var dataObj = {};
+                    var firstNameVal = $(obj).find('input').eq(0).val();
+                    var emailVal = $(obj).find('input').eq(1).val();
+
+                    if(firstNameVal && emailVal) {
+                        dataObj.FirstName = firstNameVal;
+                        dataObj.Email = emailVal;
+                        dataObj.productId = $('.product-page-details').attr('product-id');
+                        dataObj.productTitle = $('.product-page-details').attr('product-title');
+                        dataObj.productDescription = $('.product-page-details').attr('product-description');
+                        dataObj.productPath = $('.product-page-details').attr('product-path');
+                        //requestData.push(JSON.stringify(dataObj));
+
+                        if(index === 0) {
+                            transferSingleObj = dataObj;
+                        }
+                    }
+                });
+            }
+
+            MktoForms2.loadForm("//733-JCL-696.mktoweb.com", "733-JCL-696", 1007, function(form) {
+                form.addHiddenFields(transferSingleObj);
+                form.submit();
+                console.log("Form Submitted !!!")
+                console.log(dataObj);
+                form.onSuccess(function(vals,thanksURL){
+
+                    return false;
+                });
+            });
+        }
     });
 }
 
