@@ -61,9 +61,19 @@
                                 offset="1"
                                 width="10"/>
                         </cq:responsive>
+                        <ctaButton jcr:primaryType="nt:unstructured">
+                            <item0
+                                jcr:primaryType="nt:unstructured"
+                                atmCtaLabel="Buy Now"
+                                atmCtaLink="/content/lead2loyalty/language-masters/en/home-page/products/development-board/advance-development-board"
+                                atmCtaType="btn-primary"/>
+                            <item1
+                                jcr:primaryType="nt:unstructured"
+                                atmCtaLabel="Add To Cart"
+                                atmCtaLink="#"
+                                atmCtaType="btn-outline-primary"/>
+                        </ctaButton>
                         <banner
-                            jcr:lastModified="{Date}2023-01-22T23:47:05.721+05:30"
-                            jcr:lastModifiedBy="admin"
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="xpbootstrap/components/content/organisms/carousel"
                             autopauseDisabled="false"
@@ -78,91 +88,65 @@
                                 cq:panelTitle="image-1"
                                 jcr:created="{Date}2023-01-22T23:46:40.858+05:30"
                                 jcr:createdBy="admin"
-                                jcr:lastModified="{Date}2023-01-22T23:48:01.635+05:30"
-                                jcr:lastModifiedBy="admin"
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="xpbootstrap/components/content/molecules/mleImage"
-                                atmIconSrcFileReference="/content/dam/lead2loyalty/circuit-8.jpg"
+                                atmIconSrcFileReference="/content/dam/lead2loyalty/crcuit-11.jpg"
                                 marginBottom="margin-bottom-x"
                                 marginTop="margin-top-x"
                                 mobileMarginBottom="m-margin-bottom-x"
                                 mobileMarginTop="m-margin-top-x"/>
                             <item_1674411416192
                                 cq:panelTitle="image-2"
-                                jcr:lastModified="{Date}2023-01-22T23:47:46.937+05:30"
-                                jcr:lastModifiedBy="admin"
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="xpbootstrap/components/content/molecules/mleImage"
-                                atmIconSrcFileReference="/content/dam/lead2loyalty/circuit-7.jpg"
+                                atmIconSrcFileReference="/content/dam/lead2loyalty/circuit.jpg"
                                 marginBottom="margin-bottom-x"
                                 marginTop="margin-top-x"
                                 mobileMarginBottom="m-margin-bottom-x"
                                 mobileMarginTop="m-margin-top-x"/>
                         </banner>
-                        <ctaButton jcr:primaryType="nt:unstructured">
-                            <item0
-                                jcr:primaryType="nt:unstructured"
-                                atmCtaLabel="Buy Now"
-                                atmCtaLink="/content/lead2loyalty/language-masters/en/home-page/products/development-board/advance-development-board"
-                                atmCtaType="btn-primary"/>
-                            <item1
-                                jcr:primaryType="nt:unstructured"
-                                atmCtaLabel="Add To Cart"
-                                atmCtaLink="#"
-                                atmCtaType="btn-outline-primary"/>
-                        </ctaButton>
                     </product_details>
                     <xp_container_9275655
-                            cq:styleIds="[1673004790935]"
-                            jcr:created="{Date}2022-12-14T11:32:39.665+05:30"
-                            jcr:createdBy="admin"
-                            jcr:lastModified="{Date}2022-12-14T11:32:39.665+05:30"
-                            jcr:lastModifiedBy="admin"
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="lead2loyalty/components/content/organisms/xp-container">
+                        cq:styleIds="[1673004790935]"
+                        jcr:created="{Date}2022-12-14T11:32:39.665+05:30"
+                        jcr:createdBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="lead2loyalty/components/content/organisms/xp-container">
                         <text_img_cta_1958937571
-                                jcr:created="{Date}2023-01-09T16:04:48.450+05:30"
-                                jcr:createdBy="admin"
-                                jcr:lastModified="{Date}2023-01-31T20:50:27.727+05:30"
-                                jcr:lastModifiedBy="admin"
-                                openRequestQuoteForm="true"
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="lead2loyalty/components/content/organisms/text-img-cta/v1/text-img-cta"
-                                atmTextHtml="&lt;p>Business to Business integration (B2Bi) allows you to use your own internal processes to securely shop with us, and drive purchasing through your own e-procurement system.&lt;/p>&#xd;&#xa;&lt;ul>&#xd;&#xa;&lt;li>No doubt entry data for purchase orders.&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;&lt;ul>&#xd;&#xa;&lt;li>Consolidate and digitalize eProcurement flows in one system&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;&lt;ul>&#xd;&#xa;&lt;li>Strengthen compliance and control by adhering to your internal purchasing processes&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;"
-                                fileReference="/content/dam/lead2loyalty/circuit-13.jpg"
-                                imgAlignment="img-left"
-                                marginBottom="margin-bottom-x"
-                                marginTop="margin-top-x"
-                                mobileMarginBottom="m-margin-bottom-x"
-                                mobileMarginTop="m-margin-top-x"
-                                textIsRich="true"
-                                title="Connect with one of our Sales Reps">
-                            <ctaButton jcr:primaryType="nt:unstructured">
-                            </ctaButton>
+                            jcr:created="{Date}2023-01-09T16:04:48.450+05:30"
+                            jcr:createdBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="lead2loyalty/components/content/organisms/text-img-cta/v1/text-img-cta"
+                            atmTextHtml="&lt;p>Business to Business integration (B2Bi) allows you to use your own internal processes to securely shop with us, and drive purchasing through your own e-procurement system.&lt;/p>&#xd;&#xa;&lt;ul>&#xd;&#xa;&lt;li>No doubt entry data for purchase orders.&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;&lt;ul>&#xd;&#xa;&lt;li>Consolidate and digitalize eProcurement flows in one system&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;&lt;ul>&#xd;&#xa;&lt;li>Strengthen compliance and control by adhering to your internal purchasing processes&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;"
+                            fileReference="/content/dam/lead2loyalty/circuit-13.jpg"
+                            imgAlignment="img-left"
+                            marginBottom="margin-bottom-x"
+                            marginTop="margin-top-x"
+                            mobileMarginBottom="m-margin-bottom-x"
+                            mobileMarginTop="m-margin-top-x"
+							openRequestQuoteForm="true"
+                            textIsRich="true"
+                            title="Connect with one of our Sales Reps">
                             <container
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="lead2loyalty/components/content/organisms/xp-container">
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="lead2loyalty/components/content/organisms/xp-container">
                                 <aemform
-                                        jcr:created="{Date}2023-01-24T17:23:48.043+05:30"
-                                        jcr:createdBy="admin"
-                                        jcr:lastModified="{Date}2023-01-24T17:54:12.942+05:30"
-                                        jcr:lastModifiedBy="admin"
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="fd/af/components/aemform"
-                                        formRef="/content/dam/formsanddocuments/quote"
-                                        formType="adaptiveForm"
-                                        submitType="inline"
-                                        textIsRich="true"
-                                        thankyouConfig="message"
-                                        usePageLocale="true"/>
+                                    jcr:created="{Date}2023-01-24T17:23:48.043+05:30"
+                                    jcr:createdBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="fd/af/components/aemform"
+                                    formRef="/content/dam/formsanddocuments/quote"
+                                    formType="adaptiveForm"
+                                    submitType="inline"
+                                    textIsRich="true"
+                                    thankyouConfig="message"
+                                    usePageLocale="true"/>
                             </container>
                         </text_img_cta_1958937571>
                     </xp_container_9275655>
                     <xp_container_32384955
                         jcr:created="{Date}2022-12-15T12:18:01.412+05:30"
                         jcr:createdBy="admin"
-                        jcr:lastModified="{Date}2022-12-15T12:40:36.428+05:30"
-                        jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="lead2loyalty/components/content/organisms/xp-container"
                         layout="responsiveGrid"
@@ -171,17 +155,15 @@
                         mobileMarginBottom="m-margin-bottom-x"
                         mobileMarginTop="m-margin-top-x">
                         <tiles_copy
-                            jcr:created="{Date}2022-12-12T14:02:20.280+05:30"
+                        	jcr:created="{Date}2022-12-12T14:02:20.280+05:30"
                             jcr:createdBy="admin"
-                            jcr:lastModified="{Date}2022-12-15T12:26:03.522+05:30"
-                            jcr:lastModifiedBy="admin"
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="lead2loyalty/components/content/organisms/tiles/v1/tiles"
-                            ctaLabel="View More"
-                            ctaLink="/content/lead2loyalty/language-masters/en/home-page/products"
-                            ctaTarget="_blank"
+							ctaLabel="View More"
+							ctaLink="/content/lead2loyalty/language-masters/en/home-page/products"
+							ctaTarget="_blank"
                             textIsRich="[true,true,true,true]"
-                            tileHeading="You may also like">
+							tileHeading="You may also like">
                             <tileListItems jcr:primaryType="nt:unstructured">
                                 <item0
                                     jcr:primaryType="nt:unstructured"
@@ -194,83 +176,80 @@
                                 <item2
                                     jcr:primaryType="nt:unstructured"
                                     productImageSource="/content/dam/lead2loyalty/circuit.jpg"
-                                    productTitle="GEEKcredit 433MHZ DC 12V 10A Relay 1CH Channel Wireless RF Remote Contr"/>
+                                    productTitle="GEEK 433MHZ DC 12V 10A Relay 1CH Channel Wireless RF Remote Control"/>
                                 <item3
                                     jcr:primaryType="nt:unstructured"
                                     productImageSource="/content/dam/lead2loyalty/circuit-2.jpg"
-                                    productTitle="LU-ASR01 Intelligent Speech Rocognition Moule Offline Recognition Custom 100"/>
+                                    productTitle="LU-ASR01 Intelligent Speech Recognition Offline Recognition Custom 100"/>
                             </tileListItems>
                         </tiles_copy>
                     </xp_container_32384955>
                     <tabs
-                            jcr:created="{Date}2023-02-08T19:11:01.691+05:30"
-                            jcr:createdBy="admin"
-                            jcr:lastModified="{Date}2023-02-08T19:12:16.185+05:30"
-                            jcr:lastModifiedBy="admin"
+                        jcr:created="{Date}2023-02-08T19:11:01.691+05:30"
+                        jcr:createdBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="xpbootstrap/components/content/organisms/tabs"
+                        marginBottom="margin-bottom-x"
+                        marginTop="margin-top-x"
+                        mobileMarginBottom="m-margin-bottom-x"
+                        mobileMarginTop="m-margin-top-x"
+                        order="[text_img_cta,item_1675863716440,item_1675863725912]">
+                        <text_img_cta
+                            cq:panelTitle="Specifications"
                             jcr:primaryType="nt:unstructured"
-                            sling:resourceType="xpbootstrap/components/content/organisms/tabs"
+                            sling:resourceType="lead2loyalty/components/content/organisms/text-img-cta/v1/text-img-cta"
+                            atmTextHtml="&lt;p>Your users in Shanghai will get the same capabilities and purchasing experience as those in San Francisco, only in their own language and currency.&lt;/p>&#xd;&#xa;&lt;ul>&#xd;&#xa;&lt;li>Start your purchases in one location, approve it in another, and order it from a third. Translates and converts everything for you automatically&lt;/li>&#xd;&#xa;&lt;li>This is available in 13 languages and 43 countries across more than 200 countries&lt;/li>&#xd;&#xa;&lt;li>Establish a globally consistent purchasing processes.&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;"
+                            fileReference="/content/dam/lead2loyalty/circuit-7.jpg"
+                            imgAlignment="img-right"
                             marginBottom="margin-bottom-x"
                             marginTop="margin-top-x"
                             mobileMarginBottom="m-margin-bottom-x"
                             mobileMarginTop="m-margin-top-x"
-                            order="[text_img_cta,item_1675863716440,item_1675863725912]">
-                        <text_img_cta
-                                cq:panelTitle="Specifications"
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="lead2loyalty/components/content/organisms/text-img-cta/v1/text-img-cta"
-                                atmTextHtml="&lt;p>Your users in Shanghai will get the same capabilities and purchasing experience as those in San Francisco, only in their own language and currency.&lt;/p>&#xd;&#xa;&lt;ul>&#xd;&#xa;&lt;li>Start your purchases in one location, approve it in another, and order it from a third. Translates and converts everything for you automatically&lt;/li>&#xd;&#xa;&lt;li>This is available in 13 languages and 43 countries across more than 200 countries&lt;/li>&#xd;&#xa;&lt;li>Establish a globally consistent purchasing processes.&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;"
-                                fileReference="/content/dam/lead2loyalty/circuit-7.jpg"
-                                imgAlignment="img-right"
-                                marginBottom="margin-bottom-x"
-                                marginTop="margin-top-x"
-                                mobileMarginBottom="m-margin-bottom-x"
-                                mobileMarginTop="m-margin-top-x"
-                                textIsRich="true"
-                                title="Get the same B2B experience, no matter where you are in the world">
+                            textIsRich="true"
+                            title="Get the same B2B experience, no matter where you are in the world">
                             <cq:responsive jcr:primaryType="nt:unstructured">
                                 <default
-                                        jcr:primaryType="nt:unstructured"
-                                        offset="0"
-                                        width="12"/>
+                                    jcr:primaryType="nt:unstructured"
+                                    offset="0"
+                                    width="12"/>
                             </cq:responsive>
                         </text_img_cta>
                         <xp_container_9275655
-                                cq:panelTitle="Safety Information"
-                                cq:styleIds="[1673004790935]"
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="lead2loyalty/components/content/organisms/xp-container">
+                            cq:panelTitle="Safety Information"
+                            cq:styleIds="[1673004790935]"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="lead2loyalty/components/content/organisms/xp-container">
                             <text_img_cta_1958937571
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="lead2loyalty/components/content/organisms/text-img-cta/v1/text-img-cta"
-                                    atmTextHtml="&lt;p>Business to Business integration (B2Bi) allows you to use your own internal processes to securely shop with us, and drive purchasing through your own e-procurement system.&lt;/p>&#xd;&#xa;&lt;ul>&#xd;&#xa;&lt;li>No doubt entry data for purchase orders.&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;&lt;ul>&#xd;&#xa;&lt;li>Consolidate and digitize eProcurement flows in one system&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;&lt;ul>&#xd;&#xa;&lt;li>Strengthen compliance and control by adhering to your internal purchasing processes&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;"
-                                    fileReference="/content/dam/lead2loyalty/circuit-13.jpg"
-                                    imgAlignment="img-left"
-                                    marginBottom="margin-bottom-x"
-                                    marginTop="margin-top-x"
-                                    mobileMarginBottom="m-margin-bottom-x"
-                                    mobileMarginTop="m-margin-top-x"
-                                    textIsRich="true"
-                                    title="Business to Business integration">
-                            </text_img_cta_1958937571>
-                        </xp_container_9275655>
-                        <item_text_img_cta
-                                cq:panelTitle="Specifications"
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="lead2loyalty/components/content/organisms/text-img-cta/v1/text-img-cta"
-                                atmTextHtml="&lt;p>Your users in Shanghai will get the same capabilities and purchasing experience as those in San Francisco, only in their own language and currency.&lt;/p>&#xd;&#xa;&lt;ul>&#xd;&#xa;&lt;li>Start your purchases in one location, approve it in another, and order it from a third. Translates and converts everything for you automatically&lt;/li>&#xd;&#xa;&lt;li>This is available in 13 languages and 43 countries across more than 200 countries&lt;/li>&#xd;&#xa;&lt;li>Establish a globally consistent purchasing processes.&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;"
-                                fileReference="/content/dam/lead2loyalty/circuit-7.jpg"
-                                imgAlignment="img-right"
+                                atmTextHtml="&lt;p>Business to Business integration (B2Bi) allows you to use your own internal processes to securely shop with us, and drive purchasing through your own e-procurement system.&lt;/p>&#xd;&#xa;&lt;ul>&#xd;&#xa;&lt;li>No doubt entry data for purchase orders.&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;&lt;ul>&#xd;&#xa;&lt;li>Consolidate and digitize eProcurement flows in one system&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;&lt;ul>&#xd;&#xa;&lt;li>Strengthen compliance and control by adhering to your internal purchasing processes&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;"
+                                fileReference="/content/dam/lead2loyalty/circuit-13.jpg"
+                                imgAlignment="img-left"
                                 marginBottom="margin-bottom-x"
                                 marginTop="margin-top-x"
                                 mobileMarginBottom="m-margin-bottom-x"
                                 mobileMarginTop="m-margin-top-x"
                                 textIsRich="true"
-                                title="Get the same B2B experience, no matter where you are in the world">
+                                title="Business to Business integration"/>
+                        </xp_container_9275655>
+                        <item_text_img_cta
+                            cq:panelTitle="Specifications"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="lead2loyalty/components/content/organisms/text-img-cta/v1/text-img-cta"
+                            atmTextHtml="&lt;p>Your users in Shanghai will get the same capabilities and purchasing experience as those in San Francisco, only in their own language and currency.&lt;/p>&#xd;&#xa;&lt;ul>&#xd;&#xa;&lt;li>Start your purchases in one location, approve it in another, and order it from a third. Translates and converts everything for you automatically&lt;/li>&#xd;&#xa;&lt;li>This is available in 13 languages and 43 countries across more than 200 countries&lt;/li>&#xd;&#xa;&lt;li>Establish a globally consistent purchasing processes.&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;"
+                            fileReference="/content/dam/lead2loyalty/circuit-7.jpg"
+                            imgAlignment="img-right"
+                            marginBottom="margin-bottom-x"
+                            marginTop="margin-top-x"
+                            mobileMarginBottom="m-margin-bottom-x"
+                            mobileMarginTop="m-margin-top-x"
+                            textIsRich="true"
+                            title="Get the same B2B experience, no matter where you are in the world">
                             <cq:responsive jcr:primaryType="nt:unstructured">
                                 <default
-                                        jcr:primaryType="nt:unstructured"
-                                        offset="0"
-                                        width="12"/>
+                                    jcr:primaryType="nt:unstructured"
+                                    offset="0"
+                                    width="12"/>
                             </cq:responsive>
                         </item_text_img_cta>
                     </tabs>
@@ -278,8 +257,6 @@
                         cq:styleIds="[1673004790935]"
                         jcr:created="{Date}2022-12-15T12:18:01.412+05:30"
                         jcr:createdBy="admin"
-                        jcr:lastModified="{Date}2022-12-15T12:40:25.062+05:30"
-                        jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="lead2loyalty/components/content/organisms/xp-container"
                         layout="responsiveGrid"
@@ -288,17 +265,15 @@
                         mobileMarginBottom="m-margin-bottom-x"
                         mobileMarginTop="m-margin-top-x">
                         <tiles_copy
-                            jcr:created="{Date}2022-12-12T14:02:20.280+05:30"
+                        	jcr:created="{Date}2022-12-12T14:02:20.280+05:30"
                             jcr:createdBy="admin"
-                            jcr:lastModified="{Date}2022-12-15T12:33:04.741+05:30"
-                            jcr:lastModifiedBy="admin"
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="lead2loyalty/components/content/organisms/tiles/v1/tiles"
-                            ctaLabel="View More"
-                            ctaLink="/content/lead2loyalty/language-masters/en/home-page/products"
-                            ctaTarget="_blank"
+							ctaLabel="View More"
+							ctaLink="/content/lead2loyalty/language-masters/en/home-page/products"
+							ctaTarget="_blank"
                             textIsRich="[true,true,true,true]"
-                            tileHeading="Customers who view this item also bought this">
+							tileHeading="Customers who view this item also bought this">
                             <tileListItems jcr:primaryType="nt:unstructured">
                                 <item0
                                     jcr:primaryType="nt:unstructured"
@@ -315,57 +290,51 @@
                                 <item3
                                     jcr:primaryType="nt:unstructured"
                                     productImageSource="/content/dam/lead2loyalty/circuit-1.jpg"
-                                    productTitle="Geekcreit DFPlayer Mini MP3 Player Module MP3 Voice Audio Decoder Board"/>
+                                    productTitle="Geek DFPlayer Mini MP3 Player Module MP3 Voice Audio Decoder Board"/>
                             </tileListItems>
                         </tiles_copy>
                     </xp_container_3238495>
                     <xp_container_1543464264
-                            cq:styleIds="[1673004790934]"
-                            jcr:created="{Date}2022-12-15T12:13:33.382+05:30"
-                            jcr:createdBy="admin"
-                            jcr:lastModified="{Date}2022-12-15T12:13:33.382+05:30"
-                            jcr:lastModifiedBy="admin"
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="lead2loyalty/components/content/organisms/xp-container">
+                        cq:styleIds="[1673004790934]"
+                        jcr:created="{Date}2022-12-15T12:13:33.382+05:30"
+                        jcr:createdBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="lead2loyalty/components/content/organisms/xp-container">
                         <tiles
-                                cq:styleIds="[1670928226762]"
-                                jcr:created="{Date}2022-12-12T14:02:20.280+05:30"
-                                jcr:createdBy="admin"
-                                jcr:lastModified="{Date}2022-12-15T12:09:13.029+05:30"
-                                jcr:lastModifiedBy="admin"
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="lead2loyalty/components/content/organisms/tiles/v1/tiles"
-                                textIsRich="[true,true,true,true]"
-                                tileHeading="Popular Industry Use Case">
+                            cq:styleIds="[1670928226762]"
+                            jcr:created="{Date}2022-12-12T14:02:20.280+05:30"
+                            jcr:createdBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="lead2loyalty/components/content/organisms/tiles/v1/tiles"
+                            textIsRich="[true,true,true,true]"
+                            tileHeading="Popular Industry Use Case">
                             <tileListItems jcr:primaryType="nt:unstructured">
                                 <item0
-                                        jcr:primaryType="nt:unstructured"
-                                        productDescription="&lt;p>Some quick example text to build on the card title nad make up the bulk of the card's content.&amp;nbsp;&lt;/p>&#xd;&#xa;"
-                                        productImageSource="/content/dam/lead2loyalty/cell-2.jpg"
-                                        productTitle="Automative"/>
+                                    jcr:primaryType="nt:unstructured"
+                                    productDescription="&lt;p>Some quick example text to build on the card title nad make up the bulk of the card's content.&amp;nbsp;&lt;/p>&#xd;&#xa;"
+                                    productImageSource="/content/dam/lead2loyalty/cell-2.jpg"
+                                    productTitle="Automative"/>
                                 <item1
-                                        jcr:primaryType="nt:unstructured"
-                                        productDescription="&lt;p>Some quick example text to build on the card title and make up the bulk of the card's content.&lt;/p>&#xd;&#xa;"
-                                        productImageSource="/content/dam/lead2loyalty/cell-1.jpg"
-                                        productTitle="Cellular Device"/>
+                                    jcr:primaryType="nt:unstructured"
+                                    productDescription="&lt;p>Some quick example text to build on the card title and make up the bulk of the card's content.&lt;/p>&#xd;&#xa;"
+                                    productImageSource="/content/dam/lead2loyalty/cell-1.jpg"
+                                    productTitle="Cellular Device"/>
                                 <item2
-                                        jcr:primaryType="nt:unstructured"
-                                        productDescription="&lt;p>Some quick example text to build on the card title and make up the bulk of the card's content.&lt;/p>&#xd;&#xa;"
-                                        productImageSource="/content/dam/lead2loyalty/cell-4.jpg"
-                                        productTitle="Automative"/>
+                                    jcr:primaryType="nt:unstructured"
+                                    productDescription="&lt;p>Some quick example text to build on the card title and make up the bulk of the card's content.&lt;/p>&#xd;&#xa;"
+                                    productImageSource="/content/dam/lead2loyalty/cell-4.jpg"
+                                    productTitle="Automative"/>
                                 <item3
-                                        jcr:primaryType="nt:unstructured"
-                                        productDescription="&lt;p>Some quick example text to build on the card title and make up the bulk of the card's content.&lt;/p>&#xd;&#xa;"
-                                        productImageSource="/content/dam/lead2loyalty/cell-3.jpg"
-                                        productTitle="Cellular Device"/>
+                                    jcr:primaryType="nt:unstructured"
+                                    productDescription="&lt;p>Some quick example text to build on the card title and make up the bulk of the card's content.&lt;/p>&#xd;&#xa;"
+                                    productImageSource="/content/dam/lead2loyalty/cell-3.jpg"
+                                    productTitle="Cellular Device"/>
                             </tileListItems>
                         </tiles>
                     </xp_container_1543464264>
                     <sales_tech_support
                         jcr:created="{Date}2023-01-09T13:51:12.135+05:30"
                         jcr:createdBy="admin"
-                        jcr:lastModified="{Date}2023-01-11T19:42:33.244+05:30"
-                        jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="lead2loyalty/components/content/organisms/sales-tech-support/v1/sales-tech-support"
                         fileReference="/content/dam/lead2loyalty/circuit6.jpg"
