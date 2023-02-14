@@ -64,13 +64,20 @@ if($('.product-details').length) {
         '<div class="col-6"><label for="inputTeamEmail'+(variableIndex+1)+'" class="form-label">Email</label><input type="email" class="form-control" name="emailTeam'+(variableIndex+1)+'" id="inputTeamEmail'+(variableIndex+1)+'"></div></div>';
         $('.share-team-form .table-container').append(additionalRow);
         variableIndex++;
+        $('.form-success-container.share-with-team').addClass('d-none');
     });
 
     $('#shareWithTeamsBtn').click(function() {        
         variableIndex = 2;
+        $('.form-success-container.share-with-team').addClass('d-none');
+    });
+
+    $(".share-team-form input").change(function() { 
+        $('.form-success-container.share-with-team').addClass('d-none');
     });
 
     $('#shareWithTeamForm').submit(function(event) {
+        $('.form-success-container.share-with-team').addClass('d-none');
         if(this.checkValidity()) {
             event.preventDefault();
 			var requestData = [];
@@ -101,9 +108,12 @@ if($('.product-details').length) {
                 form.addHiddenFields(transferSingleObj);
                 form.submit();
                 console.log("Form Submitted !!!")
-                console.log(dataObj);
-                form.onSuccess(function(vals,thanksURL){
-
+                console.log(transferSingleObj);
+                form.onSuccess(function(vals,thanksURL) {
+                    $(".form-success-container.share-with-team", parent.document).removeClass('d-none');
+                    digitalData.event = 'formSubmission';
+                	digitalData.form = {};
+                	digitalData.form.formName = 'Share with Team';
                     return false;
                 });
             });
