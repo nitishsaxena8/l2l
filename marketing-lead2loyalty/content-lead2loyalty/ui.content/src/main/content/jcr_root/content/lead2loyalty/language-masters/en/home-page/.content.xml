@@ -219,6 +219,7 @@
                         sling:resourceType="lead2loyalty/components/content/organisms/xp-container">
                         <tiles_copy
                             cq:styleIds="[1670928226762]"
+                            authorType="manual"
                             tileHeading="What can we help you find today ?"
 							ctaLabel="View More"
 							ctaLink="/content/lead2loyalty/language-masters/en/home-page/products/development-board"
@@ -270,6 +271,7 @@
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="lead2loyalty/components/content/organisms/text-img-cta/v1/text-img-cta"
                         atmTextHtml="&lt;p>Your users in Shanghai will get the same capabilities and purchasing experience as those in San Francisco, only in their own language and currency.&lt;/p>&#xd;&#xa;&lt;ul>&#xd;&#xa;&lt;li>Start your purchases in one location, approve it in another, and order it from a third. Translates and converts everything for you automatically&lt;/li>&#xd;&#xa;&lt;li>This is available in 13 languages and 43 countries across more than 200 countries&lt;/li>&#xd;&#xa;&lt;li>Establish a globally consistent purchasing processes.&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;"
+                        authorType="manual"
                         fileReference="/content/dam/lead2loyalty/circuit-7.jpg"
                         imgAlignment="img-right"
                         marginBottom="margin-bottom-x"
@@ -293,6 +295,7 @@
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="lead2loyalty/components/content/organisms/text-img-cta/v1/text-img-cta"
                                 atmTextHtml="&lt;p>Business to Business integration (B2Bi) allows you to use your own internal processes to securely shop with us, and drive purchasing through your own e-procurement system.&lt;/p>&#xd;&#xa;&lt;ul>&#xd;&#xa;&lt;li>No doubt entry data for purchase orders.&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;&lt;ul>&#xd;&#xa;&lt;li>Consolidate and digitize eProcurement flows in one system&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;&lt;ul>&#xd;&#xa;&lt;li>Strengthen compliance and control by adhering to your internal purchasing processes&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;"
+                                authorType="manual"
                                 fileReference="/content/dam/lead2loyalty/circuit-13.jpg"
                                 imgAlignment="img-left"
                                 marginBottom="margin-bottom-x"
@@ -314,6 +317,7 @@
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="lead2loyalty/components/content/organisms/xp-container">
                         <tiles_copy
+                            authorType="manual"
                         	tileHeading="Training &amp; Articles"
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="lead2loyalty/components/content/organisms/tiles/v1/tiles"

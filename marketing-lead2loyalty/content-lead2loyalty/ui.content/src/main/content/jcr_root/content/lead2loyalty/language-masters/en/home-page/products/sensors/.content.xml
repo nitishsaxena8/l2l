@@ -22,6 +22,7 @@
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="lead2loyalty/components/content/organisms/text-img-cta/v1/text-img-cta"
                         atmTextHtml="&lt;p>Find the best-suited development boards from all leading brands as well as generic ones for beginners to expert level. Your users in Shanghai will get the same capabilities and purchasing experience as those in San Francisco, only in their own language.&lt;/p>&#xd;&#xa;&lt;p>Want to know more about different types of development boards?&lt;/p>&#xd;&#xa;&lt;p>&lt;/p>&#xd;&#xa;"
+                        authorType="manual"
                         fileReference="/content/dam/lead2loyalty/circuit-7.jpg"
                         imgAlignment="img-right"
                         marginBottom="margin-bottom-x"
@@ -55,6 +56,7 @@
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="lead2loyalty/components/content/organisms/text-img-cta/v1/text-img-cta"
                             atmTextHtml="&lt;p>Selecting the most reliable sensor for any Application is quite tricky as you need to think over various specs like its size, accuracy, operating specifications, and most importantly, its price. We offer low-cost coverage for children, adults, and families who qualify for state-sponsored programs. Explore programs available in your state.&lt;/p>&#xd;&#xa;&lt;p>Want to know more about different types of Sensors?&lt;/p>&#xd;&#xa;&lt;p>&lt;/p>&#xd;&#xa;"
+                            authorType="manual"
                             fileReference="/content/dam/lead2loyalty/circuit-13.jpg"
                             imgAlignment="img-left"
                             marginBottom="margin-bottom-x"
@@ -79,6 +81,7 @@
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="lead2loyalty/components/content/organisms/text-img-cta/v1/text-img-cta"
                         atmTextHtml="&lt;p>Electronic components like Resistors, Capacitors, Inductors, semiconductor ICs, Relays form the backbone of all the technological advances today.  With these, you can design any system, any model for your project.&lt;/p>&#xd;&#xa;&lt;p>Want to know more about different types of electronic components?&lt;/p>&#xd;&#xa;&lt;p>&lt;/p>&#xd;&#xa;"
+                        authorType="manual"
                         fileReference="/content/dam/lead2loyalty/circuit-8.jpg"
                         imgAlignment="img-right"
                         marginBottom="margin-bottom-x"
@@ -112,6 +115,7 @@
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="lead2loyalty/components/content/organisms/text-img-cta/v1/text-img-cta"
                             atmTextHtml="&lt;p>We as an organization, provide the best quality lithium batteries with all its accessories. Being a quality-driven organization we strive to bring forth a vast variety of Lithium Batteries at low price. We trust on customers satisfaction!! So we are always the first choice of our customers in the domain of lithium polymer battery.&lt;/p>&#xd;&#xa;&lt;p>Want to know more about different types of Batteries?&lt;/p>&#xd;&#xa;&lt;p>&lt;/p>&#xd;&#xa;"
+                            authorType="manual"
                             fileReference="/content/dam/lead2loyalty/circuit-1.jpg"
                             imgAlignment="img-left"
                             marginBottom="margin-bottom-x"
@@ -136,6 +140,7 @@
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="lead2loyalty/components/content/organisms/text-img-cta/v1/text-img-cta"
                         atmTextHtml="&lt;p>Internet of Things, or IoT Board, is a groundbreaking way to add convenience and flexibility to your life by connecting commonly used objects to the Internet and then controlling them through a WiFi connected device. Under the title IoT and wireless, we have ESP wifi modules, and Plug &amp; Play IoT switches which can control your Light, AC, Water Pump, or any other device you wish.&lt;/p>&#xd;&#xa;&lt;p>Want to know more about different type of IoT components?&lt;/p>&#xd;&#xa;&lt;p>&lt;/p>&#xd;&#xa;"
+                        authorType="manual"
                         fileReference="/content/dam/lead2loyalty/cell-4.jpg"
                         imgAlignment="img-right"
                         marginBottom="margin-bottom-x"
@@ -168,6 +173,7 @@
                         <tiles_copy_copy
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="lead2loyalty/components/content/organisms/tiles/v1/tiles"
+                            authorType="manual"
                             textIsRich="[true,true,true,true]"
                             tileHeading="Training &amp; Articles">
                             <cq:responsive jcr:primaryType="nt:unstructured">

@@ -70,6 +70,10 @@ public class TileItem {
         this.productImageSource = productImageSource;
     }
 
+    public String getProductPathValue() {
+        return productPath;
+    }
+
     public String getProductPath() {
         if(StringUtils.isNotBlank(productScrollId) && StringUtils.isNotBlank(productPath))
             return Objects.requireNonNull(ServiceUtils.getLink(resourceResolver, productPath, settingsService)).concat("#").concat(productScrollId);
