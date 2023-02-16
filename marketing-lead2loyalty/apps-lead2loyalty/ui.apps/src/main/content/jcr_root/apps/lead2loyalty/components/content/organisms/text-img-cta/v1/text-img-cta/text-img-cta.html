@@ -1,34 +1,36 @@
 <sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"
-	 data-sly-call="${template.placeholder @ isEmpty=true}"
-	 data-sly-use.ticModel="com.deloitte.aem.lead2loyalty.core.models.TextImageCtaModel" />
+	 data-sly-call="${template.placeholder @ isEmpty=true}"/>
 
-<div class="${properties.marginTop} ${properties.mobileMarginTop} ${properties.marginBottom} ${properties.mobileMarginBottom}" id="${ticModel.productScrollId}">
-	<div class="container my-5">
-		<div class="${ticModel.imgAlignment == 'img-right' ? 'row flex-row-reverse' : ''} row">
-			<div class="col-6 p-0">
-				<img src="${ticModel.image}" alt="${ticModel.imageAlt}" class="w-100" style="max-height:400px;">
-			</div>
-			<div class="col-6" >
-				<div class="row h-100 mx-2 align-items-center">
-					<div>
-						<h4>${ticModel.title}</h4>
-						<p class="mt-5"> ${ticModel.description @context='html'}</p>
-						<sly data-sly-test="${properties.openRequestQuoteForm != 'true'}" data-sly-list.child="${ticModel.ctaModelList}">
-							<a class="btn ${child.atmCtaType} ${child.atmCtaSize} mt-3" href="${child.atmCtaLink}" target="${child.atmCtaTarget == 'true' ? '_blank' : '_self'}" data-analytics-context="${child.atmCtaContext}">${child.atmCtaLabel}</a>
-						</sly>
+<sly data-sly-test="${properties.authorType}">
+	<sly data-sly-use.ticModel="com.deloitte.aem.lead2loyalty.core.models.TextImageCtaModel" />
+	<div class="${properties.marginTop} ${properties.mobileMarginTop} ${properties.marginBottom} ${properties.mobileMarginBottom}" id="${ticModel.productScrollId}">
+		<div class="container my-5">
+			<div class="${ticModel.imgAlignment == 'img-right' ? 'row flex-row-reverse' : ''} row">
+				<div class="col-6 p-0">
+					<img src="${ticModel.image}" alt="${ticModel.imageAlt}" class="w-100" style="max-height:400px;">
+				</div>
+				<div class="col-6" >
+					<div class="row h-100 mx-2 align-items-center">
+						<div>
+							<h4>${ticModel.title}</h4>
+							<p class="mt-5"> ${ticModel.description @context='html'}</p>
+							<sly data-sly-test="${properties.openRequestQuoteForm != 'true'}" data-sly-list.child="${ticModel.ctaModelList}">
+								<a class="btn ${child.atmCtaType} ${child.atmCtaSize} mt-3" href="${child.atmCtaLink}" target="${child.atmCtaTarget == 'true' ? '_blank' : '_self'}" data-analytics-context="${child.atmCtaContext}">${child.atmCtaLabel}</a>
+							</sly>
 
-						<sly data-sly-test="${properties.openRequestQuoteForm == 'true'}">
-							<p class="form-success-container request-quote-member text-success d-none">Request successfully submitted !!!</p>
-							<button type="button" class="btn btn-primary" data-bs-toggle="modal" id="requestAQuoteGuest" data-target="#requestAQuote" data-toggle="modal">Request a Quote</button>
-							<button type="button" class="btn btn-primary d-none" id="requestAQuoteMember">Request a Quote</button>
-						</sly>
+							<sly data-sly-test="${properties.openRequestQuoteForm == 'true'}">
+								<p class="form-success-container request-quote-member text-success d-none">Request successfully submitted !!!</p>
+								<button type="button" class="btn btn-primary" data-bs-toggle="modal" id="requestAQuoteGuest" data-target="#requestAQuote" data-toggle="modal">Request a Quote</button>
+								<button type="button" class="btn btn-primary d-none" id="requestAQuoteMember">Request a Quote</button>
+							</sly>
 
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
+</sly>
 
 <sly data-sly-test="${properties.openRequestQuoteForm == 'true'}">
 	<div  class="modal fade" id="myModal" role="dialog" id="requestAQuote" tabindex="-1" aria-labelledby="exampleModalLabel" style="display: none;">

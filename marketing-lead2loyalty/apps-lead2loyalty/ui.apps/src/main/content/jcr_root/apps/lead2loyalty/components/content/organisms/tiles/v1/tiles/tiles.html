@@ -1,7 +1,8 @@
 <sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
-     data-sly-call="${templates.placeholder @ isEmpty = true}"></sly>
-<sly data-sly-use.tilesModel="com.deloitte.aem.lead2loyalty.core.models.TilesModel" data-sly-test="${tilesModel}">
+     data-sly-call="${templates.placeholder @ isEmpty = true}"/>
 
+<sly data-sly-test="${properties.authorType}">
+    <sly data-sly-use.tilesModel="com.deloitte.aem.lead2loyalty.core.models.TilesModel" />
     <div class="container my-5">
         <div class="row tile-header mb-4">
             <div class="d-flex flex-row w-100 justify-content-between">
