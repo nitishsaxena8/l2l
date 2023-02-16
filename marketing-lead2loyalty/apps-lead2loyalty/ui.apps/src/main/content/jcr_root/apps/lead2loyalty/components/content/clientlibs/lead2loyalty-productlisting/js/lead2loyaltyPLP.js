@@ -50,7 +50,7 @@ if($('.plp-container').length) {
     });
 }
 
-if($('.product-details').length) {
+if($('#shareWithTeamsBtnModal').length) {
     var variableIndex;
 	$(document).on('show.bs.modal', '.modal', function () {
         $(".modal-backdrop").not(':first').remove();
@@ -58,14 +58,14 @@ if($('.product-details').length) {
         $('.table-container').empty();
     });
 
-    $('.add-team-details').click(function(event) {
-        var additionalRow = '<div class="row mb-4 team-line-item">'+
-        '<div class="col-6"><label for="inputTeamName'+(variableIndex+1)+'" class="form-label">First Name</label><input type="text" class="form-control" name="firstnameTeam'+(variableIndex+1)+'" id="inputTeamName'+(variableIndex+1)+'"></div>'+
-        '<div class="col-6"><label for="inputTeamEmail'+(variableIndex+1)+'" class="form-label">Email</label><input type="email" class="form-control" name="emailTeam'+(variableIndex+1)+'" id="inputTeamEmail'+(variableIndex+1)+'"></div></div>';
-        $('.share-team-form .table-container').append(additionalRow);
-        variableIndex++;
-        $('.form-success-container.share-with-team').addClass('d-none');
-    });
+    // $('.add-team-details').click(function(event) {
+    //     var additionalRow = '<div class="row mb-4 team-line-item">'+
+    //     '<div class="col-6"><label for="inputTeamName'+(variableIndex+1)+'" class="form-label">First Name</label><input type="text" class="form-control" name="firstnameTeam'+(variableIndex+1)+'" id="inputTeamName'+(variableIndex+1)+'"></div>'+
+    //     '<div class="col-6"><label for="inputTeamEmail'+(variableIndex+1)+'" class="form-label">Email</label><input type="email" class="form-control" name="emailTeam'+(variableIndex+1)+'" id="inputTeamEmail'+(variableIndex+1)+'"></div></div>';
+    //     $('.share-team-form .table-container').append(additionalRow);
+    //     variableIndex++;
+    //     $('.form-success-container.share-with-team').addClass('d-none');
+    // });
 
     $('#shareWithTeamsBtn').click(function() {        
         variableIndex = 2;
