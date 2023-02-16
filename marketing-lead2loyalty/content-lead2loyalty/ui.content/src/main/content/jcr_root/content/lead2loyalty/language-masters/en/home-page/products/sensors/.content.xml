@@ -5,7 +5,7 @@
         cq:lastModified="{Date}2022-12-19T13:15:45.162+05:30"
         cq:lastModifiedBy="admin"
         cq:template="/conf/lead2loyalty/settings/wcm/templates/product-category-page"
-        jcr:description="Sensors description."
+        jcr:description="Selecting the most reliable sensor for any Application is quite tricky as you need to think over various specs like its size, accuracy, operating specifications, and most importantly, its price. We offer low-cost coverage for children, adults, and families who qualify for state-sponsored programs. Explore programs available in your state.&#xd;&#xa;&lt;p>&lt;/p>&#xd;&#xa;Want to know more about different types of Sensors?"
         jcr:primaryType="cq:PageContent"
         jcr:title="Sensors"
         sling:resourceType="lead2loyalty/components/content/organisms/page"
@@ -18,21 +18,19 @@
                 <container
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="xpbootstrap/components/content/organisms/xp-container">
-                    <text_img_cta_copy
+                    <text_img_cta
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="lead2loyalty/components/content/organisms/text-img-cta/v1/text-img-cta"
-                        atmTextHtml="&lt;p>Find the best-suited development boards from all leading brands as well as generic ones for beginners to expert level. Your users in Shanghai will get the same capabilities and purchasing experience as those in San Francisco, only in their own language.&lt;/p>&#xd;&#xa;&lt;p>Want to know more about different types of development boards?&lt;/p>&#xd;&#xa;&lt;p>&lt;/p>&#xd;&#xa;"
-                        authorType="manual"
-                        fileReference="/content/dam/lead2loyalty/circuit-7.jpg"
+                        authorType="path"
                         imgAlignment="img-right"
                         marginBottom="margin-bottom-x"
                         marginTop="margin-top-x"
                         mobileMarginBottom="m-margin-bottom-x"
                         mobileMarginTop="m-margin-top-x"
+                        openRequestQuoteForm="false"
+                        pagePath="/content/lead2loyalty/language-masters/en/home-page/products/development-board"
                         productCategory="development-board"
-                        productScrollId="development-boards"
-                        textIsRich="true"
-                        title="Development Boards">
+                        textIsRich="true">
                         <cq:responsive jcr:primaryType="nt:unstructured">
                             <default
                                 jcr:primaryType="nt:unstructured"
@@ -47,26 +45,24 @@
                                 atmCtaTarget="true"
                                 atmCtaType="btn-primary"/>
                         </ctaButton>
-                    </text_img_cta_copy>
+                    </text_img_cta>
                     <xp_container_9275655
                         cq:styleIds="[1673004790935]"
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="lead2loyalty/components/content/organisms/xp-container">
-                        <text_img_cta_1958937571
+                        <text_img_cta_19583
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="lead2loyalty/components/content/organisms/text-img-cta/v1/text-img-cta"
-                            atmTextHtml="&lt;p>Selecting the most reliable sensor for any Application is quite tricky as you need to think over various specs like its size, accuracy, operating specifications, and most importantly, its price. We offer low-cost coverage for children, adults, and families who qualify for state-sponsored programs. Explore programs available in your state.&lt;/p>&#xd;&#xa;&lt;p>Want to know more about different types of Sensors?&lt;/p>&#xd;&#xa;&lt;p>&lt;/p>&#xd;&#xa;"
-                            authorType="manual"
-                            fileReference="/content/dam/lead2loyalty/circuit-13.jpg"
+                            authorType="path"
                             imgAlignment="img-left"
                             marginBottom="margin-bottom-x"
                             marginTop="margin-top-x"
                             mobileMarginBottom="m-margin-bottom-x"
                             mobileMarginTop="m-margin-top-x"
+                            openRequestQuoteForm="false"
+                            pagePath="/content/lead2loyalty/language-masters/en/home-page/products/sensors"
                             productCategory="sensors"
-                            productScrollId="sensors"
-                            textIsRich="true"
-                            title="Sensors">
+                            textIsRich="true">
                             <ctaButton jcr:primaryType="nt:unstructured">
                                 <item0
                                     jcr:primaryType="nt:unstructured"
@@ -75,23 +71,75 @@
                                     atmCtaTarget="true"
                                     atmCtaType="btn-primary"/>
                             </ctaButton>
-                        </text_img_cta_1958937571>
+                        </text_img_cta_19583>
                     </xp_container_9275655>
-                    <text_img_cta_copy_co
+                    <text_img_cta_copy
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="lead2loyalty/components/content/organisms/text-img-cta/v1/text-img-cta"
-                        atmTextHtml="&lt;p>Electronic components like Resistors, Capacitors, Inductors, semiconductor ICs, Relays form the backbone of all the technological advances today.  With these, you can design any system, any model for your project.&lt;/p>&#xd;&#xa;&lt;p>Want to know more about different types of electronic components?&lt;/p>&#xd;&#xa;&lt;p>&lt;/p>&#xd;&#xa;"
-                        authorType="manual"
-                        fileReference="/content/dam/lead2loyalty/circuit-8.jpg"
+                        authorType="path"
                         imgAlignment="img-right"
                         marginBottom="margin-bottom-x"
                         marginTop="margin-top-x"
                         mobileMarginBottom="m-margin-bottom-x"
                         mobileMarginTop="m-margin-top-x"
+                        openRequestQuoteForm="false"
+                        pagePath="/content/lead2loyalty/language-masters/en/home-page/products/electronic-components"
                         productCategory="electronic-components"
-                        productScrollId="electronic-components"
-                        textIsRich="true"
-                        title="Electronic Components">
+                        textIsRich="true">
+                        <cq:responsive jcr:primaryType="nt:unstructured">
+                            <default
+                                jcr:primaryType="nt:unstructured"
+                                offset="0"
+                                width="12"/>
+                        </cq:responsive>
+                        <ctaButton jcr:primaryType="nt:unstructured">
+                            <item0
+                                jcr:primaryType="nt:unstructured"
+                                atmCtaLabel="View Products"
+                                atmCtaLink="/content/lead2loyalty/language-masters/en/home-page/products"
+                                atmCtaType="btn-primary"/>
+                        </ctaButton>
+                    </text_img_cta_copy>
+                    <xp_container_9275655_1822097876
+                        cq:styleIds="[1673004790935]"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="lead2loyalty/components/content/organisms/xp-container">
+                        <text_img_cta_19583_copy
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="lead2loyalty/components/content/organisms/text-img-cta/v1/text-img-cta"
+                            authorType="path"
+                            imgAlignment="img-left"
+                            marginBottom="margin-bottom-x"
+                            marginTop="margin-top-x"
+                            mobileMarginBottom="m-margin-bottom-x"
+                            mobileMarginTop="m-margin-top-x"
+                            openRequestQuoteForm="false"
+                            pagePath="/content/lead2loyalty/language-masters/en/home-page/products/batteries-and-accessoris"
+                            productCategory="batteries-and-accessoris"
+                            textIsRich="true">
+                            <ctaButton jcr:primaryType="nt:unstructured">
+                                <item0
+                                    jcr:primaryType="nt:unstructured"
+                                    atmCtaLabel="View Products"
+                                    atmCtaLink="/content/lead2loyalty/language-masters/en/home-page/products"
+                                    atmCtaTarget="true"
+                                    atmCtaType="btn-primary"/>
+                            </ctaButton>
+                        </text_img_cta_19583_copy>
+                    </xp_container_9275655_1822097876>
+                    <text_img_cta_copy_co
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="lead2loyalty/components/content/organisms/text-img-cta/v1/text-img-cta"
+                        authorType="path"
+                        imgAlignment="img-right"
+                        marginBottom="margin-bottom-x"
+                        marginTop="margin-top-x"
+                        mobileMarginBottom="m-margin-bottom-x"
+                        mobileMarginTop="m-margin-top-x"
+                        openRequestQuoteForm="false"
+                        pagePath="/content/lead2loyalty/language-masters/en/home-page/products/iot-and-wireless"
+                        productCategory="iot-and-wireless"
+                        textIsRich="true">
                         <cq:responsive jcr:primaryType="nt:unstructured">
                             <default
                                 jcr:primaryType="nt:unstructured"
@@ -107,70 +155,11 @@
                                 atmCtaType="btn-primary"/>
                         </ctaButton>
                     </text_img_cta_copy_co>
-                    <xp_container_9275655_1822097876
-                        cq:styleIds="[1673004790935]"
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="lead2loyalty/components/content/organisms/xp-container">
-                        <text_img_cta_21958937571
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="lead2loyalty/components/content/organisms/text-img-cta/v1/text-img-cta"
-                            atmTextHtml="&lt;p>We as an organization, provide the best quality lithium batteries with all its accessories. Being a quality-driven organization we strive to bring forth a vast variety of Lithium Batteries at low price. We trust on customers satisfaction!! So we are always the first choice of our customers in the domain of lithium polymer battery.&lt;/p>&#xd;&#xa;&lt;p>Want to know more about different types of Batteries?&lt;/p>&#xd;&#xa;&lt;p>&lt;/p>&#xd;&#xa;"
-                            authorType="manual"
-                            fileReference="/content/dam/lead2loyalty/circuit-1.jpg"
-                            imgAlignment="img-left"
-                            marginBottom="margin-bottom-x"
-                            marginTop="margin-top-x"
-                            mobileMarginBottom="m-margin-bottom-x"
-                            mobileMarginTop="m-margin-top-x"
-                            productCategory="batteries-and-accessoris"
-                            productScrollId="batteries-and-accessories"
-                            textIsRich="true"
-                            title="Batteries &amp; Accessories">
-                            <ctaButton jcr:primaryType="nt:unstructured">
-                                <item0
-                                    jcr:primaryType="nt:unstructured"
-                                    atmCtaLabel="View Products"
-                                    atmCtaLink="/content/lead2loyalty/language-masters/en/home-page/products"
-                                    atmCtaTarget="true"
-                                    atmCtaType="btn-primary"/>
-                            </ctaButton>
-                        </text_img_cta_21958937571>
-                    </xp_container_9275655_1822097876>
-                    <text_img_cta_copy_co_307452288
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="lead2loyalty/components/content/organisms/text-img-cta/v1/text-img-cta"
-                        atmTextHtml="&lt;p>Internet of Things, or IoT Board, is a groundbreaking way to add convenience and flexibility to your life by connecting commonly used objects to the Internet and then controlling them through a WiFi connected device. Under the title IoT and wireless, we have ESP wifi modules, and Plug &amp; Play IoT switches which can control your Light, AC, Water Pump, or any other device you wish.&lt;/p>&#xd;&#xa;&lt;p>Want to know more about different type of IoT components?&lt;/p>&#xd;&#xa;&lt;p>&lt;/p>&#xd;&#xa;"
-                        authorType="manual"
-                        fileReference="/content/dam/lead2loyalty/cell-4.jpg"
-                        imgAlignment="img-right"
-                        marginBottom="margin-bottom-x"
-                        marginTop="margin-top-x"
-                        mobileMarginBottom="m-margin-bottom-x"
-                        mobileMarginTop="m-margin-top-x"
-                        productCategory="iot-and-wireless"
-                        productScrollId="iot-and-wireless"
-                        textIsRich="true"
-                        title="IoT and Wireless">
-                        <cq:responsive jcr:primaryType="nt:unstructured">
-                            <default
-                                jcr:primaryType="nt:unstructured"
-                                offset="0"
-                                width="12"/>
-                        </cq:responsive>
-                        <ctaButton jcr:primaryType="nt:unstructured">
-                            <item0
-                                jcr:primaryType="nt:unstructured"
-                                atmCtaLabel="View Products"
-                                atmCtaLink="/content/lead2loyalty/language-masters/en/home-page/products"
-                                atmCtaTarget="true"
-                                atmCtaType="btn-primary"/>
-                        </ctaButton>
-                    </text_img_cta_copy_co_307452288>
                     <xp_container_copy
                         cq:styleIds="[1670845915845]"
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="xpbootstrap/components/content/organisms/xp-container">
-                        <tiles_copy_copy
+                        <tiles
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="lead2loyalty/components/content/organisms/tiles/v1/tiles"
                             authorType="manual"
@@ -204,9 +193,9 @@
                                     productImageSource="/content/dam/lead2loyalty/circuit-8.jpg"
                                     productTitle="Order &amp; Purchase"/>
                             </tileListItems>
-                        </tiles_copy_copy>
+                        </tiles>
                     </xp_container_copy>
-                    <sales_tech_support_c
+                    <sales_tech_support
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="lead2loyalty/components/content/organisms/sales-tech-support/v1/sales-tech-support"
                         fileReference="/content/dam/lead2loyalty/circuit6.jpg"
@@ -230,7 +219,7 @@
                                 iconAlt="icon-2"
                                 title="Technical Support"/>
                         </saleSupportLinks>
-                    </sales_tech_support_c>
+                    </sales_tech_support>
                 </container>
             </container>
         </root>

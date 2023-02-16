@@ -8,8 +8,8 @@
         cq:template="/conf/lead2loyalty/settings/wcm/templates/product-detail-page"
         jcr:primaryType="cq:PageContent"
         jcr:title="Products"
-        pageType="Product list page"
         sling:resourceType="lead2loyalty/components/content/organisms/product-page"
+		pageType="Product list page"
         pwaCachestrategy="staleWhileRevalidate"
         pwaDisplay="standalone"
         pwaOrientation="any">
@@ -28,21 +28,21 @@
                         jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="lead2loyalty/components/content/organisms/product-listing/v1/product-listing"
-                        marginBottom="margin-bottom-x"
-                        filterLabel="Filter"
-                        sortByLabel="Sort By"
-                        sortBestSellerLabel="Best Seller"
-                        rootPagePath="/content/lead2loyalty/language-masters/en/home-page/products"
-                        sortPopularityLabel="Popularity"
                         clearFilterLabel="Clear All"
-                        marginTop="margin-top-5x"/>
+                        filterLabel="Filter"
+						marginBottom="margin-bottom-x"
+                        marginTop="margin-top-5x"
+						rootPagePath="/content/lead2loyalty/language-masters/en/home-page/products"
+                        sortBestSellerLabel="Best Seller"
+						sortByLabel="Sort By"
+                        sortPopularityLabel="Popularity"/>
                 </container>
             </container>
         </root>
     </jcr:content>
     <development-board/>
-    <electronic-components/>
     <sensors/>
+    <electronic-components/>
     <batteries-and-accessoris/>
     <iot-and-wireless/>
     <drone-parts/>
