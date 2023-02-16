@@ -23,16 +23,12 @@
                 sling:resourceType="xpbootstrap/components/content/molecules/mleBanner"/>
             <container jcr:primaryType="nt:unstructured">
                 <container
-                    jcr:lastModified="{Date}2022-12-13T15:24:44.133+05:30"
-                    jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="xpbootstrap/components/content/organisms/xp-container"
                     layout="responsiveGrid">
                     <product_details
                         jcr:created="{Date}2022-12-12T14:02:04.067+05:30"
                         jcr:createdBy="admin"
-                        jcr:lastModified="{Date}2023-02-02T11:32:51.543+05:30"
-                        jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="lead2loyalty/components/content/organisms/product-details/v1/product-details"
                         atmTextHtml="&lt;h4>Product Description&lt;/h4>&#xd;&#xa;&lt;p>Capacitive proximity sensor is suitable for a plastic target an inductive proximity sensor always requires a metal target. A proximity sensor is a sensor able to detect the presence of nearby objects without any physical contact. It emits an electromagnetic field or a beam of radiation (say infrared), and looks for changes in the field or return signal.&lt;/p>&#xd;&#xa;"
@@ -90,7 +86,7 @@
                                 jcr:createdBy="admin"
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="xpbootstrap/components/content/molecules/mleImage"
-                                atmIconSrcFileReference="/content/dam/lead2loyalty/crcuit-11.jpg"
+                                atmIconSrcFileReference="/content/dam/lead2loyalty/Proximity-Sensor.jpg"
                                 marginBottom="margin-bottom-x"
                                 marginTop="margin-top-x"
                                 mobileMarginBottom="m-margin-bottom-x"
@@ -99,7 +95,7 @@
                                 cq:panelTitle="image-2"
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="xpbootstrap/components/content/molecules/mleImage"
-                                atmIconSrcFileReference="/content/dam/lead2loyalty/circuit.jpg"
+                                atmIconSrcFileReference="/content/dam/lead2loyalty/crcuit-11.jpg"
                                 marginBottom="margin-bottom-x"
                                 marginTop="margin-top-x"
                                 mobileMarginBottom="m-margin-bottom-x"

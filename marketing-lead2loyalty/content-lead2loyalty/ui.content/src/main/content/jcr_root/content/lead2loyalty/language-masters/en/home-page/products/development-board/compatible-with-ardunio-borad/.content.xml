@@ -24,16 +24,12 @@
                 sling:resourceType="xpbootstrap/components/content/molecules/mleBanner"/>
             <container jcr:primaryType="nt:unstructured">
                 <container
-                    jcr:lastModified="{Date}2022-12-13T15:24:44.133+05:30"
-                    jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="xpbootstrap/components/content/organisms/xp-container"
                     layout="responsiveGrid">
                     <product_details
                         jcr:created="{Date}2022-12-12T14:02:04.067+05:30"
                         jcr:createdBy="admin"
-                        jcr:lastModified="{Date}2023-01-18T23:11:08.687+05:30"
-                        jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="lead2loyalty/components/content/organisms/product-details/v1/product-details"
                         atmTextHtml="&lt;h4>Product Description&lt;/h4>&#xd;&#xa;&lt;p>This little and very affordable microcontroller is an Esp8266-based development board produced by Espressif. It features an external antenna connector and female pin headers for all its GPIOs along the edge of this small board. Supported in the Arduino IDE, Esp8266-based boards offer a great alternative to an Arduino board, thanks to their low price and many features.&lt;/p>&#xd;&#xa;"
@@ -91,7 +87,7 @@
                                 jcr:createdBy="admin"
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="xpbootstrap/components/content/molecules/mleImage"
-                                atmIconSrcFileReference="/content/dam/lead2loyalty/crcuit-11.jpg"
+                                atmIconSrcFileReference="/content/dam/lead2loyalty/circuit-4.jpg"
                                 marginBottom="margin-bottom-x"
                                 marginTop="margin-top-x"
                                 mobileMarginBottom="m-margin-bottom-x"
@@ -100,7 +96,7 @@
                                 cq:panelTitle="image-2"
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="xpbootstrap/components/content/molecules/mleImage"
-                                atmIconSrcFileReference="/content/dam/lead2loyalty/circuit.jpg"
+                                atmIconSrcFileReference="/content/dam/lead2loyalty/crcuit-11.jpg"
                                 marginBottom="margin-bottom-x"
                                 marginTop="margin-top-x"
                                 mobileMarginBottom="m-margin-bottom-x"

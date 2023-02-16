@@ -23,16 +23,12 @@
                 sling:resourceType="xpbootstrap/components/content/molecules/mleBanner"/>
             <container jcr:primaryType="nt:unstructured">
                 <container
-                    jcr:lastModified="{Date}2022-12-13T15:24:44.133+05:30"
-                    jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="xpbootstrap/components/content/organisms/xp-container"
                     layout="responsiveGrid">
                     <product_details
                         jcr:created="{Date}2022-12-12T14:02:04.067+05:30"
                         jcr:createdBy="admin"
-                        jcr:lastModified="{Date}2023-02-02T12:22:27.593+05:30"
-                        jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="lead2loyalty/components/content/organisms/product-details/v1/product-details"
                         atmTextHtml="&lt;h4>Product Description&lt;/h4>&#xd;&#xa;&lt;p>This Arducam IMX477 High-Quality motorized focus camera module integrates a motor that could be controlled by software for a smarter focus, and you can use keyboard keys or OpenCV to remotely control the focusing process of your HQ camera. Field of View: 75° (H) on Raspberry Pi High-Quality Camera, 50°(H) on Raspberry Pi V1/V2 Camera&lt;/p>&#xd;&#xa;"
@@ -90,7 +86,7 @@
                                 jcr:createdBy="admin"
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="xpbootstrap/components/content/molecules/mleImage"
-                                atmIconSrcFileReference="/content/dam/lead2loyalty/crcuit-11.jpg"
+                                atmIconSrcFileReference="/content/dam/lead2loyalty/Camera-motor.jpg"
                                 marginBottom="margin-bottom-x"
                                 marginTop="margin-top-x"
                                 mobileMarginBottom="m-margin-bottom-x"
@@ -99,7 +95,7 @@
                                 cq:panelTitle="image-2"
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="xpbootstrap/components/content/molecules/mleImage"
-                                atmIconSrcFileReference="/content/dam/lead2loyalty/circuit.jpg"
+                                atmIconSrcFileReference="/content/dam/lead2loyalty/crcuit-11.jpg"
                                 marginBottom="margin-bottom-x"
                                 marginTop="margin-top-x"
                                 mobileMarginBottom="m-margin-bottom-x"

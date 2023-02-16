@@ -23,16 +23,12 @@
                 sling:resourceType="xpbootstrap/components/content/molecules/mleBanner"/>
             <container jcr:primaryType="nt:unstructured">
                 <container
-                    jcr:lastModified="{Date}2022-12-13T15:24:44.133+05:30"
-                    jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="xpbootstrap/components/content/organisms/xp-container"
                     layout="responsiveGrid">
                     <product_details
                         jcr:created="{Date}2022-12-12T14:02:04.067+05:30"
                         jcr:createdBy="admin"
-                        jcr:lastModified="{Date}2023-02-02T12:19:58.762+05:30"
-                        jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="lead2loyalty/components/content/organisms/product-details/v1/product-details"
                         atmTextHtml="&lt;h4>Product Description&lt;/h4>&#xd;&#xa;&lt;p>This DC 12V 4×4 16-Key Matrix Membrane Switch Keypad Keyboard is a high-quality soft-touch feeling button keypad with 100 million life-stroke lifespans and good resistance to environmental conditions. This DC 12V 4×4 Key Matrix Membrane Switch Keypad is a high-quality product at a meagre cost for your application needs and provides a useful human interface component for microcontroller projects. Convenient adhesive backing provides a simple way to mount the&amp;nbsp;keypad&amp;nbsp;in various applications.&lt;/p>&#xd;&#xa;"
@@ -90,7 +86,7 @@
                                 jcr:createdBy="admin"
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="xpbootstrap/components/content/molecules/mleImage"
-                                atmIconSrcFileReference="/content/dam/lead2loyalty/crcuit-11.jpg"
+                                atmIconSrcFileReference="/content/dam/lead2loyalty/Electronic-Switch-Keypad.jpg"
                                 marginBottom="margin-bottom-x"
                                 marginTop="margin-top-x"
                                 mobileMarginBottom="m-margin-bottom-x"
@@ -99,7 +95,7 @@
                                 cq:panelTitle="image-2"
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="xpbootstrap/components/content/molecules/mleImage"
-                                atmIconSrcFileReference="/content/dam/lead2loyalty/circuit.jpg"
+                                atmIconSrcFileReference="/content/dam/lead2loyalty/crcuit-11.jpg"
                                 marginBottom="margin-bottom-x"
                                 marginTop="margin-top-x"
                                 mobileMarginBottom="m-margin-bottom-x"

@@ -24,16 +24,12 @@
                 sling:resourceType="xpbootstrap/components/content/molecules/mleBanner"/>
             <container jcr:primaryType="nt:unstructured">
                 <container
-                    jcr:lastModified="{Date}2022-12-13T15:24:44.133+05:30"
-                    jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="xpbootstrap/components/content/organisms/xp-container"
                     layout="responsiveGrid">
                     <product_details
                         jcr:created="{Date}2022-12-12T14:02:04.067+05:30"
                         jcr:createdBy="admin"
-                        jcr:lastModified="{Date}2023-01-18T23:11:08.687+05:30"
-                        jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="lead2loyalty/components/content/organisms/product-details/v1/product-details"
                         atmTextHtml="&lt;h4>Product Description&lt;/h4>&#xd;&#xa;&lt;p>The Teensy 4.1 is the newest iteration of the astoundingly popular development platform that features an ARM Cortex-M7 processor at 600MHz, with an NXP iMXRT1062 chip, four times larger flash memory than the 4.0, and two new locations to optionally add more memory. The Teensy 4.1 is the same size and shape as the Teensy 3.6 (2.4in by 0.7in) and provides greater I/O capability, including an ethernet PHY, SD card socket, and USB host port.&lt;/p>&#xd;&#xa;"
@@ -91,7 +87,7 @@
                                 jcr:createdBy="admin"
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="xpbootstrap/components/content/molecules/mleImage"
-                                atmIconSrcFileReference="/content/dam/lead2loyalty/crcuit-11.jpg"
+                                atmIconSrcFileReference="/content/dam/lead2loyalty/circuit.jpg"
                                 marginBottom="margin-bottom-x"
                                 marginTop="margin-top-x"
                                 mobileMarginBottom="m-margin-bottom-x"
@@ -100,7 +96,7 @@
                                 cq:panelTitle="image-2"
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="xpbootstrap/components/content/molecules/mleImage"
-                                atmIconSrcFileReference="/content/dam/lead2loyalty/circuit.jpg"
+                                atmIconSrcFileReference="/content/dam/lead2loyalty/crcuit-11.jpg"
                                 marginBottom="margin-bottom-x"
                                 marginTop="margin-top-x"
                                 mobileMarginBottom="m-margin-bottom-x"
