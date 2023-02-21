@@ -6,7 +6,7 @@
     <div class="container my-5">
         <div class="row tile-header mb-4">
             <div class="d-flex flex-row w-100 justify-content-between">
-                <h4>${tilesModel.tileHeading}</h4>
+                <h4 class="col-8">${tilesModel.tileHeading}</h4>
                 <a href="${tilesModel.ctaLink}" class="mt-1" target="${tilesModel.ctaTarget}">${tilesModel.ctaLabel}</a>
             </div>
         </div>
@@ -14,7 +14,7 @@
         <div class="row">
             <sly data-sly-test="${tilesModel.authorType=='manual'}">
                 <sly data-sly-repeat.item="${tilesModel.tileListItems}">
-                    <div class="col-3">
+                    <div class="col-lg-3 col-md-4 col-sm-12 mb-5">
                         <a href="${item.productPath}" class="text-decoration-none">
                             <div class="card">
                                 <img class="card-img-top" src="${item.productImageSource}" alt="Tile image alt text">
@@ -29,7 +29,7 @@
             </sly>
             <sly data-sly-test="${tilesModel.authorType=='path'}">
                 <sly data-sly-repeat.item="${tilesModel.tilePathListItems}">
-                    <div class="col-3">
+                    <div class="col-lg-3 col-md-4 col-sm-12 mt-5">
                         <a href="${item.productPath}" class="text-decoration-none">
                             <div class="card">
                                 <img class="card-img-top" src="${item.productImageSource}" alt="Tile image alt text">

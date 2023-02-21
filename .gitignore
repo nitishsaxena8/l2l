@@ -15,3 +15,6 @@
 .idea
 .idea/*
 
+xpbootstrap/apps-xpbootstrap/core/target/
+xpbootstrap/apps-xpbootstrap/ui.apps/target/classes/org/apache/sling/scripting/sightly/apps/xpbootstrap/components/master/molecules/mleEmbed/v1/mleEmbed/embeddable/embeddable__002e__html.class
+xpbootstrap/

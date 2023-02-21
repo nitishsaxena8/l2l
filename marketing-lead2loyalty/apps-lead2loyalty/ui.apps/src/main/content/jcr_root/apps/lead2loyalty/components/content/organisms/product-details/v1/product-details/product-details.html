@@ -8,10 +8,10 @@
 
 <div class="row ${properties.marginTop} ${properties.mobileMarginTop} ${properties.marginBottom} ${properties.mobileMarginBottom}">
     <div class="row ">
-        <div class="col-6">
+        <div class="col-md-6 col-sm-12">
             <div data-sly-resource="${'banner' @resourceType='xpbootstrap/components/content/organisms/carousel'}"></div>
         </div>
-        <div class="col-6">
+        <div class="col-md-6 col-sm-12">
             <div class="product-heading">
                 <div class="d-flex justify-content-between">
                     <div>
@@ -45,9 +45,9 @@
                     <div class="row justify-content-center">
                         <div class="col-12">
                             <form class="share-team-form" id="shareWithTeamForm">
-								<div class="alert alert-success form-success-container share-with-team d-none">
-									The requested details will be shared with the recipient shortly. Thank you!
-								</div>
+                                <div class="alert alert-success form-success-container share-with-team d-none">
+                                    The requested details will be shared with the recipient shortly. Thank you!
+                                </div>
                                 <p class="mb-4">${productModel.modalDesc}</p>
 
                                 <div class="row mb-4 team-line-item">
@@ -68,11 +68,11 @@
                                     <button type="button" class="btn btn-link add-team-details text-decoration-none mb-2">+ Add More</button>
                                 </div> -->
 
-								<hr class="hr" />
+                                <hr class="hr" />
 
-								<div class="d-flex justify-content-end">
-									<button type="submit" class="btn btn-primary submit-btn">${productModel.modalCtaLabel}</button>
-								</div>
+                                <div class="d-flex justify-content-end">
+                                    <button type="submit" class="btn btn-primary submit-btn">${productModel.modalCtaLabel}</button>
+                                </div>
                             </form>
                         </div>
                     </div>

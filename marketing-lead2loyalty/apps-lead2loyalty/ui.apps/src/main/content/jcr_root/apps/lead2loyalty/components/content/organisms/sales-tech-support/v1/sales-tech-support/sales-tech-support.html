@@ -3,12 +3,12 @@
      data-sly-use.salesModel="com.deloitte.aem.lead2loyalty.core.models.SalesSupportModel" />
 
 <div class="${properties.marginTop} ${properties.mobileMarginTop} ${properties.marginBottom} ${properties.mobileMarginBottom}">
-    <div class="container my-5">
+    <div class="container">
         <div class="row">
-            <div class="col-5 p-0">
+            <div class="col-md-4 col-sm-12">
                 <img src="${salesModel.image}" alt="${ticModel.imageAlt}" class="w-100" style="max-height:300px;">
             </div>
-            <div class="col-7">
+            <div class="col-md-8 col-sm-12 mt-4">
                 <div class="row h-100 ms-5 align-items-center">
                     <sly data-sly-list.child="${salesModel.saleSupportLinks.listChildren}">
                         <div class="col-6">
@@ -16,7 +16,7 @@
                             <h5 class="mt-5">${child.title}</h5>
                             <div class="text-decoration-none">${child.atmTextHtml @context='html'}</div>
                         </div>
-                     </sly>
+                    </sly>
                 </div>
             </div>
         </div>
