@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="AEM Marketo Form Integration"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[lead2loyalty.author]">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <product-tiles
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Product Title"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <formDetails
+                                                jcr:primaryType="nt:unstructured"
+                                                jcr:title="Marketo Form Details"
+                                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <marketoFormId
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Marketo Form ID"
+                                                        name="./formID"/>
+                                                    <formTitle
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Marketo Form Title"
+                                                        name="./formTitle"/>
+                                                    <ctaLabel
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="CTA Label"
+                                                        name="./ctaLabel"/>
+                                                    <aemFormPath
+                                                        cq:showOnCreate="{Boolean}true"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                                        fieldDescription="AEM Form Component Path"
+                                                        fieldLabel="AEM Form Component Path"
+                                                        name="./aemFormPath"
+                                                        rootPath="/content/"/>
+                                                    <downloadPdfPath
+                                                        cq:showOnCreate="{Boolean}true"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                                        fieldDescription="Path for PDF to be downloaded"
+                                                        fieldLabel="PDF Path"
+                                                        name="./downloadPdfPath"
+                                                        rootPath="/content/dam/lead2loyalty/"/>
+                                                </items>
+                                            </formDetails>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </product-tiles>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>
