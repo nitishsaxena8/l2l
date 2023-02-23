@@ -8,8 +8,9 @@
         jcr:description="We as an organization, provide the best quality lithium batteries with all its accessories. Being a quality-driven organization we strive to bring forth a vast variety of Lithium Batteries at low price. We trust on customers satisfaction!! So we are always the first choice of our customers in the domain of lithium polymer battery.&#xd;&#xa;&lt;p>&lt;/p>&#xd;&#xa;Want to know more about different types of Batteries?"
         jcr:primaryType="cq:PageContent"
         jcr:title="Batteries &amp; Accessories"
-        sling:resourceType="lead2loyalty/components/content/organisms/page"
-        pageType="Product Category page">
+        sling:resourceType="lead2loyalty/components/content/organisms/product-category-page"
+        pageType="Product Category page"
+        showInNav="true">
         <root
             jcr:primaryType="nt:unstructured"
             sling:resourceType="xpbootstrap/components/content/organisms/xp-container"

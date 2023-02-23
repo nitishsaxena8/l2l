@@ -14,7 +14,8 @@
         image="/content/dam/lead2loyalty/circuit-10.jpg"
         pwaCachestrategy="staleWhileRevalidate"
         pwaDisplay="standalone"
-        pwaOrientation="any">
+        pwaOrientation="any"
+        showInNav="true">
         <root
             jcr:primaryType="nt:unstructured"
             sling:resourceType="xpbootstrap/components/content/organisms/xp-container"

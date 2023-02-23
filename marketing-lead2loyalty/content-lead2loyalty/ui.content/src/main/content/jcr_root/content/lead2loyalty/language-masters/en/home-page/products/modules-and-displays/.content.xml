@@ -8,8 +8,9 @@
         jcr:description="Modules and Displays description."
         jcr:primaryType="cq:PageContent"
         jcr:title="Modules and Displays"
-        sling:resourceType="lead2loyalty/components/content/organisms/page"
-        pageType="Product Category page">
+        sling:resourceType="lead2loyalty/components/content/organisms/product-category-page"
+        pageType="Product Category page"
+        showInNav="true">
         <root
             jcr:primaryType="nt:unstructured"
             sling:resourceType="xpbootstrap/components/content/organisms/xp-container"

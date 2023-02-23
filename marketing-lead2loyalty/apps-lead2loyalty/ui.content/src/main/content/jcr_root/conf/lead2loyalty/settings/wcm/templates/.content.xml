@@ -2,8 +2,11 @@
 <jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:rep="internal"
     jcr:mixinTypes="[rep:AccessControllable]"
     jcr:primaryType="cq:Page">
+	<product-category-page/>
     <product-detail-page/>
+	<product-listing-page/>
     <home-page/>
+    <form-page/>
     <xf-web-variation/>
     <rep:policy/>
 </jcr:root>

@@ -31,7 +31,7 @@
                         tr_linkTitle="Home"/>
                     <item1
                         jcr:primaryType="nt:unstructured"
-                        linkUrl="#"
+                        linkUrl="/content/lead2loyalty/language-masters/en/home-page/products"
                         openInNewWindow="false"
                         tr_linkTitle="Products">
                         <secondaryLinks jcr:primaryType="nt:unstructured">

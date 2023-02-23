@@ -12,7 +12,8 @@
 		pageType="Product list page"
         pwaCachestrategy="staleWhileRevalidate"
         pwaDisplay="standalone"
-        pwaOrientation="any">
+        pwaOrientation="any"
+        showInNav="true">
         <root
             jcr:primaryType="nt:unstructured"
             sling:resourceType="xpbootstrap/components/content/organisms/xp-container"

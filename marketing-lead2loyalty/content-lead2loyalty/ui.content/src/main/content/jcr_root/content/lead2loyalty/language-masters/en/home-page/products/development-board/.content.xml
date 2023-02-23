@@ -8,8 +8,9 @@
         jcr:description="Find the best-suited development boards from all leading brands as well as generic ones for beginners to expert level. Your users in Shanghai will get the same capabilities and purchasing experience as those in San Francisco, only in their own language.&#xd;&#xa;&lt;p>&lt;/p>&#xd;&#xa;Want to know more about different types of development boards?"
         jcr:primaryType="cq:PageContent"
         jcr:title="Development Board"
-        sling:resourceType="lead2loyalty/components/content/organisms/page"
-        pageType="Product Category page">
+        sling:resourceType="lead2loyalty/components/content/organisms/product-category-page"
+        pageType="Product Category page"
+        showInNav="true">
         <root
             jcr:primaryType="nt:unstructured"
             sling:resourceType="xpbootstrap/components/content/organisms/xp-container"
