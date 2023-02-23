@@ -43,7 +43,7 @@ public class HeaderModel {
 	private String rowLabel;
 
 	@ChildResource(name = "secondaryLinks")
-	public List<SecondaryListModel > secondaryLinks;
+	public List<NavSecondaryListModel> secondaryLinks;
 
 	public String getLinkTitle() {
 		return linkTitle;
@@ -61,7 +61,7 @@ public class HeaderModel {
 		return rowLabel;
 	}
 
-	public List<SecondaryListModel > getSecondaryLinks() {
+	public List<NavSecondaryListModel> getSecondaryLinks() {
 		return secondaryLinks;
 	}
 

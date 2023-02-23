@@ -15,7 +15,7 @@ import javax.inject.Named;
 
 @Model(adaptables = { SlingHttpServletRequest.class,
 		Resource.class }, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
-public class SecondaryListModel {
+public class NavSecondaryListModel {
 	
 	@ValueMapValue
 	@Named("tr_secondarylinkTitle")
@@ -43,6 +43,10 @@ public class SecondaryListModel {
 
 	public String getSecondarylinkUrl() {
 		return ServiceUtils.getLink(resourceResolver, secondarylinkUrl, settingsService);
+	}
+
+	public String getSecondarylinkUrlPath() {
+		return secondarylinkUrl;
 	}
 
 	public void setSecondarylinkUrl(String secondarylinkUrl) {
