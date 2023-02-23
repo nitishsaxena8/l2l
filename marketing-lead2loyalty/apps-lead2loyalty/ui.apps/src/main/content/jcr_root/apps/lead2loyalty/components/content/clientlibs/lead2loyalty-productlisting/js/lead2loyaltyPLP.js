@@ -212,20 +212,24 @@ $("body").on("click", "#btnExport", function () {
 
 $( document ).ready(function() {
     $('#requestAQuoteMember').click(function(event) {
-    	$("#guideContainerForm input").change(function() { 
-            $('.form-success-container').addClass('d-none'); 
-        });     $('.request-quote-btn').click(function(event) {
-            $('.form-success-container').addClass('d-none'); 
+    	$("#guideContainerForm input").change(function() {
+            $('.form-success-container').addClass('d-none');
+        }); $('.request-quote-btn').click(function(event) {
+            $('.form-success-container').addClass('d-none');
         });
 
         var quote = {};
+        var formID = 1008;
+        if($('.form-data-container').attr('id') != 'undefined'){
+			formID = $('.form-data-container').attr('id');
+        }
 
         if (localStorage.getItem('userDetails')) {
             var user = JSON.parse(localStorage.getItem('userDetails'));
             if (user) {
 
 				quote = {
-                    "firstName": user.email,
+                    "firstName": user.firstName,
                     "lastName": user.lastName,
                     "email": user.email
                 }
@@ -248,19 +252,23 @@ $( document ).ready(function() {
             quote["productPath"] = $('.product-page-details', parent.document).attr("product-path");
         }
 
-        MktoForms2.loadForm("//733-JCL-696.mktoweb.com", "733-JCL-696", 1008, function(form) {
+        MktoForms2.loadForm("//733-JCL-696.mktoweb.com", "733-JCL-696", formID, function(form) {
             form.addHiddenFields(quote);
             form.submit();
             console.log("Form Submitted !!!")
 			console.log(quote);
             form.onSuccess(function(vals,thanksURL){
-                $('.form-success-container', parent.document).removeClass('d-none'); 
+                $('.form-success-container', parent.document).removeClass('d-none');
                 digitalData.event = 'formSubmission';
                 digitalData.form = {};
                 digitalData.form.formName = 'Request Quote';
                 return false;
             });
         });
+        var downloadResourcePath = $('.form-data-container').data('path');
+        if(downloadResourcePath !== 'undefined') {
+            window.location.href = downloadResourcePath;
+        }
 
         if ($('.product-page-details', parent.document) && $('.product-page-details', parent.document).attr("product-title")) {
             $('#requestAQuotemdelTitle', parent.document).text("Request a Quote - "+$('.product-page-details', parent.document).attr("product-title"));

@@ -89,10 +89,10 @@ $( document ).ready(function() {
         $('.signup-success-container').addClass('d-none');
         $('.signup-success-container').text('');
 
-        $("#guideContainerForm input").change(function() { 
-            $('.form-success-container').addClass('d-none'); 
-        });     $('.request-quote-btn').click(function(event) {
-            $('.form-success-container').addClass('d-none'); 
+        $("#guideContainerForm input").change(function() {
+            $('.form-success-container').addClass('d-none');
+        }); $('.request-quote-btn').click(function(event) {
+            $('.form-success-container').addClass('d-none');
         });
 
         var quote = collectFormData("quote");
@@ -103,6 +103,35 @@ $( document ).ready(function() {
         }
 
     });
+
+    	$( ".request-detailed-specs-submit-btn button" ).on( "click", function() {
+
+            $('.signup-fail-container').addClass('d-none');
+    		$('.signup-fail-container').text('');
+            $('.signup-success-container').addClass('d-none');
+            $('.signup-success-container').text('');
+
+            $("#guideContainerForm input").change(function() {
+                $('.form-success-container').addClass('d-none');
+            }); $('.request-quote-btn').click(function(event) {
+                $('.form-success-container').addClass('d-none');
+            });
+
+            var formID = 0;
+            if($('.form-data-container', parent.document).attr("id") !== 'undefined') {
+                formID = $('.form-data-container', parent.document).attr("id");
+            }
+            var quote = collectFormData("quote");
+            delete quote.submit;
+
+            if(quote != false) {
+                callMarketoForm(quote, formID);
+            }
+            if($('.form-data-container', parent.document).attr("data-path") !== 'undefined') {
+                window.location.href = $('.form-data-container', parent.document).attr("data-path");
+            }
+
+        });
 
     function collectFormData(type) {
 		var loginData = {};
@@ -154,7 +183,7 @@ $( document ).ready(function() {
 
             form.onSuccess(function(vals,thanksURL){
                 $('.form-success-container', parent.document).removeClass('d-none');
-                $('.form-success-container', parent.document).text('Request for Quote Submitted Successfully !!!');
+                $('.form-success-container', parent.document).text('Request Submitted Successfully !!!');
 
                 //analytics
                 parent.window.digitalData.event = 'formSubmission';
