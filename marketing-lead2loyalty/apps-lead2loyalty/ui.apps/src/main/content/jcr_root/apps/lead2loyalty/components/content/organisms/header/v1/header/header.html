@@ -32,32 +32,32 @@
                                 <a class="nav-link dropdown-toggle" href="${primaryLink.linkUrl}" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
                                     ${primaryLink.linkTitle}
                                 </a>
-								<ul class="dropdown-menu">
-									<sly data-sly-list.levelOneLink="${dropdownNav.firstLevelLinks}">
-										<li class="nav-item dropend">
-											<a class="nav-link dropdown-toggle" href="${levelOneLink.url}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-												${levelOneLink.text}
-											</a>
-											<ul class="dropdown-menu">
-												<sly data-sly-list.levelTwoLink="${levelOneLink.secondaryLinks}">
-													<li>
-														<a class="dropdown-item" href="${levelTwoLink.secondarylinkUrlPath}">
-															${levelTwoLink.secondarylinkTitle}
-														</a>
-													</li>
-												</sly>
-												<li class="nav-item dropend">
-													<a class="nav-link dropdown-toggle" href="${levelOneLink.url}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-														More
-													</a>
-												</li>
-											</ul>
-										</li>
-									</sly>
-									<li class="nav-item ">
+                                <ul class="dropdown-menu">
+                                    <sly data-sly-list.levelOneLink="${dropdownNav.firstLevelLinks}">
+                                        <li class="nav-item dropend">
+                                            <a class="nav-link dropdown-toggle" href="${levelOneLink.url}" role="button" aria-expanded="false">
+                                                ${levelOneLink.text}
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                <sly data-sly-list.levelTwoLink="${levelOneLink.secondaryLinks}">
+                                                    <li>
+                                                        <a class="dropdown-item" href="${levelTwoLink.secondarylinkUrlPath}">
+                                                            ${levelTwoLink.secondarylinkTitle}
+                                                        </a>
+                                                    </li>
+                                                </sly>
+                                                <li class="nav-item dropend">
+                                                    <a class="nav-link dropdown-toggle" href="${levelOneLink.url}" role="button" aria-expanded="false">
+                                                        More
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </sly>
+                                    <li class="nav-item ">
                                         <a class="dropdown-item" href="${primaryLink.linkUrl}">All Products</a>
                                     </li>
-								</ul>
+                                </ul>
                             </li>
                         </sly>
                     </sly>
@@ -112,7 +112,7 @@
             <div class="modal-body">
                 <form id="signInForm">
 
-					<p class="sign-in-error text-danger d-none">Sign in Error</p>
+                    <p class="sign-in-error text-danger d-none">Sign in Error</p>
                     <div class="form-outline mb-4">
                         <label class="form-label" for="loginEmail">Email address</label>
                         <input type="email" id="loginEmail" name="email" class="form-control" required/>
@@ -126,11 +126,9 @@
                     <button type="submit" class="btn btn-primary btn-block mb-1 w-100 login-btn">Sign in</button>
                 </form>
             </div>
-			<div class="modal-footer">
-				<a class="btn btn-primary w-100 mb-3" href="${loginModel.signUpPageUrl}" role="button">Register</a>
+            <div class="modal-footer">
+                <a class="btn btn-primary w-100 mb-3" href="${loginModel.signUpPageUrl}" role="button">Register</a>
             </div>
         </div>
     </div>
 </div>
-
-

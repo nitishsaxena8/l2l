@@ -1,11 +1,23 @@
 <sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"
 	 data-sly-call="${template.placeholder @ isEmpty=true}"/>
-
-<div class="form-data-container d-none" id="${properties.formID}" data-path="${properties.downloadPdfPath}"></div>
-<p class="form-success-container request-quote-member text-success d-none">Request successfully submitted !!!</p>
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" id="requestAQuoteGuest" data-target="#requestAQuote1" data-toggle="modal">${properties.ctaLabel}</button>
-<button type="button" class="btn btn-primary d-none" id="requestAQuoteMember">${properties.ctaLabel}</button>
-
+<div class="row">
+	<div class="col-6"></div>
+	<div class="col-6">
+		<div class="d-flex">
+			<p class="form-success-container request-quote-member text-success d-none">Request successfully submitted !!!</p>
+		</div>
+	</div>
+</div>
+<div class="row pb-4">
+	<div class="col-6"></div>
+	<div class="col-6">
+		<div class="d-flex">
+			<div class="form-data-container d-none" id="${properties.formID}" data-path="${properties.downloadPdfPath}"></div>
+			<button type="button" class="btn btn-primary" data-bs-toggle="modal" id="requestAQuoteGuest" data-target="#requestAQuote1" data-toggle="modal">${properties.ctaLabel}</button>
+			<button type="button" class="btn btn-primary d-none" id="requestAQuoteMember">${properties.ctaLabel}</button>
+		</div>
+	</div>
+</div>
 <script src="//733-JCL-696.mktoweb.com/js/forms2/js/forms2.min.js"></script>
 <form id="mktoForm_${properties.formID}" style="display: none;"></form>
 <script>

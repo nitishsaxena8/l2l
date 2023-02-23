@@ -785,8 +785,8 @@ button#shareWithTeamsBtn {
 }
 .dropdown:hover > .dropdown-menu, .dropend:hover > .dropdown-menu{
     display: block;
-    margin-top: .125em;
-    margin-left: .125em;
+    margin-top: .05em;
+    margin-left: .05em;
 }
 @media screen and (min-width:769px) {
     .dropend:hover > .dropdown-menu{
