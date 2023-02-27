@@ -4,7 +4,7 @@
 <sly data-sly-test="${properties.authorType}">
     <sly data-sly-use.tilesModel="com.deloitte.aem.lead2loyalty.core.models.TilesModel" />
     <div class="container my-5">
-        <div class="row tile-header mb-4">
+        <div class="row tile-header">
             <div class="d-flex flex-row w-100 justify-content-between">
                 <h4>${tilesModel.tileHeading}</h4>
                 <a href="${tilesModel.ctaLink}" class="mt-1" target="${tilesModel.ctaTarget}">${tilesModel.ctaLabel}</a>

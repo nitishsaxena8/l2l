@@ -788,6 +788,17 @@ button#shareWithTeamsBtn {
     margin-top: .05em;
     margin-left: .05em;
 }
+
+h5.card-title,h5.card-text {
+    min-height:48px;
+    margin-bottom:0;
+}
+
+.custom-image-height {
+    max-height:400px;
+    padding:0 36px;
+}
+
 @media screen and (min-width:769px) {
     .dropend:hover > .dropdown-menu{
         position: absolute;

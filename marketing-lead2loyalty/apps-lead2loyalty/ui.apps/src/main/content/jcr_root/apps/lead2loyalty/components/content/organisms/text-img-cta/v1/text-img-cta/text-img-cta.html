@@ -7,11 +7,11 @@
 		<div class="container my-5">
 			<div class="${ticModel.imgAlignment == 'img-right' ? 'row flex-row-reverse' : ''} row">
 				<div class="col-md-6 col-sm-12 p-0">
-					<img src="${ticModel.image}" alt="${ticModel.imageAlt}" class="w-100" style="max-height:400px;">
+					<img src="${ticModel.image}" alt="${ticModel.imageAlt}" class="w-100 custom-image-height">
 				</div>
-				<div class="col-md-6 col-sm-12 mt-4 mb-mt-0" >
+				<div class="col-md-6 col-sm-12" >
 					<div class="row h-100 mx-2 align-items-center">
-						<div>
+						<div class="col">
 							<h4>${ticModel.title}</h4>
 							<p class="mt-5"> ${ticModel.description @context='html'}</p>
 							<sly data-sly-test="${properties.openRequestQuoteForm != 'true'}" data-sly-list.child="${ticModel.ctaModelList}">
