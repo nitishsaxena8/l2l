@@ -1,0 +1,27 @@
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"
+	 data-sly-call="${template.placeholder @ isEmpty='true'}"
+	 data-sly-use.articleListingModel="com.deloitte.aem.lead2loyalty.core.models.ArticleListingModel" />
+
+<div class="${properties.marginTop} ${properties.mobileMarginTop} ${properties.marginBottom} ${properties.mobileMarginBottom}">
+</div>
+
+<div class="container my-5">
+	<div class="row container">
+		<sly data-sly-test="${properties.rootPagePath}">
+			<!--/* ----------------- results start ------------------ */-->
+			<sly data-sly-repeat.article="${articleListingModel.articleList}">
+				<div class="col-lg-3 col-md-4 col-sm-12 mt-5">
+					<a href="${article.path}" class="text-decoration-none">
+						<div class="card">
+							<img class="card-img-top" src="${article.image}" alt="Tile image alt text">
+							<div class="card-body">
+								<h5 class="card-title">${article.title}</h5>
+							</div>
+						</div>
+					</a>
+				</div>
+			</sly>
+			<!--/* ----------------- results end ------------------ */-->
+		</sly>
+	</div>
+</div>
