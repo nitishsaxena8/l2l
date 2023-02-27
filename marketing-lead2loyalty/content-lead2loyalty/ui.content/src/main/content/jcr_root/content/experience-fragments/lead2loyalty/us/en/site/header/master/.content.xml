@@ -56,17 +56,17 @@
                     </item1>
                     <item2
                             jcr:primaryType="nt:unstructured"
-                            linkUrl="#"
+                            linkUrl="/content/lead2loyalty/language-masters/en/article-page"
                             openInNewWindow="false"
-                            tr_linkTitle="Training"/>
+                            tr_linkTitle="Articles"/>
                     <item3
                             jcr:primaryType="nt:unstructured"
-                            linkUrl="#"
+                            linkUrl="/content/lead2loyalty/language-masters/en/about-us"
                             openInNewWindow="false"
                             tr_linkTitle="About"/>
                     <item4
                             jcr:primaryType="nt:unstructured"
-                            linkUrl="#"
+                            linkUrl="/content/lead2loyalty/language-masters/en/contact-us"
                             openInNewWindow="false"
                             tr_linkTitle="Contact Us"/>
                 </utilityLinks>

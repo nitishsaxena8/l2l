@@ -78,9 +78,42 @@ $( document ).ready(function() {
                   }
                 });
             }
-
     });
 
+//Contact us
+    $( ".contactus-submit-btn button" ).on( "click", function() {
+
+        $('.signup-fail-container').addClass('d-none');
+    	$('.signup-fail-container').text('');
+        $('.signup-success-container').addClass('d-none');
+        $('.signup-success-container').text('');
+
+        $("#guideContainerForm input").change(function() {
+            $('.form-success-container').addClass('d-none');
+        });
+        $('.request-quote-btn').click(function(event) {
+            $('.form-success-container').addClass('d-none');
+        });
+
+        var contactUsFormData = collectFormData("contactus");
+
+        if(contactUsFormData != false) {
+            MktoForms2.loadForm("//733-JCL-696.mktoweb.com", "733-JCL-696", 1025, function(form) {
+                form.addHiddenFields(contactUsFormData);
+                form.submit();
+
+                form.onSuccess(function(vals,thanksURL){
+                    $('.form-success-container', parent.document).removeClass('d-none');
+                        //analytics
+                        parent.window.digitalData.event = 'formSubmission';
+                        parent.window.digitalData.form = {};
+                        parent.window.digitalData.form.formName = 'Contact Us';
+                    return false;
+                });
+            });
+        }
+    });
+// contact us close
 
 	$( ".quote-submit-btn button" ).on( "click", function() {
 
@@ -104,34 +137,34 @@ $( document ).ready(function() {
 
     });
 
-    	$( ".request-detailed-specs-submit-btn button" ).on( "click", function() {
+    $( ".request-detailed-specs-submit-btn button" ).on( "click", function() {
 
-            $('.signup-fail-container').addClass('d-none');
-    		$('.signup-fail-container').text('');
-            $('.signup-success-container').addClass('d-none');
-            $('.signup-success-container').text('');
+        $('.signup-fail-container').addClass('d-none');
+    	$('.signup-fail-container').text('');
+        $('.signup-success-container').addClass('d-none');
+        $('.signup-success-container').text('');
 
-            $("#guideContainerForm input").change(function() {
-                $('.form-success-container').addClass('d-none');
-            }); $('.request-quote-btn').click(function(event) {
-                $('.form-success-container').addClass('d-none');
-            });
+        $("#guideContainerForm input").change(function() {
+            $('.form-success-container').addClass('d-none');
+        }); $('.request-quote-btn').click(function(event) {
+            $('.form-success-container').addClass('d-none');
+        });
 
-            var formID = 0;
-            if($('.form-data-container', parent.document).attr("id") !== 'undefined') {
-                formID = $('.form-data-container', parent.document).attr("id");
-            }
-            var quote = collectFormData("quote");
-            delete quote.submit;
+        var formID = 0;
+        if($('.form-data-container', parent.document).attr("id") !== 'undefined') {
+            formID = $('.form-data-container', parent.document).attr("id");
+        }
+        var quote = collectFormData("quote");
+        delete quote.submit;
 
-            if(quote != false) {
-                callMarketoForm(quote, formID);
-            }
+        if(quote.FirstName !=='' && quote.LastName !=='' && quote.Email !=='' && quote.TermsAndConditions === '0') {
+            callMarketoForm(quote, formID);
             if($('.form-data-container', parent.document).attr("data-path") !== 'undefined') {
                 window.location.href = $('.form-data-container', parent.document).attr("data-path");
             }
+        }
 
-        });
+    });
 
     function collectFormData(type) {
 		var loginData = {};
@@ -158,7 +191,7 @@ $( document ).ready(function() {
         return loginData;
     }
 
-    function callMarketoForm (loginData, formId) {
+    function callMarketoForm (loginData, formID) {
 		if ($('.product-page-details', parent.document).attr('product-id') !== 'undefined') {
             loginData["productId"] = $('.product-page-details', parent.document).attr("product-id");
         }
@@ -177,7 +210,7 @@ $( document ).ready(function() {
 
         console.log(loginData);
 
-        MktoForms2.loadForm("//733-JCL-696.mktoweb.com", "733-JCL-696", formId, function(form) {
+        MktoForms2.loadForm("//733-JCL-696.mktoweb.com", "733-JCL-696", formID, function(form) {
 			form.addHiddenFields(loginData);
             form.submit();
 
@@ -188,7 +221,11 @@ $( document ).ready(function() {
                 //analytics
                 parent.window.digitalData.event = 'formSubmission';
                 parent.window.digitalData.form = {};
-                parent.window.digitalData.form.formName = 'Request Quote';
+                if(formID === '1008') {
+                    parent.window.digitalData.form.formName = 'Request Quote';
+                } else if(formID === '1024') {
+                    parent.window.digitalData.form.formName = 'Request Detailed Specs';
+                }
                 return false;
             });
         });

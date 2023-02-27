@@ -5,7 +5,7 @@ if(localStorage.getItem('userDetails')) {
 
 
 
-if (digitalData && digitalData.user && digitalData.user.profile && digitalData.user.profile.email) {
+if (digitalData && digitalData.user && digitalData.user.email) {
    $("#requestAQuoteMember").removeClass("d-none");
    $("#requestAQuoteGuest").addClass("d-none");
 } else {
@@ -82,6 +82,7 @@ if($('#shareWithTeamsBtnModal').length) {
             event.preventDefault();
 			var requestData = [];
             var transferSingleObj = {};
+            var pagePath= '';
             if($('.share-team-form input').length) {
                 $.each($('.share-team-form .team-line-item'), function(index, obj) {
 					var dataObj = {};
@@ -95,6 +96,7 @@ if($('#shareWithTeamsBtnModal').length) {
                         dataObj.productTitle = $('.product-page-details').attr('product-title');
                         dataObj.productDescription = $('.product-page-details').attr('product-description');
                         dataObj.productPath = $('.product-page-details').attr('product-path');
+                        pagePath = dataObj.productPath;
                         //requestData.push(JSON.stringify(dataObj));
 
                         if(index === 0) {
@@ -113,7 +115,7 @@ if($('#shareWithTeamsBtnModal').length) {
                     $(".form-success-container.share-with-team", parent.document).removeClass('d-none');
                     digitalData.event = 'formSubmission';
                 	digitalData.form = {};
-                	digitalData.form.formName = 'Share with Team';
+                	digitalData.form.formName = pagePath.includes("/products") ? 'Share with Team' : 'Share the Article';
                     return false;
                 });
             });
@@ -261,7 +263,12 @@ $( document ).ready(function() {
                 $('.form-success-container', parent.document).removeClass('d-none');
                 digitalData.event = 'formSubmission';
                 digitalData.form = {};
-                digitalData.form.formName = 'Request Quote';
+                if(formID == 1008){
+                    digitalData.form.formName = 'Request Quote';
+                } else if(formID == 1024){
+                    digitalData.form.formName = 'Request Detailed Specs';
+                }
+
                 return false;
             });
         });

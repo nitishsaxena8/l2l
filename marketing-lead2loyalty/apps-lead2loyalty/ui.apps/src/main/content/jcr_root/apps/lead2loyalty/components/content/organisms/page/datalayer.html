@@ -33,10 +33,7 @@
 
 		digitalData.user.authState = 'authenticate';
         digitalData.user.userType = 'member';
-        digitalData.user.profile = {
-            'userID' : user.email,
-			'email' : user.email
-        };
+		digitalData.user.email = user.email;
     }
 
     digitalData.ecommerce = {
@@ -50,7 +47,4 @@
     digitalData.ecommerce.detail.actionField = {
 
     };
-
-
-
 </script>
