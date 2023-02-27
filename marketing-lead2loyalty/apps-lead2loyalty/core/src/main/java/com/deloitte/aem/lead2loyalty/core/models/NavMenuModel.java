@@ -59,7 +59,8 @@ public class NavMenuModel {
 					NavPrimaryListModel categoryPageInfo = new NavPrimaryListModel();
 					categoryPageInfo.setText(categoryValueMap.get(JcrConstants.JCR_TITLE, ""));
 					categoryPageInfo.setUrl(ServiceUtils.getLink(resourceResolver, categoryResource.getPath(), settingsService));
-
+					String categoryParam = settingsService.getRunModes().contains("author") ? "&category="+categoryResource.getName() : "?category="+categoryResource.getName();
+					categoryPageInfo.setSecondLevelMoreLink(ServiceUtils.getLink(resourceResolver, categoryResource.getParent().getPath(), settingsService) + categoryParam);
 					//to set product page links
 					List<NavSecondaryListModel> secondaryLinks=new ArrayList<>();
 					Iterator<Resource> childResources2 = categoryResource.listChildren();

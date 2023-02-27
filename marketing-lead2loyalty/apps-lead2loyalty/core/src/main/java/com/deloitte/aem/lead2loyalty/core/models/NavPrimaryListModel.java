@@ -13,6 +13,7 @@ public class NavPrimaryListModel {
 
     private String text;
     private String url;
+    private String secondLevelMoreLink;
 
     public List<NavSecondaryListModel> secondaryLinks;
 
@@ -30,6 +31,14 @@ public class NavPrimaryListModel {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    public String getSecondLevelMoreLink() {
+        return secondLevelMoreLink;
+    }
+
+    public void setSecondLevelMoreLink(String secondLevelMoreLink) {
+        this.secondLevelMoreLink = secondLevelMoreLink;
     }
 
     public void setSecondaryLinks(List<NavSecondaryListModel> secondaryLinks) {

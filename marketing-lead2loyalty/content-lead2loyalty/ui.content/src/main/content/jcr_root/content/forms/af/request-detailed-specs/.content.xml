@@ -21,6 +21,7 @@
             enableServerValidation="true"
             guideCss="guideContainer"
             guideNodeClass="guideContainerNode"
+            clientLibRef="lead2loyalty.forms"
             name="guide1"
             thankYouOption="page"
             themeRef="/content/dam/formsanddocuments-themes/manyavar/canvas-3-0"
