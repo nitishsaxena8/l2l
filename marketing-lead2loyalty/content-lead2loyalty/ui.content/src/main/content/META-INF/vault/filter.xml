@@ -4,10 +4,14 @@
 
     <filter root="/content/forms/af/signup"/>
     <filter root="/content/forms/af/quote"/>
+    <filter root="/content/forms/af/request-detailed-specs"/>
+    <filter root="/content/forms/af/contact-us-form"/>
 
     <filter root="/content/dam/formsanddocuments/quote"/>
     <filter root="/content/dam/formsanddocuments/quote.schema.json"/>
     <filter root="/content/dam/formsanddocuments/signup"/>
     <filter root="/content/dam/formsanddocuments/signup.schema.json"/>
+    <filter root="/content/dam/formsanddocuments/request-detailed-specs"/>
+    <filter root="/content/dam/formsanddocuments/contact-us-form"/>
 
 </workspaceFilter>
