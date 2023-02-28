@@ -22,7 +22,10 @@ if($('.plp-container').length) {
 	if(queryURL.split('category').length === 2) {
         filterCode = queryURL.split('=')[1];
     } else {
-        filterCode = $('.filter-header').eq(0).attr('data-name');
+        //filterCode = $('.filter-header').eq(0).attr('data-name');
+        $('.resultsWrapper').removeClass('d-none');
+        $('.filter-header').removeClass('expanded');
+        $('#accordion .collapse').removeClass('show');
     }
     $('.filter-header[data-name="'+filterCode+'"]').trigger('click');
     $('.filter-header[data-name="'+filterCode+'"]').addClass('expanded');
