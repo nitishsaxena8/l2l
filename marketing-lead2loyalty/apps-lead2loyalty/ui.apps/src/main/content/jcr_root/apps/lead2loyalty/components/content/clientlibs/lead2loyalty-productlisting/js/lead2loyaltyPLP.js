@@ -115,7 +115,7 @@ if($('#shareWithTeamsBtnModal').length) {
                     $(".form-success-container.share-with-team", parent.document).removeClass('d-none');
                     digitalData.event = 'formSubmission';
                 	digitalData.form = {};
-                	digitalData.form.formName = pagePath.includes("/products") ? 'Share with Team' : 'Share the Article';
+                	digitalData.form.formName = pagePath.includes("/products") ? 'Share the Product' : 'Share the Article';
                     return false;
                 });
             });

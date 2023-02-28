@@ -83,18 +83,6 @@ $( document ).ready(function() {
 //Contact us
     $( ".contactus-submit-btn button" ).on( "click", function() {
 
-        $('.signup-fail-container').addClass('d-none');
-    	$('.signup-fail-container').text('');
-        $('.signup-success-container').addClass('d-none');
-        $('.signup-success-container').text('');
-
-        $("#guideContainerForm input").change(function() {
-            $('.form-success-container').addClass('d-none');
-        });
-        $('.request-quote-btn').click(function(event) {
-            $('.form-success-container').addClass('d-none');
-        });
-
         var contactUsFormData = collectFormData("contactus");
 
         if(contactUsFormData != false) {
@@ -103,7 +91,7 @@ $( document ).ready(function() {
                 form.submit();
 
                 form.onSuccess(function(vals,thanksURL){
-                    $('.form-success-container', parent.document).removeClass('d-none');
+                    $('.signup-success-container', parent.document).removeClass('d-none');
                         //analytics
                         parent.window.digitalData.event = 'formSubmission';
                         parent.window.digitalData.form = {};
