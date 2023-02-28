@@ -85,7 +85,7 @@ public class UserServlet extends SlingAllMethodsServlet {
 				}
 
 				if (loyaltyNode.hasNode(data.getString("Email"))) {
-					return responseObjectMapper.writeValueAsString(new Lead2loyaltyException("User already exist !!!", 1001));
+					return responseObjectMapper.writeValueAsString(new Lead2loyaltyException("User already exists !!!", 1001));
 				} else {
 					Node userNode = loyaltyNode.addNode(data.getString("Email"));
 
