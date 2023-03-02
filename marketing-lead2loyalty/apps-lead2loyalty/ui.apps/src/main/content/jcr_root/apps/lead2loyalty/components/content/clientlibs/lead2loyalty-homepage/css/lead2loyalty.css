@@ -807,6 +807,10 @@ h5.card-title,h5.card-text {
 	list-style-type:disc;
 }
 
+.text-center P {
+	text-align: start;
+}
+
 @media screen and (min-width:769px) {
     .dropend:hover > .dropdown-menu{
         position: absolute;

@@ -4,12 +4,17 @@
       <h2>${properties.formTitle}</h2>
       <p>${properties.formDescription}</p>
       <span>${properties.formRequiredFieldIndicatorText}</span>
-  </div>
+    </div>
   </div>
 
   <div class="form-container">
     <p class="signup-fail-container text-danger d-none">Something went wrong !!!</p>
-    <p class="signup-success-container text-success d-none">Request successfully submitted !!!</p>
+    <p class="contactus-success-container text-success d-none">Request successfully submitted !!!</p>
+    <p class="signup-success-container text-success d-none">
+      Congratulations!!! Your account has been successfully created. Please click on this
+      <a type="button" style="color:blue" data-bs-toggle="modal" data-target="#signInFormModal" data-toggle="modal"><u>link</u></a>
+      to Sign In.
+    </p>
     <div data-sly-resource="${'user-signup' @resourceType='fd/af/components/aemform'}"></div>
   </div>
 </div>

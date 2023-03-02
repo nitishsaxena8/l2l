@@ -5,12 +5,15 @@
 <div class="${properties.marginTop} ${properties.mobileMarginTop} ${properties.marginBottom} ${properties.mobileMarginBottom}">
 </div>
 
-<div class="container my-5">
-	<div class="row container">
+<div class="container">
+	<div class="row pt-2">
+		<h4 class="atm--title">${articleListingModel.articleTitle}</h4>
+	</div>
+	<div class="row">
 		<sly data-sly-test="${properties.rootPagePath}">
 			<!--/* ----------------- results start ------------------ */-->
 			<sly data-sly-repeat.article="${articleListingModel.articleList}">
-				<div class="col-lg-3 col-md-4 col-sm-12 mt-5">
+				<div class="col-lg-3 col-md-4 col-sm-12 my-4">
 					<a href="${article.path}" class="text-decoration-none">
 						<div class="card shadow-lg">
 							<img class="card-img-top" src="${article.image}" alt="Tile image alt text">

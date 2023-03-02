@@ -38,6 +38,9 @@ public class ArticleListingModel {
 	private SlingSettingsService settingsService;
 
 	@ValueMapValue
+	private String articleTitle;
+
+	@ValueMapValue
 	private String rootPagePath;
 
 	private List<ProductsBean> articleList;
@@ -82,4 +85,11 @@ public class ArticleListingModel {
 		return new ArrayList<>();
 	}
 
+	public String getArticleTitle() {
+		return articleTitle;
+	}
+
+	public void setArticleTitle(String articleTitle) {
+		this.articleTitle = articleTitle;
+	}
 }

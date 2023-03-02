@@ -91,7 +91,7 @@ $( document ).ready(function() {
                 form.submit();
 
                 form.onSuccess(function(vals,thanksURL){
-                    $('.signup-success-container', parent.document).removeClass('d-none');
+                    $('.contactus-success-container', parent.document).removeClass('d-none');
                         //analytics
                         parent.window.digitalData.event = 'formSubmission';
                         parent.window.digitalData.form = {};
