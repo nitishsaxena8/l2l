@@ -85,7 +85,7 @@ $( document ).ready(function() {
 
         var contactUsFormData = collectFormData("contactus");
 
-        if(contactUsFormData != false) {
+        if(quote.FirstName !=='' && quote.LastName !=='' && quote.Email !=='' && quote.Company == '' && quote.Query == '' && quote.JobRole == '') {
             MktoForms2.loadForm("//733-JCL-696.mktoweb.com", "733-JCL-696", 1025, function(form) {
                 form.addHiddenFields(contactUsFormData);
                 form.submit();
