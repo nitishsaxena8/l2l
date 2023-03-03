@@ -85,7 +85,7 @@ $( document ).ready(function() {
 
         var contactUsFormData = collectFormData("contactus");
 
-        if(contactUsFormData.FirstName !=='' && contactUsFormData.LastName !=='' && contactUsFormData.Email !=='' && contactUsFormData.Company == '' && contactUsFormData.Query == '' && contactUsFormData.JobRole == '') {
+        if(contactUsFormData.FirstName !=='' && contactUsFormData.LastName !=='' && contactUsFormData.Email !=='' && contactUsFormData.Company !== '' && contactUsFormData.Query !== '' && contactUsFormData.jobRole !== '') {
             MktoForms2.loadForm("//733-JCL-696.mktoweb.com", "733-JCL-696", 1025, function(form) {
                 form.addHiddenFields(contactUsFormData);
                 form.submit();

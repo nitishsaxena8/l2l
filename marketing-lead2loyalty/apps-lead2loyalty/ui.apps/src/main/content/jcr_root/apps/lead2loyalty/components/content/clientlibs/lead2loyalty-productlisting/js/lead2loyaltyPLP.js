@@ -81,6 +81,7 @@ if($('#shareWithTeamsBtnModal').length) {
 
     $('#shareWithTeamForm').submit(function(event) {
         $('.form-success-container.share-with-team').addClass('d-none');
+        var formID = $('.form-success-container').attr('form-id');
         if(this.checkValidity()) {
             event.preventDefault();
 			var requestData = [];
@@ -109,7 +110,7 @@ if($('#shareWithTeamsBtnModal').length) {
                 });
             }
 
-            MktoForms2.loadForm("//733-JCL-696.mktoweb.com", "733-JCL-696", 1007, function(form) {
+            MktoForms2.loadForm("//733-JCL-696.mktoweb.com", "733-JCL-696", formID, function(form) {
                 form.addHiddenFields(transferSingleObj);
                 form.submit();
                 console.log("Form Submitted !!!")
