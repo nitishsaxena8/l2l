@@ -120,7 +120,7 @@ $( document ).ready(function() {
         delete quote.submit;
 
         if(quote != false) {
-            callMarketoForm(quote, 1008);
+            callMarketoForm(quote, '1008');
         }
 
     });
