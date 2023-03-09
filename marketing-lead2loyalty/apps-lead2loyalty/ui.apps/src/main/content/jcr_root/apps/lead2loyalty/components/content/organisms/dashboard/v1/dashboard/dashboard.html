@@ -1,0 +1,358 @@
+<!-- ----------------------------------Funnel script start------------------------------------------------- -->
+
+<script>
+    function addCode() {
+
+        var data = [2200,1000,800,300,100,34];
+        var mf = 100 / data.length;
+        let newdiv;
+        let divIdname;
+
+        for(let i=0;i<data.length;i++){
+            let w = 100 - (i*mf);
+            let wid = (w/100)*150;
+            //alert(w);
+
+            newdiv = document.createElement('div');
+            divIdname = 'boxx'+i+1;
+            newdiv.setAttribute('id',divIdname);
+            newdiv.innerHTML = '<div class="boxx align-items-center bg-primary" style="color:#fff">'+data[i]+'</div>';
+            document.getElementById('fontainer').appendChild(newdiv);
+
+
+            document.getElementById(divIdname).childNodes[0].style.width = wid + "px";
+            console.log(newdiv.childNodes);
+        }
+
+}
+			window.onload = function () {
+			addCode(); };
+
+</script>
+
+
+<!-- -------------------------------------Funnel script end------------------------------------------------------ -->
+
+
+
+
+
+<!-- ----------------------------------------Styles for dashboard------------------------------------------- -->
+
+
+<style>
+
+.table a{
+text-decoration: none;
+color: #0b6ec5;
+
+}
+.table, .td{
+border-bottom-width: 0;
+}
+
+
+.boxx{
+ border: 1px solid rebeccapurple;
+ border-radius: 5px;
+                
+
+ height: 20px;
+ margin: 6px;
+}
+
+.fdiv{
+height:20px;
+margin:6px;
+}
+
+.fdiv a{
+text-decoration: none;
+}
+
+.navbar-links a{
+color:white;
+text-decoration: none;
+}
+</style>
+
+
+<!-- --------------------------------------------------Styles end------------------------------------------- -->
+
+
+
+
+<!-- -----------------------------------------First Page--------------------------------- -->
+
+
+<nav class="navbar-light py-3" style="background-color: #031633">
+<div class="container navbar-links">
+	<a class="px-2" href="/content/lead2loyalty/language-masters/en/home-page.html">GG</a>
+	<a class="px-3" href="/content/lead2loyalty/language-masters/en/dashboard.html">Dashboard</a>
+	<a class="px-3" href="/content/lead2loyalty/language-masters/en/dashboard/accounts.html">Accounts</a>
+	<a class="px-3" href="/content/lead2loyalty/language-masters/en/dashboard/quotes.html">Quotes</a>
+	<a class="px-3" style="color:white; float:right;" href="#"><i class="fa-regular fa-circle-user"></i></a>
+</div>
+</nav>
+
+
+
+
+
+
+
+<!----------------------------------------------------------------------------------------------------------->
+<div class="container my-3">
+<div class="row d-flex flex-row ">
+
+					<div class="col-md-3 col-sm-4">
+						<label for="sort">Select Company </label>
+						<select name="company" id="company" class="border bg-primary text-white">
+							<option value="Best seller">Best Seller</option>
+							<option value="Popularity">Popularity</option>
+						</select>
+					</div>
+
+					<div class="col-md-3 col-sm-4">
+						<label for="sort">Select Month </label>
+						<select name="month" id="month" class="border bg-primary text-white">
+							<option value="Best seller">Best Seller</option>
+							<option value="Popularity">Popularity</option>
+						</select>
+					</div>
+
+
+					<div class="col-md-6 col-sm-4 justify-content-end d-flex flex-row">
+					<div class="padding-right-6">
+                        <button type="button" class="btn btn-link download-btn text-decoration-none">
+                            Download Report
+							<i class="fa-solid fa-download"></i>
+                        </button>
+                    </div>
+					</div>
+</div>
+</div>
+
+<!-- ---------------------------------------------------------------------------------------------- -->
+
+<div class="container">
+<div class="row">
+<div class="col-md-3 col-sm-6 my-3">
+	<div class=" card shadow-lg d-flex flex-column justify-content-around" style="min-height:100px;">
+		<div class="d-flex flex-column align-items-center">
+			<h7 class="pb-2">Sales in Feb 2023</h7>
+			<h5><b>$1.20K </b><i class="fas fa-arrow-circle-up text-success fa-xs"></i></h5>
+			<h7>Jan 2023: $1.05K</h7>
+		</div>
+	</div>
+</div>
+
+<div class="col-md-3 col-sm-6 my-3">
+	<div class="card shadow-lg d-flex flex-column justify-content-around" style="min-height:100px;">
+		<div class="d-flex flex-column align-items-center">
+			<h7 class="pb-2">Orders in Feb 2023</h7>
+			<h5><b>1,450 </b><i class="fas fa-arrow-circle-up text-success fa-xs"></i></h5>
+			<h7>Jan 2023: 1394</h7>
+		</div>
+	</div>
+</div>
+
+<div class="col-md-3 col-sm-6 my-3">
+	<div class="card shadow-lg d-flex flex-column justify-content-around" style="min-height:100px;">
+		<div class="d-flex flex-column align-items-center">
+			<h7 class="pb-2">Average Order Value in Feb 2023</h7>
+			<h5><b>$490.23 </b><i class="fas fa-arrow-circle-up text-success fa-xs"></i></h5>
+			<h7>Jan 2023: $372.68</h7>
+		</div>
+	</div>
+</div>
+
+<div class="col-md-3 col-sm-6 my-3">
+	<div class="card shadow-lg d-flex flex-column justify-content-around" style="min-height:100px;">
+		<div class="d-flex flex-column align-items-center">
+			<h7 class="pb-2">Active Customers in Feb 2023</h7>
+			<h5><b>817 </b><i class="fas fa-arrow-circle-up text-success fa-xs"></i></h5>
+			<h7>Jan 2023: 792</h7>
+		</div>
+	</div>
+</div>
+</div>
+</div>
+<!-- ------------------------------------------------------------------------------------ -->
+
+
+
+
+
+<div class="container">
+<div class="row">
+<div class="col-md-6 col-sm-12 my-3">
+
+<div class="header container pt-3 pb-2">
+	<b>Pipeline View</b>
+</div>
+<div class="card shadow-lg" style="">
+
+
+<div class="d-flex">
+
+<div class="col-md-5 pt-3">
+	<!--<div class="fdiv">Anonymous</div>-->
+	<div class="fdiv"><a href="#">Known</a></div>
+	<div class="fdiv"><a href="#">Nurture</a></div>
+	<div class="fdiv"><a href="#">Marketing Qualified Lead</a></div>
+	<div class="fdiv"><a href="#">Sales Accepted Lead</a></div>
+	<div class="fdiv"><a href="#">Oppurtunity</a></div>
+	<div class="fdiv"><a href="#">Won Deals</a></div>
+</div>
+
+<div class="col-md-5 pt-3" id="fontainer">
+
+</div>
+
+<div class="col-md-2 pt-3">
+	<div class="fdiv"><i class="fas fa-arrow-circle-up text-success fa-xs"></i><span class="px-1">+10%</span></div>
+	<div class="fdiv"><i class="fas fa-arrow-circle-down text-danger fa-xs"></i><span class="px-1">-10%</span></div>
+	<div class="fdiv"><i class="fas fa-arrow-circle-up text-success fa-xs"></i><span class="px-1">+10%</span></div>
+	<div class="fdiv"><i class="fas fa-arrow-circle-down text-danger fa-xs"></i><span class="px-1">-10%</span></div>
+	<div class="fdiv"><i class="fas fa-arrow-circle-up text-success fa-xs"></i><span class="px-1">+10%</span></div>
+	<div class="fdiv"><i class="fas fa-arrow-circle-up text-success fa-xs"></i><span class="px-1">+10%</span></div>
+</div>
+
+</div>
+
+<div class="d-flex justify-content-center pt-4 pb-3"><b>$97,457,309 Total Revenue</b></div>
+
+	</div>
+</div>
+
+<div class="col-md-6 col-sm-12 my-3">
+<div class="header container pt-3 pb-2">
+	<b>Open Quotes</b>
+</div>
+<div class="card shadow-lg d-flex justify-content-between">
+		<table class="table">
+    <thead>
+        <tr>
+            <th>Quote ID</th>
+            <th>Value</th>
+            <th>Date Issued</th>
+			<th><i class="fas fa-xs fa-filter"></i></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><a href="#">1234</a></td>
+            <td>$5673.23</td>
+			<td>22/01/2023</td>
+		</tr>
+ <tr>
+            <td><a href="#">1674</a></td>
+            <td>$6723.56</td>
+			<td>23/01/2023</td>
+		</tr>
+
+ <tr>
+            <td><a href="#">7822</a></td>
+            <td>$1223.93</td>
+			<td>24/01/2023</td>
+		</tr>
+
+ <tr>
+            <td><a href="#">8742</a></td>
+            <td>$2894.20</td>
+			<td>25/01/2023</td>
+		</tr>
+
+ <tr>
+            <td><a href="#">9743</a></td>
+            <td>$1223.23</td>
+			<td>26/01/2023</td>
+		</tr>
+
+
+            </tbody>
+        </table>
+	</div>
+</div>
+</div>
+</div>
+<!-- ------------------------------------------------------------------------------------------------------------ -->
+
+<div class="header container pt-3 d-flex flex-row">
+	<b>Accounts Overview </b><span><i class="far fa-xs px-2 text-primary fa-eye"></i></span><span class="text-primary">View All</span>
+</div>
+
+<div class="container">
+<div class="row">
+<div class="col-md-12 col-sm-12 my-3">
+<div class="card shadow-lg d-flex justify-content-between" style="min-height:250px;">
+		<table class="table">
+    <thead>
+        <tr>
+            <th style="width:400px;">Account Name <span style="float:right;"><i class="fas fa-xs fa-filter"></i></span></th>
+            <th>Leads Score <span style="float:right;"><i class="fas fa-xs fa-filter"></i></span></th>
+            <th>Business Need Area  <span style="float:right;"><i class="fas fa-xs fa-filter"></i></span></th>
+			<th>Industry  <span style="float:right;"><i class="fas fa-xs fa-filter"></i></span></th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><a href="#">Mikes Microphones</a></td>
+            <td>1500</td>
+			<td>Selling</td>
+			<td>Personal Electronics</td>
+		</tr>
+ <tr>
+            <td><a href="#">Ralph Edwards</a></td>
+            <td>1200</td>
+			<td>Selling</td>
+<td>Hardware Electronics</td>
+		</tr>
+
+ <tr>
+            <td><a href="#">Annette Black</a></td>
+            <td>100</td>
+			<td>Advisory</td>
+<td>Personal Electronics</td>
+		</tr>
+
+ <tr>
+            <td><a href="#">Devon Lanee</a></td>
+            <td>1000</td>
+			<td>Selling</td>
+<td>Hardware Electronics</td>
+		</tr>
+
+ <tr>
+            <td><a href="#">Wade Warren</a></td>
+            <td>900</td>
+			<td>Advisory</td>
+<td>Electronic Chips</td>
+		</tr>
+
+ <tr>
+            <td><a href="#">Mikes Microphones</a></td>
+            <td>600</td>
+			<td>Advisory</td>
+<td>Electronic Chips</td>
+		</tr>
+
+<tr>
+            <td><a href="#">Mikes Microphones</a></td>
+            <td>400</td>
+			<td>Selling</td>
+<td>Personal Electronics</td>
+		</tr>
+            </tbody>
+        </table>
+	</div>
+</div>
+</div>
+</div>
+
+
+
+
+<!-- -------------------------------------------------------------------------------------------------------- -->
