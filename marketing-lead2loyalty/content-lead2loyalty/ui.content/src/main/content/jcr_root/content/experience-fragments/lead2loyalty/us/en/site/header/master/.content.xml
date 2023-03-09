@@ -35,7 +35,25 @@
                             jcr:primaryType="nt:unstructured"
                             linkUrl="/content/lead2loyalty/language-masters/en/home-page/products"
                             openInNewWindow="false"
-                            tr_linkTitle="Products"/>
+                            tr_linkTitle="Products">
+                        <secondaryLinks jcr:primaryType="nt:unstructured">
+                            <item0
+                                    jcr:primaryType="nt:unstructured"
+                                    openInNewWindowsecondary="false"
+                                    secondarylinkUrl="#"
+                                    tr_secondarylinkTitle="Product-1"/>
+                            <item1
+                                    jcr:primaryType="nt:unstructured"
+                                    openInNewWindowsecondary="false"
+                                    secondarylinkUrl="#"
+                                    tr_secondarylinkTitle="Product-2"/>
+                            <item2
+                                    jcr:primaryType="nt:unstructured"
+                                    openInNewWindowsecondary="false"
+                                    secondarylinkUrl="#"
+                                    tr_secondarylinkTitle="Product-3"/>
+                        </secondaryLinks>
+                    </item1>
                     <item2
                             jcr:primaryType="nt:unstructured"
                             linkUrl="/content/lead2loyalty/language-masters/en/article-page"
