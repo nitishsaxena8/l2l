@@ -104,8 +104,6 @@
                     <page jcr:primaryType="nt:unstructured">
                         <policy_1669842399486
                             jcr:description="Page Policy for Home page."
-                            jcr:lastModified="{Date}2022-12-14T13:20:43.062+05:30"
-                            jcr:lastModifiedBy="admin"
                             jcr:primaryType="nt:unstructured"
                             jcr:title="Home Page - Page Policy"
                             sling:resourceType="wcm/core/components/policy/policy"
