@@ -119,7 +119,7 @@ $( document ).ready(function() {
         var quote = collectFormData("quote");
         delete quote.submit;
 
-        if(quote != false) {
+        if(quote.FirstName !=='' && quote.LastName !=='' && quote.Email !=='') {
             callMarketoForm(quote, '1008');
         }
 
