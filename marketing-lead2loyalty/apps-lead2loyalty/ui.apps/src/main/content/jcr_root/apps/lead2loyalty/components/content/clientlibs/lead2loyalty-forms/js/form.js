@@ -20,64 +20,73 @@ $( document ).ready(function() {
 
         var loginData = collectFormData("signup");
 
-            if(loginData != false) {
+        const { Phone, webpage, ...newloginData } = loginData;
+        const keys = Object.keys(newloginData);
+        var k = 1;
+        console.log("keys accessed: ",keys);
+        keys.forEach((key, index) => {
+            if((newloginData[key]) === "") {
+		        k=0;
+		    }
+	    });
 
-                $.ajax({
-                  type: "POST",
-                  url: "/bin/user",
-                  data: JSON.stringify(loginData),
-                  contentType: "application/json",
-                  dataType: "json",
-                  success: function(resultData) {
-                      if (resultData && resultData.errorCode) {
+        if(k === 1) {
+            $.ajax({
+              type: "POST",
+              url: "/bin/user",
+              data: JSON.stringify(loginData),
+              contentType: "application/json",
+              dataType: "json",
+              success: function(resultData) {
+                  if (resultData && resultData.errorCode) {
 
-                            $('.signup-fail-container', parent.document).removeClass('d-none');
-                            $('.signup-fail-container', parent.document).text(resultData.errorMessage);
+                        $('.signup-fail-container', parent.document).removeClass('d-none');
+                        $('.signup-fail-container', parent.document).text(resultData.errorMessage);
 
-                            $('.signup-success-container', parent.document).text('');
-                            $('.signup-success-container', parent.document).addClass('d-none');
+                        $('.signup-success-container', parent.document).text('');
+                        $('.signup-success-container', parent.document).addClass('d-none');
 
-                      } else {
+                  } else {
 
-                            $('.signup-success-container', parent.document).removeClass('d-none');
-                            $('.signup-success-container').text("Thanks For Signing Up !!!");
+                        $('.signup-success-container', parent.document).removeClass('d-none');
+                        $('.signup-success-container').text("Thanks For Signing Up !!!");
 
-                            $('.signup-fail-container', parent.document).text('');
-                            $('.signup-fail-container', parent.document).addClass('d-none');
+                        $('.signup-fail-container', parent.document).text('');
+                        $('.signup-fail-container', parent.document).addClass('d-none');
 
 
-                            delete loginData.password;
+                        delete loginData.password;
 
-                            MktoForms2.loadForm("//733-JCL-696.mktoweb.com", "733-JCL-696", 1001, function(form) {
-                                form.addHiddenFields(loginData);
-                                form.submit();
+                        MktoForms2.loadForm("//733-JCL-696.mktoweb.com", "733-JCL-696", 1001, function(form) {
+                            form.addHiddenFields(loginData);
+                            form.submit();
 
-                                form.onSuccess(function(vals,thanksURL){
-                                    $('.form-success-container', parent.document).removeClass('d-none'); 
-                                    //analytics
-									parent.window.digitalData.event = 'formSubmission';
-                                    parent.window.digitalData.user.authState = 'authenticated';
-                                    parent.window.digitalData.form = {};
-                                    parent.window.digitalData.form.formName = 'Signup';
-                                    parent.window.digitalData.user = parent.window.digitalData.user || {};
-                                    parent.window.digitalData.user.userType = 'member';
-                                    parent.window.digitalData.user.email = loginData.Email;
-                                    return false;
-                                });
+                            form.onSuccess(function(vals,thanksURL){
+                                $('.form-success-container', parent.document).removeClass('d-none'); 
+                                //analytics
+								parent.window.digitalData.event = 'formSubmission';
+                                parent.window.digitalData.user.authState = 'authenticated';
+                                parent.window.digitalData.form = {};
+                                parent.window.digitalData.form.formName = 'Signup';
+                                parent.window.digitalData.user = parent.window.digitalData.user || {};
+                                parent.window.digitalData.user.userType = 'member';
+                                parent.window.digitalData.user.email = loginData.Email;
+                                return false;
                             });
+                        });
 
-                      }
-                  },
-                  error: function(errorData) {
-
-                    $('.signup-fail-container', parent.document).removeClass('d-none');
-                    $('.signup-fail-container', parent.document).text("Something went wrong !!!");
-
-                    $('.signup-success-container', parent.document).text('');
-                    $('.signup-success-container', parent.document).addClass('d-none');
                   }
-                });
-            }
+              },
+              error: function(errorData) {
+
+                $('.signup-fail-container', parent.document).removeClass('d-none');
+                $('.signup-fail-container', parent.document).text("Something went wrong !!!");
+
+                $('.signup-success-container', parent.document).text('');
+                $('.signup-success-container', parent.document).addClass('d-none');
+              }
+            });
+        }
     });
 
 //Contact us
