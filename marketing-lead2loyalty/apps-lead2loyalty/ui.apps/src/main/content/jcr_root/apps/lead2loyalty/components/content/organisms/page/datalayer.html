@@ -47,4 +47,14 @@
     digitalData.ecommerce.detail.actionField = {
 
     };
+
+    digitalData.article = {};
+    digitalData.article = {
+        'articleId':'${properties.id @ context="text"}',
+        'articleTitle': '${dataLayerHelper.pageTitle @ context="text"}',
+        'articleImageLink': '${properties['image/fileReference'] @ context="text"}',
+        'articleTags': '${properties.keywords @ context="text"}'
+    }
+
+
 </script>
