@@ -807,6 +807,10 @@ h5.card-title,h5.card-text {
 	list-style-type:disc;
 }
 
+.col ul li {
+	list-style-type:disc;
+}
+
 .text-center P {
 	text-align: start;
 }

@@ -127,6 +127,7 @@
                                     collectionLevel="{Double}0.0"
                                     dataType="string"
                                     guideNodeClass="guideTextBox"
+                                    mandatory="true"
                                     mandatoryMessage="This is a required field !!!"
                                     name="password"
                                     parentCollectionPath=""
