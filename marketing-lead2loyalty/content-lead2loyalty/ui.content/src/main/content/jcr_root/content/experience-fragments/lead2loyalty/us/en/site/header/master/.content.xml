@@ -63,7 +63,7 @@
                             jcr:primaryType="nt:unstructured"
                             linkUrl="/content/lead2loyalty/language-masters/en/about-us"
                             openInNewWindow="false"
-                            tr_linkTitle="About"/>
+                            tr_linkTitle="About Us"/>
                     <item4
                             jcr:primaryType="nt:unstructured"
                             linkUrl="/content/lead2loyalty/language-masters/en/contact-us"

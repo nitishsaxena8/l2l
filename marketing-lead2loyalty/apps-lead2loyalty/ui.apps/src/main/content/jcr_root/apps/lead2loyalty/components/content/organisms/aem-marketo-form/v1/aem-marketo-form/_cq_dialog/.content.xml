@@ -13,9 +13,72 @@
                 sling:resourceType="granite/ui/components/coral/foundation/tabs"
                 maximized="{Boolean}true">
                 <items jcr:primaryType="nt:unstructured">
+                    <properties
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Configurations"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            margin="{Boolean}false">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                    margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+
+                                            <title
+                                                    granite:hide="${cqDesign.linkDisabled}"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                    fieldLabel="Title"
+                                                    name="./title"/>
+                                            <text
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/include"
+                                                    path="/apps/xpbootstrap/components/master/atoms/atmText/v1/atmText/properties"/>
+                                            <image
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                    class="cq-droptarget"
+                                                    fieldLabel="Image"
+                                                    fileNameParameter="./fileName"
+                                                    fileReferenceParameter="./fileReference"
+                                                    mimeTypes="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
+                                                    name="./file"/>
+                                            <imgAlign
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                    fieldLabel="Select Image Position"
+                                                    name="./imgAlignment">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <right
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Image On Right"
+                                                            value="img-right"/>
+                                                    <left
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Image On Left"
+                                                            value="img-left"/>
+                                                </items>
+                                            </imgAlign>
+                                            <imgAlt
+                                                    granite:hide="${cqDesign.linkDisabled}"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                    fieldLabel="Image Alt Text"
+                                                    name="./imageAlt"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </properties>
                     <product-tiles
                         jcr:primaryType="nt:unstructured"
-                        jcr:title="Product Title"
+                        jcr:title="Form Details"
                         sling:resourceType="granite/ui/components/coral/foundation/container"
                         margin="{Boolean}true">
                         <items jcr:primaryType="nt:unstructured">

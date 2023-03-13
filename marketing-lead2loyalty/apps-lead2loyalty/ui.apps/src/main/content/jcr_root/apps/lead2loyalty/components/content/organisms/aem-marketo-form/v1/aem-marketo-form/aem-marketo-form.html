@@ -1,23 +1,27 @@
 <sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"
 	 data-sly-call="${template.placeholder @ isEmpty=true}"/>
-<div class="row">
-	<div class="col-6"></div>
-	<div class="col-6">
-		<div class="d-flex">
-			<p class="form-success-container request-quote-member text-success d-none">Request successfully submitted !!!</p>
+
+<div class="container my-5">
+	<div class="${ticModel.imgAlignment == 'img-right' ? 'row flex-row-reverse' : ''} row">
+		<div class="col-md-6 col-sm-12 p-0">
+			<img src="${properties.fileReference}" alt="${properties.imageAlt}" class="w-100 custom-image-height">
+		</div>
+		<div class="col-md-6 col-sm-12" >
+			<div class="row h-100 mx-2 align-items-center">
+				<div class="col">
+					<h4>${properties.title}</h4>
+					<p class="mt-5"> ${properties.atmTextHtml @context='html'}</p>
+					<p class="form-success-container request-quote-member text-success d-none">Request successfully submitted !!!</p>
+					<div class="form-data-container d-none" id="${properties.formID}" data-path="${properties.downloadPdfPath}"></div>
+					<button type="button" class="btn btn-primary" data-bs-toggle="modal" id="requestAQuoteGuest" data-target="#requestAQuote1" data-toggle="modal">${properties.ctaLabel}</button>
+					<button type="button" class="btn btn-primary d-none" id="requestAQuoteMember">${properties.ctaLabel}</button>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
-<div class="row pb-4">
-	<div class="col-6"></div>
-	<div class="col-6">
-		<div class="d-flex">
-			<div class="form-data-container d-none" id="${properties.formID}" data-path="${properties.downloadPdfPath}"></div>
-			<button type="button" class="btn btn-primary" data-bs-toggle="modal" id="requestAQuoteGuest" data-target="#requestAQuote1" data-toggle="modal">${properties.ctaLabel}</button>
-			<button type="button" class="btn btn-primary d-none" id="requestAQuoteMember">${properties.ctaLabel}</button>
-		</div>
-	</div>
-</div>
+
+
 <script src="//733-JCL-696.mktoweb.com/js/forms2/js/forms2.min.js"></script>
 <form id="mktoForm_${properties.formID}" style="display: none;"></form>
 <script>
