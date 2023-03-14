@@ -815,6 +815,10 @@ h5.card-title,h5.card-text {
 	text-align: start;
 }
 
+.iframe-height iframe {
+height:485px;
+}
+
 @media screen and (min-width:769px) {
     .dropend:hover > .dropdown-menu{
         position: absolute;
