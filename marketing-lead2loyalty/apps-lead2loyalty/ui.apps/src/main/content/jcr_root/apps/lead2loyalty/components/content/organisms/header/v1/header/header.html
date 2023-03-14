@@ -1,6 +1,5 @@
 <sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html" data-sly-call="${templates.placeholder @ isEmpty = true}"/>
-<sly data-sly-use.headerNavLinksModel="${'com.deloitte.aem.lead2loyalty.core.models.TextModel'}"
-     data-sly-use.dropdownNav="${'com.deloitte.aem.lead2loyalty.core.models.NavMenuModel'}"/>
+<sly data-sly-use.headerNavLinksModel="${'com.deloitte.aem.lead2loyalty.core.models.TextModel'}"/>
 <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
@@ -20,34 +19,34 @@
 
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0 justify-content-between">
                     <sly data-sly-list.primaryLink="${headerNavLinksModel.utilityLinks}">
-                        <sly data-sly-test="${!primaryLink.secondaryLinks}">
+                        <sly data-sly-test="${primaryLink.showChildPages == 'false'}">
                             <li class="nav-item">
-                                <a class="nav-link ${primaryLinkList.count == 1 ? 'active' : ''}" href="${primaryLink.linkUrl}">
+                                <a class="nav-link ${primaryLinkList.count == 1 ? 'active' : ''}" href="${primaryLink.linkUrl}" target="${primaryLink.openInNewWindow}">
                                     ${primaryLink.linkTitle}
                                 </a>
                             </li>
                         </sly>
-                        <sly data-sly-test="${primaryLink.secondaryLinks}">
+                        <sly data-sly-test="${primaryLink.showChildPages == 'true'}">
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="${primaryLink.linkUrl}" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
                                     ${primaryLink.linkTitle}
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <sly data-sly-list.levelOneLink="${dropdownNav.firstLevelLinks}">
+                                    <sly data-sly-list.secondaryLink="${primaryLink.secondaryHeaderLinks}">
                                         <li class="nav-item dropend">
-                                            <a class="nav-link dropdown-toggle" href="${levelOneLink.url}" role="button" aria-expanded="false">
-                                                ${levelOneLink.text}
+                                            <a class="nav-link dropdown-toggle" href="${secondaryLink.url}" target="${primaryLink.openInNewWindow}" role="button" aria-expanded="false">
+                                                ${secondaryLink.text}
                                             </a>
-                                            <ul class="dropdown-menu">
-                                                <sly data-sly-list.levelTwoLink="${levelOneLink.secondaryLinks}">
+                                            <ul class="dropdown-menu" data-sly-test="${secondaryLink.tertiaryLinks}">
+                                                <sly data-sly-list.tertiaryLink="${secondaryLink.tertiaryLinks}">
                                                     <li>
-                                                        <a class="dropdown-item" href="${levelTwoLink.secondarylinkUrlPath}">
-                                                            ${levelTwoLink.secondarylinkTitle}
+                                                        <a class="dropdown-item" href="${tertiaryLink.url}">
+                                                            ${tertiaryLink.text}
                                                         </a>
                                                     </li>
                                                 </sly>
                                                 <li class="nav-item dropend">
-                                                    <a class="nav-link dropdown-toggle" href="${levelOneLink.secondLevelMoreLink}" role="button" aria-expanded="false">
+                                                    <a class="nav-link dropdown-toggle" href="${secondaryLink.secondLevelMoreLink}" role="button" aria-expanded="false">
                                                         More
                                                     </a>
                                                 </li>
@@ -55,7 +54,7 @@
                                         </li>
                                     </sly>
                                     <li class="nav-item ">
-                                        <a class="dropdown-item" href="${primaryLink.linkUrl}">All Products</a>
+                                        <a class="dropdown-item" href="${primaryLink.linkUrl}">All ${primaryLink.linkTitle}</a>
                                     </li>
                                 </ul>
                             </li>
@@ -103,7 +102,7 @@
 <!-- Header -->
 
 <!-- Sign in Modal -->
-<div  class="modal fade" id="myModal" role="dialog" id="signInFormModal" tabindex="-1" aria-labelledby="signInLabel" style="display: none;" data-sly-use.loginModel="${'com.deloitte.aem.lead2loyalty.core.models.HeaderModel'}">
+<div  class="modal fade" id="myModal" role="dialog" id="signInFormModal" tabindex="-1" aria-labelledby="signInLabel" style="display: none;">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -127,7 +126,7 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <a class="btn btn-primary w-100 mb-3" href="${loginModel.signUpPageUrl}" role="button">Register</a>
+                <a class="btn btn-primary w-100 mb-3" href="${headerNavLinksModel.signUpPageUrl}" role="button">Register</a>
             </div>
         </div>
     </div>

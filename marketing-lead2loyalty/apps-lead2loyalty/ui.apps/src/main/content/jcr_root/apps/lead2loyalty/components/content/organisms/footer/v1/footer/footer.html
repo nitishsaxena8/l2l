@@ -12,13 +12,13 @@
 						</h6>
 						<p>Global Gadgets enables the world to be digitally connected and advance society.</p>
 					</div>
-					<sly data-sly-list.linkListSec="${footerModel.utilityLinks}">
+					<sly data-sly-list.primaryLinks="${footerModel.utilityLinks}">
 						<div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-							<h6 class="text-uppercase fw-bold mb-4">${linkListSec.linkTitle}</h6>
-							<sly data-sly-list.secondarylinkListSec="${linkListSec.secondaryLinks}">
+							<h6 class="text-uppercase fw-bold mb-4">${primaryLinks.linkTitle}</h6>
+							<sly data-sly-list.secondaryLinks="${primaryLinks.secondaryFooterLinks}">
 								<p>
-									<a href="${secondarylinkListSec.secondarylinkUrl}" class="text-reset text-decoration-none">
-										${secondarylinkListSec.secondarylinkTitle}
+									<a href="${secondaryLinks.secondaryLinkUrl}" target="${secondaryLinks.openInNewWindowSecondary}" class="text-reset text-decoration-none">
+										${secondaryLinks.secondaryLinkTitle}
 									</a>
 								</p>
 							</sly>

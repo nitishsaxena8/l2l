@@ -17,7 +17,8 @@ import org.apache.sling.settings.SlingSettingsService;
 @Model(adaptables = { SlingHttpServletRequest.class,
 		Resource.class }, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class TextModel {
-	
+
+	//primary Nav Links
 	@ChildResource(name = "utilityLinks")
 	public List<HeaderModel> utilityLinks;
 
@@ -26,6 +27,9 @@ public class TextModel {
 
 	@ValueMapValue
 	private String logoLink;
+
+	@ValueMapValue
+	private String signUpPageUrl;
 
 	@SlingObject
 	private ResourceResolver resourceResolver;
@@ -41,15 +45,11 @@ public class TextModel {
 		return logoTitle;
 	}
 
-	public void setLogoTitle(String logoTitle) {
-		this.logoTitle = logoTitle;
-	}
-
 	public String getLogoLink() {
 		return ServiceUtils.getLink(resourceResolver, logoLink, settingsService);
 	}
 
-	public void setLogoLink(String logoLink) {
-		this.logoLink = logoLink;
+	public String getSignUpPageUrl() {
+		return ServiceUtils.getLink(resourceResolver, signUpPageUrl, settingsService);
 	}
 }

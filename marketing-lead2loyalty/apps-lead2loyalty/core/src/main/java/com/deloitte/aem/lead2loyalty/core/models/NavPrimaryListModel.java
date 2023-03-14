@@ -1,5 +1,6 @@
 package com.deloitte.aem.lead2loyalty.core.models;
 
+import com.deloitte.aem.lead2loyalty.core.beans.TextAndUrlBean;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
@@ -15,7 +16,7 @@ public class NavPrimaryListModel {
     private String url;
     private String secondLevelMoreLink;
 
-    public List<NavSecondaryListModel> secondaryLinks;
+    public List<TextAndUrlBean> tertiaryLinks;
 
     public String getText() {
         return text;
@@ -41,12 +42,12 @@ public class NavPrimaryListModel {
         this.secondLevelMoreLink = secondLevelMoreLink;
     }
 
-    public void setSecondaryLinks(List<NavSecondaryListModel> secondaryLinks) {
-        this.secondaryLinks = secondaryLinks;
+    public void setTertiaryLinks(List<TextAndUrlBean> tertiaryLinks) {
+        this.tertiaryLinks = tertiaryLinks;
     }
 
-    public List<NavSecondaryListModel> getSecondaryLinks() {
-        return secondaryLinks;
+    public List<TextAndUrlBean> getTertiaryLinks() {
+        return tertiaryLinks;
     }
 
 }

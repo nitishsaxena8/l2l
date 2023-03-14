@@ -51,7 +51,7 @@ public class ArticleListingModel {
 		PageManager pageManager = resourceResolver.adaptTo(PageManager.class);
 		Page parentPage = Objects.requireNonNull(pageManager).getPage(rootPagePath);
 		if (parentPage != null) {
-			Iterator<Page> rootPageIterator = parentPage.listChildren(new PageFilter(), true);
+			Iterator<Page> rootPageIterator = parentPage.listChildren(new PageFilter(), false);
 			articleList = new ArrayList<>();
 
 			while (rootPageIterator.hasNext()) {

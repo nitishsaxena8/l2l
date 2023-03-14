@@ -10,22 +10,19 @@ import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.settings.SlingSettingsService;
 
-import javax.inject.Named;
-
 
 @Model(adaptables = { SlingHttpServletRequest.class,
 		Resource.class }, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class NavSecondaryListModel {
 	
 	@ValueMapValue
-	@Named("tr_secondarylinkTitle")
-	private String secondarylinkTitle;
+	private String secondaryLinkTitle;
 
 	@ValueMapValue
-	private String secondarylinkUrl;
+	private String secondaryLinkUrl;
 
 	@ValueMapValue
-	private String openInNewWindowsecondary;
+	private String openInNewWindowSecondary;
 
 	@SlingObject
 	private ResourceResolver resourceResolver;
@@ -33,32 +30,32 @@ public class NavSecondaryListModel {
 	@OSGiService
 	private SlingSettingsService settingsService;
 
-	public String getSecondarylinkTitle() {
-		return secondarylinkTitle;
+	public String getSecondaryLinkTitle() {
+		return secondaryLinkTitle;
 	}
 
-	public void setSecondarylinkTitle(String secondarylinkTitle) {
-		this.secondarylinkTitle = secondarylinkTitle;
+	public void setSecondaryLinkTitle(String secondaryLinkTitle) {
+		this.secondaryLinkTitle = secondaryLinkTitle;
 	}
 
-	public String getSecondarylinkUrl() {
-		return ServiceUtils.getLink(resourceResolver, secondarylinkUrl, settingsService);
+	public String getSecondaryLinkUrl() {
+		return ServiceUtils.getLink(resourceResolver, secondaryLinkUrl, settingsService);
 	}
 
 	public String getSecondarylinkUrlPath() {
-		return secondarylinkUrl;
+		return secondaryLinkUrl;
 	}
 
-	public void setSecondarylinkUrl(String secondarylinkUrl) {
-		this.secondarylinkUrl = secondarylinkUrl;
+	public void setSecondaryLinkUrl(String secondaryLinkUrl) {
+		this.secondaryLinkUrl = secondaryLinkUrl;
 	}
 
-	public String getOpenInNewWindowsecondary() {
-		return openInNewWindowsecondary;
+	public String getOpenInNewWindowSecondary() {
+		return openInNewWindowSecondary;
 	}
 
-	public void setOpenInNewWindowsecondary(String openInNewWindowsecondary) {
-		this.openInNewWindowsecondary = openInNewWindowsecondary;
+	public void setOpenInNewWindowSecondary(String openInNewWindowSecondary) {
+		this.openInNewWindowSecondary = openInNewWindowSecondary;
 	}
 
 	
