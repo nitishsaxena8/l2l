@@ -212,16 +212,18 @@ $( document ).ready(function() {
             form.submit();
 
             form.onSuccess(function(vals,thanksURL){
-                $('.form-success-container', parent.document).removeClass('d-none');
-                $('.form-success-container', parent.document).text('Request Submitted Successfully !!!');
 
                 //analytics
                 parent.window.digitalData.event = 'formSubmission';
                 parent.window.digitalData.form = {};
                 if(formID === '1008') {
                     parent.window.digitalData.form.formName = 'Request Quote';
+                    $('.form-success-container', parent.document).removeClass('d-none');
+                    $('.form-success-container', parent.document).text('Request Submitted Successfully !!!');
                 } else if(formID === '1024') {
                     parent.window.digitalData.form.formName = 'Request Detailed Specs';
+                    $('.form-success-container-'formID, parent.document).removeClass('d-none');
+                    $('.form-success-container-'formID, parent.document).text('Request Submitted Successfully !!!');
                 }
                 return false;
             });

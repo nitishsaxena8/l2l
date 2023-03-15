@@ -11,7 +11,7 @@
 				<div class="col">
 					<h4>${properties.title}</h4>
 					<p class="mt-5"> ${properties.atmTextHtml @context='html'}</p>
-					<p class="form-success-container request-quote-member text-success d-none">Request successfully submitted !!!</p>
+					<p class="form-success-container-${properties.formID} request-quote-member text-success d-none">Request successfully submitted !!!</p>
 					<div class="form-data-container d-none" id="${properties.formID}" data-path="${properties.downloadPdfPath}"></div>
 					<button type="button" class="btn btn-primary" data-bs-toggle="modal" id="requestAQuoteGuest" data-target="#requestAQuote1" data-toggle="modal">${properties.ctaLabel}</button>
 					<button type="button" class="btn btn-primary d-none" id="requestAQuoteMember">${properties.ctaLabel}</button>
@@ -24,12 +24,6 @@
 
 <script src="//733-JCL-696.mktoweb.com/js/forms2/js/forms2.min.js"></script>
 <form id="mktoForm_${properties.formID}" style="display: none;"></form>
-<script>
-        if($('.form-success-container').attr('id') !== 'undefined'){
-			var formID = $('.form-success-container').attr('id');
-			MktoForms2.loadForm("//733-JCL-696.mktoweb.com", "733-JCL-696", formID);
-        }
-</script>
 
 <div  class="modal fade" id="myModal" role="dialog" id="requestAQuote1" tabindex="-1" aria-labelledby="exampleModalLabel" style="display: none;">
 	<div class="modal-dialog">
@@ -41,7 +35,7 @@
 			<div class="modal-body">
 				<div class="row justify-content-center">
 					<div>
-						<div class="alert alert-success form-success-container d-none">
+						<div class="alert alert-success form-success-container-${properties.formID} d-none">
 							Request successfully submitted !!!
 						</div>
 						<div class="iframe-height" data-sly-resource="${'container' @path='/content/lead2loyalty/language-masters/en/home-page/jcr:content/root/container/container/text_img_cta/container'}"></div>

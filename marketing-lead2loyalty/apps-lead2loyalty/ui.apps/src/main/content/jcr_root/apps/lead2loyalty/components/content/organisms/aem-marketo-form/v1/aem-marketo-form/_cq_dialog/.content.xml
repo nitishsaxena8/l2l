@@ -126,7 +126,7 @@
                                                         fieldDescription="Path for PDF to be downloaded"
                                                         fieldLabel="PDF Path"
                                                         name="./downloadPdfPath"
-                                                        rootPath="/content/dam/lead2loyalty/"/>
+                                                        rootPath="/content/dam/"/>
                                                 </items>
                                             </formDetails>
                                         </items>
