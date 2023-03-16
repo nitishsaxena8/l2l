@@ -161,7 +161,7 @@
                                     jcr:lastModified="{Date}2023-02-24T17:28:15.630+05:30"
                                     jcr:lastModifiedBy="admin"
                                     jcr:primaryType="nt:unstructured"
-                                    jcr:title="Query"
+                                    jcr:title="How can we help you?"
                                     sling:resourceType="fd/af/components/guidetextbox"
                                     autofillFieldKeyword="name"
                                     bindRef="/query"
@@ -169,7 +169,7 @@
                                     mandatory="true"
                                     mandatoryMessage="This field is required!!!"
                                     name="Query"
-                                    placeholderText="Type your query here."
+                                    placeholderText="Type your question here"
                                     textIsRich="[true,true,true]"/>
                             <guidebutton
                                     jcr:created="{Date}2023-01-30T20:11:48.384+05:30"

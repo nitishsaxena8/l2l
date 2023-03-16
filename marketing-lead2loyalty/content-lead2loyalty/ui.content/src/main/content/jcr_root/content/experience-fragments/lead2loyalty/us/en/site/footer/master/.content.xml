@@ -19,23 +19,23 @@
                 <utilityLinks jcr:primaryType="nt:unstructured">
                     <item0
                         jcr:primaryType="nt:unstructured"
-                        tr_linkTitle="CUSTOMER SUPPORT">
+                        tr_linkTitle="NAVIGATE">
                         <secondaryFooterLinks jcr:primaryType="nt:unstructured">
                             <item0
                                 jcr:primaryType="nt:unstructured"
-                                openInNewWindowSecondary="_blank"
-                                secondaryLinkUrl="#"
-                                secondaryLinkTitle="Download Drivers"/>
+                                openInNewWindowSecondary="_self"
+                                secondaryLinkUrl="/content/lead2loyalty/language-masters/en/home-page/products"
+                                secondaryLinkTitle="Products"/>
                             <item1
                                 jcr:primaryType="nt:unstructured"
                                 openInNewWindowSecondary="_self"
-                                secondaryLinkUrl="#"
-                                secondaryLinkTitle="Support &amp; Troubleshooting"/>
+                                secondaryLinkUrl="/content/lead2loyalty/language-masters/en/article-page"
+                                secondaryLinkTitle="Articles"/>
                             <item2
                                 jcr:primaryType="nt:unstructured"
                                 openInNewWindowSecondary="_self"
-                                secondaryLinkUrl="#"
-                                secondaryLinkTitle="Training &amp; Certification"/>
+                                secondaryLinkUrl="/content/lead2loyalty/language-masters/en/about-us"
+                                secondaryLinkTitle="About Us"/>
                         </secondaryFooterLinks>
                     </item0>
                 </utilityLinks>
