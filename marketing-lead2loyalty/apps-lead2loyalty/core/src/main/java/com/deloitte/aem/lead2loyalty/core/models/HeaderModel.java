@@ -75,27 +75,31 @@ public class HeaderModel {
 			while (rootPageIterator.hasNext()) {
 				Page childPage = rootPageIterator.next();
 				ValueMap childPageProperties = childPage.getProperties();
-				NavPrimaryListModel childPageInfo = new NavPrimaryListModel();
-				childPageInfo.setText(childPageProperties.get(JcrConstants.JCR_TITLE, ""));
-				childPageInfo.setUrl(ServiceUtils.getLink(resourceResolver, childPage.getPath(), settingsService) + "#" + childPage.getName());
-				String categoryParam = settingsService.getRunModes().contains("author") ? "&category="+childPage.getName() : "?category="+childPage.getName();
-				childPageInfo.setSecondLevelMoreLink(ServiceUtils.getLink(resourceResolver, parentPage.getPath(), settingsService) + categoryParam);
+				if ("true".equals(childPageProperties.get("showInNav", String.class)) )	{
+					NavPrimaryListModel childPageInfo = new NavPrimaryListModel();
+					childPageInfo.setText(childPageProperties.get(JcrConstants.JCR_TITLE, ""));
+					childPageInfo.setUrl(ServiceUtils.getLink(resourceResolver, childPage.getPath(), settingsService) + "#" + childPage.getName());
+					String categoryParam = settingsService.getRunModes().contains("author") ? "&category="+childPage.getName() : "?category="+childPage.getName();
+					childPageInfo.setSecondLevelMoreLink(ServiceUtils.getLink(resourceResolver, parentPage.getPath(), settingsService) + categoryParam);
 
-				//to set tertiary links
-				Iterator<Page> childPageIterator = childPage.listChildren(new PageFilter(), false);
-				List<TextAndUrlBean> tertiaryLinks=new ArrayList<>();
-				while (childPageIterator.hasNext()) {
-					Page grandchildPage = childPageIterator.next();
-					ValueMap grandchildPageProperties = grandchildPage.getProperties();
-					TextAndUrlBean grandchildPageInfo = new TextAndUrlBean();
-					grandchildPageInfo.setText(grandchildPageProperties.get(JcrConstants.JCR_TITLE, ""));
-					grandchildPageInfo.setUrl(ServiceUtils.getLink(resourceResolver, grandchildPage.getPath(), settingsService));
+					//to set tertiary links
+					Iterator<Page> childPageIterator = childPage.listChildren(new PageFilter(), false);
+					List<TextAndUrlBean> tertiaryLinks=new ArrayList<>();
+					while (childPageIterator.hasNext()) {
+						Page grandchildPage = childPageIterator.next();
+						ValueMap grandchildPageProperties = grandchildPage.getProperties();
+						if ("true".equals(grandchildPageProperties.get("showInNav", String.class)) )	{
+							TextAndUrlBean grandchildPageInfo = new TextAndUrlBean();
+							grandchildPageInfo.setText(grandchildPageProperties.get(JcrConstants.JCR_TITLE, ""));
+							grandchildPageInfo.setUrl(ServiceUtils.getLink(resourceResolver, grandchildPage.getPath(), settingsService));
 
-					tertiaryLinks.add(grandchildPageInfo);
+							tertiaryLinks.add(grandchildPageInfo);
+						}
+					}
+
+					childPageInfo.setTertiaryLinks(tertiaryLinks);
+					secondaryHeaderLinks.add(childPageInfo);
 				}
-
-				childPageInfo.setTertiaryLinks(tertiaryLinks);
-				secondaryHeaderLinks.add(childPageInfo);
 			}
 		}
 	}
