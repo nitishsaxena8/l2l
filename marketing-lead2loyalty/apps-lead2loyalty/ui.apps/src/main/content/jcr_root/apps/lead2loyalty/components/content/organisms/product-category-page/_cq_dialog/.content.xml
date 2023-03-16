@@ -20,7 +20,7 @@
                 <items jcr:primaryType="nt:unstructured">
                     <product
                         jcr:primaryType="nt:unstructured"
-                        jcr:title="Product"
+                        jcr:title="Product Category"
                         sling:orderBefore="basic"
                         sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
                         <items jcr:primaryType="nt:unstructured">
@@ -28,34 +28,11 @@
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/coral/foundation/container">
                                 <items jcr:primaryType="nt:unstructured">
-                                    <productID
-										cq:showOnCreate="{Boolean}true"
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                        fieldLabel="Product ID"
-                                        name="./productID"
-                                        renderReadOnly="{Boolean}true"
-                                        required="{Boolean}true">
-                                        <granite:data
-                                            jcr:primaryType="nt:unstructured"
-                                            cq-msm-lockable="productID"/>
-                                    </productID>
-                                    <productPath
-                                        cq:showOnCreate="{Boolean}true"
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
-                                        fieldDescription="Select Product Image Path"
-                                        fieldLabel="Product Image Path"
-                                        name="./image">
-                                        <granite:data
-                                            jcr:primaryType="nt:unstructured"
-                                            cq-msm-lockable="image"/>
-                                    </productPath>
                                     <showInNav
 										cq:showOnCreate="{Boolean}true"
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
-                                        fieldDescription="Check the box to show the page in Header Navigation"
+                                        fieldDescription="Show the page in Header Navigation"
                                         name="./showInNav"
                                         text="Show In Header Navigation"
                                         uncheckedValue="false"
