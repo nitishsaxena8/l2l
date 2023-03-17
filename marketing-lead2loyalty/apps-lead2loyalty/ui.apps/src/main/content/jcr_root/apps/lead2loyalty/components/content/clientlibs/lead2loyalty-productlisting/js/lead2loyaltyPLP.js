@@ -270,7 +270,7 @@ $( document ).ready(function() {
                 if(formID == 1008){
                     digitalData.form.formName = 'Request Quote';
                 } else if(formID == 1024){
-                    digitalData.form.formName = 'Request Detailed Specs';
+                    digitalData.form.formName = 'Download Technical Specifications';
                 }
 
                 return false;

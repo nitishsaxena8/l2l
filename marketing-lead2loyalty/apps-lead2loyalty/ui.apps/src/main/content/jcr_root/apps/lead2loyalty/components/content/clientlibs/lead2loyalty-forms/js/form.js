@@ -221,7 +221,7 @@ $( document ).ready(function() {
                     $('.form-success-container', parent.document).removeClass('d-none');
                     $('.form-success-container', parent.document).text('Request Submitted Successfully !!!');
                 } else if(formID === '1024') {
-                    parent.window.digitalData.form.formName = 'Request Detailed Specs';
+                    parent.window.digitalData.form.formName = 'Download Technical Specifications';
                     $('.form-success-container-'+formID, parent.document).removeClass('d-none');
                     $('.form-success-container-'+formID, parent.document).text('Request Submitted Successfully !!!');
                 }
