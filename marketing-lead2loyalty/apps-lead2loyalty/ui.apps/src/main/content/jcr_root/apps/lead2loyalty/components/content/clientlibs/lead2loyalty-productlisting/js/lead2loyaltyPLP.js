@@ -6,11 +6,11 @@ if(localStorage.getItem('userDetails')) {
 
 
 if (digitalData && digitalData.user && digitalData.user.email) {
-   $("#requestAQuoteMember").removeClass("d-none");
-   $("#requestAQuoteGuest").addClass("d-none");
+   $(".requestAQuoteMember").removeClass("d-none");
+   $(".requestAQuoteGuest").addClass("d-none");
 } else {
-	$("#requestAQuoteMember").addClass("d-none");
-    $("#requestAQuoteGuest").removeClass("d-none");
+	$(".requestAQuoteMember").addClass("d-none");
+    $(".requestAQuoteGuest").removeClass("d-none");
 }
 
 if($('.plp-container').length) {
@@ -162,9 +162,9 @@ $('#signInForm').submit(function(event) {
                 digitalData.user.userType = 'member';
                 digitalData.user.email = resultData.email;
 
-                if($("#requestAQuoteMember")) {
-   					$("#requestAQuoteMember").removeClass("d-none");
-   				$("#requestAQuoteGuest").addClass("d-none");
+                if($(".requestAQuoteMember")) {
+   					$(".requestAQuoteMember").removeClass("d-none");
+   				$(".requestAQuoteGuest").addClass("d-none");
                   }
 
               }
@@ -216,76 +216,83 @@ $("body").on("click", "#btnExport", function () {
                 pdfMake.createPdf(docDefinition).download($('.product-page-details', parent.document).attr("product-title")+".pdf");
             }
         });
-    },2000);
+    },5000);
 });
 
 $( document ).ready(function() {
-    $('#requestAQuoteMember').click(function(event) {
-    	$("#guideContainerForm input").change(function() {
-            $('.form-success-container').addClass('d-none');
-        }); $('.request-quote-btn').click(function(event) {
-            $('.form-success-container').addClass('d-none');
-        });
-
-        var quote = {};
-        var formID = 1008;
-        if($('.form-data-container').attr('id') != 'undefined'){
-			formID = $('.form-data-container').attr('id');
-        }
-
-        if (localStorage.getItem('userDetails')) {
-            var user = JSON.parse(localStorage.getItem('userDetails'));
-            if (user) {
-
-				quote = {
-                    "firstName": user.firstName,
-                    "lastName": user.lastName,
-                    "email": user.email
-                }
-            }
-        }
-
-        if ($('.product-page-details', parent.document).attr('product-id') !== 'undefined') {
-            quote["productId"] = $('.product-page-details', parent.document).attr("product-id");
-        }
-
-        if ($('.product-page-details', parent.document).attr("product-title") !== 'undefined') {
-            quote["productTitle"] = $('.product-page-details', parent.document).attr("product-title");
-        }
-
-        if ($('.product-page-details', parent.document).attr("product-description") !== 'undefined') {
-            quote["productDescription"] = $('.product-page-details', parent.document).attr("product-description");
-        }
-
-        if ($('.product-page-details', parent.document).attr("product-path") !== 'undefined') {
-            quote["productPath"] = $('.product-page-details', parent.document).attr("product-path");
-        }
-
-        MktoForms2.loadForm("//733-JCL-696.mktoweb.com", "733-JCL-696", formID, function(form) {
-            form.addHiddenFields(quote);
-            form.submit();
-            console.log("Form Submitted !!!")
-			console.log(quote);
-            form.onSuccess(function(vals,thanksURL){
-                $('.form-success-container', parent.document).removeClass('d-none');
-                digitalData.event = 'formSubmission';
-                digitalData.form = {};
-                if(formID == 1008){
-                    digitalData.form.formName = 'Request Quote';
-                } else if(formID == 1024){
-                    digitalData.form.formName = 'Download Technical Specifications';
-                }
-
-                return false;
-            });
-        });
-        var downloadResourcePath = $('.form-data-container').data('path');
-        if(downloadResourcePath !== 'undefined') {
-            window.location.href = downloadResourcePath;
-        }
-
-        if ($('.product-page-details', parent.document) && $('.product-page-details', parent.document).attr("product-title")) {
-            $('#requestAQuotemdelTitle', parent.document).text("Request a Quote - "+$('.product-page-details', parent.document).attr("product-title"));
-        }
+    $('#requestAQuoteMember-1008').click(function(event) {
+        submitMarketoForm(1008);
+    });
+    $('#requestAQuoteMember-1024').click(function(event) {
+        submitMarketoForm(1024);
     });
 });
+
+function submitMarketoForm(formID) {
+
+    $("#guideContainerForm input").change(function() {
+        $('.form-success-container').addClass('d-none');
+    });
+    $('.request-quote-btn').click(function(event) {
+        $('.form-success-container').addClass('d-none');
+    });
+
+    var quote = {};
+
+    if (localStorage.getItem('userDetails')) {
+        var user = JSON.parse(localStorage.getItem('userDetails'));
+        if (user) {
+
+    		quote = {
+                "firstName": user.firstName,
+                "lastName": user.lastName,
+                "email": user.email
+            }
+        }
+    }
+
+    if ($('.product-page-details', parent.document).attr('product-id') !== 'undefined') {
+        quote["productId"] = $('.product-page-details', parent.document).attr("product-id");
+    }
+
+    if ($('.product-page-details', parent.document).attr("product-title") !== 'undefined') {
+        quote["productTitle"] = $('.product-page-details', parent.document).attr("product-title");
+    }
+
+    if ($('.product-page-details', parent.document).attr("product-description") !== 'undefined') {
+        quote["productDescription"] = $('.product-page-details', parent.document).attr("product-description");
+    }
+
+    if ($('.product-page-details', parent.document).attr("product-path") !== 'undefined') {
+        quote["productPath"] = $('.product-page-details', parent.document).attr("product-path");
+    }
+
+    MktoForms2.loadForm("//733-JCL-696.mktoweb.com", "733-JCL-696", formID, function(form) {
+        form.addHiddenFields(quote);
+        form.submit();
+        console.log("Form Submitted !!!")
+    	console.log(quote);
+        form.onSuccess(function(vals,thanksURL){
+
+            digitalData.event = 'formSubmission';
+            digitalData.form = {};
+            if(formID == 1008){
+                digitalData.form.formName = 'Request Quote';
+                $('.form-success-container', parent.document).removeClass('d-none');
+            } else if(formID == 1024){
+                digitalData.form.formName = 'Download Technical Specifications';
+                $('.form-success-container-'+formID, parent.document).removeClass('d-none');
+                var downloadResourcePath = $('.form-data-container').data('path');
+                if(downloadResourcePath !== 'undefined') {
+                    window.location.href = downloadResourcePath;
+                }
+            }
+
+            return false;
+        });
+    });
+
+    if ($('.product-page-details', parent.document) && $('.product-page-details', parent.document).attr("product-title")) {
+        $('#requestAQuotemdelTitle', parent.document).text("Request a Quote - "+$('.product-page-details', parent.document).attr("product-title"));
+    }
+}

@@ -13,8 +13,8 @@
 					<p class="mt-5"> ${properties.atmTextHtml @context='html'}</p>
 					<p class="form-success-container-${properties.formID} request-quote-member text-success d-none">Request successfully submitted !!!</p>
 					<div class="form-data-container d-none" id="${properties.formID}" data-path="${properties.downloadPdfPath}"></div>
-					<button type="button" class="btn btn-primary" data-bs-toggle="modal" id="requestAQuoteGuest" data-target="#requestAQuote1" data-toggle="modal">${properties.ctaLabel}</button>
-					<button type="button" class="btn btn-primary d-none" id="requestAQuoteMember">${properties.ctaLabel}</button>
+					<button type="button" class="btn btn-primary requestAQuoteGuest" data-bs-toggle="modal" id="requestAQuoteGuest" data-target="#requestAQuote1" data-toggle="modal">${properties.ctaLabel}</button>
+					<button type="button" class="btn btn-primary d-none requestAQuoteMember" id="requestAQuoteMember-${properties.formID}">${properties.ctaLabel}</button>
 				</div>
 			</div>
 		</div>
