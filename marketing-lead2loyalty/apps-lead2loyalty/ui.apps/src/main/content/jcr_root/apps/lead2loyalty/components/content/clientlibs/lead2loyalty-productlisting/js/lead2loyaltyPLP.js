@@ -75,7 +75,7 @@ if($('#shareWithTeamsBtnModal').length) {
         $('.form-success-container.share-with-team').addClass('d-none');
     });
 
-    $(".share-team-form input").change(function() { 
+    $(".share-team-form input").change(function() {
         $('.form-success-container.share-with-team').addClass('d-none');
     });
 
@@ -112,6 +112,8 @@ if($('#shareWithTeamsBtnModal').length) {
 
             MktoForms2.loadForm("//733-JCL-696.mktoweb.com", "733-JCL-696", formID, function(form) {
                 form.addHiddenFields(transferSingleObj);
+                // need not to send _mkt_trk during share form submission
+                form.addHiddenFields({"_mkt_trk":""});
                 form.submit();
                 console.log("Form Submitted !!!")
                 console.log(transferSingleObj);
@@ -206,7 +208,7 @@ $('[data-bs-toggle="modal"]').click(function(event) {
 });
 
 //Article Download
-$("body").on("click", "#btnExport", function () {
+/*$("body").on("click", "#btnExport", function () {
     setTimeout(function() {
         html2canvas($('#tblCustomers')[0],{
             onrendered: function (canvas) {
@@ -217,6 +219,14 @@ $("body").on("click", "#btnExport", function () {
             }
         });
     },5000);
+});*/
+$("body").on("click", "#btnExport", function () {
+    var makepdf = document.getElementById("tblCustomers");
+    var opt = {
+    pagebreak: { before: '#pbPointB', after: '#pbPointA' }
+};
+ html2pdf().set(opt).from(makepdf).save();
+ //html2pdf().from(makepdf).save();
 });
 
 $( document ).ready(function() {
