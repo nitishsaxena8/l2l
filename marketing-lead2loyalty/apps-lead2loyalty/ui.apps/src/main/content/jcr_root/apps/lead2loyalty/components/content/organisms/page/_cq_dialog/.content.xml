@@ -27,8 +27,6 @@
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/coral/foundation/container">
                                 <items jcr:primaryType="nt:unstructured">
-                                    <title/>
-                                    <moretitles/>
                                     <analyticsField
                                         jcr:primaryType="nt:unstructured"
                                         jcr:title="Analytics Properties"
@@ -70,9 +68,6 @@
                                             </pageType>
                                         </items>
                                     </analyticsField>
-                                    <htmlid/>
-                                    <onofftime/>
-                                    <vanityurl/>
                                 </items>
                             </column>
                         </items>
