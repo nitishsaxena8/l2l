@@ -27,19 +27,52 @@
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/coral/foundation/container">
                                 <items jcr:primaryType="nt:unstructured">
-                                    <keywordsField
+                                    <title/>
+                                    <moretitles/>
+                                    <analyticsField
                                         jcr:primaryType="nt:unstructured"
-                                        jcr:title="Keywords"
+                                        jcr:title="Analytics Properties"
                                         sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
                                         <items jcr:primaryType="nt:unstructured">
                                             <keywords
+                                                cq:showOnCreate="{Boolean}true"
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                                 fieldDescription="Provide the Keywords as comma-separated values."
                                                 fieldLabel="Keywords"
                                                 name="./keywords"/>
+                                            <pageType
+                                                cq:showOnCreate="{Boolean}true"
+												emptyOption="{Boolean}true"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                emptyText="Select"
+                                                fieldLabel="Page Type"
+                                                name="./pageType">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <home
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Home Page"
+                                                        value="Home Page"/>
+                                                    <article
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Article Page"
+                                                        value="Article Page"/>
+                                                    <pcp
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Product Category Page"
+                                                        value="Product Category Page"/>
+                                                    <pdp
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Product Detail Page"
+                                                        value="Product Detail Page"/>
+                                                </items>
+                                            </pageType>
                                         </items>
-                                    </keywordsField>
+                                    </analyticsField>
+                                    <htmlid/>
+                                    <onofftime/>
+                                    <vanityurl/>
                                 </items>
                             </column>
                         </items>
