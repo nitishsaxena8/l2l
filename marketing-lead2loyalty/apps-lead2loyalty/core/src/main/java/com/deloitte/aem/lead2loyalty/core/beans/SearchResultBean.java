@@ -7,6 +7,7 @@ public class SearchResultBean {
     private String category;
     private String keywords;
     private String pagePath;
+    private String publishDate;
 
     public String getTitle() {
         return title;
@@ -55,4 +56,13 @@ public class SearchResultBean {
     public void setPagePath(String pagePath) {
         this.pagePath = pagePath;
     }
+
+    public String getPublishDate() {
+        return publishDate;
+    }
+
+    public void setPublishDate(String publishDate) {
+        this.publishDate = publishDate;
+    }
+
 }

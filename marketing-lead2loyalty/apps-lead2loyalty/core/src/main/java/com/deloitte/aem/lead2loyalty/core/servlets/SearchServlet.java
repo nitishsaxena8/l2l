@@ -12,8 +12,8 @@ import com.deloitte.aem.lead2loyalty.core.beans.SearchFilterBean;
 import com.deloitte.aem.lead2loyalty.core.beans.SearchResponseWrapper;
 import com.deloitte.aem.lead2loyalty.core.beans.SearchResultBean;
 import com.deloitte.aem.lead2loyalty.core.service.utility.Lead2loyaltyService;
+import com.deloitte.aem.lead2loyalty.core.util.WebUtils;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
@@ -28,8 +28,6 @@ import org.osgi.service.component.annotations.Reference;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.jcr.Node;
-import javax.jcr.RepositoryException;
 import javax.jcr.Session;
 import javax.servlet.Servlet;
 import java.io.IOException;
@@ -62,28 +60,21 @@ public class SearchServlet extends SlingAllMethodsServlet {
         ObjectMapper responseObjectMapper = new ObjectMapper();
         SearchResponseWrapper searchResponseWrapper = new SearchResponseWrapper();
         List<SearchResultBean> searchResultBeanList = new ArrayList<>();
-        //HashSet<String> pagePathHashSet = new HashSet<>();
+        HashSet<String> pagePathHashSet = new HashSet<>();
 
         try {
             Map<String, String> predicate = createPredicate(request);
             Query query = builder.createQuery(PredicateGroup.create(predicate), session);
             SearchResult searchResult = query.getResult();
 
-            /*for(Hit hit : searchResult.getHits()) {
-                String nodePath = hit.getNode().getPath();
-                String pagePath = resourceResolver.getResource(nodePath.substring(0,nodePath.indexOf("jcr:content"))).adaptTo(Node.class).getPath();
-                pagePathHashSet.add(pagePath);
+            for(Hit hit : searchResult.getHits()) {
+                Page page = resourceResolver.adaptTo(PageManager.class).getContainingPage(hit.getResource());
+                pagePathHashSet.add(page.getPath());
             }
             searchResponseWrapper.setSearchResultCount(pagePathHashSet.size());
             searchResponseWrapper.setPageCount(pagePathHashSet.size()/10 + 1);
             for(String pagePath : pagePathHashSet) {
                 Page page = resourceResolver.getResource(pagePath).adaptTo(Page.class);
-                searchResultBeanList.add(getSearchResultBean(page));
-            }*/
-            searchResponseWrapper.setSearchResultCount(searchResult.getHits().size());
-            searchResponseWrapper.setPageCount(searchResult.getHits().size()/10 + 1);
-            for(Hit hit : searchResult.getHits()) {
-                Page page = resourceResolver.adaptTo(PageManager.class).getContainingPage(hit.getResource());
                 searchResultBeanList.add(getSearchResultBean(page));
             }
             searchResponseWrapper.setSearchResultBeanList(searchResultBeanList);
@@ -96,10 +87,10 @@ public class SearchServlet extends SlingAllMethodsServlet {
         }
     }
 
-    private SearchResultBean getSearchResultBean(Page page) throws RepositoryException {
+    private SearchResultBean getSearchResultBean(Page page) {
 
-        ResourceResolver resourceResolver = lead2loyaltyService.getServiceResolver();
         SearchResultBean searchResultBean = new SearchResultBean();
+
         if(page != null) {
             ValueMap properties = page.getProperties();
             searchResultBean.setPagePath(page.getPath());
@@ -109,14 +100,13 @@ public class SearchServlet extends SlingAllMethodsServlet {
             searchResultBean.setDescription(properties.get(JcrConstants.JCR_DESCRIPTION, String.class) != null
                     ? properties.get(JcrConstants.JCR_DESCRIPTION, String.class)
                     : StringUtils.EMPTY);
-            searchResultBean.setCategory(resourceResolver.getResource(properties.get("cq:template", String.class)+"/jcr:content").adaptTo(Node.class).getProperty("jcr:title").getString());
-//            searchResultBean.setCategory(properties.get("pageType", String.class) != null
-//                    ? properties.get("pageType", String.class)
-//                    : StringUtils.EMPTY);
+            searchResultBean.setCategory(properties.get("pageType", String.class) != null
+                    ? properties.get("pageType", String.class)
+                    : StringUtils.EMPTY);
             searchResultBean.setKeywords(properties.get("keywords", String.class) != null
                     ? properties.get("keywords", String.class)
                     : StringUtils.EMPTY);
-            if(page.getContentResource().getChild("image") != null){
+            if(page.getContentResource().getChild("image") != null) {
                 ValueMap imageProperties = Objects.requireNonNull(page.getContentResource().getChild("image")).getValueMap();
                 searchResultBean.setImagePath(imageProperties.get("fileReference", String.class) != null
                         ? imageProperties.get("fileReference", String.class)
@@ -126,7 +116,9 @@ public class SearchServlet extends SlingAllMethodsServlet {
                         ? properties.get("image", String.class)
                         : StringUtils.EMPTY);
             }
-
+            searchResultBean.setPublishDate(properties.get("cq:lastReplicated", Date.class) != null
+                    ? properties.get("cq:lastReplicated", Date.class).toString()
+                    : StringUtils.EMPTY);
         }
         return  searchResultBean;
     }
@@ -134,26 +126,14 @@ public class SearchServlet extends SlingAllMethodsServlet {
     private Map<String, String> createPredicate(final SlingHttpServletRequest request) throws JSONException {
 
         Map<String, String> predicate = new HashMap<>();
-        JSONObject json = getRequestParam(request);
+        JSONObject json = WebUtils.getRequestParam(request);
 
         predicate.put("path", "/content/lead2loyalty/language-masters/en");
         predicate.put("type", "nt:unstructured");
         predicate.put("fulltext", json.get("query").toString());
-        predicate.put("p.offset", json.get("offSet").toString());
         predicate.put("p.limit", "-1");
 
         return predicate;
-    }
-
-    private JSONObject getRequestParam(SlingHttpServletRequest request) {
-        JSONObject json = null;
-        try{
-            String requestData = IOUtils.toString(request.getReader());
-            json = new JSONObject(requestData);
-        } catch(Exception e) {
-            logger.error("Exception");
-        }
-        return json;
     }
 
     private List<SearchFilterBean> createSearchFilter(List<SearchResultBean> searchResultBeanList) {
