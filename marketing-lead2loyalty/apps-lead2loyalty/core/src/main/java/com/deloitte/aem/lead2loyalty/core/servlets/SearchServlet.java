@@ -117,7 +117,7 @@ public class SearchServlet extends SlingAllMethodsServlet {
                         : StringUtils.EMPTY);
             }
             searchResultBean.setPublishDate(properties.get("cq:lastReplicated", Date.class) != null
-                    ? properties.get("cq:lastReplicated", Date.class).toString()
+                    ? properties.get("cq:lastModified", Date.class).toString()
                     : StringUtils.EMPTY);
         }
         return  searchResultBean;
