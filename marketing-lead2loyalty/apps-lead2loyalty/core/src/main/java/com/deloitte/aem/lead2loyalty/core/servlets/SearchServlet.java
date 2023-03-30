@@ -116,7 +116,7 @@ public class SearchServlet extends SlingAllMethodsServlet {
                         ? properties.get("image", String.class)
                         : StringUtils.EMPTY);
             }
-            searchResultBean.setPublishDate(properties.get("cq:lastReplicated", Date.class) != null
+            searchResultBean.setPublishDate(properties.get("cq:lastModified", Date.class) != null
                     ? properties.get("cq:lastModified", Date.class).toString()
                     : StringUtils.EMPTY);
         }
