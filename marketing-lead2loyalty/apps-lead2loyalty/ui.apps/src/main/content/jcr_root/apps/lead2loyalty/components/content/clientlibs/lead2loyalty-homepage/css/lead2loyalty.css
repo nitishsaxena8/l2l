@@ -816,7 +816,15 @@ h5.card-title,h5.card-text {
 }
 
 .iframe-height iframe {
-height:485px;
+    height:485px;
+}
+
+.test-class .fa-bookmark{
+	color:orange;
+}
+
+.share-section {
+	display:flex;
 }
 
 @media screen and (min-width:769px) {

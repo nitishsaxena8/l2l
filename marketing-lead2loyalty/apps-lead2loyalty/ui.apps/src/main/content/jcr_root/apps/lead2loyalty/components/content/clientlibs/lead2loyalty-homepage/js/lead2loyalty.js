@@ -1,4 +1,37 @@
 $( document ).ready(function() {
+
+    $("#bookmarkBtn").click(function () {
+
+        if(localStorage.getItem('userDetails')) {
+
+			var user = JSON.parse(localStorage.getItem('userDetails'));
+            var email = user.email;
+            var pagePath = $(location).attr("pathname").replace(/\.[^/.]+$/, "");
+            var className = $('#bookmark1').attr("class");
+            var action = className === 'fa fa-bookmark-o' ? 'add' : 'remove';
+
+            var payload = {
+                action: action,
+                email: email,
+                pagePath: pagePath
+            };
+
+            $.ajax({
+                type: "POST",
+                url: "/bin/manageBookmarks.json",
+                contentType: "application/json",
+                data: JSON.stringify(payload),
+                success: function(resultData) {
+                    $("#bookmark1").toggleClass("fa-bookmark-o fa-bookmark");
+                }
+            });
+        }
+        else {
+			alert("Please sign in to bookmark");
+        }
+
+	});
+
     var counter = 0;
     $('#search-button1').click(function() {
        searchFunc(0);
