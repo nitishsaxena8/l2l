@@ -53,7 +53,10 @@ $( document ).ready(function() {
 
                         $('.signup-fail-container', parent.document).text('');
                         $('.signup-fail-container', parent.document).addClass('d-none');
-                        document.cookie = "userEmail="+resultData.email;
+                        var date = new Date();
+                        date.setTime(date.getTime() + (24*60*60*1000));
+                        expires = "; expires=" + date.toUTCString();
+                        document.cookie = "userEmail=" + resultData.email + expires + "; path=/";
 
                         delete loginData.password;
 

@@ -156,7 +156,10 @@ $('#signInForm').submit(function(event) {
                 $('.user-log-in').addClass('d-none');
                 $('[data-target="#signInFormModal"]').trigger('click');
                 $('.modal-backdrop').remove();
-                document.cookie = "userEmail="+resultData.email;
+                var date = new Date();
+                date.setTime(date.getTime() + (24*60*60*1000));
+                expires = "; expires=" + date.toUTCString();
+                document.cookie = "userEmail="+ resultData.email + expires + "; path=/";
 
                 //analytics
                 digitalData.event = 'loggedIn';
@@ -184,7 +187,7 @@ $('.logout-app').click(function(event) {
     $('.user-log-in').removeClass('d-none');
     $('.user-logged-in').addClass('d-none');
     $('.user-logged-in  .dropdown-menu').removeClass('show');
-    document.cookie = "userEmail=; expires=Thu, 01 Jan 1970 00:00:01 GMT;";
+    document.cookie = "userEmail=; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/";
 
     //analytics
     digitalData.event = '';
