@@ -41,6 +41,36 @@ $( document ).ready(function() {
 
 	});
 
+	 var globalSearchTerm;
+
+    if (window.location.href.includes("search-result.html")) {
+         $('#form1').attr('disabled', 'disabled');
+        $('#search-button').attr('disabled', 'disabled');
+        setTimeout(initialSearch,1000);
+    }
+
+ $('#search-button').click(function() {
+     globalSearchTerm = document.getElementById("form1").value;
+     if(globalSearchTerm !==''){
+     localStorage.setItem("searchTerm", globalSearchTerm);
+     window.location.href = "/content/lead2loyalty/language-masters/en/search-result.html?search=#";
+
+     initialSearch();
+
+     }
+     else{
+         alert("Please enter a value");
+     }
+});
+
+function initialSearch(){
+        let data = localStorage.getItem("searchTerm");
+        document.getElementById("search").value = data;
+        document.getElementById("search-button1").click();
+    }
+
+
+
     var counter = 0;
     $('#search-button1').click(function() {
        searchFunc(0);
@@ -102,7 +132,11 @@ $( document ).ready(function() {
                         var limit = resultList.length < 10 ? resultList.length : (offset + 10);
                         for(var i=offset; i<limit; i++) {
                             let newDiv = document.createElement('section');
-                            newDiv.innerHTML = '<div class="search-result-item"> <a class="image-link" href="'+resultList[i].pagePath+'.html" target="_blank"><img class="image" src="'+resultList[i].imagePath+'"></a><div class="search-result-item-body"><div class="row"><div class="col-sm-9"><h5 class="search-result-item-heading"><a href="#"> '+resultList[i].title+' </a></h5><p class="info">'+resultList[i].publishDate+'</p><p class="description">'+resultList[i].description+'</p><div class="custom-buttons"><span class="badge ">'+resultList[i].keywords+'</span></div></div></div></div></section>';
+                            if( resultList[i].imagePath == ''){
+                                  resultList[i].imagePath = '/content/dam/lead2loyalty/no-img.jpg';
+
+                         }
+                            newDiv.innerHTML = '<div class="search-result-item"> <a class="image-link" href="'+resultList[i].pagePath+'.html" target="_blank"><img class="image" src="'+resultList[i].imagePath+'"></a><div class="search-result-item-body"><div class="row"><div class="col-sm-12"><h5 class="search-result-item-heading"><a href="#"> '+resultList[i].title+' </a></h5><p class="info">'+resultList[i].publishDate+'</p><p class="description">'+resultList[i].description+'</p><div class="custom-buttons"><span class="badge ">'+resultList[i].keywords+'</span></div></div></div></div></section>';
                             document.getElementById('searchSection').appendChild(newDiv);
                         }
                     }
@@ -139,7 +173,11 @@ $( document ).ready(function() {
 					var limit = resultList.length < 10 ? resultList.length : (offset + 10);
                     for(var i=offset; i<limit; i++) {
                         let newDiv = document.createElement('section');
-                        newDiv.innerHTML = '<div class="search-result-item"> <a class="image-link" href="'+resultList[i].pagePath+'.html" target="_blank"><img class="image" src="'+resultList[i].imagePath+'"></a><div class="search-result-item-body"><div class="row"><div class="col-sm-9"><h5 class="search-result-item-heading"><a href="#"> '+resultList[i].title+' </a></h5><p class="info">'+resultList[i].publishDate+'</p><p class="description">'+resultList[i].description+'</p><div class="custom-buttons"><span class="badge ">'+resultList[i].keywords+'</span></div></div></div></div></section>';
+                        if( resultList[i].imagePath == ''){
+                                       resultList[i].imagePath = '/content/dam/lead2loyalty/no-img.jpg';
+
+                          }
+                        newDiv.innerHTML = '<div class="search-result-item"> <a class="image-link" href="'+resultList[i].pagePath+'.html" target="_blank"><img class="image" src="'+resultList[i].imagePath+'"></a><div class="search-result-item-body"><div class="row"><div class="col-sm-12"><h5 class="search-result-item-heading"><a href="#"> '+resultList[i].title+' </a></h5><p class="info">'+resultList[i].publishDate+'</p><p class="description">'+resultList[i].description+'</p><div class="custom-buttons"><span class="badge ">'+resultList[i].keywords+'</span></div></div></div></div></section>';
                         document.getElementById('searchSection').appendChild(newDiv);
                     }
             	}

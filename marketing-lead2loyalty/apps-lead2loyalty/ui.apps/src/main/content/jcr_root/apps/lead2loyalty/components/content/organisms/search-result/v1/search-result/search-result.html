@@ -48,9 +48,13 @@ display:block;
 }
 
 .search-result-item {
-    padding: 20px;
+    padding: 10px;
     background-color: #fff;
     border-radius: 4px
+}
+
+.search-result-item p {
+	margin-bottom:10px;
 }
 
 .search-result-item:after,
@@ -73,7 +77,7 @@ display:block;
 @media (min-width:768px) {
     .search-result-item .image-link {
         display: inline-block;
-        margin: -20px 0 -20px -20px;
+         margin: 0px 2px; 
         float: left;
         width: 200px
     }
@@ -160,12 +164,12 @@ section{
 							</select>-->
 
 						</div>
-						<div class="col-lg-8 col-md-6 col-sm-12 ps-5">
+						<div class="col-lg-8 col-md-6 col-sm-12 ps-5 pt-3">
 
 							<input type="text" placeholder="Search..." class="form-control" id="search" name="search">
 
 						</div>
-						<div class="col-lg-1 col-md-3 col-sm-12 p-0 d-flex justify-content-end pe-2">
+						<div class="col-lg-1 col-md-3 col-sm-12 pt-3 d-flex justify-content-end pe-2">
 							<button type="button" class="btn btn-dark" id="search-button1">
 								Search
 							</button>
