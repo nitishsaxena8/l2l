@@ -9,13 +9,13 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
+import org.apache.sling.api.resource.ResourceUtil;
 import org.apache.sling.api.resource.ValueMap;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.Self;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
-import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import org.apache.sling.settings.SlingSettingsService;
 
 import javax.annotation.PostConstruct;
@@ -23,9 +23,6 @@ import javax.jcr.Node;
 import javax.jcr.Property;
 import javax.jcr.RepositoryException;
 import javax.jcr.Value;
-import javax.servlet.http.Cookie;
-import java.io.UnsupportedEncodingException;
-import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -54,26 +51,30 @@ public class BookmarksModel {
 
 			String emailId = WebUtils.getSpecificCookie(request, "userEmail");
 			String userPath = "/var/lead2loyalty-users/" + emailId;
-			Node userNode = Objects.requireNonNull(resourceResolver.getResource(userPath)).adaptTo(Node.class);
-			if (userNode != null && userNode.hasProperty("bookmarks")) {
-				name = userNode.getProperty("FirstName").getString();
-				Property favoritesProperty = userNode.getProperty("bookmarks");
-				Value[] favoriteValues = favoritesProperty.getValues();
-				for (Value favoriteValue : favoriteValues) {
-					Resource pageResource = resourceResolver.getResource(favoriteValue.getString());
-					Resource jcrResource = Objects.requireNonNull(pageResource).getChild(JcrConstants.JCR_CONTENT);
-					ValueMap jcrProperties = Objects.requireNonNull(jcrResource).getValueMap();
-					ProductsBean productsBean = new ProductsBean();
-					productsBean.setPath(ServiceUtils.getLink(resourceResolver,
-							favoriteValue.getString(), settingsService));
-					productsBean.setTitle(jcrProperties.get(JcrConstants.JCR_TITLE, String.class) != null
-							? jcrProperties.get(JcrConstants.JCR_TITLE, String.class)
-							: StringUtils.EMPTY);
-					Resource imageResource = jcrResource.getChild("image");
-					ValueMap imageProperties = imageResource != null ? imageResource.getValueMap() : null;
-					productsBean.setImage(imageProperties != null ? imageProperties.get("fileReference", String.class)
-							: StringUtils.EMPTY);
-					bookmarks.add(productsBean);
+			Resource resource = resourceResolver.getResource(userPath);
+
+			if (!ResourceUtil.isNonExistingResource(resource) && resource.adaptTo(Node.class).hasProperty("bookmarks")) {
+				Node userNode = resource.adaptTo(Node.class);
+				if(userNode.hasProperty("bookmarks")) {
+					name = userNode.getProperty("FirstName").getString();
+					Property favoritesProperty = userNode.getProperty("bookmarks");
+					Value[] favoriteValues = favoritesProperty.getValues();
+					for (Value favoriteValue : favoriteValues) {
+						Resource pageResource = resourceResolver.getResource(favoriteValue.getString());
+						Resource jcrResource = Objects.requireNonNull(pageResource).getChild(JcrConstants.JCR_CONTENT);
+						ValueMap jcrProperties = Objects.requireNonNull(jcrResource).getValueMap();
+						ProductsBean productsBean = new ProductsBean();
+						productsBean.setPath(ServiceUtils.getLink(resourceResolver,
+								favoriteValue.getString(), settingsService));
+						productsBean.setTitle(jcrProperties.get(JcrConstants.JCR_TITLE, String.class) != null
+								? jcrProperties.get(JcrConstants.JCR_TITLE, String.class)
+								: StringUtils.EMPTY);
+						Resource imageResource = jcrResource.getChild("image");
+						ValueMap imageProperties = imageResource != null ? imageResource.getValueMap() : null;
+						productsBean.setImage(imageProperties != null ? imageProperties.get("fileReference", String.class)
+								: StringUtils.EMPTY);
+						bookmarks.add(productsBean);
+					}
 				}
 			}
 		} catch (RepositoryException e) {

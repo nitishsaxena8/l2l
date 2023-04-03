@@ -14,6 +14,7 @@ import com.deloitte.aem.lead2loyalty.core.util.WebUtils;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
+import org.apache.sling.api.resource.ResourceUtil;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Exporter;
 import org.apache.sling.models.annotations.ExporterOption;
@@ -85,16 +86,19 @@ public class ProductDetailsModel {
 
 		String emailId = WebUtils.getSpecificCookie(request, "userEmail");
 		String userPath = "/var/lead2loyalty-users/" + emailId;
-		Node node = resourceResolver.getResource(userPath).adaptTo(Node.class);
+		Resource resource = resourceResolver.getResource(userPath);
 		bookmarkClassName = "fa fa-bookmark-o";
 		try{
-			if(node.hasProperty("bookmarks")) {
-				Value[] valueArray = node.getProperty("bookmarks").getValues();
-				List<Value> valueList = new ArrayList<>(Arrays.asList(valueArray));
-				for(Value value : valueList){
-					if(value.getString().equalsIgnoreCase(currentPage.getPath())){
-						bookmarkClassName = "fa fa-bookmark";
-						break;
+			if(!ResourceUtil.isNonExistingResource(resource)) {
+				Node node = resource.adaptTo(Node.class);
+				if(node.hasProperty("bookmarks")) {
+					Value[] valueArray = node.getProperty("bookmarks").getValues();
+					List<Value> valueList = new ArrayList<>(Arrays.asList(valueArray));
+					for(Value value : valueList){
+						if(value.getString().equalsIgnoreCase(currentPage.getPath())){
+							bookmarkClassName = "fa fa-bookmark";
+							break;
+						}
 					}
 				}
 			}
