@@ -3,7 +3,6 @@ $( document ).ready(function() {
     if(localStorage.getItem('userDetails')) {
         var user = JSON.parse(localStorage.getItem('userDetails'));
         var userEmail = user.email;
-        document.cookie = "userEmail="+userEmail;
         $("#dropdownMenuLink").text("Hi "+ user.firstName);
     }
     function getCookie(name) {
