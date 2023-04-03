@@ -34,6 +34,7 @@ import java.util.List;
 public class BookmarkServlet extends SlingAllMethodsServlet {
     private static final long serialVersionUID = 1L;
     private final transient Logger logger = LoggerFactory.getLogger(getClass());
+    private static final String BOOKMARKS = "bookmarks";
     @Reference
     private transient Lead2loyaltyService lead2loyaltyService;
     @Override
@@ -51,9 +52,9 @@ public class BookmarkServlet extends SlingAllMethodsServlet {
             if (varNode.hasNode("lead2loyalty-users/" + email) && !ResourceUtil.isNonExistingResource(resourceResolver.getResource(pagePath))) {
                 Node node = resourceResolver.getResource("/var/lead2loyalty-users/" + email).adaptTo(Node.class);
                 if(json.get("action").toString().equalsIgnoreCase("add")) {
-                    addAsFavorite(node, session, response, pagePath);
+                    addAsBookmark(node, session, response, pagePath);
                 } else {
-                    removeFromFavorite(node, session, response, pagePath);
+                    removeFromBookmark(node, session, response, pagePath);
                 }
             }
         } catch(Exception e) {
@@ -61,18 +62,18 @@ public class BookmarkServlet extends SlingAllMethodsServlet {
         }
     }
 
-    private void addAsFavorite(Node node, Session session, SlingHttpServletResponse response, String pagePath) throws RepositoryException, IOException {
+    private void addAsBookmark(Node node, Session session, SlingHttpServletResponse response, String pagePath) throws RepositoryException, IOException {
 
         PrintWriter out = response.getWriter();
         ValueFactory valueFactory = session.getValueFactory();
         Value value = valueFactory.createValue(pagePath);
 
-        if(node.hasProperty("favorites")) {
-            Value[] valueArray = node.getProperty("favorites").getValues();
+        if(node.hasProperty(BOOKMARKS)) {
+            Value[] valueArray = node.getProperty(BOOKMARKS).getValues();
             List<Value> valueList = new ArrayList<>(Arrays.asList(valueArray));
             if(!valueList.contains(value)){
                 valueList.add(value);
-                node.setProperty("favorites", valueList.toArray(new Value[0]));
+                node.setProperty(BOOKMARKS, valueList.toArray(new Value[0]));
                 session.save();
                 out.println("Page bookmarked!!!");
             } else {
@@ -81,23 +82,23 @@ public class BookmarkServlet extends SlingAllMethodsServlet {
         } else {
             List<Value> valueList = new ArrayList<>();
             valueList.add(value);
-            node.setProperty("favorites", valueList.toArray(new Value[0]));
+            node.setProperty(BOOKMARKS, valueList.toArray(new Value[0]));
             session.save();
             out.println("Page bookmarked!!!");
         }
     }
 
-    private void removeFromFavorite(Node node, Session session, SlingHttpServletResponse response, String pagePath) throws RepositoryException, IOException {
+    private void removeFromBookmark(Node node, Session session, SlingHttpServletResponse response, String pagePath) throws RepositoryException, IOException {
 
         PrintWriter out = response.getWriter();
         ValueFactory valueFactory = session.getValueFactory();
         Value value = valueFactory.createValue(pagePath);
-        if(node.hasProperty("favorites")) {
-            Value[] valueArray = node.getProperty("favorites").getValues();
+        if(node.hasProperty(BOOKMARKS)) {
+            Value[] valueArray = node.getProperty(BOOKMARKS).getValues();
             List<Value> valueList = new ArrayList<>(Arrays.asList(valueArray));
             if(valueList.contains(value)) {
                 valueList.remove(value);
-                node.setProperty("favorites", valueList.toArray(new Value[0]));
+                node.setProperty(BOOKMARKS, valueList.toArray(new Value[0]));
                 session.save();
                 out.println("Page removed from bookmark list.");
             } else {

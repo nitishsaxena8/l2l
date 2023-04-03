@@ -16,6 +16,7 @@
             <header
 				jcr:primaryType="nt:unstructured"
 				sling:resourceType="lead2loyalty/components/content/organisms/header/v1/header"
+				bookmarksPageUrl="/content/lead2loyalty/language-masters/en/bookmarks"
 				logoLink="/content/lead2loyalty/language-masters/en/home-page"
 				logoTitle="GG"
 				signUpPageUrl="/content/lead2loyalty/language-masters/en/signup">

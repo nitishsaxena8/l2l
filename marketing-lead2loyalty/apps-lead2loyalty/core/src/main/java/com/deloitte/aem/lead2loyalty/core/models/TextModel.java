@@ -31,6 +31,9 @@ public class TextModel {
 	@ValueMapValue
 	private String signUpPageUrl;
 
+	@ValueMapValue
+	private String bookmarksPageUrl;
+
 	@SlingObject
 	private ResourceResolver resourceResolver;
 
@@ -51,5 +54,9 @@ public class TextModel {
 
 	public String getSignUpPageUrl() {
 		return ServiceUtils.getLink(resourceResolver, signUpPageUrl, settingsService);
+	}
+
+	public String getBookmarksPageUrl() {
+		return ServiceUtils.getLink(resourceResolver, bookmarksPageUrl, settingsService);
 	}
 }

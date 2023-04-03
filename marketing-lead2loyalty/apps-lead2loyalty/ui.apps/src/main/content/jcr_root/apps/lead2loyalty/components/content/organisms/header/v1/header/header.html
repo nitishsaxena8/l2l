@@ -85,11 +85,19 @@
                     <!-- user dropdown start -->
                     <div class="dropdown user-logged-in d-none">
                         <a class="btn btn-dark dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            My Account
+                            My Account Hi
+                            <script>
+                            if (localStorage.getItem('userDetails')) {
+                                var user = JSON.parse(localStorage.getItem('userDetails'));
+                                digitalData.user.email = user.firstName;
+                            }
+
+                            </script>
                         </a>
 
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                             <a class="dropdown-item" href="#">Profile</a>
+                            <a class="dropdown-item" href="${headerNavLinksModel.bookmarksPageUrl}">Bookmarks</a>
                             <a class="dropdown-item logout-app" href="javascript:void(0)">Logout</a>
                         </div>
                     </div>

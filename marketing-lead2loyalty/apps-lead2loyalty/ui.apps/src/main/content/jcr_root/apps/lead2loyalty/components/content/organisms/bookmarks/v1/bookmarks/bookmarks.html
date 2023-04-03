@@ -1,0 +1,28 @@
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"
+     data-sly-call="${template.placeholder @ isEmpty='true'}"
+     data-sly-use.bookmarksModel="com.deloitte.aem.lead2loyalty.core.models.BookmarksModel" />
+
+<div class="${properties.marginTop} ${properties.mobileMarginTop} ${properties.marginBottom} ${properties.mobileMarginBottom}">
+</div>
+
+<div class="container">
+    <div class="row tile-header">
+        <div class="d-flex flex-row w-100 justify-content-between">
+            <h4>Hello ${bookmarksModel.name},  ${bookmarksModel.emailId}</h4>
+        </div>
+    </div>
+    <div class="row">
+        <sly data-sly-list.page="${bookmarksModel.bookmarks}">
+            <div class="col-lg-3 col-md-4 col-sm-12 my-4">
+                <a href="${page.path}" class="text-decoration-none">
+                    <div class="card shadow-lg">
+                        <img class="card-img-top" src="${page.image}" alt="bookmarked page image alt text">
+                        <div class="card-body">
+                            <h5 class="card-title">${page.title}</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </sly>
+    </div>
+</div>

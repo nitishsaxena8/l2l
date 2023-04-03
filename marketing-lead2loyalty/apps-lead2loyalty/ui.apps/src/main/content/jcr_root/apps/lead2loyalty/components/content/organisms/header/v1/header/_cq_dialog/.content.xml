@@ -39,6 +39,14 @@
                                 fieldLabel="SignUp Page URL"
                                 name="./signUpPageUrl"
                                 rootPath="/content"/>
+                            <bookmarksPageUrl
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                emptyText="Bookmarks Page URL"
+                                fieldDescription="Please Enter Bookmarks Page URL."
+                                fieldLabel="Bookmarks Page URL"
+                                name="./bookmarksPageUrl"
+                                rootPath="/content"/>
                         </items>
                     </headerDetails>
                     <navigation
