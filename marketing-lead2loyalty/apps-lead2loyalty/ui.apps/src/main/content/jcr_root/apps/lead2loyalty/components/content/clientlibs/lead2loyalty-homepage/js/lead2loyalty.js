@@ -1,18 +1,27 @@
 $( document ).ready(function() {
 
+    if(localStorage.getItem('userDetails')) {
+        var user = JSON.parse(localStorage.getItem('userDetails'));
+        var userEmail = user.email;
+        document.cookie = "userEmail="+userEmail;
+        $("#dropdownMenuLink").text("Hi "+ user.firstName);
+    }
+    function getCookie(name) {
+        function escape(s) { return s.replace(/([.*+?\^$(){}|\[\]\/\\])/g, '\\$1'); }
+        var match = document.cookie.match(RegExp('(?:^|;\\s*)' + escape(name) + '=([^;]*)'));
+        return match ? match[1] : null;
+    }
     $("#bookmarkBtn").click(function () {
 
-        if(localStorage.getItem('userDetails')) {
+        if(getCookie("userEmail") !== null) {
 
-			var user = JSON.parse(localStorage.getItem('userDetails'));
-            var email = user.email;
             var pagePath = $(location).attr("pathname").replace(/\.[^/.]+$/, "");
             var className = $('#bookmark1').attr("class");
             var action = className === 'fa fa-bookmark-o' ? 'add' : 'remove';
 
             var payload = {
                 action: action,
-                email: email,
+                email: userEmail,
                 pagePath: pagePath
             };
 

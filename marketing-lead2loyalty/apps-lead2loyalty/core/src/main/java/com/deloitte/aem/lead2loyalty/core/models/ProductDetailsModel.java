@@ -1,19 +1,26 @@
 package com.deloitte.aem.lead2loyalty.core.models;
 
 import java.util.ArrayList;
-import java.util.Iterator;
+import java.util.Arrays;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
+import javax.jcr.Node;
+import javax.jcr.Value;
 
+import com.day.cq.wcm.api.Page;
+import com.deloitte.aem.lead2loyalty.core.util.WebUtils;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
+import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Exporter;
 import org.apache.sling.models.annotations.ExporterOption;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.Via;
+import org.apache.sling.models.annotations.injectorspecific.Self;
+import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
 import com.adobe.cq.export.json.ExporterConstants;
@@ -26,6 +33,9 @@ import com.adobe.cq.export.json.ExporterConstants;
 		@ExporterOption(name = "SerializationFeature.WRITE_DATES_AS_TIMESTAMPS", value = "false") })
 
 public class ProductDetailsModel {
+
+	@Inject
+	private Page currentPage;
 
 	@ValueMapValue
 	private String subtitle;
@@ -64,8 +74,35 @@ public class ProductDetailsModel {
 	@Via("resource")
 	private Resource ctaButton;
 
+	private String bookmarkClassName;
+	@Self
+	private SlingHttpServletRequest request;
+	@SlingObject
+	private ResourceResolver resourceResolver;
+
 	@PostConstruct
-	protected void init() { }
+	protected void init() {
+
+		String emailId = WebUtils.getSpecificCookie(request, "userEmail");
+		String userPath = "/var/lead2loyalty-users/" + emailId;
+		Node node = resourceResolver.getResource(userPath).adaptTo(Node.class);
+		bookmarkClassName = "fa fa-bookmark-o";
+		try{
+			if(node.hasProperty("bookmarks")) {
+				Value[] valueArray = node.getProperty("bookmarks").getValues();
+				List<Value> valueList = new ArrayList<>(Arrays.asList(valueArray));
+				for(Value value : valueList){
+					if(value.getString().equalsIgnoreCase(currentPage.getPath())){
+						bookmarkClassName = "fa fa-bookmark";
+						break;
+					}
+				}
+			}
+		} catch(Exception e) {
+			// Handle exception
+		}
+
+	}
 
 	public Resource getCtaButton() {
 		return ctaButton;
@@ -115,4 +152,7 @@ public class ProductDetailsModel {
 		return modalCtaLabel;
 	}
 
+	public String getBookmarkClassName() {
+		return bookmarkClassName;
+	}
 }

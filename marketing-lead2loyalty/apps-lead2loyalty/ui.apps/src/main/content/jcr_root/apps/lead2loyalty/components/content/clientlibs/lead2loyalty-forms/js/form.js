@@ -53,13 +53,13 @@ $( document ).ready(function() {
 
                         $('.signup-fail-container', parent.document).text('');
                         $('.signup-fail-container', parent.document).addClass('d-none');
-
+                        document.cookie = "userEmail="+resultData.email;
 
                         delete loginData.password;
 
                         MktoForms2.loadForm("//733-JCL-696.mktoweb.com", "733-JCL-696", 1001, function(form) {
                             form.addHiddenFields(loginData);
-                            form.submit();
+                                form.submit();
 
                             form.onSuccess(function(vals,thanksURL){
                                 $('.form-success-container', parent.document).removeClass('d-none'); 
@@ -97,7 +97,7 @@ $( document ).ready(function() {
         if(contactUsFormData.FirstName !=='' && contactUsFormData.LastName !=='' && contactUsFormData.Email !=='' && contactUsFormData.Company !== '' && contactUsFormData.Query !== '' && contactUsFormData.jobRole !== '') {
             MktoForms2.loadForm("//733-JCL-696.mktoweb.com", "733-JCL-696", 1025, function(form) {
                 form.addHiddenFields(contactUsFormData);
-                form.submit();
+                    form.submit();
 
                 form.onSuccess(function(vals,thanksURL){
                     $('.contactus-success-container', parent.document).removeClass('d-none');
@@ -209,7 +209,7 @@ $( document ).ready(function() {
 
         MktoForms2.loadForm("//733-JCL-696.mktoweb.com", "733-JCL-696", formID, function(form) {
 			form.addHiddenFields(loginData);
-            form.submit();
+                form.submit();
 
             form.onSuccess(function(vals,thanksURL){
 

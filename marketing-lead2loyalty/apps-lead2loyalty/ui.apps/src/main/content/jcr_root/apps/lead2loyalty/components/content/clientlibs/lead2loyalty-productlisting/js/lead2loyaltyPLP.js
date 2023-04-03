@@ -114,7 +114,7 @@ if($('#shareWithTeamsBtnModal').length) {
                 form.addHiddenFields(transferSingleObj);
                 // need not to send _mkt_trk during share form submission
                 form.addHiddenFields({"_mkt_trk":""});
-                form.submit();
+                    form.submit();
                 console.log("Form Submitted !!!")
                 console.log(transferSingleObj);
                 form.onSuccess(function(vals,thanksURL) {
@@ -156,6 +156,7 @@ $('#signInForm').submit(function(event) {
                 $('.user-log-in').addClass('d-none');
                 $('[data-target="#signInFormModal"]').trigger('click');
                 $('.modal-backdrop').remove();
+                document.cookie = "userEmail="+resultData.email;
 
                 //analytics
                 digitalData.event = 'loggedIn';
@@ -183,6 +184,7 @@ $('.logout-app').click(function(event) {
     $('.user-log-in').removeClass('d-none');
     $('.user-logged-in').addClass('d-none');
     $('.user-logged-in  .dropdown-menu').removeClass('show');
+    document.cookie = "userEmail=; expires=Thu, 01 Jan 1970 00:00:01 GMT;";
 
     //analytics
     digitalData.event = '';
@@ -201,9 +203,9 @@ $("#signInFormModal .form-control").change(function() {
 });
 
 $('[data-bs-toggle="modal"]').click(function(event) {
-    var modalTarget = $(this).attr('data-target');    
+    var modalTarget = $(this).attr('data-target');
     if($(modalTarget).find('form').length) {
-        $(modalTarget).find('form')[0].reset(); 
+        $(modalTarget).find('form')[0].reset();
     }
 });
 
@@ -279,7 +281,7 @@ function submitMarketoForm(formID) {
 
     MktoForms2.loadForm("//733-JCL-696.mktoweb.com", "733-JCL-696", formID, function(form) {
         form.addHiddenFields(quote);
-        form.submit();
+            form.submit();
         console.log("Form Submitted !!!")
     	console.log(quote);
         form.onSuccess(function(vals,thanksURL){
