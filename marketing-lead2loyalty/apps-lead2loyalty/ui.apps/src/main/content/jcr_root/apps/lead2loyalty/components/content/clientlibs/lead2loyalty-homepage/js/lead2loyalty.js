@@ -40,29 +40,26 @@ $( document ).ready(function() {
 
 	});
 
-	 var globalSearchTerm;
-
+	var globalSearchTerm;
     if (window.location.href.includes("search-result.html")) {
          $('#form1').attr('disabled', 'disabled');
         $('#search-button').attr('disabled', 'disabled');
         setTimeout(initialSearch,1000);
     }
 
- $('#search-button').click(function() {
-     globalSearchTerm = document.getElementById("form1").value;
-     if(globalSearchTerm !==''){
-     localStorage.setItem("searchTerm", globalSearchTerm);
-     window.location.href = "/content/lead2loyalty/language-masters/en/search-result.html?search=#";
+    $('#search-button').click(function() {
+         globalSearchTerm = document.getElementById("form1").value;
+         if(globalSearchTerm !==''){
+         localStorage.setItem("searchTerm", globalSearchTerm);
+         window.location.href = "/content/lead2loyalty/language-masters/en/search-result.html?search=#";
+         initialSearch();
+         }
+         else {
+            alert("Please enter a value");
+         }
+    });
 
-     initialSearch();
-
-     }
-     else{
-         alert("Please enter a value");
-     }
-});
-
-function initialSearch(){
+    function initialSearch() {
         let data = localStorage.getItem("searchTerm");
         document.getElementById("search").value = data;
         document.getElementById("search-button1").click();
@@ -125,47 +122,51 @@ function initialSearch(){
                             }
                         }
                         //Search Filters
+                        for(var i=0; i<filterList.length; i++) {
+                            let newdiv = document.createElement('div');
+                            let divIdName = 'FilterButton'+i;
+                        	newdiv.setAttribute("id", divIdName);
+                            newdiv.innerHTML = '<button type="button" class="btn d-flex expanded inbtn">'+filterList[i].filterTitle+' <span class="badge bg-primary">'+filterList[i].filterCount+'</span></button>';
+                            document.getElementById('filter-counts').appendChild(newdiv);
+                        }
+                        $('#FilterButton0').click(function() {
+                            CategoryFilter(this.innerHTML);
+                        });
+                        $('#FilterButton1').click(function() {
+                            CategoryFilter(this.innerHTML);
+                        });
+                        $('#FilterButton2').click(function() {
+                            CategoryFilter(this.innerHTML);
+                        });
+                        $('#FilterButton3').click(function() {
+                            CategoryFilter(this.innerHTML);
+                        });
 
-                         //Search Filters
-                                                for(var i=0; i<filterList.length; i++) {
-                                                    let newdiv = document.createElement('div');
-                                                     let divIdName = 'FilterButton'+i;
-                        							newdiv.setAttribute("id", divIdName);
-                                                    newdiv.innerHTML = '<button type="button" class="btn d-flex expanded inbtn">'+filterList[i].filterTitle+' <span class="badge bg-primary">'+filterList[i].filterCount+'</span></button>';
-                                                    document.getElementById('filter-counts').appendChild(newdiv);
-                                                }
-                                                  $('#FilterButton0').click(function() {
-                             					 CategoryFilter(this.innerHTML);
-                             						 });
-                                                 $('#FilterButton1').click(function() {
-                             					 CategoryFilter(this.innerHTML);
-                             						 });
-                                                 $('#FilterButton2').click(function() {
-                             					 CategoryFilter(this.innerHTML);
-                             						 });
-                                                 $('#FilterButton3').click(function() {
-                             					 CategoryFilter(this.innerHTML);
-                             						 });
-
-                                                 //Segregate Search Results
-                                            for(var i=offset; i<resultList.length; i++){
-                                                    if(resultList[i].category == "Product Category Page"){category1.push((resultList[i]));}
-                                                    if(resultList[i].category == "Article Page"){category2.push((resultList[i]));}
-                                                    if(resultList[i].category == "Product Detail page"){category3.push((resultList[i]));}
-                                                    if(resultList[i].category == "Home Page"){category4.push((resultList[i]));}
-                                            }
+                         //Segregate Search Results
+                        for(var i=offset; i<resultList.length; i++) {
+                            if(resultList[i].category == "Product Category Page"){category1.push((resultList[i]));}
+                            if(resultList[i].category == "Article Page"){category2.push((resultList[i]));}
+                            if(resultList[i].category == "Product Detail page"){category3.push((resultList[i]));}
+                            if(resultList[i].category == "Home Page"){category4.push((resultList[i]));}
+                        }
 
                         //Render search result section
                         var limit = resultList.length < 10 ? resultList.length : (offset + 10);
                         for(var i=offset; i<limit; i++) {
                             let newDiv = document.createElement('section');
-                            if( resultList[i].imagePath == ''){
-                                  resultList[i].imagePath = '/content/dam/lead2loyalty/no-img.jpg';
-
-                         }
+                            if( resultList[i].imagePath == '') {
+                                resultList[i].imagePath = '/content/dam/lead2loyalty/no-img.jpg';
+                            }
                             newDiv.innerHTML = '<div class="search-result-item"> <a class="image-link" href="'+resultList[i].pagePath+'.html" target="_blank"><img class="image" src="'+resultList[i].imagePath+'"></a><div class="search-result-item-body"><div class="row"><div class="col-sm-12"><h5 class="search-result-item-heading"><a href="#"> '+resultList[i].title+' </a></h5><p class="info">'+resultList[i].publishDate+'</p><p class="description">'+resultList[i].description+'</p><div class="custom-buttons"><span class="badge ">'+resultList[i].keywords+'</span></div></div></div></div></section>';
                             document.getElementById('searchSection').appendChild(newDiv);
                         }
+                        //Search Analytics
+                        digitalData.event = 'siteSearch';
+                        digitalData.siteSearch = {
+                            'term':payload.query,
+                            'results': result.searchResultCount,
+                            'filter': ''
+                        };
                     }
                 });
             }
@@ -192,54 +193,58 @@ function initialSearch(){
                     }
                     //Search Filters
                     for(var i=0; i<filterList.length; i++) {
-                                            let newdiv = document.createElement('div');
-                                            let divIdName = 'FilterButton'+i;
-                    						newdiv.setAttribute("id", divIdName);
-                                            newdiv.innerHTML = '<button type="button" class="btn d-flex expanded">'+filterList[i].filterTitle+' <span class="badge bg-primary">'+filterList[i].filterCount+'</span></button>';
-                                            document.getElementById('filter-counts').appendChild(newdiv);
-                                        }
+                        let newdiv = document.createElement('div');
+                        let divIdName = 'FilterButton'+i;
+                        newdiv.setAttribute("id", divIdName);
+                        newdiv.innerHTML = '<button type="button" class="btn d-flex expanded">'+filterList[i].filterTitle+' <span class="badge bg-primary">'+filterList[i].filterCount+'</span></button>';
+                        document.getElementById('filter-counts').appendChild(newdiv);
+                    }
 
-                    						  $('#FilterButton0').click(function() {
-                         					 CategoryFilter(this.innerHTML);
-                         						 });
-                                             $('#FilterButton1').click(function() {
-                         					 CategoryFilter(this.innerHTML);
-                         						 });
-                                             $('#FilterButton2').click(function() {
-                         					 CategoryFilter(this.innerHTML);
-                         						 });
-                                             $('#FilterButton3').click(function() {
-                         					 CategoryFilter(this.innerHTML);
-                         						 });
+                    $('#FilterButton0').click(function() {
+                        CategoryFilter(this.innerHTML);
+                    });
+                    $('#FilterButton1').click(function() {
+                        CategoryFilter(this.innerHTML);
+                    });
+                    $('#FilterButton2').click(function() {
+                        CategoryFilter(this.innerHTML);
+                    });
+                    $('#FilterButton3').click(function() {
+                        CategoryFilter(this.innerHTML);
+                    });
 
-                                        //Segregate Search Results
-                                        for(var i=offset; i<resultList.length; i++){
-                                             if(resultList[i].category == "Product Category Page"){category1.push((resultList[i]));}
-                                                if(resultList[i].category == "Article Page"){category2.push((resultList[i]));}
-                                                if(resultList[i].category == "Product Detail page"){category3.push((resultList[i]));}
-                                                if(resultList[i].category == "Home Page"){category4.push((resultList[i]));}
-                                        }
-
-
+                    //Segregate Search Results
+                    for(var i=offset; i<resultList.length; i++){
+                        if(resultList[i].category == "Product Category Page"){category1.push((resultList[i]));}
+                        if(resultList[i].category == "Article Page"){category2.push((resultList[i]));}
+                        if(resultList[i].category == "Product Detail page"){category3.push((resultList[i]));}
+                        if(resultList[i].category == "Home Page"){category4.push((resultList[i]));}
+                    }
                     //Render search result section
 					var limit = resultList.length < 10 ? resultList.length : (offset + 10);
                     for(var i=offset; i<limit; i++) {
                         let newDiv = document.createElement('section');
-                        if( resultList[i].imagePath == ''){
-                                       resultList[i].imagePath = '/content/dam/lead2loyalty/no-img.jpg';
-
-                          }
+                        if( resultList[i].imagePath == '') {
+                            resultList[i].imagePath = '/content/dam/lead2loyalty/no-img.jpg';
+                        }
                         newDiv.innerHTML = '<div class="search-result-item"> <a class="image-link" href="'+resultList[i].pagePath+'.html" target="_blank"><img class="image" src="'+resultList[i].imagePath+'"></a><div class="search-result-item-body"><div class="row"><div class="col-sm-12"><h5 class="search-result-item-heading"><a href="#"> '+resultList[i].title+' </a></h5><p class="info">'+resultList[i].publishDate+'</p><p class="description">'+resultList[i].description+'</p><div class="custom-buttons"><span class="badge ">'+resultList[i].keywords+'</span></div></div></div></div></section>';
                         document.getElementById('searchSection').appendChild(newDiv);
                     }
+                    //Search Analytics
+                    digitalData.event = 'siteSearch';
+                    digitalData.siteSearch = {
+                        'term':payload.query,
+                        'results': result.searchResultCount,
+                        'filter': ''
+                    };
             	}
         	});
         }
-		 counter = counter + 1;
-		 category1.splice(0, category1.length);
-          category2.splice(0, category2.length);
-          category3.splice(0, category3.length);
-          category4.splice(0, category3.length);
+	    counter = counter + 1;
+		category1.splice(0, category1.length);
+        category2.splice(0, category2.length);
+        category3.splice(0, category3.length);
+        category4.splice(0, category3.length);
         }
         else {
             var handles = document.querySelectorAll("#filter-counts, #searchSection, #pagination, #resultCount");
@@ -250,53 +255,50 @@ function initialSearch(){
         }
     }
 
-    function CategoryFilter(Data){
-            let offset = 0;
-            let FilterData = Data;
-            let numbers = FilterData.match(/\d+/g);
-            let FCount = parseInt(numbers[0],10);
-            var handles = document.querySelectorAll("#searchSection, #pagination");
-    				for(var i = 0; i < handles.length; ++i) {
-    		           handles[i].innerHTML = '';
-                    }
+    function CategoryFilter(Data) {
+        let offset = 0;
+        let FilterData = Data;
+        let numbers = FilterData.match(/\d+/g);
+        let FCount = parseInt(numbers[0],10);
+        var handles = document.querySelectorAll("#searchSection, #pagination");
+        for(var i = 0; i < handles.length; ++i) {
+          handles[i].innerHTML = '';
+        }
 
-    				 //Pagination
-                            let x = Math.ceil(FCount/10);
-                            if(x >= 1) {
-                                for(var i=1; i<= x; i++) {
-                                    $("#pagination").append('<li class="page-item"><a class="page-link" offSet='+(i-1)*10+' href="#">'+i+'</a></li>');
-                                }
-                            }
+        //Pagination
+        let x = Math.ceil(FCount/10);
+        if(x >= 1) {
+            for(var i=1; i<= x; i++) {
+                $("#pagination").append('<li class="page-item"><a class="page-link" offSet='+(i-1)*10+' href="#">'+i+'</a></li>');
+            }
+        }
 
-            		 //Render search result section
-                           // var limit = resultList.length < 10 ? resultList.length : (offset + 10);
-                            for(var i=offset; i<FCount; i++) {
-                                  if(FilterData.includes("Product Category Page ")){
-                                let newDiv = document.createElement('section');
-                                newDiv.innerHTML = '<div class="search-result-item"> <a class="image-link" href="'+category1[i].pagePath+'.html" target="_blank"><img class="image" src="'+category1[i].imagePath+'"></a><div class="search-result-item-body"><div class="row"><div class="col-sm-9"><h5 class="search-result-item-heading"><a href="#"> '+category1[i].title+' </a></h5><p class="info">'+category1[i].publishDate+'</p><p class="description">'+category1[i].description+'</p><div class="custom-buttons"><span class="badge ">'+category1[i].keywords+'</span></div></div></div></div></section>';
-                                document.getElementById('searchSection').appendChild(newDiv);
-                            }
-                                if(FilterData.includes("Article Page")){
-                                let newDiv = document.createElement('section');
-                                newDiv.innerHTML = '<div class="search-result-item"> <a class="image-link" href="'+category2[i].pagePath+'.html" target="_blank"><img class="image" src="'+category2[i].imagePath+'"></a><div class="search-result-item-body"><div class="row"><div class="col-sm-9"><h5 class="search-result-item-heading"><a href="#"> '+category2[i].title+' </a></h5><p class="info">'+category2[i].publishDate+'</p><p class="description">'+category2[i].description+'</p><div class="custom-buttons"><span class="badge ">'+category2[i].keywords+'</span></div></div></div></div></section>';
-                                document.getElementById('searchSection').appendChild(newDiv);
-                            }
-                                if(FilterData.includes("Product Detail page")){
-                                let newDiv = document.createElement('section');
-                                newDiv.innerHTML = '<div class="search-result-item"> <a class="image-link" href="'+category3[i].pagePath+'.html" target="_blank"><img class="image" src="'+category3[i].imagePath+'"></a><div class="search-result-item-body"><div class="row"><div class="col-sm-9"><h5 class="search-result-item-heading"><a href="#"> '+category3[i].title+' </a></h5><p class="info">'+category3[i].publishDate+'</p><p class="description">'+category3[i].description+'</p><div class="custom-buttons"><span class="badge ">'+category3[i].keywords+'</span></div></div></div></div></section>';
-                                document.getElementById('searchSection').appendChild(newDiv);
-                            }
-                                if(FilterData.includes("Home Page")){
-                                let newDiv = document.createElement('section');
-                                newDiv.innerHTML = '<div class="search-result-item"> <a class="image-link" href="'+category4[i].pagePath+'.html" target="_blank"><img class="image" src="'+category4[i].imagePath+'"></a><div class="search-result-item-body"><div class="row"><div class="col-sm-9"><h5 class="search-result-item-heading"><a href="#"> '+category4[i].title+' </a></h5><p class="info">'+category4[i].publishDate+'</p><p class="description">'+category4[i].description+'</p><div class="custom-buttons"><span class="badge ">'+category4[i].keywords+'</span></div></div></div></div></section>';
-                                document.getElementById('searchSection').appendChild(newDiv);
-                            }
-
-                            }
-
-
-
+        //Render search result section
+        // var limit = resultList.length < 10 ? resultList.length : (offset + 10);
+        for(var i=offset; i<FCount; i++) {
+            if(FilterData.includes("Product Category Page ")) {
+                let newDiv = document.createElement('section');
+                newDiv.innerHTML = '<div class="search-result-item"> <a class="image-link" href="'+category1[i].pagePath+'.html" target="_blank"><img class="image" src="'+category1[i].imagePath+'"></a><div class="search-result-item-body"><div class="row"><div class="col-sm-9"><h5 class="search-result-item-heading"><a href="#"> '+category1[i].title+' </a></h5><p class="info">'+category1[i].publishDate+'</p><p class="description">'+category1[i].description+'</p><div class="custom-buttons"><span class="badge ">'+category1[i].keywords+'</span></div></div></div></div></section>';
+                document.getElementById('searchSection').appendChild(newDiv);
+            }
+            if(FilterData.includes("Article Page")) {
+                let newDiv = document.createElement('section');
+                newDiv.innerHTML = '<div class="search-result-item"> <a class="image-link" href="'+category2[i].pagePath+'.html" target="_blank"><img class="image" src="'+category2[i].imagePath+'"></a><div class="search-result-item-body"><div class="row"><div class="col-sm-9"><h5 class="search-result-item-heading"><a href="#"> '+category2[i].title+' </a></h5><p class="info">'+category2[i].publishDate+'</p><p class="description">'+category2[i].description+'</p><div class="custom-buttons"><span class="badge ">'+category2[i].keywords+'</span></div></div></div></div></section>';
+                document.getElementById('searchSection').appendChild(newDiv);
+            }
+            if(FilterData.includes("Product Detail page")) {
+                let newDiv = document.createElement('section');
+                newDiv.innerHTML = '<div class="search-result-item"> <a class="image-link" href="'+category3[i].pagePath+'.html" target="_blank"><img class="image" src="'+category3[i].imagePath+'"></a><div class="search-result-item-body"><div class="row"><div class="col-sm-9"><h5 class="search-result-item-heading"><a href="#"> '+category3[i].title+' </a></h5><p class="info">'+category3[i].publishDate+'</p><p class="description">'+category3[i].description+'</p><div class="custom-buttons"><span class="badge ">'+category3[i].keywords+'</span></div></div></div></div></section>';
+                document.getElementById('searchSection').appendChild(newDiv);
+            }
+            if(FilterData.includes("Home Page")) {
+                let newDiv = document.createElement('section');
+                newDiv.innerHTML = '<div class="search-result-item"> <a class="image-link" href="'+category4[i].pagePath+'.html" target="_blank"><img class="image" src="'+category4[i].imagePath+'"></a><div class="search-result-item-body"><div class="row"><div class="col-sm-9"><h5 class="search-result-item-heading"><a href="#"> '+category4[i].title+' </a></h5><p class="info">'+category4[i].publishDate+'</p><p class="description">'+category4[i].description+'</p><div class="custom-buttons"><span class="badge ">'+category4[i].keywords+'</span></div></div></div></div></section>';
+                document.getElementById('searchSection').appendChild(newDiv);
+            }
 
         }
+
+    }
 
 });
