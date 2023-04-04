@@ -1,9 +1,9 @@
 if(localStorage.getItem('userDetails')) {
 	$('.user-logged-in').removeClass('d-none');
     $('.user-log-in').addClass('d-none');
+    var user = JSON.parse(localStorage.getItem('userDetails'));
+    $("#dropdownMenuLink").text("Hi "+ user.firstName);
 }
-
-
 
 if (digitalData && digitalData.user && digitalData.user.email) {
    $(".requestAQuoteMember").removeClass("d-none");
@@ -156,6 +156,7 @@ $('#signInForm').submit(function(event) {
                 $('.user-log-in').addClass('d-none');
                 $('[data-target="#signInFormModal"]').trigger('click');
                 $('.modal-backdrop').remove();
+                $("#dropdownMenuLink").text("Hi "+ resultData.firstName);
                 var date = new Date();
                 date.setTime(date.getTime() + (24*60*60*1000));
                 expires = "; expires=" + date.toUTCString();

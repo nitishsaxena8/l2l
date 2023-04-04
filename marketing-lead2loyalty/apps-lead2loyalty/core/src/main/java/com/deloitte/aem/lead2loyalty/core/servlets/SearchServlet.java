@@ -11,6 +11,7 @@ import com.day.cq.wcm.api.PageManager;
 import com.deloitte.aem.lead2loyalty.core.beans.SearchFilterBean;
 import com.deloitte.aem.lead2loyalty.core.beans.SearchResponseWrapper;
 import com.deloitte.aem.lead2loyalty.core.beans.SearchResultBean;
+import com.deloitte.aem.lead2loyalty.core.constants.ApplicationConstants;
 import com.deloitte.aem.lead2loyalty.core.service.utility.Lead2loyaltyService;
 import com.deloitte.aem.lead2loyalty.core.util.WebUtils;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -100,24 +101,24 @@ public class SearchServlet extends SlingAllMethodsServlet {
             searchResultBean.setDescription(properties.get(JcrConstants.JCR_DESCRIPTION, String.class) != null
                     ? properties.get(JcrConstants.JCR_DESCRIPTION, String.class)
                     : StringUtils.EMPTY);
-            searchResultBean.setCategory(properties.get("pageType", String.class) != null
-                    ? properties.get("pageType", String.class)
+            searchResultBean.setCategory(properties.get(ApplicationConstants.PAGE_TYPE_PROPERTY, String.class) != null
+                    ? properties.get(ApplicationConstants.PAGE_TYPE_PROPERTY, String.class)
                     : StringUtils.EMPTY);
             searchResultBean.setKeywords(properties.get("keywords", String.class) != null
                     ? properties.get("keywords", String.class)
                     : StringUtils.EMPTY);
-            if(page.getContentResource().getChild("image") != null) {
-                ValueMap imageProperties = Objects.requireNonNull(page.getContentResource().getChild("image")).getValueMap();
+            if(page.getContentResource().getChild(ApplicationConstants.IMAGE_PROPERTY) != null) {
+                ValueMap imageProperties = Objects.requireNonNull(page.getContentResource().getChild(ApplicationConstants.IMAGE_PROPERTY)).getValueMap();
                 searchResultBean.setImagePath(imageProperties.get("fileReference", String.class) != null
                         ? imageProperties.get("fileReference", String.class)
                         : StringUtils.EMPTY);
             } else {
-                searchResultBean.setImagePath(properties.get("image", String.class) != null
-                        ? properties.get("image", String.class)
+                searchResultBean.setImagePath(properties.get(ApplicationConstants.IMAGE_PROPERTY, String.class) != null
+                        ? properties.get(ApplicationConstants.IMAGE_PROPERTY, String.class)
                         : StringUtils.EMPTY);
             }
-            searchResultBean.setPublishDate(properties.get("cq:lastModified", Date.class) != null
-                    ? properties.get("cq:lastModified", Date.class).toString()
+            searchResultBean.setPublishDate(properties.get(ApplicationConstants.CQ_LAST_MODIFIED_PROPERTY, Date.class) != null
+                    ? properties.get(ApplicationConstants.CQ_LAST_MODIFIED_PROPERTY, Date.class).toString()
                     : StringUtils.EMPTY);
         }
         return  searchResultBean;

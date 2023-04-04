@@ -1,5 +1,6 @@
 package com.deloitte.aem.lead2loyalty.core.servlets;
 
+import com.deloitte.aem.lead2loyalty.core.constants.ApplicationConstants;
 import com.deloitte.aem.lead2loyalty.core.service.utility.Lead2loyaltyService;
 import com.deloitte.aem.lead2loyalty.core.util.WebUtils;
 import org.apache.sling.api.SlingHttpServletRequest;
@@ -34,7 +35,6 @@ import java.util.List;
 public class BookmarkServlet extends SlingAllMethodsServlet {
     private static final long serialVersionUID = 1L;
     private final transient Logger logger = LoggerFactory.getLogger(getClass());
-    private static final String BOOKMARKS = "bookmarks";
     @Reference
     private transient Lead2loyaltyService lead2loyaltyService;
     @Override
@@ -48,9 +48,9 @@ public class BookmarkServlet extends SlingAllMethodsServlet {
             JSONObject json = WebUtils.getRequestParam(request);
             String email = json.get("email").toString();
             String pagePath = json.get("pagePath").toString();
-            Node varNode = session.getNode("/var");
+            Node varNode = session.getNode(ApplicationConstants.VAR_NODE_PATH);
             if (varNode.hasNode("lead2loyalty-users/" + email) && !ResourceUtil.isNonExistingResource(resourceResolver.getResource(pagePath))) {
-                Node node = resourceResolver.getResource("/var/lead2loyalty-users/" + email).adaptTo(Node.class);
+                Node node = resourceResolver.getResource(ApplicationConstants.LOYALTY_USER_PATH + email).adaptTo(Node.class);
                 if(json.get("action").toString().equalsIgnoreCase("add")) {
                     addAsBookmark(node, session, response, pagePath);
                 } else {
@@ -68,12 +68,12 @@ public class BookmarkServlet extends SlingAllMethodsServlet {
         ValueFactory valueFactory = session.getValueFactory();
         Value value = valueFactory.createValue(pagePath);
 
-        if(node.hasProperty(BOOKMARKS)) {
-            Value[] valueArray = node.getProperty(BOOKMARKS).getValues();
+        if(node.hasProperty(ApplicationConstants.BOOKMARKS_PROPERTY)) {
+            Value[] valueArray = node.getProperty(ApplicationConstants.BOOKMARKS_PROPERTY).getValues();
             List<Value> valueList = new ArrayList<>(Arrays.asList(valueArray));
             if(!valueList.contains(value)){
                 valueList.add(value);
-                node.setProperty(BOOKMARKS, valueList.toArray(new Value[0]));
+                node.setProperty(ApplicationConstants.BOOKMARKS_PROPERTY, valueList.toArray(new Value[0]));
                 session.save();
                 out.println("Page bookmarked!!!");
             } else {
@@ -82,7 +82,7 @@ public class BookmarkServlet extends SlingAllMethodsServlet {
         } else {
             List<Value> valueList = new ArrayList<>();
             valueList.add(value);
-            node.setProperty(BOOKMARKS, valueList.toArray(new Value[0]));
+            node.setProperty(ApplicationConstants.BOOKMARKS_PROPERTY, valueList.toArray(new Value[0]));
             session.save();
             out.println("Page bookmarked!!!");
         }
@@ -93,12 +93,12 @@ public class BookmarkServlet extends SlingAllMethodsServlet {
         PrintWriter out = response.getWriter();
         ValueFactory valueFactory = session.getValueFactory();
         Value value = valueFactory.createValue(pagePath);
-        if(node.hasProperty(BOOKMARKS)) {
-            Value[] valueArray = node.getProperty(BOOKMARKS).getValues();
+        if(node.hasProperty(ApplicationConstants.BOOKMARKS_PROPERTY)) {
+            Value[] valueArray = node.getProperty(ApplicationConstants.BOOKMARKS_PROPERTY).getValues();
             List<Value> valueList = new ArrayList<>(Arrays.asList(valueArray));
             if(valueList.contains(value)) {
                 valueList.remove(value);
-                node.setProperty(BOOKMARKS, valueList.toArray(new Value[0]));
+                node.setProperty(ApplicationConstants.BOOKMARKS_PROPERTY, valueList.toArray(new Value[0]));
                 session.save();
                 out.println("Page removed from bookmark list.");
             } else {

@@ -2,6 +2,7 @@ package com.deloitte.aem.lead2loyalty.core.models;
 
 import com.day.cq.commons.jcr.JcrConstants;
 import com.deloitte.aem.lead2loyalty.core.beans.ProductsBean;
+import com.deloitte.aem.lead2loyalty.core.constants.ApplicationConstants;
 import com.deloitte.aem.lead2loyalty.core.util.ServiceUtils;
 import com.deloitte.aem.lead2loyalty.core.util.WebUtils;
 import org.apache.commons.collections4.CollectionUtils;
@@ -49,15 +50,15 @@ public class BookmarksModel {
 		try {
 			bookmarks = new ArrayList<>();
 
-			String emailId = WebUtils.getSpecificCookie(request, "userEmail");
-			String userPath = "/var/lead2loyalty-users/" + emailId;
+			String emailId = WebUtils.getSpecificCookie(request, ApplicationConstants.USER_EMAIL_COOKIE);
+			String userPath = ApplicationConstants.LOYALTY_USER_PATH + emailId;
 			Resource resource = resourceResolver.getResource(userPath);
 
-			if (!ResourceUtil.isNonExistingResource(resource) && resource.adaptTo(Node.class).hasProperty("bookmarks")) {
+			if (!ResourceUtil.isNonExistingResource(resource) && resource.adaptTo(Node.class).hasProperty(ApplicationConstants.BOOKMARKS_PROPERTY)) {
 				Node userNode = resource.adaptTo(Node.class);
-				if(userNode.hasProperty("bookmarks")) {
+				if(userNode.hasProperty(ApplicationConstants.BOOKMARKS_PROPERTY)) {
 					name = userNode.getProperty("FirstName").getString();
-					Property favoritesProperty = userNode.getProperty("bookmarks");
+					Property favoritesProperty = userNode.getProperty(ApplicationConstants.BOOKMARKS_PROPERTY);
 					Value[] favoriteValues = favoritesProperty.getValues();
 					for (Value favoriteValue : favoriteValues) {
 						Resource pageResource = resourceResolver.getResource(favoriteValue.getString());

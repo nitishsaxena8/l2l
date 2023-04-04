@@ -1,29 +1,22 @@
 $( document ).ready(function() {
 
-    if(localStorage.getItem('userDetails')) {
-        var user = JSON.parse(localStorage.getItem('userDetails'));
-        var userEmail = user.email;
-        $("#dropdownMenuLink").text("Hi "+ user.firstName);
-    }
+    //retrieve browser cookie
     function getCookie(name) {
         function escape(s) { return s.replace(/([.*+?\^$(){}|\[\]\/\\])/g, '\\$1'); }
         var match = document.cookie.match(RegExp('(?:^|;\\s*)' + escape(name) + '=([^;]*)'));
         return match ? match[1] : null;
     }
+
     $("#bookmarkBtn").click(function () {
-
         if(getCookie("userEmail") !== null) {
-
             var pagePath = $(location).attr("pathname").replace(/\.[^/.]+$/, "");
             var className = $('#bookmark1').attr("class");
             var action = className === 'fa fa-bookmark-o' ? 'add' : 'remove';
-
             var payload = {
                 action: action,
-                email: userEmail,
+                email: getCookie("userEmail"),
                 pagePath: pagePath
             };
-
             $.ajax({
                 type: "POST",
                 url: "/bin/manageBookmarks.json",
@@ -37,7 +30,6 @@ $( document ).ready(function() {
         else {
 			alert("Please sign in to bookmark");
         }
-
 	});
 
 	var globalSearchTerm;
