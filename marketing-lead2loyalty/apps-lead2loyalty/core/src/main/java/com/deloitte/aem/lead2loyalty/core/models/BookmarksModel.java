@@ -48,7 +48,7 @@ public class BookmarksModel {
 	@PostConstruct
 	protected void init() {
 		try {
-			bookmarks = new ArrayList<>();
+			bookmarks = new ArrayList<ProductsBean>();
 
 			String emailId = WebUtils.getSpecificCookie(request, ApplicationConstants.USER_EMAIL_COOKIE);
 			String userPath = ApplicationConstants.LOYALTY_USER_PATH + emailId;
@@ -87,7 +87,7 @@ public class BookmarksModel {
 		if (CollectionUtils.isNotEmpty(bookmarks)) {
 			return bookmarks;
 		}
-		return new ArrayList<>();
+		return new ArrayList<ProductsBean>();
 	}
 
 	public String getName() {
