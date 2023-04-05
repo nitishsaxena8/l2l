@@ -14,6 +14,7 @@ public class ProductsBean {
 	private String parentTitle;
 	private String parentName;
 	private String parentPath;
+	private String pageType;
 
 	public List<String> getTags() {
 		return tags;
@@ -94,7 +95,12 @@ public class ProductsBean {
 	public void setParentPath(String parentPath) {
 		this.parentPath = parentPath;
 	}
-	
-	
 
+	public String getPageType() {
+		return pageType;
+	}
+
+	public void setPageType(String pageType) {
+		this.pageType = pageType;
+	}
 }
