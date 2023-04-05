@@ -4,6 +4,7 @@ import com.day.cq.commons.jcr.JcrConstants;
 import com.deloitte.aem.lead2loyalty.core.beans.ProductsBean;
 import com.deloitte.aem.lead2loyalty.core.beans.SearchFilterBean;
 import com.deloitte.aem.lead2loyalty.core.constants.ApplicationConstants;
+import com.deloitte.aem.lead2loyalty.core.service.utility.Lead2loyaltyService;
 import com.deloitte.aem.lead2loyalty.core.util.ServiceUtils;
 import com.deloitte.aem.lead2loyalty.core.util.WebUtils;
 import org.apache.commons.collections4.CollectionUtils;
@@ -11,20 +12,15 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
-import org.apache.sling.api.resource.ResourceUtil;
 import org.apache.sling.api.resource.ValueMap;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.Self;
-import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import org.apache.sling.settings.SlingSettingsService;
 
 import javax.annotation.PostConstruct;
-import javax.jcr.Node;
-import javax.jcr.Property;
-import javax.jcr.RepositoryException;
-import javax.jcr.Value;
+import javax.jcr.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -34,11 +30,11 @@ import java.util.stream.Collectors;
 		Resource.class }, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class BookmarksModel {
 
-	@SlingObject
-	private ResourceResolver resourceResolver;
-
 	@OSGiService
 	private SlingSettingsService settingsService;
+
+	@OSGiService
+	private Lead2loyaltyService lead2loyaltyService;
 
 	@Self
 	private SlingHttpServletRequest request;
@@ -51,15 +47,14 @@ public class BookmarksModel {
 
 	@PostConstruct
 	protected void init() {
+		ResourceResolver resourceResolver = lead2loyaltyService.getServiceResolver();
+		Session session = resourceResolver.adaptTo(Session.class);
+		String emailId = WebUtils.getSpecificCookie(request, ApplicationConstants.USER_EMAIL_COOKIE);
+		bookmarks = new ArrayList<>();
 		try {
-			bookmarks = new ArrayList<ProductsBean>();
-
-			String emailId = WebUtils.getSpecificCookie(request, ApplicationConstants.USER_EMAIL_COOKIE);
-			String userPath = ApplicationConstants.LOYALTY_USER_PATH + emailId;
-			Resource resource = resourceResolver.getResource(userPath);
-
-			if (!ResourceUtil.isNonExistingResource(resource) && resource.adaptTo(Node.class).hasProperty(ApplicationConstants.BOOKMARKS_PROPERTY)) {
-				Node userNode = resource.adaptTo(Node.class);
+			Node loyaltyNode = session.getNode(ApplicationConstants.LOYALTY_USER_PATH);
+			if(loyaltyNode.hasNode(emailId)) {
+				Node userNode = loyaltyNode.getNode(emailId);
 				if(userNode.hasProperty(ApplicationConstants.BOOKMARKS_PROPERTY)) {
 					name = userNode.getProperty("FirstName").getString();
 					Property favoritesProperty = userNode.getProperty(ApplicationConstants.BOOKMARKS_PROPERTY);
@@ -111,7 +106,7 @@ public class BookmarksModel {
 		if (CollectionUtils.isNotEmpty(bookmarks)) {
 			return bookmarks;
 		}
-		return new ArrayList<ProductsBean>();
+		return new ArrayList<>();
 	}
 
 	public String getName() {
