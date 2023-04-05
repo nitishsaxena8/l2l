@@ -8,6 +8,23 @@
     right: 0;
 }
 
+.custom-category-btn {
+    width: 220px;
+    text-align: left !important;
+}
+
+.custom-badge {
+    height: fit-content;
+    position: relative;
+    top: 2px;
+}
+
+.Highlight {
+background-color: #d3d3d3;
+border-radius: 6px;
+}
+
+
 .nav-stacked>li {
     float: none;
 }
