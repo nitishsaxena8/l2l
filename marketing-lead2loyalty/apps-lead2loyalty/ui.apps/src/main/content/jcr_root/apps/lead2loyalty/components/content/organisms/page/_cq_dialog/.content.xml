@@ -64,6 +64,14 @@
                                                         jcr:primaryType="nt:unstructured"
                                                         text="Product Detail Page"
                                                         value="Product Detail Page"/>
+                                                    <contactUs
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Contact Us Page"
+                                                        value="Contact Us Page"/>
+                                                    <aboutUs
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="About Us Page"
+                                                        value="About Us Page"/>
                                                 </items>
                                             </pageType>
                                         </items>

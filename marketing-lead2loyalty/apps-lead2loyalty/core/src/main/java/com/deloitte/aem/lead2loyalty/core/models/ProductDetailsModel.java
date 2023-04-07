@@ -10,6 +10,8 @@ import javax.jcr.Node;
 import javax.jcr.Value;
 
 import com.day.cq.wcm.api.Page;
+import com.deloitte.aem.lead2loyalty.core.constants.ApplicationConstants;
+import com.deloitte.aem.lead2loyalty.core.service.utility.Lead2loyaltyService;
 import com.deloitte.aem.lead2loyalty.core.util.WebUtils;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
@@ -20,8 +22,8 @@ import org.apache.sling.models.annotations.Exporter;
 import org.apache.sling.models.annotations.ExporterOption;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.Via;
+import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.Self;
-import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
 import com.adobe.cq.export.json.ExporterConstants;
@@ -78,14 +80,15 @@ public class ProductDetailsModel {
 	private String bookmarkClassName;
 	@Self
 	private SlingHttpServletRequest request;
-	@SlingObject
-	private ResourceResolver resourceResolver;
+	@OSGiService
+	private Lead2loyaltyService lead2loyaltyService;
 
 	@PostConstruct
 	protected void init() {
 
+		ResourceResolver resourceResolver = lead2loyaltyService.getServiceResolver();
 		String emailId = WebUtils.getSpecificCookie(request, "userEmail");
-		String userPath = "/var/lead2loyalty-users/" + emailId;
+		String userPath = ApplicationConstants.LOYALTY_USER_PATH + emailId;
 		Resource resource = resourceResolver.getResource(userPath);
 		bookmarkClassName = "fa fa-bookmark-o";
 		try{

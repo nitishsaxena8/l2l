@@ -15,23 +15,46 @@
         <div class="col-sm-3 my-4">
             <div class="row">
                 <sly data-sly-list.filter="${bookmarksModel.filterBeanList}">
-                    <button type="button" class="btn d-flex expanded bookmark-button" style="width: 220px;text-align: left;">${filter.filterTitle}</button>
-                    <span class="badge bg-primary bookmark-badge" style="position: relative; top: 11px; height: fit-content; width: 20px; ">${filter.filterCount}</span>
+                    <sly data-sly-test="${filter.filterTitle == 'Product Detail page'}">
+                        <div class="product-filter d-flex">
+                            <button type="button" class="btn d-flex expanded bookmark-button" style="width: 220px;text-align: left;">${filter.filterTitle}</button>
+                            <span class="badge bg-primary bookmark-badge" style="position: relative; top: 11px; height: fit-content; width: 20px; ">${filter.filterCount}</span>
+                        </div>
+                    </sly>
+                    <sly data-sly-test="${filter.filterTitle == 'Article Page'}">
+                        <div class="article-filter d-flex">
+                            <button type="button" class="btn d-flex expanded bookmark-button" style="width: 220px;text-align: left;">${filter.filterTitle}</button>
+                            <span class="badge bg-primary bookmark-badge" style="position: relative; top: 11px; height: fit-content; width: 20px; ">${filter.filterCount}</span>
+                        </div>
+                    </sly>
                 </sly>
             </div>
         </div>
         <div class="col-sm-9 my-4">
             <div class="row">
                 <sly data-sly-list.page="${bookmarksModel.bookmarks}">
-                    <div class="col-sm-4 my-3">
-                        <a href="${page.path}" class="text-decoration-none">
-                            <div class="card shadow-lg">
-                                <img class="card-img-top" src="${page.image}" alt="bookmarked page image alt text">
-                                <div class="card-body"><h5 class="card-title">${page.title}</h5>
+                    <sly data-sly-test="${page.pageType == 'Product Detail page'}">
+                        <div class="col-sm-4 my-3 Product_Detail_Page">
+                            <a href="${page.path}" class="text-decoration-none">
+                                <div class="card shadow-lg">
+                                    <img class="card-img-top" src="${page.image}" alt="bookmarked page image alt text">
+                                    <div class="card-body"><h5 class="card-title">${page.title}</h5>
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
-                    </div>
+                            </a>
+                        </div>
+                    </sly>
+                    <sly data-sly-test="${page.pageType == 'Article Page'}">
+                        <div class="col-sm-4 my-3 Article_Page">
+                            <a href="${page.path}" class="text-decoration-none">
+                                <div class="card shadow-lg">
+                                    <img class="card-img-top" src="${page.image}" alt="bookmarked page image alt text">
+                                    <div class="card-body"><h5 class="card-title">${page.title}</h5>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </sly>
                 </sly>
             </div>
         </div>

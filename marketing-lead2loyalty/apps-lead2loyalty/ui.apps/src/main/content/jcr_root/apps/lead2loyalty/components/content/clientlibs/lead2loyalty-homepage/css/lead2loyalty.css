@@ -837,3 +837,20 @@ h5.card-title,h5.card-text {
         margin-left: .5em;
     }
 }
+
+.bookmark-badge {
+    position: relative;
+    top: 11px;
+    width: 20px;
+    height: fit-content;
+}
+
+.bookmark-button{
+    width: 220px;
+    text-align:left;
+}
+
+.highlight{
+    background-color:#d3d3d3;
+    border-radius:4px;
+}

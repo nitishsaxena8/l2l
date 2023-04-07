@@ -55,8 +55,8 @@ public class BookmarksModel {
 			Node loyaltyNode = session.getNode(ApplicationConstants.LOYALTY_USER_PATH);
 			if(loyaltyNode.hasNode(emailId)) {
 				Node userNode = loyaltyNode.getNode(emailId);
+				name = userNode.getProperty("FirstName").getString();
 				if(userNode.hasProperty(ApplicationConstants.BOOKMARKS_PROPERTY)) {
-					name = userNode.getProperty("FirstName").getString();
 					Property favoritesProperty = userNode.getProperty(ApplicationConstants.BOOKMARKS_PROPERTY);
 					Value[] favoriteValues = favoritesProperty.getValues();
 					for (Value favoriteValue : favoriteValues) {
