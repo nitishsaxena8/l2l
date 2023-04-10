@@ -1,6 +1,5 @@
 package com.deloitte.aem.lead2loyalty.core.util;
 
-import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.json.JSONObject;
@@ -14,11 +13,10 @@ import java.net.URLDecoder;
 public class WebUtils {
     private static final Logger logger = LoggerFactory.getLogger(WebUtils.class);
 
-    public static JSONObject getRequestParam(SlingHttpServletRequest request) {
+    public static JSONObject getRequestParam(String  requestBody) {
         JSONObject json = null;
-        try{
-            String requestData = IOUtils.toString(request.getReader());
-            json = new JSONObject(requestData);
+        try {
+            json = new JSONObject(requestBody);
         } catch(Exception e) {
             logger.error("Exception");
         }

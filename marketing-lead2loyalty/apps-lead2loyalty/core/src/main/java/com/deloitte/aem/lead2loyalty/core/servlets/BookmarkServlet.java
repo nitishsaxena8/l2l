@@ -3,6 +3,7 @@ package com.deloitte.aem.lead2loyalty.core.servlets;
 import com.deloitte.aem.lead2loyalty.core.constants.ApplicationConstants;
 import com.deloitte.aem.lead2loyalty.core.service.utility.Lead2loyaltyService;
 import com.deloitte.aem.lead2loyalty.core.util.WebUtils;
+import org.apache.commons.io.IOUtils;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
 import org.apache.sling.api.resource.ResourceResolver;
@@ -41,11 +42,12 @@ public class BookmarkServlet extends SlingAllMethodsServlet {
     protected void doPost(final SlingHttpServletRequest request,
                           final SlingHttpServletResponse response) throws IOException {
 
+        String requestBody = IOUtils.toString(request.getReader());
         ResourceResolver resourceResolver = lead2loyaltyService.getServiceResolver();
         Session session = resourceResolver.adaptTo(Session.class);
 
         try{
-            JSONObject json = WebUtils.getRequestParam(request);
+            JSONObject json = WebUtils.getRequestParam(requestBody);
             String email = json.get("email").toString();
             String pagePath = json.get("pagePath").toString();
             Node varNode = session.getNode(ApplicationConstants.VAR_NODE_PATH);

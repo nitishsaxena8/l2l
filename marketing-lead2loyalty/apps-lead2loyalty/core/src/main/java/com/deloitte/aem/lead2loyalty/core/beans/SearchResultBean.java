@@ -1,5 +1,9 @@
 package com.deloitte.aem.lead2loyalty.core.beans;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import java.util.Date;
+
 public class SearchResultBean {
     private String title;
     private String description;
@@ -7,7 +11,9 @@ public class SearchResultBean {
     private String category;
     private String keywords;
     private String pagePath;
-    private String publishDate;
+    @JsonIgnore
+    private Date publishDate;
+    private String publishDateAsString;
 
     public String getTitle() {
         return title;
@@ -57,12 +63,19 @@ public class SearchResultBean {
         this.pagePath = pagePath;
     }
 
-    public String getPublishDate() {
+    public Date getPublishDate() {
         return publishDate;
     }
 
-    public void setPublishDate(String publishDate) {
+    public void setPublishDate(Date publishDate) {
         this.publishDate = publishDate;
     }
 
+    public String getPublishDateAsString() {
+        return publishDateAsString;
+    }
+
+    public void setPublishDateAsString(String publishDateAsString) {
+        this.publishDateAsString = publishDateAsString;
+    }
 }

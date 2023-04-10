@@ -14,6 +14,10 @@
     <div class="row">
         <div class="col-sm-3 my-4">
             <div class="row">
+                <div class="d-flex justify-content-between pb-3">
+                    <div class="fw-bold fs-4 mt-2">Filter</div>
+                    <div><button class="btn btn-link ClearAllBtn">Clear All</button></div>
+                </div>
                 <sly data-sly-list.filter="${bookmarksModel.filterBeanList}">
                     <sly data-sly-test="${filter.filterTitle == 'Product Detail page'}">
                         <div class="product-filter d-flex">

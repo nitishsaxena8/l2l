@@ -15,6 +15,7 @@ import com.deloitte.aem.lead2loyalty.core.constants.ApplicationConstants;
 import com.deloitte.aem.lead2loyalty.core.service.utility.Lead2loyaltyService;
 import com.deloitte.aem.lead2loyalty.core.util.WebUtils;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
@@ -55,6 +56,7 @@ public class SearchServlet extends SlingAllMethodsServlet {
     protected void doPost(final SlingHttpServletRequest request,
                           final SlingHttpServletResponse response) throws IOException {
 
+        String requestBody = IOUtils.toString(request.getReader());
         ResourceResolver resourceResolver = lead2loyaltyService.getServiceResolver();
         Session session = resourceResolver.adaptTo(Session.class);
 
@@ -64,7 +66,7 @@ public class SearchServlet extends SlingAllMethodsServlet {
         HashSet<String> pagePathHashSet = new HashSet<>();
 
         try {
-            Map<String, String> predicate = createPredicate(request);
+            Map<String, String> predicate = createPredicate(requestBody);
             Query query = builder.createQuery(PredicateGroup.create(predicate), session);
             SearchResult searchResult = query.getResult();
 
@@ -78,6 +80,13 @@ public class SearchServlet extends SlingAllMethodsServlet {
                 Page page = resourceResolver.getResource(pagePath).adaptTo(Page.class);
                 searchResultBeanList.add(getSearchResultBean(page));
             }
+            JSONObject json = WebUtils.getRequestParam(requestBody);
+            String sortBy = json.get("sortBy").toString();
+            if(sortBy.equals("Latest")) {
+                searchResultBeanList.sort(Comparator.comparing(SearchResultBean::getPublishDate).reversed());
+            }
+            searchResultBeanList.forEach(searchResultBean -> searchResultBean.setPublishDateAsString(searchResultBean.getPublishDate().toString()));
+
             searchResponseWrapper.setSearchResultBeanList(searchResultBeanList);
             searchResponseWrapper.setSearchFilterBeanList(createSearchFilter(searchResultBeanList));
 
@@ -118,16 +127,16 @@ public class SearchServlet extends SlingAllMethodsServlet {
                         : StringUtils.EMPTY);
             }
             searchResultBean.setPublishDate(properties.get(ApplicationConstants.CQ_LAST_MODIFIED_PROPERTY, Date.class) != null
-                    ? properties.get(ApplicationConstants.CQ_LAST_MODIFIED_PROPERTY, Date.class).toString()
-                    : StringUtils.EMPTY);
+                    ? properties.get(ApplicationConstants.CQ_LAST_MODIFIED_PROPERTY, Date.class)
+                    : null);
         }
         return  searchResultBean;
     }
 
-    private Map<String, String> createPredicate(final SlingHttpServletRequest request) throws JSONException {
+    private Map<String, String> createPredicate(String requestBody) throws JSONException {
 
         Map<String, String> predicate = new HashMap<>();
-        JSONObject json = WebUtils.getRequestParam(request);
+        JSONObject json = WebUtils.getRequestParam(requestBody);
 
         predicate.put("path", "/content/lead2loyalty/language-masters/en");
         predicate.put("type", "nt:unstructured");
