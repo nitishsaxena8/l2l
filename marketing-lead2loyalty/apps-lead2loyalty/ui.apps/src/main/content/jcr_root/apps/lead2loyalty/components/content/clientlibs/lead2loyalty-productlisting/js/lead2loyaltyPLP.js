@@ -140,45 +140,50 @@ $('#signInForm').submit(function(event) {
         };
 
         $.ajax({
-          type: "POST",
-          url: "/bin/user",
-          data: JSON.stringify(loginData),
-          contentType: "application/json",
-          dataType: "json",
-          success: function(resultData) {
-              if (resultData.errorCode) {
-                $('.sign-in-error').removeClass('d-none');
-                $('.sign-in-error').text(resultData.errorMessage);
-              } else {
-                console.log(resultData);
-                localStorage.setItem('userDetails', JSON.stringify(resultData));
-                $('.user-logged-in').removeClass('d-none');
-                $('.user-log-in').addClass('d-none');
-                $('[data-target="#signInFormModal"]').trigger('click');
-                $('.modal-backdrop').remove();
-                $("#dropdownMenuLink").text("Hi "+ resultData.firstName);
-                var date = new Date();
-                date.setTime(date.getTime() + (24*60*60*1000));
-                expires = "; expires=" + date.toUTCString();
-                document.cookie = "userEmail="+ resultData.email + expires + "; path=/";
+            type: "POST",
+            url: "/bin/user",
+            data: JSON.stringify(loginData),
+            contentType: "application/json",
+            dataType: "json",
+            success: function(resultData) {
+                if (resultData.errorCode) {
+                    $('.sign-in-error').removeClass('d-none');
+                    $('.sign-in-error').text(resultData.errorMessage);
+                }
+                else {
+                    console.log(resultData);
+                    localStorage.setItem('userDetails', JSON.stringify(resultData));
+                    $('.user-logged-in').removeClass('d-none');
+                    $('.user-log-in').addClass('d-none');
+                    $('[data-target="#signInFormModal"]').trigger('click');
+                    $('.modal-backdrop').remove();
+                    $("#dropdownMenuLink").text("Hi "+ resultData.firstName);
+                    var date = new Date();
+                    date.setTime(date.getTime() + (24*60*60*1000));
+                    expires = "; expires=" + date.toUTCString();
+                    document.cookie = "userEmail="+ resultData.email + expires + "; path=/";
 
-                //analytics
-                digitalData.event = 'loggedIn';
-                digitalData.user = digitalData.user || {};
-                digitalData.user.authState = 'authenticated';
-                digitalData.user.userType = 'member';
-                digitalData.user.email = resultData.email;
+                    //analytics
+                    digitalData.event = 'loggedIn';
+                    digitalData.user = digitalData.user || {};
+                    digitalData.user.authState = 'authenticated';
+                    digitalData.user.userType = 'member';
+                    digitalData.user.email = resultData.email;
 
-                if($(".requestAQuoteMember")) {
-   					$(".requestAQuoteMember").removeClass("d-none");
-   				$(".requestAQuoteGuest").addClass("d-none");
-                  }
+                    let searchParams = new URLSearchParams(window.location.search);
+                    if(searchParams.get('page') !== null) {
+                        window.location.href = searchParams.get('page') + '.html';
+                    }
 
-              }
-          },
-          error: function(errorData) {
-			  $('.sign-in-error').removeClass('d-none');
-          }
+                    if($(".requestAQuoteMember")) {
+   		    	        $(".requestAQuoteMember").removeClass("d-none");
+   		    	    	$(".requestAQuoteGuest").addClass("d-none");
+                    }
+                }
+            },
+            error: function(errorData) {
+		    	  $('.sign-in-error').removeClass('d-none');
+            }
         });
     }
 });

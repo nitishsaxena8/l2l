@@ -1,5 +1,12 @@
 $( document ).ready(function() {
 
+	// redirection to current page post registration & login
+    $("#register-cta").click(function () {
+        var separator = $(this).attr('href').includes('?') ? '&' : '?';
+        var currentPagePath = $(this).attr('href') + separator + 'page=' + $(location).attr("pathname").replace(/\.[^/.]+$/, "");
+        $(this).attr("href", currentPagePath);
+    });
+
     //retrieve browser cookie
     function getCookie(name) {
         function escape(s) { return s.replace(/([.*+?\^$(){}|\[\]\/\\])/g, '\\$1'); }
