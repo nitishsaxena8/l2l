@@ -215,6 +215,13 @@ $( document ).ready(function() {
                             }
                             resultObj.push((resultList[i]));
                         }
+                        //Search Analytics
+                        digitalData.event = 'siteSearch';
+                        digitalData.siteSearch = {
+                            'term':payload.query,
+                            'results': result.searchResultCount,
+                            'filter': ''
+                        };
                     }
               });
             }
@@ -267,6 +274,13 @@ $( document ).ready(function() {
                            }
                            resultObj.push((resultList[i]));
                         }
+                        //Search Analytics
+                        digitalData.event = 'siteSearch';
+                        digitalData.siteSearch = {
+                            'term':payload.query,
+                            'results': result.searchResultCount,
+                            'filter': ''
+                        };
                     }
       	        });
             }
