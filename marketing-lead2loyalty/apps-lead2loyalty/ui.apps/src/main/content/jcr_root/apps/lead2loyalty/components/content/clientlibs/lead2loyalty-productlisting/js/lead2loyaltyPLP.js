@@ -232,15 +232,15 @@ $('[data-bs-toggle="modal"]').click(function(event) {
     },5000);
 });*/
 $("body").on("click", "#btnExport", function () {
-var makepdf = document.getElementById("tblCustomers");
-var opt = {
-margin: [8,0],
-filename:'myfile.pdf',
-image:{ type: 'jpeg', quality: 1 },
-html2canvas:{ scale: 2 },
-pagebreak: { mode: 'avoid-all'}
-};
-html2pdf().set(opt).from(makepdf).save();
+    var makePDF = document.getElementById("tblCustomers");
+    var opt = {
+        margin: [8,0],
+        filename:$('.product-page-details', parent.document).attr("product-title") + ".pdf",
+        image:{ type: 'jpeg', quality: 1 },
+        html2canvas:{ scale: 2 },
+        pagebreak: { mode: 'avoid-all'}
+    };
+    html2pdf().set(opt).from(makePDF).save();
 });
 
 $( document ).ready(function() {
