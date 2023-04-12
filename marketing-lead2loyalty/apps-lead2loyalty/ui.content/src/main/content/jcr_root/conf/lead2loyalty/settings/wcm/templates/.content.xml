@@ -9,5 +9,6 @@
     <form-page/>
 	<blank-page/>
     <xf-web-variation/>
+	<account-page/>
     <rep:policy/>
 </jcr:root>

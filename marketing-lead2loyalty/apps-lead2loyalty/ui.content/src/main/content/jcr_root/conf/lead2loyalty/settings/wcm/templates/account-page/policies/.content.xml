@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:policy="lead2loyalty/components/content/organisms/page/policy_1669842399486"
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="wcm/core/components/policies/mappings">
+        <root
+            cq:policy="xpbootstrap/components/content/organisms/xp-container/policy_1669829412542"
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/core/components/policies/mapping">
+            <container jcr:primaryType="nt:unstructured">
+                <container
+                    cq:policy="xpbootstrap/components/content/organisms/xp-container/policy_1669829412542"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/core/components/policies/mapping">
+                    <xpbootstrap jcr:primaryType="nt:unstructured">
+                        <components jcr:primaryType="nt:unstructured">
+                            <content jcr:primaryType="nt:unstructured">
+                                <organisms jcr:primaryType="nt:unstructured">
+                                    <xp-container
+                                        cq:policy="xpbootstrap/components/content/organisms/xp-container/policy_1943641611500"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="wcm/core/components/policies/mapping"/>
+                                </organisms>
+                            </content>
+                        </components>
+                    </xpbootstrap>
+                    <lead2loyalty jcr:primaryType="nt:unstructured">
+                        <components jcr:primaryType="nt:unstructured">
+                            <content jcr:primaryType="nt:unstructured">
+                                <organisms jcr:primaryType="nt:unstructured">
+                                    <tiles jcr:primaryType="nt:unstructured">
+                                        <v1 jcr:primaryType="nt:unstructured">
+                                            <tiles
+                                                cq:policy="lead2loyalty/components/content/organisms/tiles/v1/tiles/policy_1670928207614"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="wcm/core/components/policies/mapping"/>
+                                        </v1>
+                                    </tiles>
+                                    <xp-container
+                                        cq:policy="lead2loyalty/components/content/organisms/xp-container/policy_1673004757124"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="wcm/core/components/policies/mapping"/>
+                                </organisms>
+                            </content>
+                        </components>
+                    </lead2loyalty>
+                </container>
+            </container>
+        </root>
+    </jcr:content>
+</jcr:root>

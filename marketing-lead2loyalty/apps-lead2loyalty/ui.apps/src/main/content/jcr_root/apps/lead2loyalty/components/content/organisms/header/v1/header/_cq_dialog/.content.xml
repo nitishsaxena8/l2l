@@ -39,6 +39,14 @@
                                 fieldLabel="SignUp Page URL"
                                 name="./signUpPageUrl"
                                 rootPath="/content"/>
+                            <profilePageUrl
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                emptyText="Profile Page URL"
+                                fieldDescription="Please Enter Profile Page URL."
+                                fieldLabel="Profile Page URL"
+                                name="./profilePageUrl"
+                                rootPath="/content"/>
                             <bookmarksPageUrl
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
@@ -46,6 +54,14 @@
                                 fieldDescription="Please Enter Bookmarks Page URL."
                                 fieldLabel="Bookmarks Page URL"
                                 name="./bookmarksPageUrl"
+                                rootPath="/content"/>
+                            <ordersPageUrl
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                emptyText="Orders Page URL"
+                                fieldDescription="Please Enter Orders Page URL."
+                                fieldLabel="Orders Page URL"
+                                name="./ordersPageUrl"
                                 rootPath="/content"/>
                         </items>
                     </headerDetails>

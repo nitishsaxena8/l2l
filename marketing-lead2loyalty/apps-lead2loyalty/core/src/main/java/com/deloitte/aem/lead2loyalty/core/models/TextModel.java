@@ -34,6 +34,12 @@ public class TextModel {
 	@ValueMapValue
 	private String bookmarksPageUrl;
 
+	@ValueMapValue
+	private String profilePageUrl;
+
+	@ValueMapValue
+	private String ordersPageUrl;
+
 	@SlingObject
 	private ResourceResolver resourceResolver;
 
@@ -58,5 +64,13 @@ public class TextModel {
 
 	public String getBookmarksPageUrl() {
 		return ServiceUtils.getLink(resourceResolver, bookmarksPageUrl, settingsService);
+	}
+
+	public String getProfilePageUrl() {
+		return ServiceUtils.getLink(resourceResolver, profilePageUrl, settingsService);
+	}
+
+	public String getOrdersPageUrl() {
+		return ServiceUtils.getLink(resourceResolver, ordersPageUrl, settingsService);
 	}
 }
