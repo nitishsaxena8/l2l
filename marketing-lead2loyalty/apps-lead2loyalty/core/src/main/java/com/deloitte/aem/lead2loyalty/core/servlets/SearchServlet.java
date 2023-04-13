@@ -112,7 +112,7 @@ public class SearchServlet extends SlingAllMethodsServlet {
                     : StringUtils.EMPTY);
             searchResultBean.setCategory(properties.get(ApplicationConstants.PAGE_TYPE_PROPERTY, String.class) != null
                     ? properties.get(ApplicationConstants.PAGE_TYPE_PROPERTY, String.class)
-                    : StringUtils.EMPTY);
+                    : "Misc.");
             searchResultBean.setKeywords(properties.get("keywords", String.class) != null
                     ? properties.get("keywords", String.class)
                     : StringUtils.EMPTY);
@@ -160,6 +160,7 @@ public class SearchServlet extends SlingAllMethodsServlet {
                     .count();
             searchFilterBeanList.add(new SearchFilterBean(filter, filterCount));
         }
+        searchFilterBeanList.sort(Comparator.comparing(SearchFilterBean::getFilterCount).reversed());
         return searchFilterBeanList;
     }
 
