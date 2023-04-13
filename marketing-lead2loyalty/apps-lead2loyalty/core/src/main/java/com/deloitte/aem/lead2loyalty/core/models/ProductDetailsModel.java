@@ -27,6 +27,7 @@ import org.apache.sling.models.annotations.injectorspecific.Self;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
 import com.adobe.cq.export.json.ExporterConstants;
+import org.json.JSONObject;
 
 @Model(adaptables = { SlingHttpServletRequest.class,
 		Resource.class }, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
@@ -87,11 +88,14 @@ public class ProductDetailsModel {
 	protected void init() {
 
 		ResourceResolver resourceResolver = lead2loyaltyService.getServiceResolver();
-		String emailId = WebUtils.getSpecificCookie(request, "userEmail");
-		String userPath = ApplicationConstants.LOYALTY_USER_PATH + emailId;
-		Resource resource = resourceResolver.getResource(userPath);
+		String userDetailsCookie = WebUtils.getSpecificCookie(request, ApplicationConstants.USER_DETAILS_COOKIE);
 		bookmarkClassName = "fa fa-bookmark-o";
 		try{
+			JSONObject jsonObject = new JSONObject(userDetailsCookie);
+			String emailId = jsonObject.get("email").toString();
+			String userPath = ApplicationConstants.LOYALTY_USER_PATH + emailId;
+			Resource resource = resourceResolver.getResource(userPath);
+
 			if(!ResourceUtil.isNonExistingResource(resource)) {
 				Node node = resource.adaptTo(Node.class);
 				if(node.hasProperty("bookmarks")) {

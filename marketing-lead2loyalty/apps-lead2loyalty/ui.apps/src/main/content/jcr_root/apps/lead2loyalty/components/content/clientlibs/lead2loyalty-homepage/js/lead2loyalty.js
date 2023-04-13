@@ -17,7 +17,7 @@ $( document ).ready(function() {
     // bookmark product & Articles
     $("#bookmarkBtn").click(function () {
         var user = JSON.parse(getCookie('userDetails'));
-        if(user.email !== null) {
+        if(user !== null) {
             var pagePath = $(location).attr("pathname").replace(/\.[^/.]+$/, "");
             var className = $('#bookmark1').attr("class");
             var action = className === 'fa fa-bookmark-o' ? 'add' : 'remove';
