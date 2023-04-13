@@ -8,7 +8,12 @@
 
 
 <script type="text/javascript">
-
+    //retrieve browser cookie
+    function getCookie(name) {
+        function escape(s) { return s.replace(/([.*+?\^$(){}|\[\]\/\\])/g, '\\$1'); }
+        var match = document.cookie.match(RegExp('(?:^|;\\s*)' + escape(name) + '=([^;]*)'));
+        return match ? match[1] : null;
+    }
     digitalData.page = {};
 
     digitalData.page = {
@@ -28,8 +33,8 @@
         'userType': 'guest'
     };
 
-    if (localStorage.getItem('userDetails')) {
-		var user = JSON.parse(localStorage.getItem('userDetails'));
+    if (getCookie('userDetails')) {
+		var user = JSON.parse(getCookie('userDetails'));
 
 		digitalData.user.authState = 'authenticate';
         digitalData.user.userType = 'member';

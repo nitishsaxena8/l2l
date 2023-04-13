@@ -18,6 +18,7 @@ import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.Self;
 import org.apache.sling.settings.SlingSettingsService;
+import org.json.JSONObject;
 
 import javax.annotation.PostConstruct;
 import javax.jcr.*;
@@ -49,9 +50,11 @@ public class BookmarksModel {
 	protected void init() {
 		ResourceResolver resourceResolver = lead2loyaltyService.getServiceResolver();
 		Session session = resourceResolver.adaptTo(Session.class);
-		String emailId = WebUtils.getSpecificCookie(request, ApplicationConstants.USER_EMAIL_COOKIE);
+		String userDetailsCookie = WebUtils.getSpecificCookie(request, ApplicationConstants.USER_DETAILS_COOKIE);
 		bookmarks = new ArrayList<>();
 		try {
+			JSONObject jsonObject = new JSONObject(userDetailsCookie);
+			String emailId = jsonObject.get("email").toString();
 			Node loyaltyNode = session.getNode(ApplicationConstants.LOYALTY_USER_PATH);
 			if(loyaltyNode.hasNode(emailId)) {
 				Node userNode = loyaltyNode.getNode(emailId);
@@ -81,7 +84,7 @@ public class BookmarksModel {
 					setFilterBeanList(getFilterList(bookmarks));
 				}
 			}
-		} catch (RepositoryException e) {
+		} catch (Exception e) {
 			// Handle exception
 		}
 	}

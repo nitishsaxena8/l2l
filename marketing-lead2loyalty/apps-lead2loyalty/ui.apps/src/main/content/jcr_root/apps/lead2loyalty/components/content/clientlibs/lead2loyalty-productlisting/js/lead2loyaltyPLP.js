@@ -1,8 +1,15 @@
-if(localStorage.getItem('userDetails')) {
-	$('.user-logged-in').removeClass('d-none');
-    $('.user-log-in').addClass('d-none');
-    var user = JSON.parse(localStorage.getItem('userDetails'));
+//retrieve browser cookie
+function getCookie(name) {
+    function escape(s) { return s.replace(/([.*+?\^$(){}|\[\]\/\\])/g, '\\$1'); }
+    var match = document.cookie.match(RegExp('(?:^|;\\s*)' + escape(name) + '=([^;]*)'));
+    return match ? match[1] : null;
+}
+
+if(getCookie('userDetails')) {
+    var user = JSON.parse(getCookie('userDetails'));
     $("#dropdownMenuLink").text("Hi "+ user.firstName);
+    $('.user-logged-in').removeClass('d-none');
+    $('.user-log-in').addClass('d-none');
 }
 
 if (digitalData && digitalData.user && digitalData.user.email) {
@@ -70,7 +77,7 @@ if($('#shareWithTeamsBtnModal').length) {
     //     $('.form-success-container.share-with-team').addClass('d-none');
     // });
 
-    $('#shareWithTeamsBtn').click(function() {        
+    $('#shareWithTeamsBtn').click(function() {
         variableIndex = 2;
         $('.form-success-container.share-with-team').addClass('d-none');
     });
@@ -151,17 +158,16 @@ $('#signInForm').submit(function(event) {
                     $('.sign-in-error').text(resultData.errorMessage);
                 }
                 else {
-                    console.log(resultData);
-                    localStorage.setItem('userDetails', JSON.stringify(resultData));
+                    var date = new Date();
+                    date.setTime(date.getTime() + (30*60*1000)); //30 minutes in milliseconds
+                    expires = "; expires=" + date.toUTCString();
+                    document.cookie = "userDetails=" + JSON.stringify(resultData) + expires + "; path=/";
+
                     $('.user-logged-in').removeClass('d-none');
                     $('.user-log-in').addClass('d-none');
                     $('[data-target="#signInFormModal"]').trigger('click');
                     $('.modal-backdrop').remove();
                     $("#dropdownMenuLink").text("Hi "+ resultData.firstName);
-                    var date = new Date();
-                    date.setTime(date.getTime() + (24*60*60*1000));
-                    expires = "; expires=" + date.toUTCString();
-                    document.cookie = "userEmail="+ resultData.email + expires + "; path=/";
 
                     //analytics
                     digitalData.event = 'loggedIn';
@@ -189,11 +195,10 @@ $('#signInForm').submit(function(event) {
 });
 
 $('.logout-app').click(function(event) {
-	localStorage.setItem('userDetails', '');
+	document.cookie = "userDetails=; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/";
     $('.user-log-in').removeClass('d-none');
     $('.user-logged-in').addClass('d-none');
     $('.user-logged-in  .dropdown-menu').removeClass('show');
-    document.cookie = "userEmail=; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/";
 
     //analytics
     digitalData.event = '';
@@ -263,10 +268,9 @@ function submitMarketoForm(formID) {
 
     var quote = {};
 
-    if (localStorage.getItem('userDetails')) {
-        var user = JSON.parse(localStorage.getItem('userDetails'));
-        if (user) {
-
+    if (getCookie('userDetails')) {
+        var user = JSON.parse(getCookie('userDetails'));
+        if(user) {
     		quote = {
                 "firstName": user.firstName,
                 "lastName": user.lastName,
@@ -293,9 +297,7 @@ function submitMarketoForm(formID) {
 
     MktoForms2.loadForm("//733-JCL-696.mktoweb.com", "733-JCL-696", formID, function(form) {
         form.addHiddenFields(quote);
-            form.submit();
-        console.log("Form Submitted !!!")
-    	console.log(quote);
+        form.submit();
         form.onSuccess(function(vals,thanksURL){
 
             digitalData.event = 'formSubmission';
