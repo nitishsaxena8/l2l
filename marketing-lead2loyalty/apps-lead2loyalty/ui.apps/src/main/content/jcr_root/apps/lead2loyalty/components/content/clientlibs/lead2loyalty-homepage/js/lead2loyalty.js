@@ -16,13 +16,14 @@ $( document ).ready(function() {
 
     // bookmark product & Articles
     $("#bookmarkBtn").click(function () {
-        if(getCookie("userEmail") !== null) {
+        var user = JSON.parse(getCookie('userDetails'));
+        if(user.email !== null) {
             var pagePath = $(location).attr("pathname").replace(/\.[^/.]+$/, "");
             var className = $('#bookmark1').attr("class");
             var action = className === 'fa fa-bookmark-o' ? 'add' : 'remove';
             var payload = {
                 action: action,
-                email: getCookie("userEmail"),
+                email: user.email,
                 pagePath: pagePath
             };
             $.ajax({
