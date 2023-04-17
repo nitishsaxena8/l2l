@@ -6,6 +6,7 @@ public class SearchResponseWrapper {
     private List<SearchResultBean> searchResultBeanList;
     private int searchResultCount;
     private int pageCount;
+    private boolean status;
     private List<SearchFilterBean> searchFilterBeanList;
 
     public List<SearchResultBean> getSearchResultBeanList() {
@@ -37,4 +38,11 @@ public class SearchResponseWrapper {
         this.searchFilterBeanList = searchFilterBeanList;
     }
 
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
 }

@@ -2,27 +2,6 @@
 <sly data-sly-use.searchResults="${'com.deloitte.aem.lead2loyalty.core.models.SearchResultsModel'}"/>
 
 <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
-<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-
-<script>
-function suggestion(){
-var list = [];
-const dataID = document.getElementById('search');
-const dataCount = JSON.parse(dataID.getAttribute('data-suggestions'));
-
-for(i=0;i<dataCount.length;i++){
-list.push(dataCount[i]);
-}
- $( "#search" ).autocomplete({
- source: list,
- minLength: 3,
-select: function(click,ui){}
- });
-
-}
-
-</script>
 
 <div class="container">
 	<div class="row">

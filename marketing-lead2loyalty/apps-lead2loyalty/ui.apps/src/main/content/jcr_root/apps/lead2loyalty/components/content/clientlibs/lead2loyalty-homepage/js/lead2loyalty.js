@@ -1,5 +1,22 @@
 $( document ).ready(function() {
 
+    //Search Suggestions
+    var list = [];
+    const dataID = document.getElementById('search');
+    const suggestions = JSON.parse(dataID.getAttribute('data-suggestions'));
+
+    suggestions.forEach(function(suggestion) {
+    	list.push(suggestion);
+    });
+
+    $("#search").autocomplete({
+    	source: list,
+    	minLength: 3,
+    	select: function(click,ui) {
+    		//searchFunc(0);
+        }
+    });
+
 	// redirection to current page post registration & login
     $("#register-cta").click(function () {
         var separator = $(this).attr('href').includes('?') ? '&' : '?';
@@ -173,58 +190,64 @@ $( document ).ready(function() {
                     contentType: "application/json",
                     data: JSON.stringify(payload),
                     success: function(resultData) {
-                        var result = JSON.parse(resultData);
-                        var resultList = JSON.parse(resultData).searchResultBeanList;
-                        var filterList = JSON.parse(resultData).searchFilterBeanList;
-                        $("#resultCount").text("");
-                        $("#resultCount").append("<b>" + result.searchResultCount + " results found for " +'"'+ payload.query +'"' + "</b>");
+                        if(resultData && JSON.parse(resultData).status) {
+                            var result = JSON.parse(resultData);
+                            var resultList = JSON.parse(resultData).searchResultBeanList;
+                            var filterList = JSON.parse(resultData).searchFilterBeanList;
+                            $("#resultCount").text("");
+                            $("#resultCount").append("<b>" + result.searchResultCount + " results found for " +'"'+ payload.query +'"' + "</b>");
 
-                        //Pagination
-                        if(result.pageCount >= 1) {
-                            for(var i=1; i<=result.pageCount; i++) {
-                                $("#pagination").append('<li class="page-item"><a class="page-link" offSet='+(i-1)*10+' pagetag='+1+' href="#">'+i+'</a></li>');
+                            //Pagination
+                            if(result.pageCount >= 1) {
+                                for(var i=1; i<=result.pageCount; i++) {
+                                    $("#pagination").append('<li class="page-item"><a class="page-link" offSet='+(i-1)*10+' pagetag='+1+' href="#">'+i+'</a></li>');
+                                }
                             }
-                        }
 
-                        //Search Filters
-                        for(var i=0; i<filterList.length; i++) {
-                            filterObj.push((filterList[i]));
-                            let newdiv = document.createElement('div');
-                            newdiv.innerHTML = '<div class="FilterDiv" categoryTag='+i+'><button type="button" class="btn expanded custom-category-btn">'+filterList[i].filterTitle+'</button><span class="badge bg-primary custom-badge">'+filterList[i].filterCount+'</span></div>';
-                            document.getElementById('filter-counts').appendChild(newdiv);
-                        }
-                        $('.FilterDiv').click(function() {
-                            var categoryTag = $(this).attr('categoryTag');
-                            CategoryFilter(this,Number(categoryTag),0);
-                        });
-
-                        //Render search result section
-                        var limit = resultList.length < 10 ? resultList.length : (offset + 10);
-                        if(limit>resultList.length){limit = resultList.length;}
-                        for(var i=offset; i<limit; i++) {
-                            let newDiv = document.createElement('section');
-                            if( resultList[i].imagePath == '') {
-                                resultList[i].imagePath = '/content/dam/lead2loyalty/no-img.jpg';
+                            //Search Filters
+                            for(var i=0; i<filterList.length; i++) {
+                                filterObj.push((filterList[i]));
+                                let newdiv = document.createElement('div');
+                                newdiv.innerHTML = '<div class="FilterDiv" categoryTag='+i+'><button type="button" class="btn expanded custom-category-btn">'+filterList[i].filterTitle+'</button><span class="badge bg-primary custom-badge">'+filterList[i].filterCount+'</span></div>';
+                                document.getElementById('filter-counts').appendChild(newdiv);
                             }
-                            newDiv.innerHTML = '<div class="search-result-item"> <a class="image-link" href="'+resultList[i].pagePath+'.html" target="_blank"><img class="image" src="'+resultList[i].imagePath+'"></a><div class="search-result-item-body"><div class="row"><div class="col-sm-12"><h5 class="search-result-item-heading"><a href="'+resultList[i].pagePath+'.html"> '+resultList[i].title+' </a></h5><p class="info">'+resultList[i].publishDateAsString+'</p><p class="description">'+resultList[i].description+'</p><div class="custom-buttons"><span class="badge ">'+resultList[i].keywords+'</span></div></div></div></div></section>';
-                            document.getElementById('searchSection').appendChild(newDiv);
-                        }
+                            $('.FilterDiv').click(function() {
+                                var categoryTag = $(this).attr('categoryTag');
+                                CategoryFilter(this,Number(categoryTag),0);
+                            });
 
-                        for(var i=0; i<resultList.length; i++) {
-                            if(resultList[i].imagePath == '') {
-                               resultList[i].imagePath = '/content/dam/lead2loyalty/no-img.jpg';
+                            //Render search result section
+                            var limit = resultList.length < 10 ? resultList.length : (offset + 10);
+                            if(limit>resultList.length){limit = resultList.length;}
+                            for(var i=offset; i<limit; i++) {
+                                let newDiv = document.createElement('section');
+                                if( resultList[i].imagePath == '') {
+                                    resultList[i].imagePath = '/content/dam/lead2loyalty/no-img.jpg';
+                                }
+                                newDiv.innerHTML = '<div class="search-result-item"> <a class="image-link" href="'+resultList[i].pagePath+'.html" target="_blank"><img class="image" src="'+resultList[i].imagePath+'"></a><div class="search-result-item-body"><div class="row"><div class="col-sm-12"><h5 class="search-result-item-heading"><a href="'+resultList[i].pagePath+'.html"> '+resultList[i].title+' </a></h5><p class="info">'+resultList[i].publishDateAsString+'</p><p class="description">'+resultList[i].description+'</p><div class="custom-buttons"><span class="badge ">'+resultList[i].keywords+'</span></div></div></div></div></section>';
+                                document.getElementById('searchSection').appendChild(newDiv);
                             }
-                            resultObj.push((resultList[i]));
+
+                            for(var i=0; i<resultList.length; i++) {
+                                if(resultList[i].imagePath == '') {
+                                   resultList[i].imagePath = '/content/dam/lead2loyalty/no-img.jpg';
+                                }
+                                resultObj.push((resultList[i]));
+                            }
+                            //Search Analytics
+                            digitalData.event = 'siteSearch';
+                            digitalData.siteSearch = {
+                                'term':payload.query,
+                                'results': result.searchResultCount,
+                                'filter': ''
+                            };
                         }
-                        //Search Analytics
-                        digitalData.event = 'siteSearch';
-                        digitalData.siteSearch = {
-                            'term':payload.query,
-                            'results': result.searchResultCount,
-                            'filter': ''
-                        };
+                        else {
+                            $("#resultCount").text("");
+                            $("#resultCount").append("<b>" + " Something went wrong. " + "</b>");
+                        }
                     }
-              });
+                });
             }
             else {
                 $.ajax({
@@ -233,55 +256,62 @@ $( document ).ready(function() {
                     contentType: "application/json",
                     data: JSON.stringify(payload),
                     success: function(resultData) {
-                        var result = JSON.parse(resultData);
-                        var resultList = JSON.parse(resultData).searchResultBeanList;
-                        var filterList = JSON.parse(resultData).searchFilterBeanList;
-                        $("#resultCount").text("");
-                        $("#resultCount").append("<b>" + result.searchResultCount + " results found for " +'"'+ payload.query +'"' + "</b>");
+                        if(resultData && JSON.parse(resultData).status) {
+                            var result = JSON.parse(resultData);
+                            var resultList = JSON.parse(resultData).searchResultBeanList;
+                            var filterList = JSON.parse(resultData).searchFilterBeanList;
+                            $("#resultCount").text("");
+                            $("#resultCount").append("<b>" + result.searchResultCount + " results found for " +'"'+ payload.query +'"' + "</b>");
 
-                        //Pagination
-                        if(result.pageCount >= 1) {
-                            for(var i=1; i<=result.pageCount; i++) {
-                                $("#pagination").append('<li class="page-item"><a class="page-link" offSet='+(i-1)*10+' pagetag='+1+' href="#">'+i+'</a></li>');
+                            //Pagination
+                            if(result.pageCount >= 1) {
+                                for(var i=1; i<=result.pageCount; i++) {
+                                    $("#pagination").append('<li class="page-item"><a class="page-link" offSet='+(i-1)*10+' pagetag='+1+' href="#">'+i+'</a></li>');
+                                }
                             }
-                        }
 
-                        //Search Filters
-                        for(var i=0; i<filterList.length; i++) {
-                            filterObj.push((filterList[i]));
-                            let newdiv = document.createElement('div');
-                            newdiv.innerHTML = '<div class="FilterDiv" categoryTag='+i+'><button type="button" class="btn expanded custom-category-btn">'+filterList[i].filterTitle+'</button> <span class="badge bg-primary custom-badge">'+filterList[i].filterCount+'</span><div>';
-                            document.getElementById('filter-counts').appendChild(newdiv);
-                        }
-                        $('.FilterDiv').click(function() {
-                            var categoryTag = $(this).attr('categoryTag');
-                            CategoryFilter(this,Number(categoryTag),0);
-                        });
-
-                        //Render search result section
-                        var limit = resultList.length < 10 ? resultList.length : (offset + 10);
-                        if(limit>resultList.length){ limit = resultList.length; }
-                        for(var i=offset; i<limit; i++) {
-                            let newDiv = document.createElement('section');
-                            if( resultList[i].imagePath == '') {
-                                resultList[i].imagePath = '/content/dam/lead2loyalty/no-img.jpg';
+                            //Search Filters
+                            for(var i=0; i<filterList.length; i++) {
+                                filterObj.push((filterList[i]));
+                                let newdiv = document.createElement('div');
+                                newdiv.innerHTML = '<div class="FilterDiv" categoryTag='+i+'><button type="button" class="btn expanded custom-category-btn">'+filterList[i].filterTitle+'</button> <span class="badge bg-primary custom-badge">'+filterList[i].filterCount+'</span><div>';
+                                document.getElementById('filter-counts').appendChild(newdiv);
                             }
-                            newDiv.innerHTML = '<div class="search-result-item"> <a class="image-link" href="'+resultList[i].pagePath+'.html" target="_blank"><img class="image" src="'+resultList[i].imagePath+'"></a><div class="search-result-item-body"><div class="row"><div class="col-sm-12"><h5 class="search-result-item-heading"><a href="'+resultList[i].pagePath+'.html"> '+resultList[i].title+' </a></h5><p class="info">'+resultList[i].publishDateAsString+'</p><p class="description">'+resultList[i].description+'</p><div class="custom-buttons"><span class="badge ">'+resultList[i].keywords+'</span></div></div></div></div></section>';
-                            document.getElementById('searchSection').appendChild(newDiv);
+                            $('.FilterDiv').click(function() {
+                                var categoryTag = $(this).attr('categoryTag');
+                                CategoryFilter(this,Number(categoryTag),0);
+                            });
+
+                            //Render search result section
+                            var limit = resultList.length < 10 ? resultList.length : (offset + 10);
+                            if(limit>resultList.length){ limit = resultList.length; }
+                            for(var i=offset; i<limit; i++) {
+                                let newDiv = document.createElement('section');
+                                if( resultList[i].imagePath == '') {
+                                    resultList[i].imagePath = '/content/dam/lead2loyalty/no-img.jpg';
+                                }
+                                newDiv.innerHTML = '<div class="search-result-item"> <a class="image-link" href="'+resultList[i].pagePath+'.html" target="_blank"><img class="image" src="'+resultList[i].imagePath+'"></a><div class="search-result-item-body"><div class="row"><div class="col-sm-12"><h5 class="search-result-item-heading"><a href="'+resultList[i].pagePath+'.html"> '+resultList[i].title+' </a></h5><p class="info">'+resultList[i].publishDateAsString+'</p><p class="description">'+resultList[i].description+'</p><div class="custom-buttons"><span class="badge ">'+resultList[i].keywords+'</span></div></div></div></div></section>';
+                                document.getElementById('searchSection').appendChild(newDiv);
+                            }
+                            for(var i=0; i<resultList.length; i++) {
+                               if( resultList[i].imagePath == '') {
+                                   resultList[i].imagePath = '/content/dam/lead2loyalty/no-img.jpg';
+                               }
+                               resultObj.push((resultList[i]));
+                            }
+                            //Search Analytics
+                            digitalData.event = 'siteSearch';
+                            digitalData.siteSearch = {
+                                'term':payload.query,
+                                'results': result.searchResultCount,
+                                'filter': ''
+                            };
                         }
-                        for(var i=0; i<resultList.length; i++) {
-                           if( resultList[i].imagePath == '') {
-                               resultList[i].imagePath = '/content/dam/lead2loyalty/no-img.jpg';
-                           }
-                           resultObj.push((resultList[i]));
+                        else {
+                            $("#resultCount").text("");
+                            $("#resultCount").append("<b>" + " Something went wrong. " + "</b>");
                         }
-                        //Search Analytics
-                        digitalData.event = 'siteSearch';
-                        digitalData.siteSearch = {
-                            'term':payload.query,
-                            'results': result.searchResultCount,
-                            'filter': ''
-                        };
+
                     }
       	        });
             }

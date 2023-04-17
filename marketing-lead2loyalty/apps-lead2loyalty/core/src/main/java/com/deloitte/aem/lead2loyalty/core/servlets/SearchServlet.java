@@ -85,14 +85,15 @@ public class SearchServlet extends SlingAllMethodsServlet {
             if(sortBy.equals("Latest")) {
                 searchResultBeanList.sort(Comparator.comparing(SearchResultBean::getPublishDate).reversed());
             }
-            searchResultBeanList.forEach(searchResultBean -> searchResultBean.setPublishDateAsString(searchResultBean.getPublishDate().toString()));
-
+            searchResultBeanList.forEach(searchResultBean -> searchResultBean.setPublishDateAsString(searchResultBean.getPublishDate() != null ? searchResultBean.getPublishDate().toString() : StringUtils.EMPTY));
             searchResponseWrapper.setSearchResultBeanList(searchResultBeanList);
             searchResponseWrapper.setSearchFilterBeanList(createSearchFilter(searchResultBeanList));
-
+            searchResponseWrapper.setStatus(Boolean.TRUE);
             response.getWriter().println(responseObjectMapper.writeValueAsString(searchResponseWrapper));
         }
         catch(Exception e) {
+            searchResponseWrapper.setStatus(Boolean.FALSE);
+            response.getWriter().println(responseObjectMapper.writeValueAsString(searchResponseWrapper));
             logger.error("Exception");
         }
     }

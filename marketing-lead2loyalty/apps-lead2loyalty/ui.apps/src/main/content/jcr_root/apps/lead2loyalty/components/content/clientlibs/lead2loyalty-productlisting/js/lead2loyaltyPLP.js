@@ -206,6 +206,8 @@ $('.logout-app').click(function(event) {
     digitalData.user.authState = 'not-authenticated';
     digitalData.user.userType = 'guest';
     digitalData.user.email = '';
+
+    window.location.href = '/content/lead2loyalty/language-masters/en/home-page.html';
 });
 
 $('.user-logged-in .dropdown-toggle').click(function(event) {
