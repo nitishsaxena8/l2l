@@ -3,11 +3,12 @@ $( document ).ready(function() {
     //Search Suggestions
     var list = [];
     const dataID = document.getElementById('search');
-    const suggestions = JSON.parse(dataID.getAttribute('data-suggestions'));
-
-    suggestions.forEach(function(suggestion) {
-    	list.push(suggestion);
-    });
+    if(dataID) {
+        const suggestions = JSON.parse(dataID.getAttribute('data-suggestions'));
+        suggestions.forEach(function(suggestion) {
+        	list.push(suggestion);
+        });
+    }
 
     $("#search").autocomplete({
     	source: list,
