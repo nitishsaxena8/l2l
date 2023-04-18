@@ -80,6 +80,11 @@ $( document ).ready(function() {
     	$('.product-filter,.article-filter').removeClass('highlight');
     });
 
+    //ClearAll Search Results
+         $( "#clearAll" ).on( "click", function() {
+             searchFunc(document.getElementById("search").value, 0);
+        });
+
     //Search Sort By
     $('#search-sort-by').change(function() {
         searchFunc(document.getElementById("search").value, 0);
