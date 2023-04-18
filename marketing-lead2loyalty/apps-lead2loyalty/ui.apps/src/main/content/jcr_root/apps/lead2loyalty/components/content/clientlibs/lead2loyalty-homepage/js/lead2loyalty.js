@@ -5,16 +5,16 @@ $( document ).ready(function() {
     const dataID = document.getElementById('search');
     if(dataID) {
         const suggestions = JSON.parse(dataID.getAttribute('data-suggestions'));
-        suggestions.forEach(function(suggestion) {
-        	list.push(suggestion);
-        });
+    	suggestions.forEach(function(suggestion) {
+    		list.push(suggestion);
+    	});
     }
 
     $("#search").autocomplete({
     	source: list,
     	minLength: 3,
     	select: function(click,ui) {
-    		//searchFunc(0);
+    		searchFunc(ui.item.value, 0);
         }
     });
 
@@ -82,7 +82,7 @@ $( document ).ready(function() {
 
     //Search Sort By
     $('#search-sort-by').change(function() {
-        searchFunc(0);
+        searchFunc(document.getElementById("search").value, 0);
     });
 
     //Search Result Section
@@ -134,7 +134,7 @@ $( document ).ready(function() {
 
     var counter = 0;
     $('#search-button1').click(function() {
-       searchFunc(0);
+       searchFunc(document.getElementById("search").value, 0);
     });
 
     //Search Page Enter button
@@ -143,7 +143,7 @@ $( document ).ready(function() {
         input.addEventListener("keypress", function(event) {
             if (event.key === "Enter") {
                 event.preventDefault();
-                searchFunc(0);
+                searchFunc(document.getElementById("search").value, 0);
             }
         });
     }
@@ -156,7 +156,7 @@ $( document ).ready(function() {
 
             if(Number(pagetag) == 1){
             var offset = $('a', this).attr('offset');
-                searchFunc(Number(offset));
+                searchFunc(document.getElementById("search").value, Number(offset));
             }
             else if(Number(pagetag) == 0) {
                 var offset = $('a', this).attr('offset');
@@ -169,13 +169,12 @@ $( document ).ready(function() {
     //End Pagination
 
     //Search Fun Start
-    function searchFunc(offset) {
+    function searchFunc(searchKeyword, offset) {
         filterObj.splice(0, filterObj.length);
         resultObj.splice(0, resultObj.length);
-        let data = document.getElementById("search").value;
         let sortBy = $('#search-sort-by').find(":selected").text();
         var payload = {
-            query: data,
+            query: searchKeyword,
             sortBy: sortBy
         };
 
