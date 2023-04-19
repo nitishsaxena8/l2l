@@ -81,7 +81,8 @@ $( document ).ready(function() {
     });
 
     //ClearAll Search Results
-    $( "#clearAll" ).on( "click", function() {
+    $( "#clearAll" ).on( "click", function(event) {
+        event.preventDefault();
         searchFunc(document.getElementById("search").value, 0);
     });
 
@@ -93,7 +94,7 @@ $( document ).ready(function() {
     //Search Result Section
 	var globalSearchTerm;
     if (window.location.href.includes("search-result.html")) {
-         $('#form1').attr('disabled', 'disabled');
+        $('#form1').attr('disabled', 'disabled');
         $('#search-button').attr('disabled', 'disabled');
         setTimeout(initialSearch,1000);
     }
@@ -102,7 +103,7 @@ $( document ).ready(function() {
          globalSearchTerm = document.getElementById("form1").value;
          if(globalSearchTerm !=='') {
              localStorage.setItem("searchTerm", globalSearchTerm);
-             window.location.href = "/content/lead2loyalty/language-masters/en/search-result.html?search=#";
+             window.location.href = "/content/lead2loyalty/language-masters/en/search-result.html?search=" + globalSearchTerm;
              initialSearch();
          }
          else {
@@ -111,17 +112,16 @@ $( document ).ready(function() {
     });
 
    //Global Search Enter button
-   var globalInput = document.getElementById("form1");
-   globalInput.addEventListener("keypress", function(event) {
+    var globalInput = document.getElementById("form1");
+    globalInput.addEventListener("keypress", function(event) {
         if (event.key === "Enter") {
             event.preventDefault();
             globalSearchTerm = document.getElementById("form1").value;
-            if(globalSearchTerm !=='') {
-                localStorage.setItem("searchTerm", globalSearchTerm);
-                window.location.href = "/content/lead2loyalty/language-masters/en/search-result.html?search=#";
+            if(globalSearchTerm !== '') {
+                window.location.href = "/content/lead2loyalty/language-masters/en/search-result.html?search=" + globalSearchTerm;
                 initialSearch();
             }
-            else{
+            else {
                 alert("Please enter a value");
             }
         }
@@ -129,18 +129,28 @@ $( document ).ready(function() {
     //End Global Search
 
    //initial Search
-   function initialSearch() {
-       let data = localStorage.getItem("searchTerm");
-       document.getElementById("search").value = data;
-       document.getElementById("search-button1").click();
-   }
+    function initialSearch() {
+        let searchParams = new URLSearchParams(window.location.search);
+        document.getElementById("search").value = searchParams.get('search');
+        document.getElementById("search-button1").click();
+    }
     var filterObj = [];
     var resultObj = [];
-
     var counter = 0;
+
     $('#search-button1').click(function() {
-       searchFunc(document.getElementById("search").value, 0);
+        var urlSplit=( window.location.href ).split( "?" );
+        var obj = { Title: document.title, Url: urlSplit[0] + "?search=" + document.getElementById("search").value };
+        history.pushState(obj, obj.Title, obj.Url);
+        searchFunc(document.getElementById("search").value, 0);
     });
+
+    //browser back button
+    if (window.history && window.history.pushState) {
+        $(window).on('popstate', function() {
+        	initialSearch();
+        });
+    }
 
     //Search Page Enter button
     if (window.location.href.includes("search-result.html")) {
@@ -148,7 +158,9 @@ $( document ).ready(function() {
         input.addEventListener("keypress", function(event) {
             if (event.key === "Enter") {
                 event.preventDefault();
-                searchFunc(document.getElementById("search").value, 0);
+                var searchTerm = document.getElementById("search").value;
+                window.location.href = "/content/lead2loyalty/language-masters/en/search-result.html?search=" + searchTerm;
+                searchFunc(searchTerm, 0);
             }
         });
     }
