@@ -64,22 +64,24 @@ public class BookmarksModel {
 					Value[] favoriteValues = favoritesProperty.getValues();
 					for (Value favoriteValue : favoriteValues) {
 						Resource pageResource = resourceResolver.getResource(favoriteValue.getString());
-						Resource jcrResource = Objects.requireNonNull(pageResource).getChild(JcrConstants.JCR_CONTENT);
-						ValueMap jcrProperties = Objects.requireNonNull(jcrResource).getValueMap();
-						ProductsBean productsBean = new ProductsBean();
-						productsBean.setPath(ServiceUtils.getLink(resourceResolver,
-								favoriteValue.getString(), settingsService));
-						productsBean.setTitle(jcrProperties.get(JcrConstants.JCR_TITLE, String.class) != null
-								? jcrProperties.get(JcrConstants.JCR_TITLE, String.class)
-								: StringUtils.EMPTY);
-						Resource imageResource = jcrResource.getChild("image");
-						ValueMap imageProperties = imageResource != null ? imageResource.getValueMap() : null;
-						productsBean.setImage(imageProperties != null ? imageProperties.get("fileReference", String.class)
-								: StringUtils.EMPTY);
-						productsBean.setPageType(jcrProperties.get(ApplicationConstants.PAGE_TYPE_PROPERTY, String.class) != null
-								? jcrProperties.get(ApplicationConstants.PAGE_TYPE_PROPERTY, String.class)
-								: StringUtils.EMPTY);
-						bookmarks.add(productsBean);
+						if(pageResource != null) {
+							Resource jcrResource = Objects.requireNonNull(pageResource).getChild(JcrConstants.JCR_CONTENT);
+							ValueMap jcrProperties = Objects.requireNonNull(jcrResource).getValueMap();
+							ProductsBean productsBean = new ProductsBean();
+							productsBean.setPath(ServiceUtils.getLink(resourceResolver,
+									favoriteValue.getString(), settingsService));
+							productsBean.setTitle(jcrProperties.get(JcrConstants.JCR_TITLE, String.class) != null
+									? jcrProperties.get(JcrConstants.JCR_TITLE, String.class)
+									: StringUtils.EMPTY);
+							Resource imageResource = jcrResource.getChild("image");
+							ValueMap imageProperties = imageResource != null ? imageResource.getValueMap() : null;
+							productsBean.setImage(imageProperties != null ? imageProperties.get("fileReference", String.class)
+									: StringUtils.EMPTY);
+							productsBean.setPageType(jcrProperties.get(ApplicationConstants.PAGE_TYPE_PROPERTY, String.class) != null
+									? jcrProperties.get(ApplicationConstants.PAGE_TYPE_PROPERTY, String.class)
+									: StringUtils.EMPTY);
+							bookmarks.add(productsBean);
+						}
 					}
 					setFilterBeanList(getFilterList(bookmarks));
 				}

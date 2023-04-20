@@ -141,16 +141,9 @@ $( document ).ready(function() {
     $('#search-button1').click(function() {
         var urlSplit=( window.location.href ).split( "?" );
         var obj = { Title: document.title, Url: urlSplit[0] + "?search=" + document.getElementById("search").value };
-        history.pushState(obj, obj.Title, obj.Url);
+        history.replaceState(obj, obj.Title, obj.Url);
         searchFunc(document.getElementById("search").value, 0);
     });
-
-    //browser back button
-    if (window.history && window.history.pushState) {
-        $(window).on('popstate', function() {
-        	initialSearch();
-        });
-    }
 
     //Search Page Enter button
     if (window.location.href.includes("search-result.html")) {
