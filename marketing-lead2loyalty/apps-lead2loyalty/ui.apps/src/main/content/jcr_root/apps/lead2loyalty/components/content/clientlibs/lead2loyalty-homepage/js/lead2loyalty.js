@@ -182,8 +182,10 @@ $( document ).ready(function() {
     function searchFunc(searchKeyword, offset) {
         filterObj.splice(0, filterObj.length);
         resultObj.splice(0, resultObj.length);
+        let rootPagePath = $('#search-button1').data('rootpagepath');
         let sortBy = $('#search-sort-by').find(":selected").text();
         var payload = {
+            rootPagePath: rootPagePath,
             query: searchKeyword,
             sortBy: sortBy
         };

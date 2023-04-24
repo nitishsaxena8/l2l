@@ -52,6 +52,7 @@ public class SearchServlet extends SlingAllMethodsServlet {
     private transient Lead2loyaltyService lead2loyaltyService;
     @Reference
     private transient QueryBuilder builder;
+    private final int RESULTS_PER_PAGE = 10;
     @Override
     protected void doPost(final SlingHttpServletRequest request,
                           final SlingHttpServletResponse response) throws IOException {
@@ -75,7 +76,7 @@ public class SearchServlet extends SlingAllMethodsServlet {
                 pagePathHashSet.add(page.getPath());
             }
             searchResponseWrapper.setSearchResultCount(pagePathHashSet.size());
-            searchResponseWrapper.setPageCount(pagePathHashSet.size()/10 + 1);
+            searchResponseWrapper.setPageCount(pagePathHashSet.size()/RESULTS_PER_PAGE + 1);
             for(String pagePath : pagePathHashSet) {
                 Page page = resourceResolver.getResource(pagePath).adaptTo(Page.class);
                 searchResultBeanList.add(getSearchResultBean(page));
@@ -139,7 +140,7 @@ public class SearchServlet extends SlingAllMethodsServlet {
         Map<String, String> predicate = new HashMap<>();
         JSONObject json = WebUtils.getRequestParam(requestBody);
 
-        predicate.put("path", "/content/lead2loyalty/language-masters/en");
+        predicate.put("path", json.get("rootPagePath").toString());
         predicate.put("type", "nt:unstructured");
         predicate.put("fulltext", json.get("query").toString());
         predicate.put("p.limit", "-1");

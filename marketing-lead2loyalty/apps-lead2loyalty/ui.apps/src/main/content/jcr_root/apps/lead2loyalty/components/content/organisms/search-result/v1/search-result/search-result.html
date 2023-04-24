@@ -14,7 +14,7 @@
 							<input type="text" placeholder="Search..." class="form-control" id="search" name="search" data-suggestions="${searchResults.pageTitlesJson}">
 						</div>
 						<div class="col-lg-1 col-md-3 col-sm-12 pt-3 d-flex justify-content-end pe-2">
-							<button type="button" class="btn btn-dark" id="search-button1"> Search
+							<button type="button" class="btn btn-dark" id="search-button1" data-rootPagePath="${properties.rootPagePath}"> ${properties.searchButtonText}
 							</button>
 						</div>
 					</div>
@@ -26,10 +26,10 @@
 	<div class="row ng-scope">
 		<div class="col-md-3 col-md-push-9">
 			<div class="d-flex">
-				<h5>Filter your search</h5>
-				<a id="clearAll" class="btn btn-link px-3 py-0" href="">Clear All</a>
+				<h5>${properties.searchFilterLabel}</h5>
+				<a id="clearAll" class="btn btn-link px-3 py-0" href="">${properties.clearFilterText}</a>
 			</div>
-			<p class="fs-mini">Listed content is categorized by the following groups:</p>
+			<p class="fs-mini">${properties.searchFilterDescription}</p>
 			<ul class="nav nav-pills nav-stacked search-result-categories mt" id="filter-counts">
 				<!--dynamic filter section goes here.-->
 			</ul>
@@ -39,7 +39,7 @@
 			<div id="search-details" class="py-3 d-flex justify-content-between">
 				<div id="resultCount"></div>
 				<div class="d-flex">
-					<label class="pe2" for="sort">Sort By</label>
+					<label class="pe2" for="sort">${properties.sortByText}</label>
 					<select id="search-sort-by">
 						<option>None</option>
 						<option>Latest</option>

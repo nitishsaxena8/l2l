@@ -1,5 +1,6 @@
 package com.deloitte.aem.lead2loyalty.core.models;
 
+import com.day.cq.commons.jcr.JcrConstants;
 import com.day.cq.search.PredicateGroup;
 import com.day.cq.search.Query;
 import com.day.cq.search.QueryBuilder;
@@ -13,6 +14,7 @@ import org.apache.sling.api.resource.ValueMap;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
+import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -26,6 +28,9 @@ import java.util.Map;
 @Model(adaptables = { SlingHttpServletRequest.class,
 		Resource.class }, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class SearchResultsModel {
+
+	@ValueMapValue
+	private String rootPagePath;
 
 	@SlingObject
 	private ResourceResolver resourceResolver;
@@ -44,7 +49,7 @@ public class SearchResultsModel {
 			// Build the query
 			Map<String, String> predicate = new HashMap<>();
 				predicate.put("type", "cq:Page");
-				predicate.put("path", "/content/lead2loyalty/language-masters/en");
+				predicate.put("path", rootPagePath);
 				predicate.put("property", "jcr:content/jcr:title");
 				predicate.put("property.operation", "exists");
 				predicate.put("p.limit", "-1");
@@ -54,7 +59,7 @@ public class SearchResultsModel {
 			// Process the results
 			for(Hit hit : searchResult.getHits()) {
 				ValueMap properties = hit.getProperties();
-				String title = properties.get("jcr:title", String.class);
+				String title = properties.get(JcrConstants.JCR_TITLE, String.class);
 				titles.add(title);
 			}
 
@@ -69,5 +74,9 @@ public class SearchResultsModel {
 
 	public String getPageTitlesJson() {
 		return pageTitlesJson;
+	}
+
+	public String getRootPagePath() {
+		return rootPagePath;
 	}
 }
