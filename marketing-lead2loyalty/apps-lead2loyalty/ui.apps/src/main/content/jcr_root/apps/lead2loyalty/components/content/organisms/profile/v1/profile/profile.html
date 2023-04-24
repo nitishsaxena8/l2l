@@ -1,0 +1,187 @@
+<style>
+
+.profilePage iframe {
+    background-color: #fff;
+    border-radius: 8px;
+}
+.profile {
+    background-color:#eee;
+}
+
+h3 {
+    margin: 10px 0;
+}
+
+h6 {
+    margin: 5px 0;
+}
+
+p {
+    font-size: 14px;
+    line-height: 21px;
+}
+
+.card-container {
+    border-radius: 5px;
+    box-shadow: 0px 10px 20px -10px rgba(0,0,0,0.75);
+    color: #000;
+    padding-top: 30px;
+    position: relative;
+    max-width: 100%;
+    text-align: center;
+}
+
+.card-container .pro {
+    color: #231E39;
+    background-color: #CCC;
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 3px 7px;
+    position: absolute;
+    right: 100px;
+}
+
+.card-container .round {
+    border: 1px solid #03BFCB;
+    border-radius: 50%;
+    padding: 7px;
+}
+
+button.primary {
+    background-color: #03BFCB;
+    border: 1px solid #03BFCB;
+    border-radius: 3px;
+    color: #231E39;
+    font-family: Montserrat, sans-serif;
+    font-weight: 500;
+    padding: 10px 25px;
+}
+
+button.primary.ghost {
+    background-color: transparent;
+    color: #02899C;
+}
+
+.file {
+	position: relative;
+    overflow: hidden;
+}
+
+.file input {
+    position: absolute;
+    opacity: 0;
+    right: 0;
+    top: 0;
+}
+
+.help-section{
+    border:1px solid #ccc;
+    padding:10px;
+    border-radius:6px;
+}
+
+.card-registration .select-input.form-control[readonly]:not([disabled]) {
+    font-size: 14px;
+    line-height: 2.15;
+    padding-left: .75em;
+    padding-right: .75em;
+    }
+
+.card-registration .select-arrow {
+    top: 13px;
+}
+
+.form-control-lg {
+	font-size: 14px !important;
+}
+
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4 my-4">
+            <div class="card">
+                <div class="card-container">
+                    <span class="pro">
+                        <a href="#">
+                            <i class="fa fa-trash"></i>
+                        </a>
+                    </span>
+                    <img class="round" src="/content/dam/lead2loyalty/no-img.jpg" alt="user" />
+                    <h3 id="userName"></h3>
+                    <div class="file btn btn-sm btn-dark">
+                        Upload New Photo
+                        <input type="file" name="file"/>
+                    </div>
+                    <div class="help-section m-3">
+                        <p>Upload a New Avatar. large image will be resized automatically.</p>
+                        <p>Maximum file upload size is 1MB</p>
+                    </div>
+                    <h6 class="mb-3">Member Since : 20 September 2020</h6>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-8 my-4">
+            <form class="my-profile-form" id="myProfileForm">
+                <div class="profilePage card">
+                    <div class="card-body text-black">
+                        <h3 class="mb-5 text-uppercase">My Profile</h3>
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <div class="form-outline">
+                                    <label class="form-label" for="formFirstName">First name</label>
+                                    <input type="text" id="formFirstName" class="form-control form-control-lg" disabled/>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="form-outline">
+                                    <label class="form-label" for="formLastName">Last name</label>
+                                    <input type="text" id="formLastName" class="form-control form-control-lg" disabled/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-outline mb-4">
+                            <label class="form-label" for="formEmail">Email</label>
+                            <input type="text" id="formEmail" class="form-control form-control-lg" disabled />
+                        </div>
+                        <div class="form-outline mb-4">
+                            <label class="form-label" for="formPassword">Password</label>
+                            <input type="text" id="formPassword" class="form-control form-control-lg" />
+                        </div>
+                        <div class="form-outline mb-4">
+                            <label class="form-label" for="formOrg">Organization</label>
+                            <input type="text" id="formOrg" class="form-control form-control-lg" disabled/>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 mb-4">
+                                <div><label class="form-label select-label">Role at Organization</label></div>
+                                <select class="select form-control form-control-lg" disabled>
+                                    <option value="1" disabled>Select Role</option>
+                                    <option value="leadership">Leadership</option>
+                                    <option value="product_management">Product Management</option>
+                                    <option value="marketing">Marketing</option>
+                                    <option value="finance">Finance</option>
+                                    <option value="engineering">Engineering</option>
+                                    <option value="supply_chain">Supply Chain</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-outline mb-4">
+                            <label class="form-label" for="formPhone">Phone</label>
+                            <input type="text" id="formPhone" class="form-control form-control-lg" />
+                        </div>
+                        <div class="form-outline mb-4">
+                            <label class="form-label" for="formSite">Website</label>
+                            <input type="text" id="formSite" class="form-control form-control-lg" />
+                        </div>
+                        <div class="d-flex justify-content-between pt-3">
+                            <button type="submit" class="btn btn-dark btn-lg ms-2">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

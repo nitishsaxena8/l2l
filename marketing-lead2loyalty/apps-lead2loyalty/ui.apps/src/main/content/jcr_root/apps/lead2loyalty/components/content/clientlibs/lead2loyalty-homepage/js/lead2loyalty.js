@@ -163,9 +163,8 @@ $( document ).ready(function() {
     $(function() {
         $('.pagination').on('click', 'li', function(){
             var pagetag = $('a', this).attr('pagetag');
-
             if(Number(pagetag) == 1){
-            var offset = $('a', this).attr('offset');
+                var offset = $('a', this).attr('offset');
                 searchFunc(document.getElementById("search").value, Number(offset));
             }
             else if(Number(pagetag) == 0) {
@@ -212,7 +211,12 @@ $( document ).ready(function() {
                             //Pagination
                             if(result.pageCount >= 1) {
                                 for(var i=1; i<=result.pageCount; i++) {
-                                    $("#pagination").append('<li class="page-item"><a class="page-link" offSet='+(i-1)*10+' pagetag='+1+' href="#">'+i+'</a></li>');
+                                    if(offset == ((i-1)*10)) {
+                                        $("#pagination").append('<li class="page-item active"><a class="page-link" offSet='+(i-1)*10+' pagetag='+1+' href="#">'+i+'</a></li>');
+                                    }
+                                    else {
+                                        $("#pagination").append('<li class="page-item"><a class="page-link" offSet='+(i-1)*10+' pagetag='+1+' href="#">'+i+'</a></li>');
+                                    }
                                 }
                             }
 
@@ -278,7 +282,12 @@ $( document ).ready(function() {
                             //Pagination
                             if(result.pageCount >= 1) {
                                 for(var i=1; i<=result.pageCount; i++) {
-                                    $("#pagination").append('<li class="page-item"><a class="page-link" offSet='+(i-1)*10+' pagetag='+1+' href="#">'+i+'</a></li>');
+                                    if(offset == ((i-1)*10)) {
+                                        $("#pagination").append('<li class="page-item active"><a class="page-link" offSet='+(i-1)*10+' pagetag='+1+' href="#">'+i+'</a></li>');
+                                    }
+                                    else {
+                                        $("#pagination").append('<li class="page-item"><a class="page-link" offSet='+(i-1)*10+' pagetag='+1+' href="#">'+i+'</a></li>');
+                                    }
                                 }
                             }
 
@@ -355,7 +364,12 @@ $( document ).ready(function() {
         let x = Math.ceil(parseInt(filterObj[Tag].filterCount)/10);
         if(x >= 1) {
             for(var i=1; i<= x; i++) {
-                $("#pagination").append('<li class="page-item"><a class="page-link" offSet='+(i-1)*10+' pageTag='+0+' href="#">'+i+'</a></li>');
+                if(offset == ((i-1)*10)) {
+                    $("#pagination").append('<li class="page-item active"><a class="page-link" offSet='+(i-1)*10+' pageTag='+0+' href="#">'+i+'</a></li>');
+                }
+                else {
+                    $("#pagination").append('<li class="page-item"><a class="page-link" offSet='+(i-1)*10+' pageTag='+0+' href="#">'+i+'</a></li>');
+                }
             }
         }
         //Render search result section
@@ -375,4 +389,22 @@ $( document ).ready(function() {
         }
     }
     //End Category filter fun
+
+	//Profile page rendering
+	if(getCookie('userDetails')) {
+        var user = JSON.parse(getCookie('userDetails'));
+        $("#formFirstName").attr("value", user.firstName);
+        $("#formLastName").attr("value", user.lastName);
+        $("#formEmail").attr("value", user.email);
+        $("#formOrg").attr("value", user.organization);
+        $("select option").each(function(){
+        if ($(this).val() == user.role)
+            $(this).attr("selected","selected");
+        });
+        $("#formPhone").attr("value", user.phone);
+        $("#formSite").attr("value", user.website);
+
+        $("#userName").text(user.firstName + " " + user.lastName);
+    }
+
 });
