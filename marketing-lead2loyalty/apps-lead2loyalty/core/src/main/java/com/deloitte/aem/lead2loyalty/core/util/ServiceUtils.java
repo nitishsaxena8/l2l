@@ -2,17 +2,13 @@ package com.deloitte.aem.lead2loyalty.core.util;
 
 import com.day.cq.commons.Externalizer;
 import com.day.cq.wcm.api.Page;
-import org.apache.sling.api.resource.LoginException;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
-import org.apache.sling.api.resource.ResourceResolverFactory;
 import org.apache.sling.settings.SlingSettingsService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.annotation.Nullable;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Assorted mix of helper methods.
@@ -38,8 +34,8 @@ public class ServiceUtils {
 
         Resource resource = resolver.getResource(url);
         String result = url;
-        if (resource != null && (resource.getPath().startsWith("/content/lead2loyalty") ||
-                resource.getPath().startsWith("/content/experience-fragments/lead2loyalty"))) {
+        if (resource != null && (resource.getPath().startsWith("/content") ||
+                resource.getPath().startsWith("/content/experience-fragments"))) {
             Page page = resource.adaptTo(Page.class);
             if (page != null) {
                 result = url + ".html";
@@ -61,8 +57,8 @@ public class ServiceUtils {
 
         Resource resource = resolver.getResource(url);
         String result = url;
-        if (resource != null && (resource.getPath().startsWith("/content/lead2loyalty") ||
-                resource.getPath().startsWith("/content/experience-fragments/lead2loyalty"))) {
+        if (resource != null && (resource.getPath().startsWith("/content") ||
+                resource.getPath().startsWith("/content/experience-fragments"))) {
             Page page = resource.adaptTo(Page.class);
             if (page != null) {
                 result = url + ".html";

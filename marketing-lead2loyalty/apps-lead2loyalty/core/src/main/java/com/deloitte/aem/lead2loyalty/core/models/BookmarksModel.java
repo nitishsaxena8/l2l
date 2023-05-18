@@ -1,6 +1,8 @@
 package com.deloitte.aem.lead2loyalty.core.models;
 
 import com.day.cq.commons.jcr.JcrConstants;
+import com.day.cq.wcm.api.Page;
+import com.day.cq.wcm.api.PageManager;
 import com.deloitte.aem.lead2loyalty.core.beans.ProductsBean;
 import com.deloitte.aem.lead2loyalty.core.beans.SearchFilterBean;
 import com.deloitte.aem.lead2loyalty.core.constants.ApplicationConstants;
@@ -52,6 +54,12 @@ public class BookmarksModel {
 		Session session = resourceResolver.adaptTo(Session.class);
 		String userDetailsCookie = WebUtils.getSpecificCookie(request, ApplicationConstants.USER_DETAILS_COOKIE);
 		bookmarks = new ArrayList<>();
+
+		PageManager pageManager = resourceResolver.adaptTo(PageManager.class);
+		Page currentPage = pageManager.getContainingPage(request.getResource());
+		String pagePath = currentPage.getPath();
+		String currentIndustryPagePreFix = pagePath.substring(0, StringUtils.ordinalIndexOf(pagePath, "/", 3));
+
 		try {
 			JSONObject jsonObject = new JSONObject(userDetailsCookie);
 			String emailId = jsonObject.get("email").toString();
@@ -68,19 +76,21 @@ public class BookmarksModel {
 							Resource jcrResource = Objects.requireNonNull(pageResource).getChild(JcrConstants.JCR_CONTENT);
 							ValueMap jcrProperties = Objects.requireNonNull(jcrResource).getValueMap();
 							ProductsBean productsBean = new ProductsBean();
-							productsBean.setPath(ServiceUtils.getLink(resourceResolver,
-									favoriteValue.getString(), settingsService));
-							productsBean.setTitle(jcrProperties.get(JcrConstants.JCR_TITLE, String.class) != null
-									? jcrProperties.get(JcrConstants.JCR_TITLE, String.class)
-									: StringUtils.EMPTY);
-							Resource imageResource = jcrResource.getChild("image");
-							ValueMap imageProperties = imageResource != null ? imageResource.getValueMap() : null;
-							productsBean.setImage(imageProperties != null ? imageProperties.get("fileReference", String.class)
-									: StringUtils.EMPTY);
-							productsBean.setPageType(jcrProperties.get(ApplicationConstants.PAGE_TYPE_PROPERTY, String.class) != null
-									? jcrProperties.get(ApplicationConstants.PAGE_TYPE_PROPERTY, String.class)
-									: StringUtils.EMPTY);
-							bookmarks.add(productsBean);
+							if(favoriteValue.getString().contains(currentIndustryPagePreFix)) {
+								productsBean.setPath(ServiceUtils.getLink(resourceResolver,
+										favoriteValue.getString(), settingsService));
+								productsBean.setTitle(jcrProperties.get(JcrConstants.JCR_TITLE, String.class) != null
+										? jcrProperties.get(JcrConstants.JCR_TITLE, String.class)
+										: StringUtils.EMPTY);
+								Resource imageResource = jcrResource.getChild("image");
+								ValueMap imageProperties = imageResource != null ? imageResource.getValueMap() : null;
+								productsBean.setImage(imageProperties != null ? imageProperties.get("fileReference", String.class)
+										: StringUtils.EMPTY);
+								productsBean.setPageType(jcrProperties.get(ApplicationConstants.PAGE_TYPE_PROPERTY, String.class) != null
+										? jcrProperties.get(ApplicationConstants.PAGE_TYPE_PROPERTY, String.class)
+										: StringUtils.EMPTY);
+								bookmarks.add(productsBean);
+							}
 						}
 					}
 					setFilterBeanList(getFilterList(bookmarks));
