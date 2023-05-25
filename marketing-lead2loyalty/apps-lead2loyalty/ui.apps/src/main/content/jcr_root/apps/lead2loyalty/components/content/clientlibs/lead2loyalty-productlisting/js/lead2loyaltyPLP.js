@@ -195,6 +195,8 @@ $('#signInForm').submit(function(event) {
 });
 
 $('.logout-app').click(function(event) {
+    var logoutElement = document.getElementById("dropdownMenuLink");
+    var logoutPageUrl = logoutElement.getAttribute('data-logoutPageUrl');
 	document.cookie = "userDetails=; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/";
     $('.user-log-in').removeClass('d-none');
     $('.user-logged-in').addClass('d-none');
@@ -207,7 +209,7 @@ $('.logout-app').click(function(event) {
     digitalData.user.userType = 'guest';
     digitalData.user.email = '';
 
-    window.location.href = '/content/lead2loyalty/language-masters/en/home-page.html';
+    window.location.href = logoutPageUrl + '.html';
 });
 
 $('.user-logged-in .dropdown-toggle').click(function(event) {

@@ -21,7 +21,9 @@
 				logoLink="/content/lead2loyalty/language-masters/en/home-page"
 				logoTitle="GG"
 				ordersPageUrl="/content/lead2loyalty/language-masters/en/my-account/orders"
-				signUpPageUrl="/content/lead2loyalty/language-masters/en/signup">
+				signUpPageUrl="/content/lead2loyalty/language-masters/en/signup"
+				logoutPageUrl="/content/lead2loyalty/language-masters/en/home-page"
+				searchResultPageUrl="/content/lead2loyalty/language-masters/en/search-result">
                 <utilityLinks jcr:primaryType="nt:unstructured">
                     <item0
 						jcr:primaryType="nt:unstructured"

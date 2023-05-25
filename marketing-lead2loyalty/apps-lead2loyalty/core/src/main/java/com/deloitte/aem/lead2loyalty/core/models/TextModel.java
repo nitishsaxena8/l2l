@@ -32,6 +32,12 @@ public class TextModel {
 	private String signUpPageUrl;
 
 	@ValueMapValue
+	private String logoutPageUrl;
+
+	@ValueMapValue
+	private String searchResultPageUrl;
+
+	@ValueMapValue
 	private String bookmarksPageUrl;
 
 	@ValueMapValue
@@ -65,12 +71,19 @@ public class TextModel {
 	public String getBookmarksPageUrl() {
 		return ServiceUtils.getLink(resourceResolver, bookmarksPageUrl, settingsService);
 	}
-
 	public String getProfilePageUrl() {
 		return ServiceUtils.getLink(resourceResolver, profilePageUrl, settingsService);
 	}
 
 	public String getOrdersPageUrl() {
 		return ServiceUtils.getLink(resourceResolver, ordersPageUrl, settingsService);
+	}
+
+	public String getLogoutPageUrl() {
+		return logoutPageUrl;
+	}
+
+	public String getSearchResultPageUrl() {
+		return searchResultPageUrl;
 	}
 }

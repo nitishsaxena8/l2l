@@ -93,6 +93,8 @@ $( document ).ready(function() {
 
     //Search Result Section
 	var globalSearchTerm;
+    var searchElement = document.getElementById("form1");
+    var searchResultPageURL = searchElement.getAttribute('data-searchResultPageUrl');
     if (window.location.href.includes("search-result.html")) {
         $('#form1').attr('disabled', 'disabled');
         $('#search-button').attr('disabled', 'disabled');
@@ -103,7 +105,7 @@ $( document ).ready(function() {
          globalSearchTerm = document.getElementById("form1").value;
          if(globalSearchTerm !=='') {
              localStorage.setItem("searchTerm", globalSearchTerm);
-             window.location.href = "/content/lead2loyalty/language-masters/en/search-result.html?search=" + globalSearchTerm;
+             window.location.href = searchResultPageURL +".html?search=" + globalSearchTerm;
              initialSearch();
          }
          else {
@@ -118,7 +120,7 @@ $( document ).ready(function() {
             event.preventDefault();
             globalSearchTerm = document.getElementById("form1").value;
             if(globalSearchTerm !== '') {
-                window.location.href = "/content/lead2loyalty/language-masters/en/search-result.html?search=" + globalSearchTerm;
+                window.location.href = searchResultPageURL + ".html?search=" + globalSearchTerm;
                 initialSearch();
             }
             else {
@@ -152,7 +154,7 @@ $( document ).ready(function() {
             if (event.key === "Enter") {
                 event.preventDefault();
                 var searchTerm = document.getElementById("search").value;
-                window.location.href = "/content/lead2loyalty/language-masters/en/search-result.html?search=" + searchTerm;
+                window.location.href = searchResultPageURL + ".html?search=" + searchTerm;
                 searchFunc(searchTerm, 0);
             }
         });

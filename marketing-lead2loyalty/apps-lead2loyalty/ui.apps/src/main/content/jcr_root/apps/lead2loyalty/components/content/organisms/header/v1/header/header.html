@@ -65,12 +65,7 @@
                     <div class="d-flex justify-content-between">
                         <div class="input-group" data-html2canvas-ignore="true">
                             <div class="form-outline">
-                                <input
-                                        id="search-input"
-                                        type="search"
-                                        id="form1"
-                                        class="form-control"
-                                />
+                                <input type="search" id="form1" class="form-control" data-searchResultPageURL="${headerNavLinksModel.searchResultPageUrl}"/>
                             </div>
                             <button id="search-button" type="button" class="btn btn-dark">
                                 <i class="fa fa-search"></i>
@@ -83,7 +78,7 @@
 
                     <!-- user dropdown start -->
                     <div class="dropdown user-logged-in d-none">
-                        <a class="btn btn-dark dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="btn btn-dark dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-logoutPageUrl="${headerNavLinksModel.logoutPageUrl}">
                             My Account
                         </a>
 
