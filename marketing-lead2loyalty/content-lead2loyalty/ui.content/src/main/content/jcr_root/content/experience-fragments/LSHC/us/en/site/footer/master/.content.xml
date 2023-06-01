@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:tags="[experience-fragments:variation/web]"
+        cq:template="/conf/xpbootstrap/settings/wcm/templates/xf-web-variation"
+        cq:xfMasterVariation="{Boolean}true"
+        cq:xfVariantType="web"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Footer"
+        sling:resourceType="lead2loyalty/components/content/organisms/xfpage">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="xpbootstrap/components/content/organisms/root-container"
+            layout="responsiveGrid">
+            <footer
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="lead2loyalty/components/content/organisms/footer/v1/footer">
+                <utilityLinks jcr:primaryType="nt:unstructured">
+                    <item0
+                        jcr:primaryType="nt:unstructured"
+                        tr_linkTitle="NAVIGATE">
+                        <secondaryFooterLinks jcr:primaryType="nt:unstructured">
+                            <item0
+                                jcr:primaryType="nt:unstructured"
+                                openInNewWindowSecondary="_self"
+                                secondaryLinkUrl="/content/life-science-and-health-care/language-masters/en/home-page/products"
+                                secondaryLinkTitle="Products"/>
+                            <item1
+                                jcr:primaryType="nt:unstructured"
+                                openInNewWindowSecondary="_self"
+                                secondaryLinkUrl="/content/life-science-and-health-care/language-masters/en/article-page"
+                                secondaryLinkTitle="Articles"/>
+                            <item2
+                                jcr:primaryType="nt:unstructured"
+                                openInNewWindowSecondary="_self"
+                                secondaryLinkUrl="/content/life-science-and-health-care/language-masters/en/about-us"
+                                secondaryLinkTitle="About Us"/>
+                        </secondaryFooterLinks>
+                    </item0>
+                </utilityLinks>
+            </footer>
+        </root>
+    </jcr:content>
+</jcr:root>

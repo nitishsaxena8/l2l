@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+	jcr:primaryType="cq:Page">
+    <jcr:content
+		cq:tags="[experience-fragments:variation/web]"
+		cq:template="/conf/xpbootstrap/settings/wcm/templates/xf-web-variation"
+		cq:xfMasterVariation="{Boolean}true"
+		cq:xfVariantType="web"
+		jcr:primaryType="cq:PageContent"
+		jcr:title="Header"
+		sling:resourceType="lead2loyalty/components/content/organisms/xfpage">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="xpbootstrap/components/content/organisms/root-container"
+            layout="responsiveGrid">
+            <header
+				jcr:primaryType="nt:unstructured"
+				sling:resourceType="lead2loyalty/components/content/organisms/header/v1/header"
+				profilePageUrl="/content/life-science-and-health-care/language-masters/en/my-account/profile"
+				bookmarksPageUrl="/content/life-science-and-health-care/language-masters/en/my-account/bookmarks"
+				logoLink="/content/life-science-and-health-care/language-masters/en/home-page"
+				logoTitle="LSHC"
+				ordersPageUrl="/content/life-science-and-health-care/language-masters/en/my-account/orders"
+				signUpPageUrl="/content/life-science-and-health-care/language-masters/en/signup"
+				logoutPageUrl="/content/life-science-and-health-care/language-masters/en/home-page"
+				searchResultPageUrl="/content/life-science-and-health-care/language-masters/en/search-result">
+                <utilityLinks jcr:primaryType="nt:unstructured">
+                    <item0
+						jcr:primaryType="nt:unstructured"
+						linkUrl="/content/life-science-and-health-care/language-masters/en/home-page"
+						openInNewWindow="_blank"
+						showChildPages="false"
+						tr_linkTitle="Home"/>
+                    <item1
+						jcr:primaryType="nt:unstructured"
+						linkUrl="/content/life-science-and-health-care/language-masters/en/home-page/products"
+						openInNewWindow="_self"
+						showChildPages="true"
+						tr_linkTitle="Products"/>
+                    <item2
+						jcr:primaryType="nt:unstructured"
+						linkUrl="/content/life-science-and-health-care/language-masters/en/article-page"
+						openInNewWindow="_self"
+						showChildPages="false"
+						tr_linkTitle="Articles"/>
+                    <item3
+						jcr:primaryType="nt:unstructured"
+						linkUrl="/content/life-science-and-health-care/language-masters/en/about-us"
+						openInNewWindow="_self"
+						showChildPages="false"
+						tr_linkTitle="About Us"/>
+                    <item4
+						jcr:primaryType="nt:unstructured"
+						linkUrl="/content/life-science-and-health-care/language-masters/en/contact-us"
+						openInNewWindow="_self"
+						showChildPages="false"
+						tr_linkTitle="Contact Us"/>
+                </utilityLinks>
+            </header>
+        </root>
+    </jcr:content>
+</jcr:root>
