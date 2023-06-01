@@ -14,7 +14,8 @@
     limitations under the License.
 */-->
 <sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html">
-    <sly data-sly-call="${clientlib.css @ categories='lead2loyalty.bootstrap.site'}"/>
+    <sly data-sly-call="${clientlib.css @ categories='lead2loyalty.bootstrap.site'}"
+         data-sly-use.dataLayerHelper="${'com.deloitte.aem.lead2loyalty.core.models.DataLayerModel'}"/>
 </sly>
 
 <sly data-sly-test="${!(wcmmode.edit || wcmmode.preview)}">
@@ -35,3 +36,5 @@
 <sly data-sly-include="datalayer.html"></sly>
 
 <sly data-sly-resource="${'contexthub' @ resourceType='granite/contexthub/components/contexthub'}"/>
+
+<sly data-sly-resource="${@path=dataLayerHelper.headerFragmentPath}"/>

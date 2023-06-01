@@ -21,6 +21,8 @@ import org.slf4j.LoggerFactory;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
+import javax.jcr.Node;
+import javax.jcr.RepositoryException;
 
 /**
  * Model Mapping the Current Page Resource
@@ -60,6 +62,10 @@ public class DataLayerModel {
 
 	private String parentPageTitle;
 
+	private String headerFragmentPath;
+
+	private String footerFragmentPath;
+
 	@SlingObject
 	private ResourceResolver resourceResolver;
 
@@ -68,7 +74,7 @@ public class DataLayerModel {
 	 *
 	 */
 	@PostConstruct
-	protected void init() {
+	protected void init() throws RepositoryException {
 		LOGGER.debug("Entering DataLayerModel");
 
 		for (int i = 0 ; i < currentPage.getDepth() - 2 ; i++) {
@@ -87,7 +93,6 @@ public class DataLayerModel {
 			action = path[path.length - 1].replaceAll("-", " ");
 		}
 
-		//String title = pageProperties.get(JcrConstants.JCR_TITLE, String.class);
 		productID = pageProperties.get("productID", String.class);
 		parentPageTitle = currentPage.getParent().getTitle();
 		pagePath = currentPage.getPath();
@@ -101,8 +106,8 @@ public class DataLayerModel {
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
-
-
+		headerFragmentPath = resourceResolver.getResource(currentPage.getAbsoluteParent(3).getPath() +"/home-page/jcr:content").adaptTo(Node.class).getProperty("headerFragmentPath").getValue().getString();
+		footerFragmentPath = resourceResolver.getResource(currentPage.getAbsoluteParent(3).getPath() +"/home-page/jcr:content").adaptTo(Node.class).getProperty("footerFragmentPath").getValue().getString();
 
 		LOGGER.debug("Exiting DataLayerModel");
 	}
@@ -138,4 +143,11 @@ public class DataLayerModel {
 		return ServiceUtils.getExternalizeAssetLink(resourceResolver, image);
 	}
 
+	public String getHeaderFragmentPath() {
+		return headerFragmentPath;
+	}
+
+	public String getFooterFragmentPath() {
+		return footerFragmentPath;
+	}
 }

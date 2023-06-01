@@ -9,11 +9,6 @@
         <root
             jcr:primaryType="nt:unstructured"
             sling:resourceType="xpbootstrap/components/content/organisms/xp-container">
-            <experiencefragment-header
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="cq/experience-fragments/editor/components/experiencefragment"
-                fragmentPath="/content/experience-fragments/lead2loyalty/us/en/site/header/master"
-                text="GG Home Products Virtual Reality Pluto 1.0 with M4 Processor Pluto 2.0 with M4 Processor Pluto 3.0 with M4 Processor More Cloud Computing Mercury 1.0 with M2 Processor Mercury 2.0 with M2 Processor Mercury 3.0 with M2 Processor More Imaging Technology Mars 1.0 with M2 Processor Mars 2.0 with M2 Processor Mars 3.0 with M2 Processor More 3D Printing Venus 1.0 with M2 Processor Venus 2.0 with M2 Processor Venus 3.0 with M2 Processor More Robotics Jupiter 1.0 with M3 Processor Jupiter 2.0 with M3 Processor Jupiter 3.0 with M3 Processor More All Products Articles About Us Contact Us Sign In My Account Profile Bookmarks Logout Login Sign in Error Email address Password Sign in Don't have an Account? Register"/>
             <container
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="xpbootstrap/components/content/organisms/xp-container"
@@ -24,11 +19,6 @@
                     editable="{Boolean}true"
                     layout="responsiveGrid"/>
             </container>
-            <experiencefragment-footer
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="cq/experience-fragments/editor/components/experiencefragment"
-                fragmentPath="/content/experience-fragments/lead2loyalty/us/en/site/footer/master"
-                text="Footer"/>
         </root>
         <cq:responsive jcr:primaryType="nt:unstructured">
             <breakpoints jcr:primaryType="nt:unstructured">
