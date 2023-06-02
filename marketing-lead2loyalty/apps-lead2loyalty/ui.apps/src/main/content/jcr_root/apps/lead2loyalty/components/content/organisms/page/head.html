@@ -32,7 +32,15 @@
     </sly>
 
     <!--/* Launch Code */-->
-    <script src="https://assets.adobedtm.com/08c6c96e8270/72912fc74997/launch-160a2cd168b5-development.min.js" async></script>
+    <script type="text/javascript">
+    	var script = document.createElement('script');
+        if(window.location.href.includes("/salesforce-ABM")) {
+            script.src ="https://assets.adobedtm.com/08c6c96e8270/d02ea2b215b8/launch-ebb024e4b974-development.min.js";
+        } else {
+			script.src ="https://assets.adobedtm.com/08c6c96e8270/72912fc74997/launch-160a2cd168b5-development.min.js";
+        }
+        document.head.appendChild(script);
+    </script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.js"
             crossorigin="anonymous"></script>
