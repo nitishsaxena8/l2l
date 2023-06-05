@@ -230,7 +230,7 @@ $('[data-bs-toggle="modal"]').click(function(event) {
 //Article Download
 /*$("body").on("click", "#btnExport", function () {
     setTimeout(function() {
-        html2canvas($('#tblCustomers')[0],{
+        html2canvas($('#articleBodyWrapper')[0],{
             onrendered: function (canvas) {
                 var data = canvas.toDataURL();
                 var docDefinition = { content: [{image: data,width: 500 }]};
@@ -241,7 +241,7 @@ $('[data-bs-toggle="modal"]').click(function(event) {
     },5000);
 });*/
 $("body").on("click", "#btnExport", function () {
-    var makePDF = document.getElementById("tblCustomers");
+    var makePDF = document.getElementById("articleBodyWrapper");
     var opt = {
         margin: [8,0],
         filename:$('.product-page-details', parent.document).attr("product-title") + ".pdf",
