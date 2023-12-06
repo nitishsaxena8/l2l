@@ -1,20 +1,5 @@
-/xpbootstrap/*.project
-/xpbootstrap/.settings/*.prefs
-/xpbootstrap/all/*.classpath
-/xpbootstrap/all/*.project
-/xpbootstrap/all/.settings/*.prefs
-/xpbootstrap/core/*.project
-/xpbootstrap/core/.settings/*.prefs
-/xpbootstrap/*.properties
-/xpbootstrap/core/*.classpath
-/xpbootstrap/ui.config/*.classpath
-/xpbootstrap/ui.config/*.project
-/xpbootstrap/ui.config/.settings/*.prefs
 *node_modules/*
 .DS_Store
 .idea
 .idea/*
 
-xpbootstrap/apps-xpbootstrap/core/target/
-xpbootstrap/apps-xpbootstrap/ui.apps/target/classes/org/apache/sling/scripting/sightly/apps/xpbootstrap/components/master/molecules/mleEmbed/v1/mleEmbed/embeddable/embeddable__002e__html.class
-xpbootstrap/
