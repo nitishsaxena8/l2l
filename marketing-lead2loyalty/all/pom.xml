@@ -39,6 +39,12 @@
                     <!-- skip sub package validation for now as some vendor packages like CIF apps will not pass -->
                     <skipSubPackageValidation>true</skipSubPackageValidation>
                     <embeddeds>
+                        <embedded>
+                                <groupId>com.xperience.aem</groupId>
+                                <artifactId>xpbootstrap.all</artifactId>
+                            <type>zip</type>
+                            <target>/apps/ui-lead2loyalty-packages/application/install</target>
+                        </embedded>
                          <embedded>
                             <groupId>com.deloitte</groupId>
                             <artifactId>ui-lead2loyalty.ui.apps</artifactId>
@@ -180,7 +186,12 @@
     <!-- D E P E N D E N C I E S                                                -->
     <!-- ====================================================================== -->
     <dependencies>
-
+        <dependency>
+            <groupId>com.xperience.aem</groupId>
+            <artifactId>xpbootstrap.all</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <type>zip</type>
+        </dependency>
         <dependency>
             <groupId>com.deloitte</groupId>
             <artifactId>ui-lead2loyalty.ui.apps</artifactId>
