@@ -1,0 +1,20 @@
+<sly data-sly-use.templates="xpbootstrap/components/master/organisms/commons/v1/templates.html"
+     data-sly-call="${templates.placeholder @ isEmpty = true}"></sly>
+<sly data-sly-use.atmTitle="xpbootstrap/components/master/atoms/atmTitle/v1/atmTitle/atmTitle.html"></sly>
+
+<sly data-sly-use.socialLinksModel = "com.xperience.aem.xpbootstrap.core.models.molecules.MleSocialMediaLinks">
+</sly>
+<div class="social-link-block-container">
+    <sly data-sly-list.items = "${socialLinksModel.links}">
+        <a
+                href="${items.pathLink}"
+                class="social-link-block"
+                target="${items.target ? '_blank' : ''}"
+        >
+            <i class="${items.icon}"></i>
+            <div>
+                <sly data-sly-call="${atmTitle.atmTitle @ atmTitleText=items.atmTitleText, atmTitleLevel=items.atmTitleLevel}"></sly>
+            </div>
+        </a>
+    </sly>
+</div>

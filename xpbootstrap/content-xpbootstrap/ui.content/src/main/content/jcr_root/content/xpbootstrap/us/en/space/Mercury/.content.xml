@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2022-10-11T11:58:00.057+05:30"
+        cq:lastModifiedBy="admin"
+        cq:template="/conf/xpbootstrap/settings/wcm/templates/articlepage"
+        jcr:description="From the surface of Mercury, the Sun would appear more than three times as large as it does when viewed from Earth, and the sunlight would be as much as seven times brighter. Despite its proximity to the Sun, Mercury is not the hottest planet in our solar system – that title belongs to nearby Venus, thanks to its dense atmosphere."
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Mercury"
+        sling:resourceType="xpbootstrap/components/content/organisms/articlepage"
+        pwaCachestrategy="staleWhileRevalidate"
+        pwaDisplay="standalone"
+        pwaOrientation="any"
+        subtitle="Mercury">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="xpbootstrap/components/content/organisms/root-container"
+            layout="responsiveGrid">
+            <container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="xpbootstrap/components/content/organisms/xp-container"
+                layout="responsiveGrid">
+                <mlebreadcrumb
+                    jcr:created="{Date}2022-10-10T16:23:09.230+05:30"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2022-10-10T16:23:09.230+05:30"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="xpbootstrap/components/content/molecules/mleBreadcrumb"/>
+                <mlecards
+                    jcr:created="{Date}2022-10-10T16:24:24.988+05:30"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2022-10-10T16:28:45.519+05:30"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="xpbootstrap/components/content/molecules/mleCards"
+                    atmCardDescription="&lt;p>From the surface of Mercury, the Sun would appear more than three times as large as it does when viewed from Earth, and the sunlight would be as much as seven times brighter. Despite its proximity to the Sun, Mercury is not the hottest planet in our solar system – that title belongs to nearby Venus, thanks to its dense atmosphere.&lt;/p>&#xd;&#xa;&lt;p>From the surface of Mercury, the Sun would appear more than three times as large as it does when viewed from Earth, and the sunlight would be as much as seven times brighter. Despite its proximity to the Sun, Mercury is not the hottest planet in our solar system – that title belongs to nearby Venus, thanks to its dense atmosphere.&lt;/p>&#xd;&#xa;"
+                    atmCardSubtitle="Smallest Planet"
+                    atmCardTitle="Mercury"
+                    atmIconSrcFileReference="/content/dam/xpbootstrap/mercury_1.jpg"
+                    marginBottom="margin-bottom-x"
+                    marginTop="margin-top-x"
+                    mobileMarginBottom="m-margin-bottom-x"
+                    mobileMarginTop="m-margin-top-x"
+                    textIsRich="true">
+                    <atmCardPrimaryCta
+                        jcr:primaryType="nt:unstructured"
+                        atmCtaLabel="Learn More"
+                        atmCtaLink="https://solarsystem.nasa.gov/planets/mercury/overview/#otp_ten_things_to_know_about_mercury"
+                        atmCtaSize="btn-sm"
+                        atmCtaTarget="true"
+                        atmCtaType="btn-primary"/>
+                    <atmCardSecondaryCta
+                        jcr:primaryType="nt:unstructured"
+                        atmCtaType="btn-link"/>
+                </mlecards>
+            </container>
+        </root>
+    </jcr:content>
+</jcr:root>

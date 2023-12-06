@@ -1,0 +1,47 @@
+
+.mle--card {
+	height: 100%;
+}
+
+.mle--vertical-card .atm--icon {
+	border-top-left-radius: calc(.25rem - 1px);
+  	border-top-right-radius: calc(.25rem - 1px);
+}
+
+.mle--stocked-card .rounded-border .atm--icon {
+	border-top-left-radius: calc(.25rem - 1px);
+  	border-top-right-radius: calc(.25rem - 1px);
+}
+
+.mle--stocked-card .header-p, .mle--stocked-card .footer-p {
+	margin-bottom: 0px !important;
+}
+
+
+.mle--horizontal-card img {
+	max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    border-bottom-left-radius: 0.25rem!important;
+    border-top-left-radius: 0.25rem!important;
+
+}
+
+.mle--vertical-card {
+	padding-top : 24px;
+    padding-bottom : 24px;
+}
+
+.mle--stocked-card {
+	padding-top : 24px;
+    padding-bottom : 24px;
+}
+/* 
+.atm--card-body {
+	display: flex;
+	flex-direction: column-reverse;
+}
+.card-title, .card-subtitle, .card-text {
+	margin-top: 15px;
+} */

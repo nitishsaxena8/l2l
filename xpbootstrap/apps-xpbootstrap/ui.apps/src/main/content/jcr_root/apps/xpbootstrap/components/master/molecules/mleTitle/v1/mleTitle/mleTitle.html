@@ -1,0 +1,16 @@
+<sly class="cmp-mle-title" data-sly-use.placeholder="xpbootstrap/components/master/organisms/commons/v1/templates.html" 
+data-sly-use.atmTitle="xpbootstrap/components/master/atoms/atmTitle/v1/atmTitle/atmTitle.html" 
+data-sly-use.titleModel="${'com.xperience.aem.xpbootstrap.core.models.molecules.MleTitle'}" 
+data-cmp-is="mle-title"></sly>
+<sly data-sly-call="${placeholder.placeholder @ isEmpty=!titleModel.atmTitleText}"></sly>
+
+
+<sly data-sly-set.marginTop="${titleModel.marginTop || 'margin-top-x'}"/>
+<sly data-sly-set.mobileMarginTop="${titleModel.mobileMarginTop || 'm-margin-top-x'}"/>
+<sly data-sly-set.marginBottom="${titleModel.marginBottom || 'margin-bottom-x'}"/>
+<sly data-sly-set.mobileMarginBottom="${titleModel.mobileMarginBottom || 'm-margin-bottom-x'}"/>
+
+<div class="mle--title molecule-spacing ${marginTop} ${mobileMarginTop} ${marginBottom} ${mobileMarginBottom}">
+	<sly data-sly-call="${atmTitle.atmTitle @ atmTitleText=titleModel.atmTitleText, atmTitleLevel=titleModel.atmTitleLevel}"></sly>
+</div>
+

@@ -1,0 +1,49 @@
+<sly data-sly-use.accordion="com.xperience.aem.xpbootstrap.core.models.organisms.Accordion"></sly>
+
+<sly data-sly-set.marginTop="${accordion.marginTop || 'margin-top-x'}"/>
+<sly data-sly-set.mobileMarginTop="${accordion.mobileMarginTop || 'm-margin-top-x'}"/>
+<sly data-sly-set.marginBottom="${accordion.marginBottom || 'margin-bottom-x'}"/>
+<sly data-sly-set.mobileMarginBottom="${accordion.mobileMarginBottom || 'm-margin-bottom-x'}"/>
+<div class="accordion">
+<div
+     data-panelcontainer="${wcmmode.edit && 'accordion'}"
+     id="${accordion.id}"
+     class="organism-accordion ${marginTop} ${mobileMarginTop} ${marginBottom} ${mobileMarginBottom}"
+     data-cmp-is="accordion"
+     data-cmp-data-layer="${accordion.data.json}"
+     data-cmp-single-expansion="${accordion.singleExpansion}"
+     data-placeholder-text="${wcmmode.edit && 'Please drag Accordion item components here' @ i18n}">
+    <div data-sly-test="${accordion.items.size > 0}"
+         data-sly-repeat.item="${accordion.items}"
+         class="accordion-item"
+         data-cmp-hook-accordion="item"
+         data-cmp-data-layer="${item.data.json}"
+         id="${item.id}"
+         data-cmp-expanded="${item.name in accordion.expandedItems}">
+        <h3 data-sly-element="${accordion.headingElement @ context='elementName'}"
+            class="accordion-header">
+            <button id="${item.id}-button"
+                    class="accordion-button${item.name in accordion.expandedItems ? ' ': ' collapsed'}"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#${item.id}-panel"
+                    aria-expanded="true"
+                    aria-controls="${item.id}-panel">
+                ${item.title}
+            </button>
+        </h3>
+        <div data-sly-resource="${item.name @ decorationTagName='div'}"
+             data-cmp-hook-accordion="panel"
+             id="${item.id}-panel"
+             class="accordion-collapse collapse${item.name in accordion.expandedItems ? ' show' : ''}"
+             role="region"
+             aria-labelledby="${item.id}-button"></div>
+    </div>
+    <sly data-sly-resource="${resource.path @ resourceType='wcm/foundation/components/parsys/newpar', appendPath='/*', decorationTagName='div', cssClassName='new section aem-Grid-newComponent'}"
+         data-sly-test="${(wcmmode.edit || wcmmode.preview) && accordion.items.size < 1}"></sly>
+</div>
+</div>
+
+
+
+
+

@@ -1,0 +1,20 @@
+<sly data-sly-use.embed="com.xperience.aem.xpbootstrap.core.models.molecules.Embed"></sly>
+
+<sly data-sly-set.marginTop="${embed.marginTop || 'margin-top-x'}"/>
+<sly data-sly-set.mobileMarginTop="${embed.mobileMarginTop || 'm-margin-top-x'}"/>
+<sly data-sly-set.marginBottom="${embed.marginBottom || 'margin-bottom-x'}"/>
+<sly data-sly-set.mobileMarginBottom="${embed.mobileMarginBottom || 'm-margin-bottom-x'}"/>
+<div
+     data-sly-use.commonsTemplates="xpbootstrap/components/master/organisms/commons/v1/templates.html"
+     data-sly-test.hasContent="${(embed.result && embed.result.processor) || embed.html || embed.embeddableResourceType}"
+     data-cmp-data-layer="${embed.data.json}"
+     id="${embed.id}"
+     class="cmp-embed molecule-spacing ${marginTop} ${mobileMarginTop} ${marginBottom} ${mobileMarginBottom}">
+    <sly data-sly-test="${embed.result && embed.result.processor}"
+         data-sly-use.processorTemplate="processors/${embed.result.processor}.html"
+         data-sly-call="${processorTemplate.render @ options=embed.result.options}"></sly>
+    <sly data-sly-test="${embed.html}">${embed.html @context = 'unsafe'}</sly>
+    <sly data-sly-test="${embed.embeddableResourceType}"
+         data-sly-resource="${resource.path @ resourceType=embed.embeddableResourceType, wcmmode='disabled'}"></sly>
+</div>
+<sly data-sly-call="${commonsTemplates.placeholder @ isEmpty = !hasContent}"></sly>

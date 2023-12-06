@@ -1,0 +1,9 @@
+
+<sly data-sly-set.referenced="${resource.children[0]}"
+	data-sly-list.prop="${referenced.valueMap}"> 
+  <sly
+	data-sly-test="${prop =='sling:resourceType'}"
+	data-sly-use.readme="${'com.xperience.aem.xpbootstrap.core.models.component.library.ReadMeDescription'  @ resourcePath=referenced.valueMap[prop]}">
+      <html>${readme.htmlMarkup @context='html'}</html>
+</sly>
+</sly>

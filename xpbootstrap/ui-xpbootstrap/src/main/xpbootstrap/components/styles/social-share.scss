@@ -1,0 +1,16 @@
+@import '../../../global/styles/functions.scss';
+
+.share-bar {
+    display: flex;
+    padding: 0px 10px;
+
+    a {
+        text-decoration: none;
+        color: var(--color-grey-two);
+
+        i {
+            margin-right: toRem(16);
+            font-size: toRem(16);
+        }
+    }
+}

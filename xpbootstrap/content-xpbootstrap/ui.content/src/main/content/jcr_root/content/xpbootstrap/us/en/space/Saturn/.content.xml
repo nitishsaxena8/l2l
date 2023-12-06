@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2022-10-11T11:57:09.330+05:30"
+        cq:lastModifiedBy="admin"
+        cq:template="/conf/xpbootstrap/settings/wcm/templates/articlepage"
+        jcr:description="Saturn is the second-largest planet in our solar system. Like fellow gas giant Jupiter, Saturn is a massive ball made mostly of hydrogen and helium. Saturn is not the only planet to have rings, but none are as spectacular or as complex as Saturn's. Saturn also has dozens of moons."
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Saturn"
+        sling:resourceType="xpbootstrap/components/content/organisms/articlepage"
+        pwaCachestrategy="staleWhileRevalidate"
+        pwaDisplay="standalone"
+        pwaOrientation="any"
+        subtitle="saturn">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="xpbootstrap/components/content/organisms/root-container"
+            layout="responsiveGrid">
+            <container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="xpbootstrap/components/content/organisms/xp-container"
+                layout="responsiveGrid">
+                <mlebreadcrumb
+                    jcr:created="{Date}2022-10-10T16:36:59.004+05:30"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2022-10-10T16:36:59.004+05:30"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="xpbootstrap/components/content/molecules/mleBreadcrumb"/>
+                <mletitle
+                    jcr:created="{Date}2022-10-10T16:37:20.321+05:30"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2022-10-10T16:37:34.647+05:30"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="xpbootstrap/components/content/molecules/mleTitle"
+                    atmTitleLevel="h1"
+                    atmTitleText="Saturn"
+                    marginBottom="margin-bottom-x"
+                    marginTop="margin-top-x"
+                    mobileMarginBottom="m-margin-bottom-x"
+                    mobileMarginTop="m-margin-top-x"/>
+                <mlecards
+                    jcr:created="{Date}2022-10-10T16:37:42.099+05:30"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2022-10-10T16:40:58.851+05:30"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="xpbootstrap/components/content/molecules/mleCards"
+                    atmCardDescription="&lt;p>Saturn is the second-largest planet in our solar system. Like fellow gas giant Jupiter, Saturn is a massive ball made mostly of hydrogen and helium. Saturn is not the only planet to &lt;em>have&lt;/em> rings, but none are as spectacular or as complex as Saturn's. Saturn also has dozens of moons.&lt;/p>&#xd;&#xa;"
+                    atmCardSubtitle="Sixth Planet from Sun"
+                    atmCardTitle="Saturn"
+                    atmIconAltText="Saturn"
+                    atmIconSrcFileReference="/content/dam/xpbootstrap/saturn_1.jpg"
+                    marginBottom="margin-bottom-x"
+                    marginTop="margin-top-x"
+                    mobileMarginBottom="m-margin-bottom-x"
+                    mobileMarginTop="m-margin-top-x"
+                    textIsRich="true">
+                    <atmCardPrimaryCta
+                        jcr:primaryType="nt:unstructured"
+                        atmCtaLabel="Learn More"
+                        atmCtaLink="https://solarsystem.nasa.gov/planets/mercury/overview/#otp_ten_things_to_know_about_mercury"
+                        atmCtaSize="btn-sm"
+                        atmCtaTarget="true"
+                        atmCtaType="btn-primary"/>
+                    <atmCardSecondaryCta
+                        jcr:primaryType="nt:unstructured"
+                        atmCtaType="btn-link"/>
+                </mlecards>
+            </container>
+        </root>
+    </jcr:content>
+</jcr:root>

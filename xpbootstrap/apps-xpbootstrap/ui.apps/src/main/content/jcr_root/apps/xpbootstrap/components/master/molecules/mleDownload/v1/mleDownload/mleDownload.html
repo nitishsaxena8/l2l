@@ -1,0 +1,21 @@
+<sly data-sly-use.templates="xpbootstrap/components/master/organisms/commons/v1/templates.html"
+	data-sly-call="${templates.placeholder @ isEmpty = true}"></sly>
+
+<div data-sly-use.download="com.xperience.aem.xpbootstrap.core.models.molecules.MleDownload"
+    data-sly-use.component="com.xperience.aem.xpbootstrap.core.component.models.Component"
+    data-sly-use.templates="xpbootstrap/components/master/organisms/commons/v1/templates.html"
+    data-sly-use.atmTitle="xpbootstrap/components/master/atoms/atmTitle/v1/atmTitle/atmTitle.html"
+    data-sly-test.hasContent="${download.filename}" id="${component.id}">
+
+	<sly data-sly-set.marginTop="${download.marginTop || 'margin-top-x'}"/>
+	<sly data-sly-set.mobileMarginTop="${download.mobileMarginTop || 'm-margin-top-x'}"/>
+	<sly data-sly-set.marginBottom="${download.marginBottom || 'margin-bottom-x'}"/>
+	<sly data-sly-set.mobileMarginBottom="${download.mobileMarginBottom || 'm-margin-bottom-x'}"/>
+<div class="molecule-spacing ${marginTop} ${mobileMarginTop} ${marginBottom} ${mobileMarginBottom}">
+<p><sly data-sly-call="${atmTitle.atmTitle @ atmTitleText=download.atmTitleText, atmTitleLevel=download.atmTitleLevel}"></sly></p>
+
+
+<sly data-sly-test =${download.displaySize}><p>${download.size}</p></sly>
+<span><i class="${download.icon} "></i><a href ="${download.url}" class ="btn btn-primary">${download.actionText} &nbsp <i class="bi bi-download"></i></a></span>
+</div>
+</div>

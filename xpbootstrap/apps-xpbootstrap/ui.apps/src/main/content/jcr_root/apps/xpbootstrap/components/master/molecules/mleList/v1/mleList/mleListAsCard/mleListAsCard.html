@@ -1,0 +1,23 @@
+<sly data-sly-use.listModel="com.xperience.aem.xpbootstrap.core.models.molecules.MleList"
+    data-sly-use.template="core/wcm/components/commons/v1/templates.html"  
+    data-sly-use.atmCardBody="xpbootstrap/components/master/atoms/atmCardBody/v1/atmCardBody/atmCardBody.html"
+    data-cmp-is="mle-list-as-card"
+    id="${listModel.id}"></sly> 
+
+<sly data-sly-set.marginTop="${listModel.marginTop || 'margin-top-x'}"/>
+<sly data-sly-set.mobileMarginTop="${listModel.mobileMarginTop || 'm-margin-top-x'}"/>
+<sly data-sly-set.marginBottom="${listModel.marginBottom || 'margin-bottom-x'}"/>
+<sly data-sly-set.mobileMarginBottom="${listModel.mobileMarginBottom || 'm-margin-bottom-x'}"/>
+<sly data-sly-set.numberOfCardsInRow="${listModel.numberOfCardsInRow}"/>
+
+<div class="mle-list-as-card ${marginTop} ${mobileMarginTop} ${marginBottom} ${mobileMarginBottom} ${numberOfCardsInRow}">
+	<sly data-sly-list.listItem="${listModel.listItems}">
+		<div class="mle--card mle--vertical-card">
+			<div class="card h-100">
+				<sly data-sly-call="${atmCardBody.atmCardBody @ atmCardTitle=listItem.title, atmCardSubtitle=listItem.subTitle, atmCardDescription=listItem.description, atmCardPrimaryCta='', atmCardSecondaryCta='', atmCardAuthor=listItem.authorName}"></sly>
+		   </div>
+		</div> 
+	</sly>
+</div>
+<sly data-sly-call="${template.placeholder @ isEmpty=listModel.listItems.size == 0, classAppend='cmp-list'}"></sly>
+
